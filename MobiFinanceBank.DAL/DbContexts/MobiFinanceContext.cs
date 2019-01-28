@@ -4,7 +4,7 @@
     using Model.Models;
 
     /// <summary>
-    /// Mobi finance context.
+    /// Mobi finance context
     /// </summary>
     /// <seealso cref="DbContext"/>
     public partial class MobiFinanceContext : DbContext
