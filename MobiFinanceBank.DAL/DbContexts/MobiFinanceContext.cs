@@ -1,13 +1,15 @@
-﻿namespace MobiFinanceBank.DAL.DbContexts
+﻿using MobiFinanceBank.DAL.DbContexts.Interfaces;
+
+namespace MobiFinanceBank.DAL.DbContexts
 {
     using System.Data.Entity;
     using Model.Models;
 
     /// <summary>
-    /// Mobi finance context.
+    /// Mobi finance context
     /// </summary>
     /// <seealso cref="DbContext"/>
-    public partial class MobiFinanceContext : DbContext
+    public partial class MobiFinanceContext : DbContext, IMobiFinanceContext
     {
         public MobiFinanceContext()
             : base("name=MobiFinanceContext")
@@ -32,13 +34,13 @@
         {
             modelBuilder.Entity<BalanceSheet>()
                 .HasMany(e => e.Assets)
-                .WithOptional(e => e.BalanceSheet)
+                .WithRequired(e => e.BalanceSheet)
                 .HasForeignKey(e => e.BalanceSheetId)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<BalanceSheet>()
                 .HasMany(e => e.Liabilities)
-                .WithOptional(e => e.BalanceSheet)
+                .WithRequired(e => e.BalanceSheet)
                 .HasForeignKey(e => e.BalanceSheetId)
                 .WillCascadeOnDelete();
 
@@ -92,25 +94,25 @@
 
             modelBuilder.Entity<Client>()
                 .HasMany(e => e.BalanceSheets)
-                .WithOptional(e => e.Client)
+                .WithRequired(e => e.Client)
                 .HasForeignKey(e => e.ClientId)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Client>()
                 .HasMany(e => e.Loans)
-                .WithOptional(e => e.Client)
+                .WithRequired(e => e.Client)
                 .HasForeignKey(e => e.ClientId)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Client>()
                 .HasMany(e => e.Accounts)
-                .WithOptional(e => e.Client)
+                .WithRequired(e => e.Client)
                 .HasForeignKey(e => e.ClientId)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Client>()
                 .HasMany(e => e.SavingAccounts)
-                .WithOptional(e => e.Client)
+                .WithRequired(e => e.Client)
                 .HasForeignKey(e => e.ClientId)
                 .WillCascadeOnDelete();
 
@@ -120,7 +122,7 @@
 
             modelBuilder.Entity<Loan>()
                 .HasMany(e => e.RepaymentPlans)
-                .WithOptional(e => e.Loan)
+                .WithRequired(e => e.Loan)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Account>()
@@ -141,7 +143,7 @@
 
             modelBuilder.Entity<EmployeeType>()
                 .HasMany(e => e.Employees)
-                .WithOptional(e => e.EmployeeType)
+                .WithRequired(e => e.EmployeeType)
                 .HasForeignKey(e => e.EmployeeTypeId)
                 .WillCascadeOnDelete();
 
@@ -155,7 +157,7 @@
 
             modelBuilder.Entity<AccountType>()
                 .HasMany(e => e.Accounts)
-                .WithOptional(e => e.AccountType)
+                .WithRequired(e => e.AccountType)
                 .HasForeignKey(e => e.AccountTypeId)
                 .WillCascadeOnDelete();
 
@@ -165,7 +167,7 @@
 
             modelBuilder.Entity<SavingAccountType>()
                 .HasMany(e => e.SavingAccounts)
-                .WithOptional(e => e.SavingAccountType)
+                .WithRequired(e => e.SavingAccountType)
                 .HasForeignKey(e => e.SavingAccountTypeId);
 
             modelBuilder.Entity<Employee>()
@@ -198,13 +200,13 @@
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Loans)
-                .WithOptional(e => e.Employee)
+                .WithRequired(e => e.Employee)
                 .HasForeignKey(e => e.EmployeeId)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.SavingAccounts)
-                .WithOptional(e => e.Employee)
+                .WithRequired(e => e.Employee)
                 .HasForeignKey(e => e.EmployeeId)
                 .WillCascadeOnDelete();
         }
