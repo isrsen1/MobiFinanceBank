@@ -8,21 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Templates;
 
 namespace MobiFinanceBank.Forms
 {
-    public partial class Form1 : Form
+    public partial class MenuForm : TemplateForm, IMenuForm
     {
-        private ILoginForm lf;
-        public Form1(ILoginForm _lf)
+        public ILoginForm loginForm { get; set; }
+        public LoginForm lf { get; set; }
+        public MenuForm(ILoginForm _loginForm)
         {
             InitializeComponent();
-            lf = _lf;
+            loginForm = _loginForm;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPregledKlijenata_Click(object sender, EventArgs e)
         {
-            lf.Show();
+            loginForm.Show();
         }
     }
 }

@@ -7,22 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MobiFinanceBank.Forms.Interfaces;
 
-namespace MobiFinanceBank.Forms
+namespace MobiFinanceBank.Templates
 {
-    public partial class Form1 : Form
+    public partial class TemplateForm : Form
     {
-        private ILoginForm lf;
-        public Form1(ILoginForm _lf)
+        public TemplateForm()
         {
             InitializeComponent();
-            lf = _lf;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            lf.Show();
+            this.Close();
         }
     }
 }

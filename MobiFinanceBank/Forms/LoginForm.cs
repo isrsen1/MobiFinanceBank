@@ -7,22 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Templates;
 
 namespace MobiFinanceBank.Forms
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : TemplateForm, ILoginForm
     {
-        private ILoginForm lf;
-        public Form1(ILoginForm _lf)
+        private IAccountRepository ar;
+        public LoginForm(IAccountRepository repo)
         {
             InitializeComponent();
-            lf = _lf;
+            ar = repo;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
-            lf.Show();
+            this.ar.Add(null, true);
         }
     }
 }
