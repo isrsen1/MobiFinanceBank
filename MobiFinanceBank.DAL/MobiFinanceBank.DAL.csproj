@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbContexts\Interfaces\IDbContext.cs" />
     <Compile Include="DbContexts\Interfaces\IMobiFinanceContext.cs" />
     <Compile Include="DbContexts\MobiFinanceContext.cs" />
     <Compile Include="Migrations\201901281932319_InitialMigration.cs" />

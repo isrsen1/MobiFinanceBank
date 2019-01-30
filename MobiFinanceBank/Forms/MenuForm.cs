@@ -14,17 +14,9 @@ namespace MobiFinanceBank.Forms
 {
     public partial class MenuForm : TemplateForm, IMenuForm
     {
-        public ILoginForm loginForm { get; set; }
-        public LoginForm lf { get; set; }
-        public MenuForm(ILoginForm _loginForm)
+        public MenuForm()
         {
             InitializeComponent();
-            loginForm = _loginForm;
-        }
-
-        private void btnPregledKlijenata_Click(object sender, EventArgs e)
-        {
-            loginForm.Show();
         }
     }
 }

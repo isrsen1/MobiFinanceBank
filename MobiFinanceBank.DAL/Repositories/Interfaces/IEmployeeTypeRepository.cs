@@ -43,5 +43,10 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="employeeTypeId">Employee type identifier.</param>
         /// <param name="shouldSaveChanges">if set to true it will save changes to db.</param>
         void Remove(long employeeTypeId, bool shouldSaveChanges = true);
+
+        /// <summary>
+        /// Saves the context changes.
+        /// </summary>
+        void SaveChanges();
     }
 }

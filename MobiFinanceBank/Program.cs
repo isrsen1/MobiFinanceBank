@@ -20,11 +20,10 @@ namespace MobiFinanceBank
         static void Main()
         {
             var container = new UnityContainer();
-            container.RegisterType<ILoginForm, LoginForm>();
-            container.RegisterType<IAccountRepository, AccountRepository>();
+            container.RegisterType<IMenuForm, MenuForm>();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.Resolve<Form1>());
+            Application.Run(container.Resolve<LoginForm>());
         }
     }
 }
