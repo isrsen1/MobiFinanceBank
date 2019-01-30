@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.DAL.Repositories.Interfaces
@@ -43,5 +44,10 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="accountTypeId">Account type identifier.</param>
         /// <param name="shouldSaveChanges">if set to true it will save changes to db.</param>
         void Remove(long accountTypeId, bool shouldSaveChanges = true);
+
+        /// <summary>
+        /// Saves the context changes.
+        /// </summary>
+        void SaveChanges();
     }
 }

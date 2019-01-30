@@ -40,8 +40,13 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <summary>
         /// Removes the specified client.
         /// </summary>
-        /// <param name="client">Client identifier.</param>
+        /// <param name="clientId">Client identifier.</param>
         /// <param name="shouldSaveChanges">if set to true it will save changes to db.</param>
-        void Remove(long client, bool shouldSaveChanges = true);
+        void Remove(long clientId, bool shouldSaveChanges = true);
+
+        /// <summary>
+        /// Saves the context changes.
+        /// </summary>
+        void SaveChanges();
     }
 }

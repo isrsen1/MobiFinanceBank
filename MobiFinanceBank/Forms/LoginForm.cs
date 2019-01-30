@@ -13,18 +13,18 @@ using MobiFinanceBank.Templates;
 
 namespace MobiFinanceBank.Forms
 {
-    public partial class LoginForm : TemplateForm, ILoginForm
+    public partial class LoginForm : TemplateForm
     {
-        private IAccountRepository ar;
-        public LoginForm(IAccountRepository repo)
+        private IMenuForm menuForm;
+        public LoginForm(IMenuForm _menuForm)
         {
             InitializeComponent();
-            ar = repo;
+            this.menuForm = _menuForm;
         }
-
-        private void LoginForm_Load(object sender, EventArgs e)
+        
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.ar.Add(null, true);
+            this.menuForm.Show();
         }
     }
 }

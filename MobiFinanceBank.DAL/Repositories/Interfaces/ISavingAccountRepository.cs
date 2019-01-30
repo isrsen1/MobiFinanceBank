@@ -43,5 +43,10 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="savingAccountId">Saving account identifier.</param>
         /// <param name="shouldSaveChanges">if set to true it will save changes to db.</param>
         void Remove(long savingAccountId, bool shouldSaveChanges = true);
+
+        /// <summary>
+        /// Saves the context changes.
+        /// </summary>
+        void SaveChanges();
     }
 }

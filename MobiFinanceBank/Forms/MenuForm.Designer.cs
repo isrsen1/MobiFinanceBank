@@ -52,7 +52,6 @@
             this.btnPregledKlijenata.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPregledKlijenata.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPregledKlijenata.UseVisualStyleBackColor = true;
-            this.btnPregledKlijenata.Click += new System.EventHandler(this.btnPregledKlijenata_Click);
             // 
             // btnMjenjacnica
             // 

@@ -11,7 +11,7 @@ namespace MobiFinanceBank.DAL.DbContexts.Interfaces
     /// <summary>
     /// Mobi finance context interface
     /// </summary>
-    public interface IMobiFinanceContext
+    public interface IMobiFinanceContext: IDbContext
     {
         DbSet<BalanceSheet> BalanceSheets { get; set; }
         DbSet<Asset> Assets { get; set; }
