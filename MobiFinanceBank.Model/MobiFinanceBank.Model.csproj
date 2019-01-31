@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Currency.cs" />
     <Compile Include="Models\BalanceSheet.cs" />
     <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\Liability.cs" />

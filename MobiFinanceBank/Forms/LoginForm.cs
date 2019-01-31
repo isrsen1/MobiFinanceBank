@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Model.Enums;
+using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
+using MobiFinanceBank.Vm;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace MobiFinanceBank.Forms
 {
@@ -25,6 +30,10 @@ namespace MobiFinanceBank.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.menuForm.Show();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

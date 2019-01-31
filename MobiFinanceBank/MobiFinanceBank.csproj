@@ -42,6 +42,9 @@
     <Reference Include="MobiFinanceBank.Services">
       <HintPath>..\MobiFinanceBank.Services\bin\Debug\MobiFinanceBank.Services.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -67,6 +70,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ExchangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExchangeForm.Designer.cs">
+      <DependentUpon>ExchangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Interfaces\IExchangeForm.cs" />
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
     <Compile Include="Forms\Interfaces\IMenuForm.cs" />
     <Compile Include="Forms\LoginForm.cs">
@@ -89,6 +99,12 @@
     <Compile Include="Templates\TemplateForm.Designer.cs">
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VmService\ExchangeVmService.cs" />
+    <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
+    <Compile Include="Vm\CurrencyExchangeRate.cs" />
+    <EmbeddedResource Include="Forms\ExchangeForm.resx">
+      <DependentUpon>ExchangeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +125,7 @@
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Vm.CurrencyExchangeRate.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -224,5 +241,6 @@
   <ItemGroup>
     <None Include="Resources\uplatnica.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

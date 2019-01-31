@@ -93,6 +93,7 @@
             this.Controls.Add(this.userNameLbl);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.Controls.SetChildIndex(this.userNameLbl, 0);
             this.Controls.SetChildIndex(this.passwordLbl, 0);
             this.Controls.SetChildIndex(this.userNameTxt, 0);
