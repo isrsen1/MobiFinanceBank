@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExchangeService.cs" />
+    <Compile Include="Interfaces\IExchangeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobiFinanceBank.Model\MobiFinanceBank.Model.csproj">
+      <Project>{8C9BE3A6-9C4B-48B7-93A7-3263950BED47}</Project>
+      <Name>MobiFinanceBank.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
