@@ -7,6 +7,10 @@ using MobiFinanceBank.DAL.Repositories;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Services;
+using MobiFinanceBank.Services.Interfaces;
+using MobiFinanceBank.VmService;
+using MobiFinanceBank.VmService.Interfaces;
 using Unity;
 
 namespace MobiFinanceBank
@@ -21,6 +25,9 @@ namespace MobiFinanceBank
         {
             var container = new UnityContainer();
             container.RegisterType<IMenuForm, MenuForm>();
+            container.RegisterType<IExchangeForm, ExchangeForm>();
+            container.RegisterType<IExchangeService, ExchangeService>();
+            container.RegisterType<IExchangeVmService, ExchangeVmService>();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<LoginForm>());

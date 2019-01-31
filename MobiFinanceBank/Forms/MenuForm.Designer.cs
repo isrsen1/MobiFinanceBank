@@ -67,6 +67,7 @@
             this.btnMjenjacnica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMjenjacnica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMjenjacnica.UseVisualStyleBackColor = true;
+            this.btnMjenjacnica.Click += new System.EventHandler(this.btnMjenjacnica_Click);
             // 
             // button1
             // 

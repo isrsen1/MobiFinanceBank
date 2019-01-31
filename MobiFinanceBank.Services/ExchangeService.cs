@@ -1,23 +1,29 @@
 ﻿using MobiFinanceBank.Model.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using MobiFinanceBank.Services.Interfaces;
 
 namespace MobiFinanceBank.Services
 {
     /// <summary>
     /// Exchange service
     /// </summary>
-    public class ExchangeService
+    /// <seealso cref="IExchangeService"/>
+    public class ExchangeService: IExchangeService
     {
         public string BaseUri { get; set; } = "http://api.hnb.hr/tecajn/v1";
-        public HttpResponseMessage CurrentAllCurrencyExchangeRate(IEnumerable<Currency> currencies, DateTime? fromDate, DateTime? toDate)
+        public string CurrentCurrencyExchangeRate(IEnumerable<Currency> currencies, DateTime? fromDate, DateTime? toDate)
         {
             string parameters = "?";
+
+            if((fromDate != null && fromDate > DateTime.Now) || (fromDate != null && toDate != null && fromDate > toDate))
+                throw new ArgumentException("Datum 'od' veći od datuma 'do'");
 
             if (currencies != null && currencies.Any())
             {
@@ -40,14 +46,13 @@ namespace MobiFinanceBank.Services
                 client.BaseAddress = new Uri(this.BaseUri);
                 var response = client.GetAsync(parameters).Result;
 
-                //string result = response.Content.ReadAsStringAsync().Result;
+                var result = response.Content.ReadAsStringAsync().Result;
 
                 // if response status ok, return response
                 if (response.IsSuccessStatusCode)
-                    return response;
+                    return result;
 
-                // return bad request
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                throw new HttpRequestException($"Could not retrieve currency exchange rates, status code {response.StatusCode}");
             }
         }
     }

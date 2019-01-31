@@ -14,9 +14,16 @@ namespace MobiFinanceBank.Forms
 {
     public partial class MenuForm : TemplateForm, IMenuForm
     {
-        public MenuForm()
+        private IExchangeForm exchangeForm;
+        public MenuForm(IExchangeForm _exchangeForm)
         {
             InitializeComponent();
+            this.exchangeForm = _exchangeForm;
+        }
+
+        private void btnMjenjacnica_Click(object sender, EventArgs e)
+        {
+            exchangeForm.Show();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,27 +15,27 @@ namespace MobiFinanceBank.Vm
         public string ExchangeRateList { get; set; }
 
         [JsonProperty("Datum primjene")]
-        public DateTime ApplicationDate { get; set; }
+        public string ApplicationDate { get; set; }
 
         [JsonProperty("Država")]
         public string Country { get; set; }
 
         [JsonProperty("Šifra valute")]
-        public int CurrencyCode { get; set; }
+        public string CurrencyCode { get; set; }
 
         [JsonProperty("Valuta")]
-        public Currency Currency { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty("Jedinica")]
         public int Unit { get; set; }
 
         [JsonProperty("Kupovni za devize")]
-        public double Buying { get; set; }
+        public string Buying { get; set; }
 
         [JsonProperty("Srednji za devize")]
-        public double Middle { get; set; }
+        public string Middle { get; set; }
 
         [JsonProperty("Prodajni za devize")]
-        public double Selling { get; set; }
+        public string Selling { get; set; }
     }
 }

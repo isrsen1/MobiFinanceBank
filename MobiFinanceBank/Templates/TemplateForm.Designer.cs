@@ -40,7 +40,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MobiFinanceBank.Properties.Resources.exit;
-            this.pictureBox2.Location = new System.Drawing.Point(1136, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(1117, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 53);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -51,16 +51,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MobiFinanceBank.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(136, 96);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.AppName);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1204, 96);
@@ -72,7 +75,7 @@
             this.AppName.Font = new System.Drawing.Font("Franklin Gothic Medium", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AppName.Location = new System.Drawing.Point(507, 20);
             this.AppName.Name = "AppName";
-            this.AppName.Size = new System.Drawing.Size(287, 51);
+            this.AppName.Size = new System.Drawing.Size(281, 50);
             this.AppName.TabIndex = 0;
             this.AppName.Text = "Mobi Finance";
             this.AppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,8 +86,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1228, 503);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
