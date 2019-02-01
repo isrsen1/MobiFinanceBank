@@ -195,7 +195,7 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.Password)
+                .Property(e => e.hashPassword)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()

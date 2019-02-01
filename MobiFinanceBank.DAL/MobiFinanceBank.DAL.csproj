@@ -60,6 +60,10 @@
     <Compile Include="Migrations\201901281932319_InitialMigration.Designer.cs">
       <DependentUpon>201901281932319_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901312101458_EmployeeHashMigration.cs" />
+    <Compile Include="Migrations\201901312101458_EmployeeHashMigration.Designer.cs">
+      <DependentUpon>201901312101458_EmployeeHashMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -94,6 +98,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901281932319_InitialMigration.resx">
       <DependentUpon>201901281932319_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901312101458_EmployeeHashMigration.resx">
+      <DependentUpon>201901312101458_EmployeeHashMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
