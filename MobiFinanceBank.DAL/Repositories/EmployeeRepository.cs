@@ -121,5 +121,11 @@ namespace MobiFinanceBank.DAL.Repositories
         {
             this.context.SaveChanges();
         }
+        public Employee GetEmployeeByName(string username)
+        {
+            
+            return this.context.Employees.FirstOrDefault(employee => employee.UserName == username);
+            
+        }
     }
 }
