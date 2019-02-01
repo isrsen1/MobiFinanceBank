@@ -70,12 +70,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CreateClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateClient.Designer.cs">
+      <DependentUpon>CreateClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ExchangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ExchangeForm.Designer.cs">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Interfaces\ICreateClient.cs" />
     <Compile Include="Forms\Interfaces\IExchangeForm.cs" />
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
     <Compile Include="Forms\Interfaces\IMenuForm.cs" />
@@ -101,7 +108,11 @@
     </Compile>
     <Compile Include="VmService\ExchangeVmService.cs" />
     <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
+    <Compile Include="Vm\ClientViewModel.cs" />
     <Compile Include="Vm\CurrencyExchangeRate.cs" />
+    <EmbeddedResource Include="Forms\CreateClient.resx">
+      <DependentUpon>CreateClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExchangeForm.resx">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </EmbeddedResource>

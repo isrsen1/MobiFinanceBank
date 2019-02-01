@@ -157,6 +157,7 @@
             this.btnZaposlenici.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnZaposlenici.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnZaposlenici.UseVisualStyleBackColor = true;
+            this.btnZaposlenici.Click += new System.EventHandler(this.btnZaposlenici_Click);
             // 
             // MenuForm
             // 

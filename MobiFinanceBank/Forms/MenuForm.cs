@@ -15,15 +15,22 @@ namespace MobiFinanceBank.Forms
     public partial class MenuForm : TemplateForm, IMenuForm
     {
         private IExchangeForm exchangeForm;
-        public MenuForm(IExchangeForm _exchangeForm)
+        private ICreateClient createClient;
+        public MenuForm(IExchangeForm _exchangeForm, ICreateClient _createClient)
         {
             InitializeComponent();
             this.exchangeForm = _exchangeForm;
+            this.createClient = _createClient;
         }
 
         private void btnMjenjacnica_Click(object sender, EventArgs e)
         {
             exchangeForm.Show();
+        }
+
+        private void btnZaposlenici_Click(object sender, EventArgs e)
+        {
+            this.createClient.Show();
         }
     }
 }
