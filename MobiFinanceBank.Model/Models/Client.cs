@@ -44,6 +44,14 @@ namespace MobiFinanceBank.Model.Models
         public string LastName { get; set; }
         
         /// <summary>
+        /// Gets or sets the company name
+        /// </summary>
+        /// <value>
+        /// The company name
+        /// </value>
+        public string CompanyName { get; set; }
+
+        /// <summary>
         /// Gets or sets clients personal identification number
         /// </summary>
         /// <value>

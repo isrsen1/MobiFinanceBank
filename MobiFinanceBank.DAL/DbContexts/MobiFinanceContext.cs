@@ -74,6 +74,10 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .IsUnicode(false);
 
             modelBuilder.Entity<Client>()
+                .Property(e => e.CompanyName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Client>()
                 .Property(e => e.OIB)
                 .IsUnicode(false);
 
