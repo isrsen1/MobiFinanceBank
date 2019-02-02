@@ -82,7 +82,6 @@ namespace MobiFinanceBank.Forms
                 Income = double.Parse(monthlyIncomeTb.Text),
                 PhoneNumber = contactTb.Text,
                 Address = addressTb.Text,
-                ClientType = clientType,
                 ClientTypeId = clientType.Id
             });
         }

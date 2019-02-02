@@ -57,14 +57,14 @@
             this.lastNameTb.Location = new System.Drawing.Point(3, 31);
             this.lastNameTb.Name = "lastNameTb";
             this.lastNameTb.Size = new System.Drawing.Size(226, 22);
-            this.lastNameTb.TabIndex = 3;
+            this.lastNameTb.TabIndex = 2;
             // 
             // firstNameTb
             // 
             this.firstNameTb.Location = new System.Drawing.Point(3, 3);
             this.firstNameTb.Name = "firstNameTb";
             this.firstNameTb.Size = new System.Drawing.Size(226, 22);
-            this.firstNameTb.TabIndex = 4;
+            this.firstNameTb.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -89,21 +89,21 @@
             this.companyTb.Location = new System.Drawing.Point(3, 59);
             this.companyTb.Name = "companyTb";
             this.companyTb.Size = new System.Drawing.Size(226, 22);
-            this.companyTb.TabIndex = 10;
+            this.companyTb.TabIndex = 3;
             // 
             // oibTb
             // 
             this.oibTb.Location = new System.Drawing.Point(3, 87);
             this.oibTb.Name = "oibTb";
             this.oibTb.Size = new System.Drawing.Size(226, 22);
-            this.oibTb.TabIndex = 5;
+            this.oibTb.TabIndex = 4;
             // 
             // emailTb
             // 
             this.emailTb.Location = new System.Drawing.Point(3, 115);
             this.emailTb.Name = "emailTb";
             this.emailTb.Size = new System.Drawing.Size(226, 22);
-            this.emailTb.TabIndex = 6;
+            this.emailTb.TabIndex = 5;
             this.emailTb.Enter += new System.EventHandler(this.emailTb_Enter);
             this.emailTb.Leave += new System.EventHandler(this.emailTb_Leave);
             // 
@@ -112,21 +112,21 @@
             this.monthlyIncomeTb.Location = new System.Drawing.Point(3, 143);
             this.monthlyIncomeTb.Name = "monthlyIncomeTb";
             this.monthlyIncomeTb.Size = new System.Drawing.Size(226, 22);
-            this.monthlyIncomeTb.TabIndex = 7;
+            this.monthlyIncomeTb.TabIndex = 6;
             // 
             // contactTb
             // 
             this.contactTb.Location = new System.Drawing.Point(3, 171);
             this.contactTb.Name = "contactTb";
             this.contactTb.Size = new System.Drawing.Size(226, 22);
-            this.contactTb.TabIndex = 8;
+            this.contactTb.TabIndex = 7;
             // 
             // addressTb
             // 
             this.addressTb.Location = new System.Drawing.Point(3, 199);
             this.addressTb.Name = "addressTb";
             this.addressTb.Size = new System.Drawing.Size(226, 22);
-            this.addressTb.TabIndex = 9;
+            this.addressTb.TabIndex = 8;
             // 
             // clientTypeCb
             // 

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;
+using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.DAL.Repositories
 {
@@ -46,21 +47,17 @@ namespace MobiFinanceBank.DAL.Repositories
 
             try
             {
-                var isPrivateClient = client.ClientType.Name == "Privatni" ? true : false;
+                var isPrivateClient = (ClientType) client.ClientTypeId == ClientType.Privatni ? true : false;
                 client.FirstName = isPrivateClient ? client.FirstName : "";
                 client.LastName = isPrivateClient ? client.LastName : "";
                 client.CompanyName = !isPrivateClient ? client.CompanyName : "";
-                client.BalanceSheets = new List<BalanceSheet>();
-                client.Loans = new List<Loan>();
-                client.Accounts = new List<Account>();
-                client.SavingAccounts = new List<SavingAccount>();
                 
                 // Adds client instance to database 
-                //this.context.Clients.Add(client);
+                this.context.Clients.Add(client);
 
                 // Saves changes
-                //if (shouldSaveChanges)
-                    //this.SaveChanges();
+                if (shouldSaveChanges)
+                    this.SaveChanges();
             }
             catch (Exception e)
             {
