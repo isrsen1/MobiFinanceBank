@@ -35,6 +35,7 @@ namespace MobiFinanceBank
             container.RegisterType<IClientRepository, ClientRepository>();
             container.RegisterType<IMobiFinanceContext, MobiFinanceContext>();
             container.RegisterType<IClientOverview, ClientOverview>();
+            container.RegisterType<IClientOverviewVmService, ClientOverviewVmService>();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<LoginForm>());

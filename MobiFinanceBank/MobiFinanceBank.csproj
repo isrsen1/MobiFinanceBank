@@ -122,7 +122,9 @@
     </Compile>
     <Compile Include="VmService\ClientOverviewVmService.cs" />
     <Compile Include="VmService\ExchangeVmService.cs" />
+    <Compile Include="VmService\Interfaces\IClientOverviewVmService.cs" />
     <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
+    <Compile Include="Vm\ClientOverviewFilter.cs" />
     <Compile Include="Vm\ClientViewModel.cs" />
     <Compile Include="Vm\CurrencyExchangeRate.cs" />
     <EmbeddedResource Include="Forms\ClientOverview.resx">

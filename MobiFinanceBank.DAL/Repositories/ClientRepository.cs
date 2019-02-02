@@ -18,6 +18,11 @@ namespace MobiFinanceBank.DAL.Repositories
     {
         private readonly IMobiFinanceContext context;
 
+        public ClientRepository(IMobiFinanceContext _context)
+        {
+            this.context = _context;
+        }
+
         /// <summary>
         /// Gets all clients as queryable
         /// </summary>

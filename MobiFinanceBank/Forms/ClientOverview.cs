@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,16 +12,21 @@ using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
+using MobiFinanceBank.Vm;
+using MobiFinanceBank.VmService;
+using MobiFinanceBank.VmService.Interfaces;
 
 namespace MobiFinanceBank.Forms
 {
     public partial class ClientOverview : TemplateForm, IClientOverview
     {
         private readonly IClientTypeRepository clientTypeRepository;
-        public ClientOverview(IClientTypeRepository _clientTypeRepository)
+        private readonly IClientOverviewVmService clientOverviewVmService;
+        public ClientOverview(IClientTypeRepository _clientTypeRepository, IClientOverviewVmService _clientOverviewVmService)
         {
             InitializeComponent();
             this.clientTypeRepository = _clientTypeRepository;
+            this.clientOverviewVmService = _clientOverviewVmService;
         }
 
         private void ClientOverview_Load(object sender, EventArgs e)
@@ -33,9 +39,16 @@ namespace MobiFinanceBank.Forms
         private void clientTypeCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             var clientType = (ClientType)clientTypeCb.SelectedItem;
-            var isPrivateClient = clientType.Name == "Privatni" ? true : false;
+            var isPrivateClient = clientType.Name == Model.Enums.ClientType.Privatni.ToString() ? true : false;
 
-            clientOverviewDgv.DataSource = clientType.Clients.Where(client => client.ClientType == clientType).ToList();
+            Model.Enums.ClientType.TryParse(clientType.Name, true, out Model.Enums.ClientType selectedClientType);
+
+            var filter = new ClientOverviewFilter()
+            {
+                ClientType = selectedClientType
+            };
+
+            clientOverviewDgv.DataSource = this.clientOverviewVmService.GetClientOverview(filter);
         }
     }
 }
