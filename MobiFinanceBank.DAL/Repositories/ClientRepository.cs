@@ -19,6 +19,15 @@ namespace MobiFinanceBank.DAL.Repositories
         private readonly IMobiFinanceContext context;
 
         /// <summary>
+        /// Gets all clients as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        public IQueryable<Client> GetAsQueryable()
+        {
+            return this.context.Clients;
+        }
+
+        /// <summary>
         /// Adds the specified client.
         /// </summary>
         /// <param name="client">Client</param>
@@ -32,12 +41,21 @@ namespace MobiFinanceBank.DAL.Repositories
 
             try
             {
+                var isPrivateClient = client.ClientType.Name == "Privatni" ? true : false;
+                client.FirstName = isPrivateClient ? client.FirstName : "";
+                client.LastName = isPrivateClient ? client.LastName : "";
+                client.CompanyName = !isPrivateClient ? client.CompanyName : "";
+                client.BalanceSheets = new List<BalanceSheet>();
+                client.Loans = new List<Loan>();
+                client.Accounts = new List<Account>();
+                client.SavingAccounts = new List<SavingAccount>();
+                
                 // Adds client instance to database 
-                this.context.Clients.Add(client);
+                //this.context.Clients.Add(client);
 
                 // Saves changes
-                if (shouldSaveChanges)
-                    this.SaveChanges();
+                //if (shouldSaveChanges)
+                    //this.SaveChanges();
             }
             catch (Exception e)
             {
@@ -50,13 +68,13 @@ namespace MobiFinanceBank.DAL.Repositories
         /// <summary>
         /// Gets the asset
         /// </summary>
-        /// <param name="assetId">Asset id</param>
+        /// <param name="clientId">Asset id</param>
         /// <returns>Asset</returns>
         public Client Get(long clientId)
         {
             return this.context.Clients.FirstOrDefault(client => client.Id == clientId);
         }
-
+        
         /// <summary>
         /// Edits the specified client.
         /// </summary>

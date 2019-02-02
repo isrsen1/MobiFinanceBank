@@ -77,6 +77,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ClientOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientOverview.Designer.cs">
+      <DependentUpon>ClientOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,7 @@
     <Compile Include="Forms\ExchangeForm.Designer.cs">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Interfaces\IClientOverview.cs" />
     <Compile Include="Forms\Interfaces\ICreateClient.cs" />
     <Compile Include="Forms\Interfaces\IExchangeForm.cs" />
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
@@ -113,10 +120,14 @@
     <Compile Include="Templates\TemplateForm.Designer.cs">
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VmService\ClientOverviewVmService.cs" />
     <Compile Include="VmService\ExchangeVmService.cs" />
     <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
     <Compile Include="Vm\ClientViewModel.cs" />
     <Compile Include="Vm\CurrencyExchangeRate.cs" />
+    <EmbeddedResource Include="Forms\ClientOverview.resx">
+      <DependentUpon>ClientOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateClient.resx">
       <DependentUpon>CreateClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +154,7 @@
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Client.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Vm.ClientViewModel.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Vm.CurrencyExchangeRate.datasource" />
     <None Include="Properties\Settings.settings">

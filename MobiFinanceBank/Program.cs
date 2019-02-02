@@ -32,7 +32,9 @@ namespace MobiFinanceBank
             container.RegisterType<IExchangeVmService, ExchangeVmService>();
             container.RegisterType<ICreateClient, CreateClient>();
             container.RegisterType<IClientTypeRepository, ClientTypeRepository>();
+            container.RegisterType<IClientRepository, ClientRepository>();
             container.RegisterType<IMobiFinanceContext, MobiFinanceContext>();
+            container.RegisterType<IClientOverview, ClientOverview>();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<LoginForm>());

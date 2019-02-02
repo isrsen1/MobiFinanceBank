@@ -18,11 +18,13 @@ namespace MobiFinanceBank.Forms
     public partial class CreateClient : TemplateForm, ICreateClient
     {
         private IClientTypeRepository clientTypeRepository;
+        private IClientRepository clientRepository;
         private string emailPlaceholder = "e.g. isrsen1@foi.hr";
-        public CreateClient(IClientTypeRepository _clientTypeRepository)
+        public CreateClient(IClientTypeRepository _clientTypeRepository, IClientRepository _clientRepository)
         {
             InitializeComponent();
             this.clientTypeRepository = _clientTypeRepository;
+            this.clientRepository = _clientRepository;
         }
 
         private void CreateClient_Load(object sender, EventArgs e)
@@ -52,8 +54,8 @@ namespace MobiFinanceBank.Forms
 
         private void clientTypeCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var result = (ClientType) clientTypeCb.SelectedItem;
-            var isPrivateClient = result.Name == "Privatni" ? true : false;
+            var clientType = (ClientType) clientTypeCb.SelectedItem;
+            var isPrivateClient = clientType.Name == "Privatni" ? true : false;
 
             firstNameLbl.Visible = isPrivateClient;
             firstNameTb.Visible = isPrivateClient;
@@ -67,7 +69,22 @@ namespace MobiFinanceBank.Forms
 
         private void addClientBtn_Click(object sender, EventArgs e)
         {
+            var clientType = (ClientType)clientTypeCb.SelectedItem;
 
+            this.clientRepository.Add(new Client()
+            {
+
+                FirstName = firstNameTb.Text,
+                LastName = lastNameTb.Text,
+                OIB = oibTb.Text,
+                CompanyName = companyTb.Text,
+                Email = emailTb.Text,
+                Income = double.Parse(monthlyIncomeTb.Text),
+                PhoneNumber = contactTb.Text,
+                Address = addressTb.Text,
+                ClientType = clientType,
+                ClientTypeId = clientType.Id
+            });
         }
     }
 }

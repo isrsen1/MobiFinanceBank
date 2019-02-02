@@ -88,7 +88,7 @@ namespace MobiFinanceBank.Model.Models
         /// <value>
         /// Employee
         /// </value>
-        [ForeignKey("Zaposlenikid")]
+        [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
     }
 }

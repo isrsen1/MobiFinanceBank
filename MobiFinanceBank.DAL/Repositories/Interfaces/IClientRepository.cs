@@ -13,6 +13,12 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
     public interface IClientRepository
     {
         /// <summary>
+        /// Gets all clients as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        IQueryable<Client> GetAsQueryable();
+
+        /// <summary>
         /// Adds the specified client.
         /// </summary>
         /// <param name="client">Client</param>

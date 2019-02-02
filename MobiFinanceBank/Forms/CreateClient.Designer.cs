@@ -233,7 +233,7 @@
             this.addClientBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.addClientBtn.Location = new System.Drawing.Point(584, 223);
             this.addClientBtn.Name = "addClientBtn";
-            this.addClientBtn.Size = new System.Drawing.Size(145, 23);
+            this.addClientBtn.Size = new System.Drawing.Size(145, 34);
             this.addClientBtn.TabIndex = 17;
             this.addClientBtn.Text = "Stvori klijenta";
             this.addClientBtn.UseVisualStyleBackColor = true;
