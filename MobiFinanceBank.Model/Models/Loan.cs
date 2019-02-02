@@ -34,20 +34,23 @@
         /// Loan status
         /// </value>
         public int Status { get; set; }
-
+        
         /// <summary>
-        /// Gets or sets loan start date
+        /// Gets or sets the loan capital
         /// </summary>
         /// <value>
-        /// Loan start date
+        /// Loan capital
         /// </value>
-        [Column(TypeName = "date")]
-        public DateTime? StartDate { get; set; }
+        public double Capital { get; set; }
 
-        public double Glavnica { get; set; }
-
-        public int RokOtplate { get; set; }
-
+        /// <summary>
+        /// Gets or sets the value indicating whether standing order is active
+        /// </summary>
+        /// <value>
+        /// <c>true</c>if standing order is active, otherwise <c>false</c>
+        /// </value>
+        public bool IsStandingOrderActive { get; set; }
+        
         /// <summary>
         /// Gets or sets employee's id which issued loan
         /// </summary>
@@ -62,18 +65,15 @@
         /// <value>
         /// Client id
         /// </value>
-        public int? ClientId { get; set; }
-
-        public double KamatnaStopa { get; set; }
+        public int ClientId { get; set; }
         
         /// <summary>
-        /// Gets or sets loan name
+        /// Gets or sets the account id
         /// </summary>
         /// <value>
-        /// Loan name
+        /// The account id
         /// </value>
-        public string LoanName { get; set; }
-
+        public int AccountId { get; set; }
         /// <summary>
         /// Gets or sets client which issued loan
         /// </summary>
@@ -89,7 +89,17 @@
         /// <value>
         /// Employee
         /// </value>
+        [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account for loan standing order
+        /// </summary>
+        /// <value>
+        /// The account
+        /// </value>
+        [ForeignKey("AccountId")]
+        public virtual Account Account { get; set; }
 
         /// <summary>
         /// Gets or sets repayment plans

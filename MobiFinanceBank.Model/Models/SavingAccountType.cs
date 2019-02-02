@@ -35,12 +35,20 @@ namespace MobiFinanceBank.Model.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets saving account type effective interest rate
+        /// Gets or sets saving account interest
         /// </summary>
         /// <value>
-        /// Effective interest rate
+        /// Saving account interest
         /// </value>
-        public double EffectiveInterestRate { get; set; }
+        public double InterestRate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the fixed term depositing period - unit - year
+        /// </summary>
+        /// <value>
+        /// Gets or sets the fixed term depositing period
+        ///</value>
+        public int FixedTermDepositingPeriod { get; set; }
 
         /// <summary>
         /// Gets or sets saving accounts
