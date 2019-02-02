@@ -44,6 +44,14 @@ namespace MobiFinanceBank.Model.Models
         public string LastName { get; set; }
         
         /// <summary>
+        /// Gets or sets the company name
+        /// </summary>
+        /// <value>
+        /// The company name
+        /// </value>
+        public string CompanyName { get; set; }
+
+        /// <summary>
         /// Gets or sets clients personal identification number
         /// </summary>
         /// <value>
@@ -74,20 +82,19 @@ namespace MobiFinanceBank.Model.Models
         /// Clients income
         /// </value>
         public double? Income { get; set; }
-        
-        /// <summary>
-        /// Gets or sets clients type
-        /// </summary>
-        /// <value>
-        /// Clients type
-        /// </value>
-        public string ClientType { get; set; }
 
         /// <summary>
         /// Gets or sets clients address
         /// </summary>
+        /// <value>
         /// Clients address
+        /// </value>
         public string Address { get; set; }
+
+        /// <summary>
+        /// Gets or sets clients type id
+        /// </summary>
+        public int ClientTypeId { get; set; }
 
         /// <summary>
         /// Gets or sets clients balance sheets
@@ -118,5 +125,14 @@ namespace MobiFinanceBank.Model.Models
         /// Clients saving accounts collection
         /// </value>
         public virtual ICollection<SavingAccount> SavingAccounts { get; set; }
+
+        /// <summary>
+        /// Gets or sets employee's type
+        /// </summary>
+        /// <value>
+        /// Employee's type
+        /// </value>
+        [ForeignKey("ClientTypeId")]
+        public virtual ClientType ClientType { get; set; }
     }
 }

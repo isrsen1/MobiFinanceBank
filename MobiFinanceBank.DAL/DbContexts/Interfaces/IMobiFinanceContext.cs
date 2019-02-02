@@ -26,5 +26,6 @@ namespace MobiFinanceBank.DAL.DbContexts.Interfaces
         DbSet<AccountType> AccountTypes { get; set; }
         DbSet<SavingAccountType> SavingAccountTypes { get; set; }
         DbSet<Employee> Employees { get; set; }
+        DbSet<ClientType> ClientTypes { get; set; }
     }
 }

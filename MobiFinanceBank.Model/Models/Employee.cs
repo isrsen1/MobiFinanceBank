@@ -89,7 +89,7 @@
         /// <value>
         /// Employee's password
         /// </value>
-        public string Password { get; set; }
+        public string hashPassword { get; set; }
 
         /// <summary>
         /// Gets or sets employee's issued loans

@@ -29,6 +29,7 @@ namespace MobiFinanceBank.DAL.DbContexts
         public virtual DbSet<AccountType> AccountTypes { get; set; }
         public virtual DbSet<SavingAccountType> SavingAccountTypes { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual  DbSet<ClientType> ClientTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -73,6 +74,10 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .IsUnicode(false);
 
             modelBuilder.Entity<Client>()
+                .Property(e => e.CompanyName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Client>()
                 .Property(e => e.OIB)
                 .IsUnicode(false);
 
@@ -83,11 +88,7 @@ namespace MobiFinanceBank.DAL.DbContexts
             modelBuilder.Entity<Client>()
                 .Property(e => e.PhoneNumber)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Client>()
-                .Property(e => e.ClientType)
-                .IsUnicode(false);
-
+            
             modelBuilder.Entity<Client>()
                 .Property(e => e.Address)
                 .IsUnicode(false);
@@ -147,6 +148,16 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .HasForeignKey(e => e.EmployeeTypeId)
                 .WillCascadeOnDelete();
 
+            modelBuilder.Entity<ClientType>()
+                .HasMany(c => c.Clients)
+                .WithRequired(c => c.ClientType)
+                .HasForeignKey(c => c.ClientTypeId)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<ClientType>()
+                .Property(c => c.Name)
+                .IsUnicode(false);
+
             modelBuilder.Entity<AccountType>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
@@ -195,7 +206,7 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.Password)
+                .Property(e => e.hashPassword)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()

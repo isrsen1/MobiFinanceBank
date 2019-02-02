@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MobiFinanceBank.DAL">
       <HintPath>..\MobiFinanceBank.DAL\bin\Debug\MobiFinanceBank.DAL.dll</HintPath>
     </Reference>
@@ -46,6 +52,7 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.9.2\lib\net46\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -70,12 +77,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ClientOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientOverview.Designer.cs">
+      <DependentUpon>ClientOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateClient.Designer.cs">
+      <DependentUpon>CreateClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ExchangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ExchangeForm.Designer.cs">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Interfaces\IClientOverview.cs" />
+    <Compile Include="Forms\Interfaces\ICreateClient.cs" />
     <Compile Include="Forms\Interfaces\IExchangeForm.cs" />
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
     <Compile Include="Forms\Interfaces\IMenuForm.cs" />
@@ -99,9 +120,19 @@
     <Compile Include="Templates\TemplateForm.Designer.cs">
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VmService\ClientOverviewVmService.cs" />
     <Compile Include="VmService\ExchangeVmService.cs" />
+    <Compile Include="VmService\Interfaces\IClientOverviewVmService.cs" />
     <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
+    <Compile Include="Vm\ClientOverviewFilter.cs" />
+    <Compile Include="Vm\ClientViewModel.cs" />
     <Compile Include="Vm\CurrencyExchangeRate.cs" />
+    <EmbeddedResource Include="Forms\ClientOverview.resx">
+      <DependentUpon>ClientOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateClient.resx">
+      <DependentUpon>CreateClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExchangeForm.resx">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +156,8 @@
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Client.datasource" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Vm.ClientViewModel.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Vm.CurrencyExchangeRate.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

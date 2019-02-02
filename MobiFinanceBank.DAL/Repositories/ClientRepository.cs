@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;
+using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.DAL.Repositories
 {
@@ -17,6 +18,20 @@ namespace MobiFinanceBank.DAL.Repositories
     public class ClientRepository: IClientRepository
     {
         private readonly IMobiFinanceContext context;
+
+        public ClientRepository(IMobiFinanceContext _context)
+        {
+            this.context = _context;
+        }
+
+        /// <summary>
+        /// Gets all clients as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        public IQueryable<Client> GetAsQueryable()
+        {
+            return this.context.Clients;
+        }
 
         /// <summary>
         /// Adds the specified client.
@@ -32,6 +47,11 @@ namespace MobiFinanceBank.DAL.Repositories
 
             try
             {
+                var isPrivateClient = (ClientType) client.ClientTypeId == ClientType.Privatni ? true : false;
+                client.FirstName = isPrivateClient ? client.FirstName : "";
+                client.LastName = isPrivateClient ? client.LastName : "";
+                client.CompanyName = !isPrivateClient ? client.CompanyName : "";
+                
                 // Adds client instance to database 
                 this.context.Clients.Add(client);
 
@@ -50,13 +70,13 @@ namespace MobiFinanceBank.DAL.Repositories
         /// <summary>
         /// Gets the asset
         /// </summary>
-        /// <param name="assetId">Asset id</param>
+        /// <param name="clientId">Asset id</param>
         /// <returns>Asset</returns>
         public Client Get(long clientId)
         {
             return this.context.Clients.FirstOrDefault(client => client.Id == clientId);
         }
-
+        
         /// <summary>
         /// Edits the specified client.
         /// </summary>

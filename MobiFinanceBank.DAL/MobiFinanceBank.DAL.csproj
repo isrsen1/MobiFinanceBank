@@ -60,6 +60,18 @@
     <Compile Include="Migrations\201901281932319_InitialMigration.Designer.cs">
       <DependentUpon>201901281932319_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901312101458_EmployeeHashMigration.cs" />
+    <Compile Include="Migrations\201901312101458_EmployeeHashMigration.Designer.cs">
+      <DependentUpon>201901312101458_EmployeeHashMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902011456274_ClientType.cs" />
+    <Compile Include="Migrations\201902011456274_ClientType.Designer.cs">
+      <DependentUpon>201902011456274_ClientType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902011512582_ClientCompanyName.cs" />
+    <Compile Include="Migrations\201902011512582_ClientCompanyName.Designer.cs">
+      <DependentUpon>201902011512582_ClientCompanyName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -67,6 +79,7 @@
     <Compile Include="Repositories\AssetRepository.cs" />
     <Compile Include="Repositories\BalanceSheetRepository.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\ClientType.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\EmployeeTypeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IAccountRepository.cs" />
@@ -74,6 +87,7 @@
     <Compile Include="Repositories\Interfaces\IAssetRepository.cs" />
     <Compile Include="Repositories\Interfaces\IBalanceSheetRepository.cs" />
     <Compile Include="Repositories\Interfaces\IClientRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IClientType.cs" />
     <Compile Include="Repositories\Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IEmployeeTypeRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILiabilityRepository.cs" />
@@ -94,6 +108,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901281932319_InitialMigration.resx">
       <DependentUpon>201901281932319_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901312101458_EmployeeHashMigration.resx">
+      <DependentUpon>201901312101458_EmployeeHashMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902011456274_ClientType.resx">
+      <DependentUpon>201902011456274_ClientType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902011512582_ClientCompanyName.resx">
+      <DependentUpon>201902011512582_ClientCompanyName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
