@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobiFinanceBank.DAL.DbContexts;
+using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms;
@@ -29,6 +31,8 @@ namespace MobiFinanceBank
             container.RegisterType<IExchangeService, ExchangeService>();
             container.RegisterType<IExchangeVmService, ExchangeVmService>();
             container.RegisterType<ICreateClient, CreateClient>();
+            container.RegisterType<IClientTypeRepository, ClientTypeRepository>();
+            container.RegisterType<IMobiFinanceContext, MobiFinanceContext>();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<LoginForm>());

@@ -28,106 +28,237 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lastNameTb = new System.Windows.Forms.TextBox();
+            this.firstNameTb = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.companyTb = new System.Windows.Forms.TextBox();
+            this.oibTb = new System.Windows.Forms.TextBox();
+            this.emailTb = new System.Windows.Forms.TextBox();
+            this.monthlyIncomeTb = new System.Windows.Forms.TextBox();
+            this.contactTb = new System.Windows.Forms.TextBox();
+            this.addressTb = new System.Windows.Forms.TextBox();
+            this.clientTypeCb = new System.Windows.Forms.ComboBox();
+            this.firstNameLbl = new System.Windows.Forms.Label();
+            this.lastNameLbl = new System.Windows.Forms.Label();
+            this.oibLbl = new System.Windows.Forms.Label();
+            this.emailLbl = new System.Windows.Forms.Label();
+            this.monthlyIncomeLbl = new System.Windows.Forms.Label();
+            this.contactLbl = new System.Windows.Forms.Label();
+            this.addressLbl = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.companyLbl = new System.Windows.Forms.Label();
+            this.addClientBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // lastNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 22);
-            this.textBox1.TabIndex = 3;
+            this.lastNameTb.Location = new System.Drawing.Point(3, 31);
+            this.lastNameTb.Name = "lastNameTb";
+            this.lastNameTb.Size = new System.Drawing.Size(226, 22);
+            this.lastNameTb.TabIndex = 3;
             // 
-            // textBox2
+            // firstNameTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 22);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            this.firstNameTb.Location = new System.Drawing.Point(3, 3);
+            this.firstNameTb.Name = "firstNameTb";
+            this.firstNameTb.Size = new System.Drawing.Size(226, 22);
+            this.firstNameTb.TabIndex = 4;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.textBox2);
-            this.flowLayoutPanel1.Controls.Add(this.textBox1);
-            this.flowLayoutPanel1.Controls.Add(this.textBox3);
-            this.flowLayoutPanel1.Controls.Add(this.textBox4);
-            this.flowLayoutPanel1.Controls.Add(this.textBox5);
-            this.flowLayoutPanel1.Controls.Add(this.textBox6);
-            this.flowLayoutPanel1.Controls.Add(this.textBox7);
-            this.flowLayoutPanel1.Controls.Add(this.textBox8);
+            this.flowLayoutPanel1.Controls.Add(this.firstNameTb);
+            this.flowLayoutPanel1.Controls.Add(this.lastNameTb);
+            this.flowLayoutPanel1.Controls.Add(this.companyTb);
+            this.flowLayoutPanel1.Controls.Add(this.oibTb);
+            this.flowLayoutPanel1.Controls.Add(this.emailTb);
+            this.flowLayoutPanel1.Controls.Add(this.monthlyIncomeTb);
+            this.flowLayoutPanel1.Controls.Add(this.contactTb);
+            this.flowLayoutPanel1.Controls.Add(this.addressTb);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(246, 169);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(317, 169);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 224);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
-            // textBox3
+            // companyTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 59);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 22);
-            this.textBox3.TabIndex = 5;
+            this.companyTb.Location = new System.Drawing.Point(3, 59);
+            this.companyTb.Name = "companyTb";
+            this.companyTb.Size = new System.Drawing.Size(226, 22);
+            this.companyTb.TabIndex = 10;
             // 
-            // textBox4
+            // oibTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(3, 87);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 22);
-            this.textBox4.TabIndex = 6;
+            this.oibTb.Location = new System.Drawing.Point(3, 87);
+            this.oibTb.Name = "oibTb";
+            this.oibTb.Size = new System.Drawing.Size(226, 22);
+            this.oibTb.TabIndex = 5;
             // 
-            // textBox5
+            // emailTb
             // 
-            this.textBox5.Location = new System.Drawing.Point(3, 115);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(226, 22);
-            this.textBox5.TabIndex = 7;
+            this.emailTb.Location = new System.Drawing.Point(3, 115);
+            this.emailTb.Name = "emailTb";
+            this.emailTb.Size = new System.Drawing.Size(226, 22);
+            this.emailTb.TabIndex = 6;
+            this.emailTb.Enter += new System.EventHandler(this.emailTb_Enter);
+            this.emailTb.Leave += new System.EventHandler(this.emailTb_Leave);
             // 
-            // textBox6
+            // monthlyIncomeTb
             // 
-            this.textBox6.Location = new System.Drawing.Point(3, 143);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(226, 22);
-            this.textBox6.TabIndex = 8;
+            this.monthlyIncomeTb.Location = new System.Drawing.Point(3, 143);
+            this.monthlyIncomeTb.Name = "monthlyIncomeTb";
+            this.monthlyIncomeTb.Size = new System.Drawing.Size(226, 22);
+            this.monthlyIncomeTb.TabIndex = 7;
             // 
-            // textBox7
+            // contactTb
             // 
-            this.textBox7.Location = new System.Drawing.Point(3, 171);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(226, 22);
-            this.textBox7.TabIndex = 9;
+            this.contactTb.Location = new System.Drawing.Point(3, 171);
+            this.contactTb.Name = "contactTb";
+            this.contactTb.Size = new System.Drawing.Size(226, 22);
+            this.contactTb.TabIndex = 8;
             // 
-            // textBox8
+            // addressTb
             // 
-            this.textBox8.Location = new System.Drawing.Point(3, 199);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(226, 22);
-            this.textBox8.TabIndex = 10;
+            this.addressTb.Location = new System.Drawing.Point(3, 199);
+            this.addressTb.Name = "addressTb";
+            this.addressTb.Size = new System.Drawing.Size(226, 22);
+            this.addressTb.TabIndex = 9;
+            // 
+            // clientTypeCb
+            // 
+            this.clientTypeCb.DisplayMember = "ClientType";
+            this.clientTypeCb.FormattingEnabled = true;
+            this.clientTypeCb.Location = new System.Drawing.Point(584, 169);
+            this.clientTypeCb.Name = "clientTypeCb";
+            this.clientTypeCb.Size = new System.Drawing.Size(145, 24);
+            this.clientTypeCb.TabIndex = 7;
+            this.clientTypeCb.ValueMember = "ClientType";
+            this.clientTypeCb.SelectedIndexChanged += new System.EventHandler(this.clientTypeCb_SelectedIndexChanged);
+            // 
+            // firstNameLbl
+            // 
+            this.firstNameLbl.AutoSize = true;
+            this.firstNameLbl.Location = new System.Drawing.Point(3, 0);
+            this.firstNameLbl.Name = "firstNameLbl";
+            this.firstNameLbl.Size = new System.Drawing.Size(30, 17);
+            this.firstNameLbl.TabIndex = 8;
+            this.firstNameLbl.Text = "Ime";
+            // 
+            // lastNameLbl
+            // 
+            this.lastNameLbl.AutoSize = true;
+            this.lastNameLbl.Location = new System.Drawing.Point(3, 17);
+            this.lastNameLbl.Name = "lastNameLbl";
+            this.lastNameLbl.Size = new System.Drawing.Size(59, 17);
+            this.lastNameLbl.TabIndex = 9;
+            this.lastNameLbl.Text = "Prezime";
+            // 
+            // oibLbl
+            // 
+            this.oibLbl.AutoSize = true;
+            this.oibLbl.Location = new System.Drawing.Point(3, 51);
+            this.oibLbl.Name = "oibLbl";
+            this.oibLbl.Size = new System.Drawing.Size(31, 17);
+            this.oibLbl.TabIndex = 10;
+            this.oibLbl.Text = "OIB";
+            // 
+            // emailLbl
+            // 
+            this.emailLbl.AutoSize = true;
+            this.emailLbl.Location = new System.Drawing.Point(3, 68);
+            this.emailLbl.Name = "emailLbl";
+            this.emailLbl.Size = new System.Drawing.Size(42, 17);
+            this.emailLbl.TabIndex = 11;
+            this.emailLbl.Text = "Email";
+            // 
+            // monthlyIncomeLbl
+            // 
+            this.monthlyIncomeLbl.AutoSize = true;
+            this.monthlyIncomeLbl.Location = new System.Drawing.Point(3, 85);
+            this.monthlyIncomeLbl.Name = "monthlyIncomeLbl";
+            this.monthlyIncomeLbl.Size = new System.Drawing.Size(126, 17);
+            this.monthlyIncomeLbl.TabIndex = 12;
+            this.monthlyIncomeLbl.Text = "Mjesečna primanja";
+            // 
+            // contactLbl
+            // 
+            this.contactLbl.AutoSize = true;
+            this.contactLbl.Location = new System.Drawing.Point(3, 102);
+            this.contactLbl.Name = "contactLbl";
+            this.contactLbl.Size = new System.Drawing.Size(56, 17);
+            this.contactLbl.TabIndex = 13;
+            this.contactLbl.Text = "Kontakt";
+            // 
+            // addressLbl
+            // 
+            this.addressLbl.AutoSize = true;
+            this.addressLbl.Location = new System.Drawing.Point(3, 119);
+            this.addressLbl.Name = "addressLbl";
+            this.addressLbl.Size = new System.Drawing.Size(53, 17);
+            this.addressLbl.TabIndex = 14;
+            this.addressLbl.Text = "Adresa";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.Controls.Add(this.firstNameLbl);
+            this.flowLayoutPanel2.Controls.Add(this.lastNameLbl);
+            this.flowLayoutPanel2.Controls.Add(this.companyLbl);
+            this.flowLayoutPanel2.Controls.Add(this.oibLbl);
+            this.flowLayoutPanel2.Controls.Add(this.emailLbl);
+            this.flowLayoutPanel2.Controls.Add(this.monthlyIncomeLbl);
+            this.flowLayoutPanel2.Controls.Add(this.contactLbl);
+            this.flowLayoutPanel2.Controls.Add(this.addressLbl);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(83, 172);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(132, 149);
+            this.flowLayoutPanel2.TabIndex = 16;
+            // 
+            // companyLbl
+            // 
+            this.companyLbl.AutoSize = true;
+            this.companyLbl.Location = new System.Drawing.Point(3, 34);
+            this.companyLbl.Name = "companyLbl";
+            this.companyLbl.Size = new System.Drawing.Size(48, 17);
+            this.companyLbl.TabIndex = 15;
+            this.companyLbl.Text = "Tvrtka";
+            // 
+            // addClientBtn
+            // 
+            this.addClientBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addClientBtn.Location = new System.Drawing.Point(584, 223);
+            this.addClientBtn.Name = "addClientBtn";
+            this.addClientBtn.Size = new System.Drawing.Size(145, 23);
+            this.addClientBtn.TabIndex = 17;
+            this.addClientBtn.Text = "Stvori klijenta";
+            this.addClientBtn.UseVisualStyleBackColor = true;
+            this.addClientBtn.Click += new System.EventHandler(this.addClientBtn_Click);
             // 
             // CreateClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 503);
+            this.Controls.Add(this.addClientBtn);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.clientTypeCb);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "CreateClient";
             this.Text = "CreateClient";
             this.Load += new System.EventHandler(this.CreateClient_Load);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.clientTypeCb, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
+            this.Controls.SetChildIndex(this.addClientBtn, 0);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,14 +266,25 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox lastNameTb;
+        private System.Windows.Forms.TextBox firstNameTb;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox oibTb;
+        private System.Windows.Forms.TextBox emailTb;
+        private System.Windows.Forms.TextBox monthlyIncomeTb;
+        private System.Windows.Forms.TextBox contactTb;
+        private System.Windows.Forms.TextBox addressTb;
+        private System.Windows.Forms.ComboBox clientTypeCb;
+        private System.Windows.Forms.Label firstNameLbl;
+        private System.Windows.Forms.Label lastNameLbl;
+        private System.Windows.Forms.Label oibLbl;
+        private System.Windows.Forms.Label emailLbl;
+        private System.Windows.Forms.Label monthlyIncomeLbl;
+        private System.Windows.Forms.Label contactLbl;
+        private System.Windows.Forms.Label addressLbl;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TextBox companyTb;
+        private System.Windows.Forms.Label companyLbl;
+        private System.Windows.Forms.Button addClientBtn;
     }
 }

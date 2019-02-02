@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -17,6 +18,10 @@ namespace MobiFinanceBank.DAL.Repositories
     {
         private IMobiFinanceContext context;
 
+        public ClientTypeRepository(IMobiFinanceContext _context)
+        {
+            this.context = _context;
+        }
         /// <summary>
         /// Gets the client type based on id
         /// </summary>
