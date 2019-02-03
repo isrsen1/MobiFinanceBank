@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\BankServices.cs" />
     <Compile Include="Enums\ClientType.cs" />
     <Compile Include="Enums\Currency.cs" />
     <Compile Include="Models\BalanceSheet.cs" />

@@ -77,17 +77,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\ClientOverview.cs">
+    <Compile Include="Forms\ClientOverviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ClientOverview.Designer.cs">
-      <DependentUpon>ClientOverview.cs</DependentUpon>
+    <Compile Include="Forms\ClientOverviewForm.Designer.cs">
+      <DependentUpon>ClientOverviewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CreateClient.cs">
+    <Compile Include="Forms\CreateClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateClient.Designer.cs">
-      <DependentUpon>CreateClient.cs</DependentUpon>
+    <Compile Include="Forms\CreateClientForm.Designer.cs">
+      <DependentUpon>CreateClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ExchangeForm.cs">
       <SubType>Form</SubType>
@@ -95,11 +95,12 @@
     <Compile Include="Forms\ExchangeForm.Designer.cs">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Interfaces\IClientOverview.cs" />
-    <Compile Include="Forms\Interfaces\ICreateClient.cs" />
+    <Compile Include="Forms\Interfaces\IClientOverviewForm.cs" />
+    <Compile Include="Forms\Interfaces\ICreateClientForm.cs" />
     <Compile Include="Forms\Interfaces\IExchangeForm.cs" />
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
     <Compile Include="Forms\Interfaces\IMenuForm.cs" />
+    <Compile Include="Forms\Interfaces\IBankServicesOverviewForm.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,12 @@
     </Compile>
     <Compile Include="Forms\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BankServicesOverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BankServicesOverviewForm.Designer.cs">
+      <DependentUpon>BankServicesOverviewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,14 +131,19 @@
     <Compile Include="VmService\ExchangeVmService.cs" />
     <Compile Include="VmService\Interfaces\IClientOverviewVmService.cs" />
     <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
+    <Compile Include="VmService\Interfaces\IBankServicesVmService.cs" />
+    <Compile Include="VmService\BankServicesVmService.cs" />
+    <Compile Include="Vm\AccountOverviewFilter.cs" />
     <Compile Include="Vm\ClientOverviewFilter.cs" />
     <Compile Include="Vm\ClientViewModel.cs" />
     <Compile Include="Vm\CurrencyExchangeRate.cs" />
-    <EmbeddedResource Include="Forms\ClientOverview.resx">
-      <DependentUpon>ClientOverview.cs</DependentUpon>
+    <Compile Include="Vm\LoanOverviewFilter.cs" />
+    <Compile Include="Vm\SavingOverviewFilter.cs" />
+    <EmbeddedResource Include="Forms\ClientOverviewForm.resx">
+      <DependentUpon>ClientOverviewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateClient.resx">
-      <DependentUpon>CreateClient.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CreateClientForm.resx">
+      <DependentUpon>CreateClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExchangeForm.resx">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
@@ -141,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BankServicesOverviewForm.resx">
+      <DependentUpon>BankServicesOverviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,7 +171,10 @@
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Account.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Client.datasource" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Loan.datasource" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.SavingAccount.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Vm.ClientViewModel.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Vm.CurrencyExchangeRate.datasource" />
     <None Include="Properties\Settings.settings">

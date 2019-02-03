@@ -15,12 +15,12 @@ using MobiFinanceBank.Vm;
 
 namespace MobiFinanceBank.Forms
 {
-    public partial class CreateClient : TemplateForm, ICreateClient
+    public partial class CreateClientForm : TemplateForm, ICreateClientForm
     {
         private IClientTypeRepository clientTypeRepository;
         private IClientRepository clientRepository;
         private string emailPlaceholder = "e.g. isrsen1@foi.hr";
-        public CreateClient(IClientTypeRepository _clientTypeRepository, IClientRepository _clientRepository)
+        public CreateClientForm(IClientTypeRepository _clientTypeRepository, IClientRepository _clientRepository)
         {
             InitializeComponent();
             this.clientTypeRepository = _clientTypeRepository;

@@ -1,6 +1,6 @@
 ﻿namespace MobiFinanceBank.Forms
 {
-    partial class ClientOverview
+    partial class ClientOverviewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -55,6 +55,8 @@
             this.clientTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientTypeCb = new System.Windows.Forms.ComboBox();
+            this.bankServicesOverview = new System.Windows.Forms.Button();
+            this.KreditiBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -213,18 +215,53 @@
             this.clientTypeCb.TabIndex = 4;
             this.clientTypeCb.SelectedIndexChanged += new System.EventHandler(this.clientTypeCb_SelectedIndexChanged);
             // 
-            // ClientOverview
+            // bankServicesOverview
+            // 
+            this.bankServicesOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bankServicesOverview.ForeColor = System.Drawing.Color.Black;
+            this.bankServicesOverview.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
+            this.bankServicesOverview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bankServicesOverview.Location = new System.Drawing.Point(970, 300);
+            this.bankServicesOverview.Name = "bankServicesOverview";
+            this.bankServicesOverview.Size = new System.Drawing.Size(210, 64);
+            this.bankServicesOverview.TabIndex = 14;
+            this.bankServicesOverview.Text = "Pregled usluga";
+            this.bankServicesOverview.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bankServicesOverview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bankServicesOverview.UseVisualStyleBackColor = true;
+            this.bankServicesOverview.Click += new System.EventHandler(this.bankServicesOverview_Click);
+            // 
+            // KreditiBtn
+            // 
+            this.KreditiBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KreditiBtn.ForeColor = System.Drawing.Color.Black;
+            this.KreditiBtn.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
+            this.KreditiBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KreditiBtn.Location = new System.Drawing.Point(970, 370);
+            this.KreditiBtn.Name = "KreditiBtn";
+            this.KreditiBtn.Size = new System.Drawing.Size(210, 64);
+            this.KreditiBtn.TabIndex = 15;
+            this.KreditiBtn.Text = "Krediti";
+            this.KreditiBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.KreditiBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.KreditiBtn.UseVisualStyleBackColor = true;
+            // 
+            // ClientOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 503);
+            this.Controls.Add(this.KreditiBtn);
+            this.Controls.Add(this.bankServicesOverview);
             this.Controls.Add(this.clientTypeCb);
             this.Controls.Add(this.clientOverviewDgv);
-            this.Name = "ClientOverview";
-            this.Text = "ClientOverview";
+            this.Name = "ClientOverviewForm";
+            this.Text = "ClientOverviewForm";
             this.Load += new System.EventHandler(this.ClientOverview_Load);
             this.Controls.SetChildIndex(this.clientOverviewDgv, 0);
             this.Controls.SetChildIndex(this.clientTypeCb, 0);
+            this.Controls.SetChildIndex(this.bankServicesOverview, 0);
+            this.Controls.SetChildIndex(this.KreditiBtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -251,5 +288,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn accountsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn savingAccountsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button bankServicesOverview;
+        private System.Windows.Forms.Button KreditiBtn;
     }
 }

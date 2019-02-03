@@ -143,6 +143,7 @@
             this.btnOtvaranjeUsluga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOtvaranjeUsluga.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOtvaranjeUsluga.UseVisualStyleBackColor = true;
+            this.btnOtvaranjeUsluga.Click += new System.EventHandler(this.btnOtvaranjeUsluga_Click);
             // 
             // btnZaposlenici
             // 

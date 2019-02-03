@@ -1,6 +1,6 @@
 ﻿namespace MobiFinanceBank.Forms
 {
-    partial class CreateClient
+    partial class CreateClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -239,7 +239,7 @@
             this.addClientBtn.UseVisualStyleBackColor = true;
             this.addClientBtn.Click += new System.EventHandler(this.addClientBtn_Click);
             // 
-            // CreateClient
+            // CreateClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,8 +248,8 @@
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.clientTypeCb);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "CreateClient";
-            this.Text = "CreateClient";
+            this.Name = "CreateClientForm";
+            this.Text = "CreateClientForm";
             this.Load += new System.EventHandler(this.CreateClient_Load);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.clientTypeCb, 0);

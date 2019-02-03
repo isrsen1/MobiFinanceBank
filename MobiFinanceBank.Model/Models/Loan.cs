@@ -73,7 +73,7 @@
         /// <value>
         /// The account id
         /// </value>
-        public int AccountId { get; set; }
+        public int? AccountId { get; set; }
         /// <summary>
         /// Gets or sets client which issued loan
         /// </summary>

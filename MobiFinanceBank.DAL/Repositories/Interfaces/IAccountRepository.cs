@@ -20,6 +20,11 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <returns>Returns newly created account.</returns>
         Account Add(Account account, bool shouldSaveChanges = true);
 
+        /// <summary>
+        /// Gets all accounts as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        IQueryable<Account> GetAsQueryable();
 
         /// <summary>
         /// Gets the account on given date for given person.

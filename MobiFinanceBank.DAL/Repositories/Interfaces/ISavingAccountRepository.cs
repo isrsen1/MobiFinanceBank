@@ -20,6 +20,11 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <returns>Returns newly created saving account.</returns>
         SavingAccount Add(SavingAccount savingAccount, bool shouldSaveChanges = true);
 
+        /// <summary>
+        /// Gets all saving accounts as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        IQueryable<SavingAccount> GetAsQueryable();
 
         /// <summary>
         /// Gets the account on given date for given person.
@@ -27,6 +32,13 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="personId">The person identifier.</param>
         /// <returns>Returns account </returns>
         SavingAccount Get(long personId);
+
+        /// <summary>
+        /// Gets saving account collection filtered by client
+        /// </summary>
+        /// <param name="clientId">Client id</param>
+        /// <returns>Saving account collection</returns>
+        IEnumerable<SavingAccount> GetByClient(int clientId);
 
         /// <summary>
         /// Edits the specified saving account.

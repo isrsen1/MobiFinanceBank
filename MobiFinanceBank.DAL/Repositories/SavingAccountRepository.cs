@@ -19,6 +19,15 @@ namespace MobiFinanceBank.DAL.Repositories
         private readonly IMobiFinanceContext context;
 
         /// <summary>
+        /// Initializes new saving account repository instance
+        /// </summary>
+        /// <param name="_mobiFinanceContext">Mobi finance context</param>
+        public SavingAccountRepository(IMobiFinanceContext _mobiFinanceContext)
+        {
+            this.context = _mobiFinanceContext;
+        }
+
+        /// <summary>
         /// Adds the specified saving account.
         /// </summary>
         /// <param name="savingAccount">Saving account</param>
@@ -48,13 +57,32 @@ namespace MobiFinanceBank.DAL.Repositories
         }
 
         /// <summary>
+        /// Gets all saving accounts as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        public IQueryable<SavingAccount> GetAsQueryable()
+        {
+            return this.context.SavingAccounts;
+        }
+
+        /// <summary>
         /// Gets the asset
         /// </summary>
-        /// <param name="liabilityId">Liability id</param>
+        /// <param name="savingAccountId">Liability id</param>
         /// <returns>Asset</returns>
         public SavingAccount Get(long savingAccountId)
         {
             return this.context.SavingAccounts.FirstOrDefault(savingAccount => savingAccount.Id == savingAccountId);
+        }
+
+        /// <summary>
+        /// Gets saving account collection filtered by client
+        /// </summary>
+        /// <param name="clientId">Client id</param>
+        /// <returns>Saving account collection</returns>
+        public IEnumerable<SavingAccount> GetByClient(int clientId)
+        {
+            return this.context.SavingAccounts.Where(sa => sa.ClientId == clientId);
         }
 
         /// <summary>
