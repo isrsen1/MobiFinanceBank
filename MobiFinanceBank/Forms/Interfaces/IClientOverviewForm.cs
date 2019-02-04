@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobiFinanceBank.Forms.Interfaces
 {
-    public interface IClientOverview
+    public interface IClientOverviewForm
     {
         void Show();
     }

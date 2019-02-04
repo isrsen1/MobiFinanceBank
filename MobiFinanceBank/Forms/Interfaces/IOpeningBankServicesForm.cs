@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.Forms.Interfaces
 {
-    /// <summary>
-    /// Create client interface
-    /// </summary>
-    public interface ICreateClient
+    public interface IOpeningBankServicesForm
     {
-        void Show();
+        void Show(Client client);
     }
 }

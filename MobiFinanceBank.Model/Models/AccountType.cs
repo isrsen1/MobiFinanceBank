@@ -33,6 +33,30 @@ namespace MobiFinanceBank.Model.Models
         /// The account type name
         /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account negative balance limit
+        /// </summary>
+        /// <value>
+        /// Negative balance limit
+        /// </value>
+        public double NegativeBalanceLimit { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account income bottom limit
+        /// </summary>
+        /// <value>
+        /// Income bottom line
+        /// </value>
+        public double IncomeBottomLimit { get; set;}
+
+        /// <summary>
+        /// Gets or sets the account negative balance monthly fee
+        /// </summary>
+        /// <value>
+        /// Negative balance monthly fee
+        /// </value>
+        public double NegativeBalanceMonthlyFee { get; set; }
         
         /// <summary>
         /// Gets or sets the account type description

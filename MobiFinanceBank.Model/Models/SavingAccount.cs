@@ -1,3 +1,5 @@
+using System;
+
 namespace MobiFinanceBank.Model.Models
 {
     using System.ComponentModel.DataAnnotations.Schema;
@@ -17,18 +19,60 @@ namespace MobiFinanceBank.Model.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets saving account status
+        /// Gets or sets the value indicating whether the saving account is active
         /// </summary>
         /// <value>
-        /// Saving account status
+        /// <true>if saving account is active, otherwise <c>false</c></true>
         /// </value>
-        public int Status { get; set; }
+        public bool IsActive { get; set; }
 
-        public double Glavnica { get; set; }
+        /// <summary>
+        /// Gets or sets the saving account capital 
+        /// </summary>
+        /// <value>
+        /// The capital
+        /// </value>
+        public double Capital { get; set; }
 
-        public int RokOročenja { get; set; }
+        /// <summary>
+        /// Gets or sets the saving account balance
+        /// </summary>
+        /// <value>
+        /// Saving account balance
+        /// </value>
+        public double Balance { get; set; }
 
-        public double? KonačanIznos { get; set; }
+        /// <summary>
+        /// Gets or sets the fixed term depositing start date 
+        /// </summary>
+        /// <value>
+        /// Fixed term depositing start date
+        /// </value>
+        public DateTime FixedTermDepositingStartDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the fixed term depositing end date
+        /// </summary>
+        /// <value>
+        /// Fixed term depositing end date
+        /// </value>
+        public DateTime FixedTermDepositingEndDate { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the value indicating whether standing order is active
+        /// </summary>
+        /// <value>
+        /// <c>true</c>if standing order is active, otherwise <c>false</c>
+        /// </value>
+        public bool IsStandingOrderActive { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account id - used for standing order
+        /// </summary>
+        /// <value>
+        /// Account id
+        /// </value>
+        public int AccountId { get; set; }
 
         /// <summary>
         /// Gets or sets saving account type id
@@ -37,15 +81,7 @@ namespace MobiFinanceBank.Model.Models
         /// Saving account type id
         /// </value>
         public int SavingAccountTypeId { get; set; }
-
-        /// <summary>
-        /// Gets or sets saving account interest
-        /// </summary>
-        /// <value>
-        /// Saving account interest
-        /// </value>
-        public double Interest { get; set; }
-
+        
         /// <summary>
         /// Gets or sets client id which saving account belongs
         /// </summary>
@@ -61,8 +97,6 @@ namespace MobiFinanceBank.Model.Models
         /// Employee id
         /// </value>
         public int EmployeeId { get; set; }
-
-        public double? RKS { get; set; }
 
         /// <summary>
         /// Gets or sets client which saving account belongs
@@ -90,5 +124,14 @@ namespace MobiFinanceBank.Model.Models
         /// </value>
         [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account for standing order
+        /// </summary>
+        /// <value>
+        /// The account
+        /// </value>
+        [ForeignKey("AccountId")]
+        public virtual Account Account { get; set; }
     }
 }

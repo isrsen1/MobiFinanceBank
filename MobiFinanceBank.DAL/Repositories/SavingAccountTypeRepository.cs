@@ -19,6 +19,15 @@ namespace MobiFinanceBank.DAL.Repositories
         private readonly IMobiFinanceContext context;
 
         /// <summary>
+        /// Initializes new saving account type repository instance
+        /// </summary>
+        /// <param name="_mobiFinanceContext">Mobi finance context</param>
+        public SavingAccountTypeRepository(IMobiFinanceContext _mobiFinanceContext)
+        {
+            this.context = _mobiFinanceContext;
+        }
+
+        /// <summary>
         /// Adds the specified saving account type.
         /// </summary>
         /// <param name="savingAccountType">Saving account type</param>
@@ -45,6 +54,11 @@ namespace MobiFinanceBank.DAL.Repositories
             }
 
             return savingAccountType;
+        }
+
+        public IEnumerable<SavingAccountType> GetAll()
+        {
+            return this.context.SavingAccountTypes.ToList();
         }
 
         /// <summary>

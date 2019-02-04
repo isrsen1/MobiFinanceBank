@@ -18,6 +18,11 @@ namespace MobiFinanceBank.DAL.Repositories
     {
         private readonly IMobiFinanceContext context;
 
+        public AccountRepository(IMobiFinanceContext _context)
+        {
+            this.context = _context;
+        }
+
         /// <summary>
         /// Adds new account to database
         /// </summary>
@@ -48,6 +53,15 @@ namespace MobiFinanceBank.DAL.Repositories
         }
 
         /// <summary>
+        /// Gets all accounts as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        public IQueryable<Account> GetAsQueryable()
+        {
+            return this.context.Accounts;
+        }
+
+        /// <summary>
         /// Gets the account
         /// </summary>
         /// <param name="accountId">Account id</param>
@@ -55,6 +69,16 @@ namespace MobiFinanceBank.DAL.Repositories
         public Account Get(long accountId)
         {
             return this.context.Accounts.FirstOrDefault(account => account.Id == accountId);
+        }
+
+        /// <summary>
+        /// Gets saving account collection filtered by client
+        /// </summary>
+        /// <param name="clientId">Client id</param>
+        /// <returns>Saving account collection</returns>
+        public IEnumerable<Account> GetByClient(int clientId)
+        {
+            return this.context.Accounts.Where(acc => acc.ClientId == clientId);
         }
 
         /// <summary>

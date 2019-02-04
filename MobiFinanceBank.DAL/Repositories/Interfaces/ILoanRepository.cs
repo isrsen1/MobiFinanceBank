@@ -22,6 +22,12 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
 
 
         /// <summary>
+        /// Gets all loans as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        IQueryable<Loan> GetAsQueryable();
+
+        /// <summary>
         /// Gets the account on given date for given person.
         /// </summary>
         /// <param name="personId">The person identifier.</param>

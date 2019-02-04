@@ -30,6 +30,7 @@ namespace MobiFinanceBank.DAL.DbContexts
         public virtual DbSet<SavingAccountType> SavingAccountTypes { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual  DbSet<ClientType> ClientTypes { get; set; }
+        public virtual DbSet<LoanType> LoanTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -116,11 +117,7 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .WithRequired(e => e.Client)
                 .HasForeignKey(e => e.ClientId)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Loan>()
-                .Property(e => e.LoanName)
-                .IsUnicode(false);
-
+            
             modelBuilder.Entity<Loan>()
                 .HasMany(e => e.RepaymentPlans)
                 .WithRequired(e => e.Loan)
@@ -133,6 +130,18 @@ namespace MobiFinanceBank.DAL.DbContexts
             modelBuilder.Entity<Account>()
                 .Property(e => e.CardNumber)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.SavingAccounts)
+                .WithRequired(e => e.Account)
+                .HasForeignKey(e => e.AccountId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Loans)
+                .WithOptional(e => e.Account)
+                .HasForeignKey(e => e.AccountId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EmployeeType>()
                 .Property(e => e.Name)

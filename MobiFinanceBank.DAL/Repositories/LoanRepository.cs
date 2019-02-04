@@ -18,6 +18,11 @@ namespace MobiFinanceBank.DAL.Repositories
     {
         private readonly IMobiFinanceContext context;
 
+        public LoanRepository(IMobiFinanceContext _context)
+        {
+            this.context = _context;
+        }
+
         /// <summary>
         /// Adds the specified loan.
         /// </summary>
@@ -45,6 +50,15 @@ namespace MobiFinanceBank.DAL.Repositories
             }
 
             return loan;
+        }
+
+        /// <summary>
+        /// Gets all loans as queryable
+        /// </summary>
+        /// <returns>LINQ upgradable query</returns>
+        public IQueryable<Loan> GetAsQueryable()
+        {
+            return this.context.Loans;
         }
 
         /// <summary>

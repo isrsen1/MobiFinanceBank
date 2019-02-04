@@ -15,14 +15,20 @@ namespace MobiFinanceBank.Forms
     public partial class MenuForm : TemplateForm, IMenuForm
     {
         private readonly IExchangeForm exchangeForm;
-        private readonly ICreateClient createClient;
-        private readonly IClientOverview clientOverview;
-        public MenuForm(IExchangeForm _exchangeForm, ICreateClient _createClient, IClientOverview _clientOverview)
+        private readonly ICreateClientForm _createClientForm;
+        private readonly IClientOverviewForm _clientOverviewForm;
+        private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
+        public MenuForm
+            (IExchangeForm _exchangeForm, 
+            ICreateClientForm createClientForm, 
+            IClientOverviewForm clientOverviewForm,
+            IBankServicesOverviewForm bankServicesOverviewForm)
         {
             InitializeComponent();
             this.exchangeForm = _exchangeForm;
-            this.createClient = _createClient;
-            this.clientOverview = _clientOverview;
+            this._createClientForm = createClientForm;
+            this._clientOverviewForm = clientOverviewForm;
+            this._bankServicesOverviewForm = bankServicesOverviewForm;
         }
 
         private void btnMjenjacnica_Click(object sender, EventArgs e)
@@ -32,12 +38,17 @@ namespace MobiFinanceBank.Forms
 
         private void btnZaposlenici_Click(object sender, EventArgs e)
         {
-            this.createClient.Show();
+            this._createClientForm.Show();
         }
 
         private void btnPregledKlijenata_Click(object sender, EventArgs e)
         {
-            this.clientOverview.Show();
+            this._clientOverviewForm.Show();
+        }
+
+        private void btnOtvaranjeUsluga_Click(object sender, EventArgs e)
+        {
+            this._bankServicesOverviewForm.Show(null);
         }
     }
 }
