@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201902031030518_SavingLoanAccount.Designer.cs">
       <DependentUpon>201902031030518_SavingLoanAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902041304523_LoanType.cs" />
+    <Compile Include="Migrations\201902041304523_LoanType.Designer.cs">
+      <DependentUpon>201902041304523_LoanType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -96,11 +100,13 @@
     <Compile Include="Repositories\Interfaces\IEmployeeTypeRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILiabilityRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILoanRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILoanTypeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepaymentPlanRepository.cs" />
     <Compile Include="Repositories\Interfaces\ISavingAccountRepository.cs" />
     <Compile Include="Repositories\Interfaces\ISavingAccountTypeRepository.cs" />
     <Compile Include="Repositories\LiabilityRepository.cs" />
     <Compile Include="Repositories\LoanRepository.cs" />
+    <Compile Include="Repositories\LoanTypeRepository.cs" />
     <Compile Include="Repositories\RepaymentPlanRepository.cs" />
     <Compile Include="Repositories\SavingAccountRepository.cs" />
     <Compile Include="Repositories\SavingAccountTypeRepository.cs" />
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902031030518_SavingLoanAccount.resx">
       <DependentUpon>201902031030518_SavingLoanAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902041304523_LoanType.resx">
+      <DependentUpon>201902041304523_LoanType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

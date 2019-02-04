@@ -13,23 +13,47 @@ using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
-using MobiFinanceBank.VmService;
-using MobiFinanceBank.VmService.Interfaces;
 
 namespace MobiFinanceBank.Forms
 {
-    public partial class BankServicesOverviewForm : TemplateForm, IBankServicesOverviewForm
+    public partial class OpeningBankServicesForm : TemplateForm, IOpeningBankServicesForm
     {
-        private IBankServicesVmService bankServicesVmService;
+        private readonly ISavingAccountTypeRepository savingAccountTypeRepository;
+        private readonly IAccountTypeRepository accountTypeRepository;
+        private readonly ILoanTypeRepository loanTypeRepository;
+
+        /// <summary>
+        /// Gets or sets the client
+        /// </summary>
+        /// <value>
+        /// The client
+        /// </value>
         public Client Client { get; set; }
+
+        /// <summary>
+        /// Gets or sets services dictionary
+        /// </summary>
+        /// <value>
+        /// Key value pair of bank services and corresponding data grid views
+        /// </value>
         public Dictionary<BankServices, DataGridView> ServicesDictionary { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current service filter
+        /// </summary>
+        /// <value>
+        /// Bank service enum value filter
+        /// </value>
         public BankServices CurrentServiceFilter { get; set; }
-        
-        public BankServicesOverviewForm
-            (IBankServicesVmService _bankServicesVmService)
+        public OpeningBankServicesForm
+            (ISavingAccountTypeRepository _savingAccountTypeRepository, 
+            IAccountTypeRepository _accountTypeRepository,
+            ILoanTypeRepository _loanTypeRepository)
         {
             InitializeComponent();
-            this.bankServicesVmService = _bankServicesVmService;
+            this.savingAccountTypeRepository = _savingAccountTypeRepository;
+            this.accountTypeRepository = _accountTypeRepository;
+            this.loanTypeRepository = _loanTypeRepository;
         }
 
         public new void Show(Client client)
@@ -38,11 +62,11 @@ namespace MobiFinanceBank.Forms
 
             base.Show();
         }
-
-        private void SavingAndAccountOverviewForm_Load(object sender, EventArgs e)
+        
+        private void OpeningBankServicesForm_Load(object sender, EventArgs e)
         {
             this.SetDataSources();
-            this.SetDataGridViewSize(750, 300);
+            this.SetDataGridViewSize(900, 300);
 
             ServicesDictionary = new Dictionary<BankServices, DataGridView>()
             {
@@ -51,12 +75,12 @@ namespace MobiFinanceBank.Forms
                 {BankServices.Štednja, savingAccountDgv}
             };
         }
-
+        
         private void bankServicesCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                var item = (BankServices) bankServicesCb.SelectedItem;
+                var item = (BankServices)bankServicesCb.SelectedItem;
                 if (item == CurrentServiceFilter)
                     return;
                 var current = ServicesDictionary.FirstOrDefault(k => k.Key == item);
@@ -70,7 +94,7 @@ namespace MobiFinanceBank.Forms
 
             }
         }
-
+        
         private void SetDataSources()
         {
             bankServicesCb.DataSource = Enum.GetValues(typeof(BankServices));
@@ -78,26 +102,9 @@ namespace MobiFinanceBank.Forms
             savingAccountDgv.Visible = false;
             this.CurrentServiceFilter = BankServices.Račun;
 
-            var accountFilter = new AccountOverviewFilter()
-            {
-                Client = this.Client
-            };
-
-            accountDgv.DataSource = this.bankServicesVmService.GetAccountsOverview(accountFilter);
-
-            var savingAccoutFilter = new SavingOverviewFilter()
-            {
-                Client = this.Client
-            };
-
-            savingAccountDgv.DataSource = this.bankServicesVmService.GetSavingAccountsOverview(savingAccoutFilter);
-
-            var loanFilter = new LoanOverviewFilter()
-            {
-                Client = this.Client
-            };
-
-            loanDgv.DataSource = this.bankServicesVmService.GetLoansOverview(loanFilter);
+            savingAccountDgv.DataSource = this.savingAccountTypeRepository.GetAll();
+            accountDgv.DataSource = this.accountTypeRepository.GetAll();
+            loanDgv.DataSource = this.loanTypeRepository.GetAll();
         }
 
         private void SetDataGridViewSize(int width, int height)

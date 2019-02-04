@@ -101,6 +101,7 @@
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
     <Compile Include="Forms\Interfaces\IMenuForm.cs" />
     <Compile Include="Forms\Interfaces\IBankServicesOverviewForm.cs" />
+    <Compile Include="Forms\Interfaces\IOpeningBankServicesForm.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +119,12 @@
     </Compile>
     <Compile Include="Forms\BankServicesOverviewForm.Designer.cs">
       <DependentUpon>BankServicesOverviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OpeningBankServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpeningBankServicesForm.Designer.cs">
+      <DependentUpon>OpeningBankServicesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -157,6 +164,9 @@
     <EmbeddedResource Include="Forms\BankServicesOverviewForm.resx">
       <DependentUpon>BankServicesOverviewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpeningBankServicesForm.resx">
+      <DependentUpon>OpeningBankServicesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -172,9 +182,12 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Account.datasource" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.AccountType.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Client.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.Loan.datasource" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.LoanType.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.SavingAccount.datasource" />
+    <None Include="Properties\DataSources\MobiFinanceBank.Model.Models.SavingAccountType.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Vm.ClientViewModel.datasource" />
     <None Include="Properties\DataSources\MobiFinanceBank.Vm.CurrencyExchangeRate.datasource" />
     <None Include="Properties\Settings.settings">

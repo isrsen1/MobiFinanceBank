@@ -21,6 +21,7 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <returns>Returns newly created account type.</returns>
         AccountType Add(AccountType accountType, bool shouldSaveChanges = true);
 
+        IEnumerable<AccountType> GetAll();
 
         /// <summary>
         /// Gets the account on given date for given person.

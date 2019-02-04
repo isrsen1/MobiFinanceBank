@@ -30,6 +30,7 @@ namespace MobiFinanceBank.DAL.DbContexts
         public virtual DbSet<SavingAccountType> SavingAccountTypes { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual  DbSet<ClientType> ClientTypes { get; set; }
+        public virtual DbSet<LoanType> LoanTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

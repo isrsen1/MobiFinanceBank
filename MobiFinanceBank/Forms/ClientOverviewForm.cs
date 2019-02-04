@@ -27,21 +27,26 @@ namespace MobiFinanceBank.Forms
         private readonly IClientTypeRepository clientTypeRepository;
         private readonly IClientOverviewVmService clientOverviewVmService;
         private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
+        private readonly IOpeningBankServicesForm openingBankServicesForm;
 
         /// <summary>
         /// Initializes new instance of client overview form
         /// </summary>
         /// <param name="_clientTypeRepository">The client type repository</param>
         /// <param name="_clientOverviewVmService">The client overview view model service</param>
+        /// <param name="bankServicesOverviewForm">Bank services overview form</param>
+        /// <param name="_openingBankServicesForm">Opening bank services form</param>
         public ClientOverviewForm
             (IClientTypeRepository _clientTypeRepository, 
             IClientOverviewVmService _clientOverviewVmService,
-            IBankServicesOverviewForm bankServicesOverviewForm)
+            IBankServicesOverviewForm bankServicesOverviewForm,
+            IOpeningBankServicesForm _openingBankServicesForm)
         {
             InitializeComponent();
             this.clientTypeRepository = _clientTypeRepository;
             this.clientOverviewVmService = _clientOverviewVmService;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
+            this.openingBankServicesForm = _openingBankServicesForm;
         }
 
         /// <summary>
@@ -85,6 +90,16 @@ namespace MobiFinanceBank.Forms
                 var row = this.clientOverviewDgv.SelectedRows[0];
                 var client = (Client)row.DataBoundItem;
                 this._bankServicesOverviewForm.Show(client);
+            }
+        }
+
+        private void openingBankServicesBtn_Click(object sender, EventArgs e)
+        {
+            if (clientOverviewDgv.SelectedRows.Count != 0)
+            {
+                var row = this.clientOverviewDgv.SelectedRows[0];
+                var client = (Client)row.DataBoundItem;
+                this.openingBankServicesForm.Show(client);
             }
         }
     }

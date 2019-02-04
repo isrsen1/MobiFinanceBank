@@ -41,6 +41,11 @@ namespace MobiFinanceBank
             container.RegisterType<IAccountRepository, AccountRepository>();
             container.RegisterType<ISavingAccountRepository, SavingAccountRepository>();
             container.RegisterType<ILoanRepository, LoanRepository>();
+            container.RegisterType<ILoanTypeRepository, LoanTypeRepository>();
+            container.RegisterType<ISavingAccountTypeRepository, SavingAccountTypeRepository>();
+            container.RegisterType<IAccountTypeRepository, AccountTypeRepository>();
+            container.RegisterType<IOpeningBankServicesForm, OpeningBankServicesForm>();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<LoginForm>());
