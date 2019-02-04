@@ -68,7 +68,7 @@ namespace MobiFinanceBank.Forms
             // Gets api request result and changes grid view data source
             var result = this.exchangeVmService.RetrieveExchangeRates(Currencies, dateFrom, dateTo);
             currencyExchangeRateDgv.DataSource = result;
-            Currencies = null;
+            Currencies.Clear();
         }
 
         /// <summary>

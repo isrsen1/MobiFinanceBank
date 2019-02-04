@@ -72,7 +72,7 @@ namespace MobiFinanceBank.Model.Models
         /// <value>
         /// Account id
         /// </value>
-        public int AccountId { get; set; }
+        public int? AccountId { get; set; }
 
         /// <summary>
         /// Gets or sets saving account type id

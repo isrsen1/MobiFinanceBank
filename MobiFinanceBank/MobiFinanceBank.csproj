@@ -101,7 +101,22 @@
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
     <Compile Include="Forms\Interfaces\IMenuForm.cs" />
     <Compile Include="Forms\Interfaces\IBankServicesOverviewForm.cs" />
+    <Compile Include="Forms\Interfaces\IOpenAccountBankServiceForm.cs" />
     <Compile Include="Forms\Interfaces\IOpeningBankServicesForm.cs" />
+    <Compile Include="Forms\Interfaces\IOpenLoanBankServiceForm.cs" />
+    <Compile Include="Forms\Interfaces\IOpenSavingAccountBankServiceForm.cs" />
+    <Compile Include="Forms\OpenLoanBankServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenLoanBankServiceForm.Designer.cs">
+      <DependentUpon>OpenLoanBankServiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OpenSavingAccountBankServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenSavingAccountBankServiceForm.Designer.cs">
+      <DependentUpon>OpenSavingAccountBankServiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +134,12 @@
     </Compile>
     <Compile Include="Forms\BankServicesOverviewForm.Designer.cs">
       <DependentUpon>BankServicesOverviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OpenAccountBankServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenAccountBankServiceForm.Designer.cs">
+      <DependentUpon>OpenAccountBankServiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OpeningBankServicesForm.cs">
       <SubType>Form</SubType>
@@ -164,8 +185,14 @@
     <EmbeddedResource Include="Forms\BankServicesOverviewForm.resx">
       <DependentUpon>BankServicesOverviewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenAccountBankServiceForm.resx">
+      <DependentUpon>OpenAccountBankServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OpeningBankServicesForm.resx">
       <DependentUpon>OpeningBankServicesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenSavingAccountBankServiceForm.resx">
+      <DependentUpon>OpenSavingAccountBankServiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

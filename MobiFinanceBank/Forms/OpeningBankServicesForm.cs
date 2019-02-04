@@ -22,6 +22,9 @@ namespace MobiFinanceBank.Forms
         private readonly IAccountTypeRepository accountTypeRepository;
         private readonly ILoanTypeRepository loanTypeRepository;
 
+        private readonly IOpenAccountBankServiceForm openAccountBankServiceForm;
+        private readonly IOpenSavingAccountBankServiceForm openSavingAccountBankServiceForm;
+
         /// <summary>
         /// Gets or sets the client
         /// </summary>
@@ -48,12 +51,17 @@ namespace MobiFinanceBank.Forms
         public OpeningBankServicesForm
             (ISavingAccountTypeRepository _savingAccountTypeRepository, 
             IAccountTypeRepository _accountTypeRepository,
-            ILoanTypeRepository _loanTypeRepository)
+            ILoanTypeRepository _loanTypeRepository,
+            IOpenAccountBankServiceForm _openAccountBankServiceForm,
+            IOpenSavingAccountBankServiceForm _openSavingAccountBankServiceForm)
         {
             InitializeComponent();
+
             this.savingAccountTypeRepository = _savingAccountTypeRepository;
             this.accountTypeRepository = _accountTypeRepository;
             this.loanTypeRepository = _loanTypeRepository;
+            this.openAccountBankServiceForm = _openAccountBankServiceForm;
+            this.openSavingAccountBankServiceForm = _openSavingAccountBankServiceForm;
         }
 
         public new void Show(Client client)
@@ -98,8 +106,10 @@ namespace MobiFinanceBank.Forms
         private void SetDataSources()
         {
             bankServicesCb.DataSource = Enum.GetValues(typeof(BankServices));
+
             loanDgv.Visible = false;
             savingAccountDgv.Visible = false;
+            
             this.CurrentServiceFilter = BankServices.Račun;
 
             savingAccountDgv.DataSource = this.savingAccountTypeRepository.GetAll();
@@ -112,6 +122,21 @@ namespace MobiFinanceBank.Forms
             savingAccountDgv.Size = new Size(width, height);
             accountDgv.Size = new Size(width, height);
             loanDgv.Size = new Size(width, height);
+        }
+
+        private void createAccountBtn_Click(object sender, EventArgs e)
+        {
+            if (accountDgv.SelectedRows.Count != 0)
+            {
+                var row = this.accountDgv.SelectedRows[0];
+                var accountType = (AccountType)row.DataBoundItem;
+                this.openAccountBankServiceForm.Show(this.Client, accountType);
+            }
+        }
+
+        private void createSavingAccountBtn_Click(object sender, EventArgs e)
+        {
+            this.openSavingAccountBankServiceForm.Show(this.Client);
         }
     }
 }

@@ -34,6 +34,13 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         Account Get(long personId);
 
         /// <summary>
+        /// Gets saving account collection filtered by client
+        /// </summary>
+        /// <param name="clientId">Client id</param>
+        /// <returns>Saving account collection</returns>
+        IEnumerable<Account> GetByClient(int clientId);
+
+        /// <summary>
         /// Edits the specified account.
         /// </summary>
         /// <param name="account">Account</param>

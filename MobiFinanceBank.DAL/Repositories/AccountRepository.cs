@@ -78,7 +78,7 @@ namespace MobiFinanceBank.DAL.Repositories
         /// <returns>Saving account collection</returns>
         public IEnumerable<Account> GetByClient(int clientId)
         {
-            return this.context.Accounts.Where(acc => acc.ClientId == clientId);
+            return this.context.Accounts.Where(acc => acc.ClientId == clientId).ToList();
         }
 
         /// <summary>

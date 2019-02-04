@@ -133,7 +133,7 @@ namespace MobiFinanceBank.DAL.DbContexts
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.SavingAccounts)
-                .WithRequired(e => e.Account)
+                .WithOptional(e => e.Account)
                 .HasForeignKey(e => e.AccountId)
                 .WillCascadeOnDelete(false);
 

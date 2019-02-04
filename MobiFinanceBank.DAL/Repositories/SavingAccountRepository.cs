@@ -41,6 +41,19 @@ namespace MobiFinanceBank.DAL.Repositories
 
             try
             {
+                savingAccount.IsActive = true;
+
+                if (savingAccount.Account != null && !savingAccount.IsStandingOrderActive)
+                    savingAccount.Account = null;
+
+                if (savingAccount.Capital < 0)
+                    return null;
+
+                savingAccount.Balance = savingAccount.Capital;
+
+                if (savingAccount.FixedTermDepositingStartDate < DateTime.Now)
+                    return null;
+                
                 // Adds saving account instance to database 
                 this.context.SavingAccounts.Add(savingAccount);
 
