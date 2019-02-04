@@ -20,9 +20,15 @@ namespace MobiFinanceBank.Forms
     /// <summary>
     /// Exchange form
     /// </summary>
+    /// <seealso cref="TemplateForm"/>
+    /// <seealso cref="IExchangeForm"/>
     public partial class ExchangeForm : TemplateForm, IExchangeForm
     {
         private IExchangeVmService exchangeVmService;
+
+        /// <summary>
+        /// Gets or sets list of currencies
+        /// </summary>
         public List<Currency> Currencies { get; set; } = new List<Currency>();
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace MobiFinanceBank.Forms
         public ExchangeForm(IExchangeVmService _exchangeVmService)
         {
             InitializeComponent();
+
             this.exchangeVmService = _exchangeVmService;
 
         }
@@ -39,17 +46,18 @@ namespace MobiFinanceBank.Forms
         /// <summary>
         /// On exchange form load
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void ExchangeForm_Load(object sender, EventArgs e)
         {
+            // Retrieve exchange rates and check if everything went wells
             var result = this.exchangeVmService.RetrieveExchangeRates(null, null, null);
-
             if (result == null)
             {
                 MessageBox.Show("Neuspjeh pri dohvatu tečaja", "Tečaj", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+            // Set data sources
             currencyExchangeRateDgv.DataSource = result;
             currencyCb.DataSource = result;
         }
@@ -57,8 +65,8 @@ namespace MobiFinanceBank.Forms
         /// <summary>
         /// Sends api request to HNB on apply button click
         /// </summary>
-        /// <param name="sender">Sender</param>
-        /// <param name="e">event args</param>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void applyBtn_Click(object sender, EventArgs e)
         {
             // Extract filter data
@@ -74,7 +82,7 @@ namespace MobiFinanceBank.Forms
         /// <summary>
         /// Adds filter currency to list
         /// </summary>
-        /// <param name="sender">Sender</param>
+        /// <param name="sender">Sender object</param>
         /// <param name="e">Event args</param>
         private void addCurrencyBtn_Click(object sender, EventArgs e)
         {

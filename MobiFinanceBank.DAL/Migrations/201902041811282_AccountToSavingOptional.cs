@@ -1,8 +1,11 @@
+using System.Data.Entity.Migrations;
+
 namespace MobiFinanceBank.DAL.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
+    /// <summary>
+    /// Account to saving optional - adding zero to many relationship 
+    /// </summary>
+    /// <seealso cref="DbMigration"/>
     public partial class AccountToSavingOptional : DbMigration
     {
         public override void Up()

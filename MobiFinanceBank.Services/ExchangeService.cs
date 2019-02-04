@@ -17,14 +17,31 @@ namespace MobiFinanceBank.Services
     /// <seealso cref="IExchangeService"/>
     public class ExchangeService: IExchangeService
     {
+        /// <summary>
+        /// Gets or sets the base api uri 
+        /// </summary>
+        /// <value>
+        /// Base api uri
+        /// </value>
         public string BaseUri { get; set; } = "http://api.hnb.hr/tecajn/v1";
-        public string CurrentCurrencyExchangeRate(IEnumerable<Currency> currencies, DateTime? fromDate, DateTime? toDate)
+
+        /// <summary>
+        /// Get currency exchange rates
+        /// </summary>
+        /// <param name="currencies">List of filtered currencies</param>
+        /// <param name="fromDate">From date filter</param>
+        /// <param name="toDate">To date filter</param>
+        /// <returns>
+        /// JSON result
+        /// </returns>
+        public string GetCurrencyExchangeRates(IEnumerable<Currency> currencies, DateTime? fromDate, DateTime? toDate)
         {
             string parameters = "?";
 
-            if((fromDate != null && fromDate > DateTime.Now) || (fromDate != null && toDate != null && fromDate > toDate))
-                throw new ArgumentException("Datum 'od' veći od datuma 'do'");
+            //if((fromDate != null && fromDate > DateTime.Now) || (fromDate != null && toDate != null))
+            //    throw new ArgumentException("Datum 'od' veći od datuma 'do'");
 
+            // If currency list contains data, add to uri
             if (currencies != null && currencies.Any())
             {
                 foreach (var currency in currencies)
@@ -33,9 +50,11 @@ namespace MobiFinanceBank.Services
                 }
             }
             
+            // Add date from to uri
             if (fromDate != null)
                 parameters += $"datum-od={String.Format("{0:yyyy-MM-dd}", fromDate)}&";
 
+            // Add date to to uri
             if(toDate != null)
                 parameters += $"datum-do={String.Format("{0:yyyy-MM-dd}", toDate)}&";
 

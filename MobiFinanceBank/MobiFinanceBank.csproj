@@ -191,6 +191,9 @@
     <EmbeddedResource Include="Forms\OpeningBankServicesForm.resx">
       <DependentUpon>OpeningBankServicesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenLoanBankServiceForm.resx">
+      <DependentUpon>OpenLoanBankServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OpenSavingAccountBankServiceForm.resx">
       <DependentUpon>OpenSavingAccountBankServiceForm.cs</DependentUpon>
     </EmbeddedResource>

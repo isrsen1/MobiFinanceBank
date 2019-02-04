@@ -11,6 +11,9 @@ namespace MobiFinanceBank.DAL.DbContexts
     /// <seealso cref="DbContext"/>
     public partial class MobiFinanceContext : DbContext, IMobiFinanceContext
     {
+        /// <summary>
+        /// Initializes new instance of mobi finance context
+        /// </summary>
         public MobiFinanceContext()
             : base("name=MobiFinanceContext")
         {
