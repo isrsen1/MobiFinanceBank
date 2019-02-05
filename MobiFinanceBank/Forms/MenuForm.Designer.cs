@@ -40,7 +40,7 @@
             this.btnPregledKlijenata.ForeColor = System.Drawing.Color.Black;
             this.btnPregledKlijenata.Image = global::MobiFinanceBank.Properties.Resources.search;
             this.btnPregledKlijenata.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPregledKlijenata.Location = new System.Drawing.Point(234, 162);
+            this.btnPregledKlijenata.Location = new System.Drawing.Point(352, 162);
             this.btnPregledKlijenata.Name = "btnPregledKlijenata";
             this.btnPregledKlijenata.Size = new System.Drawing.Size(216, 82);
             this.btnPregledKlijenata.TabIndex = 5;
@@ -56,7 +56,7 @@
             this.btnMjenjacnica.ForeColor = System.Drawing.Color.Black;
             this.btnMjenjacnica.Image = global::MobiFinanceBank.Properties.Resources.exchange;
             this.btnMjenjacnica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMjenjacnica.Location = new System.Drawing.Point(234, 311);
+            this.btnMjenjacnica.Location = new System.Drawing.Point(352, 311);
             this.btnMjenjacnica.Name = "btnMjenjacnica";
             this.btnMjenjacnica.Size = new System.Drawing.Size(216, 82);
             this.btnMjenjacnica.TabIndex = 6;
@@ -72,7 +72,7 @@
             this.btnOtvaranjeUsluga.ForeColor = System.Drawing.Color.Black;
             this.btnOtvaranjeUsluga.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
             this.btnOtvaranjeUsluga.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOtvaranjeUsluga.Location = new System.Drawing.Point(635, 311);
+            this.btnOtvaranjeUsluga.Location = new System.Drawing.Point(900, 311);
             this.btnOtvaranjeUsluga.Name = "btnOtvaranjeUsluga";
             this.btnOtvaranjeUsluga.Size = new System.Drawing.Size(222, 82);
             this.btnOtvaranjeUsluga.TabIndex = 13;
@@ -88,7 +88,7 @@
             this.btnZaposlenici.ForeColor = System.Drawing.Color.Black;
             this.btnZaposlenici.Image = global::MobiFinanceBank.Properties.Resources.emp1;
             this.btnZaposlenici.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZaposlenici.Location = new System.Drawing.Point(635, 162);
+            this.btnZaposlenici.Location = new System.Drawing.Point(900, 162);
             this.btnZaposlenici.Name = "btnZaposlenici";
             this.btnZaposlenici.Size = new System.Drawing.Size(222, 82);
             this.btnZaposlenici.TabIndex = 12;
@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 513);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.btnOtvaranjeUsluga);
             this.Controls.Add(this.btnZaposlenici);
             this.Controls.Add(this.btnMjenjacnica);

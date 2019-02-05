@@ -40,7 +40,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MobiFinanceBank.Properties.Resources.exit;
-            this.pictureBox2.Location = new System.Drawing.Point(1117, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(1305, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 53);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -66,14 +66,14 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1204, 96);
+            this.panel1.Size = new System.Drawing.Size(1392, 96);
             this.panel1.TabIndex = 2;
             // 
             // AppName
             // 
             this.AppName.AutoSize = true;
             this.AppName.Font = new System.Drawing.Font("Franklin Gothic Medium", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppName.Location = new System.Drawing.Point(507, 20);
+            this.AppName.Location = new System.Drawing.Point(619, 18);
             this.AppName.Name = "AppName";
             this.AppName.Size = new System.Drawing.Size(281, 50);
             this.AppName.TabIndex = 0;
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1228, 503);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

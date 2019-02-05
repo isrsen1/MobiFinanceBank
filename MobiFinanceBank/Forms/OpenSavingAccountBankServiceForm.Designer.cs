@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.capitalLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.standingOrderLbl = new System.Windows.Forms.Label();
@@ -129,7 +129,7 @@
             this.loansDataGridViewTextBoxColumn,
             this.savingAccountsDataGridViewTextBoxColumn});
             this.accountsDgv.DataSource = this.accountBindingSource;
-            this.accountsDgv.Location = new System.Drawing.Point(423, 134);
+            this.accountsDgv.Location = new System.Drawing.Point(602, 134);
             this.accountsDgv.Name = "accountsDgv";
             this.accountsDgv.RowTemplate.Height = 24;
             this.accountsDgv.Size = new System.Drawing.Size(581, 277);
@@ -145,24 +145,24 @@
             // iBANDataGridViewTextBoxColumn
             // 
             this.iBANDataGridViewTextBoxColumn.DataPropertyName = "IBAN";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.iBANDataGridViewTextBoxColumn.HeaderText = "IBAN";
             this.iBANDataGridViewTextBoxColumn.Name = "iBANDataGridViewTextBoxColumn";
             // 
             // cardNumberDataGridViewTextBoxColumn
             // 
             this.cardNumberDataGridViewTextBoxColumn.DataPropertyName = "CardNumber";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.cardNumberDataGridViewTextBoxColumn.HeaderText = "CardNumber";
             this.cardNumberDataGridViewTextBoxColumn.Name = "cardNumberDataGridViewTextBoxColumn";
             // 
             // balanceDataGridViewTextBoxColumn
             // 
             this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
             this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
             // 
@@ -247,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 501);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.openSavingAccountBtn);
             this.Controls.Add(this.accountsDgv);
             this.Controls.Add(this.capitalNum);

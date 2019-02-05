@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 526);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.createAccountBtn);
             this.Controls.Add(this.paymentNum);
             this.Controls.Add(this.cardNumberTb);

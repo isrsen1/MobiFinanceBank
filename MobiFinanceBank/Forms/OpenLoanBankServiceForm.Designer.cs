@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 550);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Name = "OpenLoanBankServiceForm";
             this.Text = "OpenLoanBankServiceForm";
             this.ResumeLayout(false);

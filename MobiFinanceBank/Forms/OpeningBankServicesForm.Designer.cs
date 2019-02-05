@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.savingAccountDgv = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,7 +87,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 129);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(972, 343);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1150, 343);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // savingAccountDgv
@@ -104,7 +104,7 @@
             this.savingAccountDgv.Location = new System.Drawing.Point(3, 3);
             this.savingAccountDgv.Name = "savingAccountDgv";
             this.savingAccountDgv.RowTemplate.Height = 24;
-            this.savingAccountDgv.Size = new System.Drawing.Size(417, 309);
+            this.savingAccountDgv.Size = new System.Drawing.Size(357, 309);
             this.savingAccountDgv.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -117,24 +117,24 @@
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // interestRateDataGridViewTextBoxColumn
             // 
             this.interestRateDataGridViewTextBoxColumn.DataPropertyName = "InterestRate";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.interestRateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.interestRateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.interestRateDataGridViewTextBoxColumn.HeaderText = "InterestRate";
             this.interestRateDataGridViewTextBoxColumn.Name = "interestRateDataGridViewTextBoxColumn";
             // 
             // fixedTermDepositingPeriodDataGridViewTextBoxColumn
             // 
             this.fixedTermDepositingPeriodDataGridViewTextBoxColumn.DataPropertyName = "FixedTermDepositingPeriod";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.fixedTermDepositingPeriodDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            this.fixedTermDepositingPeriodDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.fixedTermDepositingPeriodDataGridViewTextBoxColumn.HeaderText = "FixedTermDepositingPeriod";
             this.fixedTermDepositingPeriodDataGridViewTextBoxColumn.Name = "fixedTermDepositingPeriodDataGridViewTextBoxColumn";
             // 
@@ -162,9 +162,9 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.accountsDataGridViewTextBoxColumn});
             this.accountDgv.DataSource = this.accountTypeBindingSource;
-            this.accountDgv.Location = new System.Drawing.Point(426, 3);
+            this.accountDgv.Location = new System.Drawing.Point(366, 3);
             this.accountDgv.Name = "accountDgv";
-            this.accountDgv.Size = new System.Drawing.Size(379, 306);
+            this.accountDgv.Size = new System.Drawing.Size(288, 306);
             this.accountDgv.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn1
@@ -177,40 +177,40 @@
             // nameDataGridViewTextBoxColumn1
             // 
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.nameDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.nameDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle15;
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
             // 
             // negativeBalanceLimitDataGridViewTextBoxColumn
             // 
             this.negativeBalanceLimitDataGridViewTextBoxColumn.DataPropertyName = "NegativeBalanceLimit";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.negativeBalanceLimitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.negativeBalanceLimitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.negativeBalanceLimitDataGridViewTextBoxColumn.HeaderText = "NegativeBalanceLimit";
             this.negativeBalanceLimitDataGridViewTextBoxColumn.Name = "negativeBalanceLimitDataGridViewTextBoxColumn";
             // 
             // incomeBottomLimitDataGridViewTextBoxColumn
             // 
             this.incomeBottomLimitDataGridViewTextBoxColumn.DataPropertyName = "IncomeBottomLimit";
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.incomeBottomLimitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.incomeBottomLimitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.incomeBottomLimitDataGridViewTextBoxColumn.HeaderText = "IncomeBottomLimit";
             this.incomeBottomLimitDataGridViewTextBoxColumn.Name = "incomeBottomLimitDataGridViewTextBoxColumn";
             // 
             // negativeBalanceMonthlyFeeDataGridViewTextBoxColumn
             // 
             this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn.DataPropertyName = "NegativeBalanceMonthlyFee";
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
             this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn.HeaderText = "NegativeBalanceMonthlyFee";
             this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn.Name = "negativeBalanceMonthlyFeeDataGridViewTextBoxColumn";
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
@@ -235,9 +235,9 @@
             this.loanDurationDataGridViewTextBoxColumn,
             this.interestRateDataGridViewTextBoxColumn1});
             this.loanDgv.DataSource = this.loanTypeBindingSource;
-            this.loanDgv.Location = new System.Drawing.Point(811, 3);
+            this.loanDgv.Location = new System.Drawing.Point(660, 3);
             this.loanDgv.Name = "loanDgv";
-            this.loanDgv.Size = new System.Drawing.Size(388, 306);
+            this.loanDgv.Size = new System.Drawing.Size(275, 306);
             this.loanDgv.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn2
@@ -250,24 +250,24 @@
             // nameDataGridViewTextBoxColumn2
             // 
             this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.nameDataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            this.nameDataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle20;
             this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
             // 
             // loanDurationDataGridViewTextBoxColumn
             // 
             this.loanDurationDataGridViewTextBoxColumn.DataPropertyName = "LoanDuration";
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.loanDurationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            this.loanDurationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
             this.loanDurationDataGridViewTextBoxColumn.HeaderText = "LoanDuration";
             this.loanDurationDataGridViewTextBoxColumn.Name = "loanDurationDataGridViewTextBoxColumn";
             // 
             // interestRateDataGridViewTextBoxColumn1
             // 
             this.interestRateDataGridViewTextBoxColumn1.DataPropertyName = "InterestRate";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.interestRateDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            this.interestRateDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle22;
             this.interestRateDataGridViewTextBoxColumn1.HeaderText = "InterestRate";
             this.interestRateDataGridViewTextBoxColumn1.Name = "interestRateDataGridViewTextBoxColumn1";
             // 
@@ -278,7 +278,7 @@
             // bankServicesCb
             // 
             this.bankServicesCb.FormattingEnabled = true;
-            this.bankServicesCb.Location = new System.Drawing.Point(1008, 132);
+            this.bankServicesCb.Location = new System.Drawing.Point(1202, 129);
             this.bankServicesCb.Name = "bankServicesCb";
             this.bankServicesCb.Size = new System.Drawing.Size(203, 24);
             this.bankServicesCb.TabIndex = 4;
@@ -289,7 +289,7 @@
             this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createAccountBtn.Location = new System.Drawing.Point(3, 43);
             this.createAccountBtn.Name = "createAccountBtn";
-            this.createAccountBtn.Size = new System.Drawing.Size(95, 34);
+            this.createAccountBtn.Size = new System.Drawing.Size(110, 34);
             this.createAccountBtn.TabIndex = 5;
             this.createAccountBtn.Text = "Otvori račun";
             this.createAccountBtn.UseVisualStyleBackColor = true;
@@ -300,7 +300,7 @@
             this.createLoanBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createLoanBtn.Location = new System.Drawing.Point(3, 3);
             this.createLoanBtn.Name = "createLoanBtn";
-            this.createLoanBtn.Size = new System.Drawing.Size(95, 34);
+            this.createLoanBtn.Size = new System.Drawing.Size(110, 34);
             this.createLoanBtn.TabIndex = 6;
             this.createLoanBtn.Text = "Otvori kredit";
             this.createLoanBtn.UseVisualStyleBackColor = true;
@@ -308,9 +308,9 @@
             // createSavingAccountBtn
             // 
             this.createSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createSavingAccountBtn.Location = new System.Drawing.Point(104, 3);
+            this.createSavingAccountBtn.Location = new System.Drawing.Point(119, 3);
             this.createSavingAccountBtn.Name = "createSavingAccountBtn";
-            this.createSavingAccountBtn.Size = new System.Drawing.Size(104, 34);
+            this.createSavingAccountBtn.Size = new System.Drawing.Size(112, 34);
             this.createSavingAccountBtn.TabIndex = 7;
             this.createSavingAccountBtn.Text = "Otvori štednju";
             this.createSavingAccountBtn.UseVisualStyleBackColor = true;
@@ -323,16 +323,16 @@
             this.flowLayoutPanel2.Controls.Add(this.createAccountBtn);
             this.flowLayoutPanel2.Controls.Add(this.createSavingAccountBtn);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1008, 269);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1168, 191);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(219, 100);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(242, 100);
             this.flowLayoutPanel2.TabIndex = 8;
             // 
             // OpeningBankServicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 484);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.bankServicesCb);
             this.Controls.Add(this.flowLayoutPanel1);

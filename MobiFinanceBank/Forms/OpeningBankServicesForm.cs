@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
 using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
@@ -39,7 +40,7 @@ namespace MobiFinanceBank.Forms
         /// <value>
         /// Key value pair of bank services and corresponding data grid views
         /// </value>
-        public Dictionary<BankServices, DataGridView> ServicesDictionary { get; set; }
+        public Dictionary<BankServices, GridButton> ServicesDictionary { get; set; }
 
         /// <summary>
         /// Gets or sets the current service filter
@@ -95,11 +96,18 @@ namespace MobiFinanceBank.Forms
             this.SetDataSources();
             this.SetDataGridViewSize(900, 300);
 
-            ServicesDictionary = new Dictionary<BankServices, DataGridView>()
+            var serviceButton = new Dictionary<DataGridView, Button>()
             {
-                {BankServices.Kredit, loanDgv},
-                {BankServices.Račun, accountDgv },
-                {BankServices.Štednja, savingAccountDgv}
+                {loanDgv, createLoanBtn},
+                {accountDgv, createAccountBtn },
+                {savingAccountDgv, createSavingAccountBtn }
+            };
+
+            ServicesDictionary = new Dictionary<BankServices, GridButton>()
+            {
+                {BankServices.Kredit, new GridButton(){Button = createLoanBtn, DataGridView = loanDgv}},
+                {BankServices.Račun, new GridButton(){Button = createAccountBtn, DataGridView = accountDgv}},
+                {BankServices.Štednja, new GridButton(){Button = createSavingAccountBtn, DataGridView = savingAccountDgv}}
             };
         }
         
@@ -123,8 +131,11 @@ namespace MobiFinanceBank.Forms
                 this.CurrentServiceFilter = item;
 
                 // Hide based on filter
-                current.Value.Visible = true;
-                past.Value.Visible = false;
+                current.Value.Button.Visible = true;
+                current.Value.DataGridView.Visible = true;
+
+                past.Value.DataGridView.Visible = false;
+                past.Value.Button.Visible = false;
             }
             catch (Exception eas)
             {
@@ -144,6 +155,9 @@ namespace MobiFinanceBank.Forms
             // Initial hide
             loanDgv.Visible = false;
             savingAccountDgv.Visible = false;
+
+            createLoanBtn.Visible = false;
+            createSavingAccountBtn.Visible = false;
 
             // Set data sources for all grid views
             savingAccountDgv.DataSource = this.savingAccountTypeRepository.GetAll();

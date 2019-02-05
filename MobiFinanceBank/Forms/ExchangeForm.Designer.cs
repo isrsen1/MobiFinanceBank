@@ -79,7 +79,7 @@
             this.currencyExchangeRateDgv.DataSource = this.currencyExchangeRateBindingSource;
             this.currencyExchangeRateDgv.Location = new System.Drawing.Point(12, 139);
             this.currencyExchangeRateDgv.Name = "currencyExchangeRateDgv";
-            this.currencyExchangeRateDgv.Size = new System.Drawing.Size(917, 273);
+            this.currencyExchangeRateDgv.Size = new System.Drawing.Size(985, 273);
             this.currencyExchangeRateDgv.TabIndex = 3;
             // 
             // exchangeRateListDataGridViewTextBoxColumn
@@ -177,7 +177,7 @@
             // 
             // dateFromPicker
             // 
-            this.dateFromPicker.Location = new System.Drawing.Point(948, 213);
+            this.dateFromPicker.Location = new System.Drawing.Point(1083, 213);
             this.dateFromPicker.Name = "dateFromPicker";
             this.dateFromPicker.Size = new System.Drawing.Size(268, 22);
             this.dateFromPicker.TabIndex = 4;
@@ -186,7 +186,7 @@
             // 
             this.filterLbl.AutoSize = true;
             this.filterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterLbl.Location = new System.Drawing.Point(943, 139);
+            this.filterLbl.Location = new System.Drawing.Point(1078, 139);
             this.filterLbl.Name = "filterLbl";
             this.filterLbl.Size = new System.Drawing.Size(74, 29);
             this.filterLbl.TabIndex = 5;
@@ -196,7 +196,7 @@
             // 
             this.dateFromLbl.AutoSize = true;
             this.dateFromLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFromLbl.Location = new System.Drawing.Point(944, 190);
+            this.dateFromLbl.Location = new System.Drawing.Point(1079, 190);
             this.dateFromLbl.Name = "dateFromLbl";
             this.dateFromLbl.Size = new System.Drawing.Size(87, 20);
             this.dateFromLbl.TabIndex = 6;
@@ -206,7 +206,7 @@
             // 
             this.ToDateLbl.AutoSize = true;
             this.ToDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToDateLbl.Location = new System.Drawing.Point(944, 252);
+            this.ToDateLbl.Location = new System.Drawing.Point(1079, 252);
             this.ToDateLbl.Name = "ToDateLbl";
             this.ToDateLbl.Size = new System.Drawing.Size(87, 20);
             this.ToDateLbl.TabIndex = 7;
@@ -214,7 +214,7 @@
             // 
             // dateToPicker
             // 
-            this.dateToPicker.Location = new System.Drawing.Point(948, 275);
+            this.dateToPicker.Location = new System.Drawing.Point(1083, 275);
             this.dateToPicker.Name = "dateToPicker";
             this.dateToPicker.Size = new System.Drawing.Size(268, 22);
             this.dateToPicker.TabIndex = 8;
@@ -224,7 +224,7 @@
             this.currencyCb.DataSource = this.currencyExchangeRateBindingSource;
             this.currencyCb.DisplayMember = "Currency";
             this.currencyCb.FormattingEnabled = true;
-            this.currencyCb.Location = new System.Drawing.Point(948, 334);
+            this.currencyCb.Location = new System.Drawing.Point(1083, 334);
             this.currencyCb.Name = "currencyCb";
             this.currencyCb.Size = new System.Drawing.Size(69, 24);
             this.currencyCb.TabIndex = 9;
@@ -234,7 +234,7 @@
             // 
             this.currencyLbl.AutoSize = true;
             this.currencyLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currencyLbl.Location = new System.Drawing.Point(944, 311);
+            this.currencyLbl.Location = new System.Drawing.Point(1079, 311);
             this.currencyLbl.Name = "currencyLbl";
             this.currencyLbl.Size = new System.Drawing.Size(61, 20);
             this.currencyLbl.TabIndex = 10;
@@ -243,7 +243,7 @@
             // applyBtn
             // 
             this.applyBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.applyBtn.Location = new System.Drawing.Point(1141, 379);
+            this.applyBtn.Location = new System.Drawing.Point(1276, 379);
             this.applyBtn.Name = "applyBtn";
             this.applyBtn.Size = new System.Drawing.Size(75, 33);
             this.applyBtn.TabIndex = 12;
@@ -254,7 +254,7 @@
             // addCurrencyBtn
             // 
             this.addCurrencyBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addCurrencyBtn.Location = new System.Drawing.Point(1023, 334);
+            this.addCurrencyBtn.Location = new System.Drawing.Point(1158, 334);
             this.addCurrencyBtn.Name = "addCurrencyBtn";
             this.addCurrencyBtn.Size = new System.Drawing.Size(95, 24);
             this.addCurrencyBtn.TabIndex = 13;
@@ -266,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 503);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.addCurrencyBtn);
             this.Controls.Add(this.applyBtn);
             this.Controls.Add(this.currencyLbl);
