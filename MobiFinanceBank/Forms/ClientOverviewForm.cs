@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Infrastructure;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MobiFinanceBank.DAL.Repositories;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
-using MobiFinanceBank.VmService;
 using MobiFinanceBank.VmService.Interfaces;
+using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.Forms
 {
@@ -70,9 +61,9 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void clientTypeCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Parses client type combobox selected item into client type enum
-            var clientType = (ClientType)clientTypeCb.SelectedItem;
-            Model.Enums.ClientType.TryParse(clientType.Name, true, out Model.Enums.ClientType selectedClientType);
+            // Parses client type combo box selected item into client type enum
+            var clientType = this.clientTypeCb.GetItemText(this.clientTypeCb.SelectedItem);
+            Enum.TryParse(clientType, true, out ClientType selectedClientType);
 
             // Client overview filter
             var filter = new ClientOverviewFilter()

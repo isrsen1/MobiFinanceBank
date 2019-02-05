@@ -1,20 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
-using MobiFinanceBank.Model.Enums;
-using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
-using MobiFinanceBank.Vm;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace MobiFinanceBank.Forms
 {

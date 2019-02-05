@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;

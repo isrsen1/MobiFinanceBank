@@ -3,8 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MobiFinanceBank.Model.Models
 {
-    using System.ComponentModel.DataAnnotations;
-
     /// <summary>
     /// Account database model class.
     /// </summary>
