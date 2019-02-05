@@ -16,6 +16,11 @@ using MobiFinanceBank.Vm;
 
 namespace MobiFinanceBank.Forms
 {
+    /// <summary>
+    /// Opening bank services form
+    /// </summary>
+    /// <seealso cref="TemplateForm"/>
+    /// <seealso cref="IOpeningBankServicesForm"/>
     public partial class OpeningBankServicesForm : TemplateForm, IOpeningBankServicesForm
     {
         private readonly ISavingAccountTypeRepository savingAccountTypeRepository;
@@ -48,6 +53,15 @@ namespace MobiFinanceBank.Forms
         /// Bank service enum value filter
         /// </value>
         public BankServices CurrentServiceFilter { get; set; }
+
+        /// <summary>
+        /// Initializes new instance of opening bank services form
+        /// </summary>
+        /// <param name="_savingAccountTypeRepository">Saving account type repository</param>
+        /// <param name="_accountTypeRepository">Account type repository</param>
+        /// <param name="_loanTypeRepository">Loan type repository</param>
+        /// <param name="_openAccountBankServiceForm">Open account bank service form</param>
+        /// <param name="_openSavingAccountBankServiceForm">Open saving account bank service form</param>
         public OpeningBankServicesForm
             (ISavingAccountTypeRepository _savingAccountTypeRepository, 
             IAccountTypeRepository _accountTypeRepository,
@@ -64,13 +78,23 @@ namespace MobiFinanceBank.Forms
             this.openSavingAccountBankServiceForm = _openSavingAccountBankServiceForm;
         }
 
+        /// <summary>
+        /// Hides base show method
+        /// </summary>
+        /// <param name="client">The client</param>
         public new void Show(Client client)
         {
             this.Client = client;
 
+            // Calls base show method
             base.Show();
         }
         
+        /// <summary>
+        /// On opening bank services form load
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void OpeningBankServicesForm_Load(object sender, EventArgs e)
         {
             this.SetDataSources();
@@ -84,6 +108,11 @@ namespace MobiFinanceBank.Forms
             };
         }
         
+        /// <summary>
+        /// On bank services combo box selected index change
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void bankServicesCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -103,6 +132,9 @@ namespace MobiFinanceBank.Forms
             }
         }
         
+        /// <summary>
+        /// Sets data sources for this form
+        /// </summary>
         private void SetDataSources()
         {
             bankServicesCb.DataSource = Enum.GetValues(typeof(BankServices));
@@ -124,6 +156,11 @@ namespace MobiFinanceBank.Forms
             loanDgv.Size = new Size(width, height);
         }
 
+        /// <summary>
+        /// On create account button click
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
             if (accountDgv.SelectedRows.Count != 0)

@@ -33,22 +33,39 @@ namespace MobiFinanceBank.Forms
         public AccountType AccountType { get; set; }
 
         private readonly IAccountRepository accountRepository;
+
+        /// <summary>
+        /// Initializes new instance of open account bank service form
+        /// </summary>
+        /// <param name="_accountRepository">Account repository</param>
         public OpenAccountBankServiceForm(IAccountRepository _accountRepository)
         {
             InitializeComponent();
             this.accountRepository = _accountRepository;
         }
 
+        /// <summary>
+        /// Hides base show method
+        /// </summary>
+        /// <param name="client">The client</param>
+        /// <param name="accountType">Account type</param>
         public new void Show(Client client, AccountType accountType)
         {
             this.Client = client;
             this.AccountType = accountType;
 
+            // Calls base show method
             base.Show();
         }
 
+        /// <summary>
+        /// On create account button click
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
+            // Retrieves account
             var account = new Account()
             {
                 IBAN = ibanTb.Text,
