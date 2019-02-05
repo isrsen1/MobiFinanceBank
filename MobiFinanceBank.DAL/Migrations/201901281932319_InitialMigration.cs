@@ -1,8 +1,12 @@
+using System;
+using System.Data.Entity.Migrations;
+
 namespace MobiFinanceBank.DAL.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
+    /// <summary>
+    /// Initial migration
+    /// </summary>
+    /// <seealso cref="DbMigration"/>
     public partial class InitialMigration : DbMigration
     {
         public override void Up()

@@ -1,8 +1,11 @@
+using System.Data.Entity.Migrations;
+
 namespace MobiFinanceBank.DAL.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
+    /// <summary>
+    /// Saving loan account migration - adding necessary attributes to saving account, account and loan tables
+    /// </summary>
+    /// <seealso cref="DbMigration"/>
     public partial class SavingLoanAccount : DbMigration
     {
         public override void Up()

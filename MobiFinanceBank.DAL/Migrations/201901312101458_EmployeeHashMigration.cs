@@ -1,8 +1,12 @@
+using System;
+using System.Data.Entity.Migrations;
+
 namespace MobiFinanceBank.DAL.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
+    /// <summary>
+    /// Employee hash migration - renaming password to hash password
+    /// </summary>
+    /// <seealso cref="DbMigration"/>
     public partial class EmployeeHashMigration : DbMigration
     {
         public override void Up()

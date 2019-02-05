@@ -51,6 +51,14 @@ namespace MobiFinanceBank.Model.Models
         public int FixedTermDepositingPeriod { get; set; }
 
         /// <summary>
+        /// Gets or sets value indicating whether this saving account type is fixed term
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this saving account type is fixed term, otherwise <c>false</c>
+        /// </value>
+        public int IsFixedTerm { get; set; }
+
+        /// <summary>
         /// Gets or sets saving accounts
         /// </summary>
         /// <value>

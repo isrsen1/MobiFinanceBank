@@ -1,8 +1,11 @@
+using System.Data.Entity.Migrations;
+
 namespace MobiFinanceBank.DAL.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
+    /// <summary>
+    /// Loan type - adding loan type table
+    /// </summary>
+    /// <seealso cref="DbMigration"/>
     public partial class LoanType : DbMigration
     {
         public override void Up()

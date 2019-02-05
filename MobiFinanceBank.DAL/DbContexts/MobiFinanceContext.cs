@@ -11,6 +11,9 @@ namespace MobiFinanceBank.DAL.DbContexts
     /// <seealso cref="DbContext"/>
     public partial class MobiFinanceContext : DbContext, IMobiFinanceContext
     {
+        /// <summary>
+        /// Initializes new instance of mobi finance context
+        /// </summary>
         public MobiFinanceContext()
             : base("name=MobiFinanceContext")
         {
@@ -133,7 +136,7 @@ namespace MobiFinanceBank.DAL.DbContexts
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.SavingAccounts)
-                .WithRequired(e => e.Account)
+                .WithOptional(e => e.Account)
                 .HasForeignKey(e => e.AccountId)
                 .WillCascadeOnDelete(false);
 

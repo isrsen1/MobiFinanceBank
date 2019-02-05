@@ -3,19 +3,19 @@ using System.Data.Entity.Migrations;
 namespace MobiFinanceBank.DAL.Migrations
 {
     /// <summary>
-    /// Client company name migration
+    /// Saving account type is fixed term added 
     /// </summary>
     /// <seealso cref="DbMigration"/>
-    public partial class ClientCompanyName : DbMigration
+    public partial class SavingAccountTypeIsFixedTermAdded : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Client", "CompanyName", c => c.String(unicode: false));
+            AddColumn("dbo.SavingAccountType", "IsFixedTerm", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Client", "CompanyName");
+            DropColumn("dbo.SavingAccountType", "IsFixedTerm");
         }
     }
 }

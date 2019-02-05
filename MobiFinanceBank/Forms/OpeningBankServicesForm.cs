@@ -16,11 +16,19 @@ using MobiFinanceBank.Vm;
 
 namespace MobiFinanceBank.Forms
 {
+    /// <summary>
+    /// Opening bank services form
+    /// </summary>
+    /// <seealso cref="TemplateForm"/>
+    /// <seealso cref="IOpeningBankServicesForm"/>
     public partial class OpeningBankServicesForm : TemplateForm, IOpeningBankServicesForm
     {
         private readonly ISavingAccountTypeRepository savingAccountTypeRepository;
         private readonly IAccountTypeRepository accountTypeRepository;
         private readonly ILoanTypeRepository loanTypeRepository;
+
+        private readonly IOpenAccountBankServiceForm openAccountBankServiceForm;
+        private readonly IOpenSavingAccountBankServiceForm openSavingAccountBankServiceForm;
 
         /// <summary>
         /// Gets or sets the client
@@ -45,24 +53,48 @@ namespace MobiFinanceBank.Forms
         /// Bank service enum value filter
         /// </value>
         public BankServices CurrentServiceFilter { get; set; }
+
+        /// <summary>
+        /// Initializes new instance of opening bank services form
+        /// </summary>
+        /// <param name="_savingAccountTypeRepository">Saving account type repository</param>
+        /// <param name="_accountTypeRepository">Account type repository</param>
+        /// <param name="_loanTypeRepository">Loan type repository</param>
+        /// <param name="_openAccountBankServiceForm">Open account bank service form</param>
+        /// <param name="_openSavingAccountBankServiceForm">Open saving account bank service form</param>
         public OpeningBankServicesForm
             (ISavingAccountTypeRepository _savingAccountTypeRepository, 
             IAccountTypeRepository _accountTypeRepository,
-            ILoanTypeRepository _loanTypeRepository)
+            ILoanTypeRepository _loanTypeRepository,
+            IOpenAccountBankServiceForm _openAccountBankServiceForm,
+            IOpenSavingAccountBankServiceForm _openSavingAccountBankServiceForm)
         {
             InitializeComponent();
+
             this.savingAccountTypeRepository = _savingAccountTypeRepository;
             this.accountTypeRepository = _accountTypeRepository;
             this.loanTypeRepository = _loanTypeRepository;
+            this.openAccountBankServiceForm = _openAccountBankServiceForm;
+            this.openSavingAccountBankServiceForm = _openSavingAccountBankServiceForm;
         }
 
+        /// <summary>
+        /// Hides base show method
+        /// </summary>
+        /// <param name="client">The client</param>
         public new void Show(Client client)
         {
             this.Client = client;
 
+            // Calls base show method
             base.Show();
         }
         
+        /// <summary>
+        /// On opening bank services form load
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void OpeningBankServicesForm_Load(object sender, EventArgs e)
         {
             this.SetDataSources();
@@ -76,18 +108,28 @@ namespace MobiFinanceBank.Forms
             };
         }
         
+        /// <summary>
+        /// On bank services combo box selected index change
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void bankServicesCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
+                // Retrieve selected bank service from combo box
                 var item = (BankServices)bankServicesCb.SelectedItem;
                 if (item == CurrentServiceFilter)
                     return;
+
+                // Remember filter for future use
                 var current = ServicesDictionary.FirstOrDefault(k => k.Key == item);
-                current.Value.Visible = true;
                 var past = ServicesDictionary.FirstOrDefault(k => k.Key == CurrentServiceFilter);
-                past.Value.Visible = false;
                 this.CurrentServiceFilter = item;
+
+                // Hide based on filter
+                current.Value.Visible = true;
+                past.Value.Visible = false;
             }
             catch (Exception eas)
             {
@@ -95,23 +137,62 @@ namespace MobiFinanceBank.Forms
             }
         }
         
+        /// <summary>
+        /// Sets data sources for this form
+        /// </summary>
         private void SetDataSources()
         {
+            // Set initial filter data
             bankServicesCb.DataSource = Enum.GetValues(typeof(BankServices));
-            loanDgv.Visible = false;
-            savingAccountDgv.Visible = false;
             this.CurrentServiceFilter = BankServices.Račun;
 
+            // Initial hide
+            loanDgv.Visible = false;
+            savingAccountDgv.Visible = false;
+
+            // Set data sources for all grid views
             savingAccountDgv.DataSource = this.savingAccountTypeRepository.GetAll();
             accountDgv.DataSource = this.accountTypeRepository.GetAll();
             loanDgv.DataSource = this.loanTypeRepository.GetAll();
         }
 
+        /// <summary>
+        /// Sets the data grid view size
+        /// </summary>
+        /// <param name="width">Width</param>
+        /// <param name="height">Height</param>
         private void SetDataGridViewSize(int width, int height)
         {
             savingAccountDgv.Size = new Size(width, height);
             accountDgv.Size = new Size(width, height);
             loanDgv.Size = new Size(width, height);
+        }
+
+        /// <summary>
+        /// On create account button click
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
+        private void createAccountBtn_Click(object sender, EventArgs e)
+        {
+            // If row is selected
+            if (accountDgv.SelectedRows.Count != 0)
+            {
+                // Cast row data to account type object
+                var row = this.accountDgv.SelectedRows[0];
+                var accountType = (AccountType)row.DataBoundItem;
+                this.openAccountBankServiceForm.Show(this.Client, accountType);
+            }
+        }
+
+        /// <summary>
+        /// On create saving account button click
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
+        private void createSavingAccountBtn_Click(object sender, EventArgs e)
+        {
+            this.openSavingAccountBankServiceForm.Show(this.Client);
         }
     }
 }

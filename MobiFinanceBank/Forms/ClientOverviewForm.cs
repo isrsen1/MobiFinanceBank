@@ -43,6 +43,7 @@ namespace MobiFinanceBank.Forms
             IOpeningBankServicesForm _openingBankServicesForm)
         {
             InitializeComponent();
+
             this.clientTypeRepository = _clientTypeRepository;
             this.clientOverviewVmService = _clientOverviewVmService;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
@@ -83,8 +84,14 @@ namespace MobiFinanceBank.Forms
             clientOverviewDgv.DataSource = this.clientOverviewVmService.GetClientOverview(filter);
         }
 
+        /// <summary>
+        /// Bank services overview button click
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void bankServicesOverview_Click(object sender, EventArgs e)
         {
+            // Retrieve client from selected data grid view row
             if (clientOverviewDgv.SelectedRows.Count != 0)
             {
                 var row = this.clientOverviewDgv.SelectedRows[0];
@@ -93,8 +100,14 @@ namespace MobiFinanceBank.Forms
             }
         }
 
+        /// <summary>
+        /// Opening bank services button click
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
         private void openingBankServicesBtn_Click(object sender, EventArgs e)
         {
+            // Retrieve client from selected data grid view row
             if (clientOverviewDgv.SelectedRows.Count != 0)
             {
                 var row = this.clientOverviewDgv.SelectedRows[0];

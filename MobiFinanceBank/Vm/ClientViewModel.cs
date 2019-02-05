@@ -15,11 +15,17 @@ namespace MobiFinanceBank.Vm
         /// <summary>
         /// Gets or sets the ClientType
         /// </summary>
+        /// <value>
+        /// Client type
+        /// </value>
         public ClientType ClientType { get; set; }
 
         /// <summary>
         /// Gets or sets the Client
         /// </summary>
+        /// <value>
+        /// The client
+        /// </value>
         public Client Client { get; set; }
     }
 }
