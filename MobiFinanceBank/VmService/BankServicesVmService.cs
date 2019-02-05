@@ -10,12 +10,22 @@ using MobiFinanceBank.VmService.Interfaces;
 
 namespace MobiFinanceBank.VmService
 {
+    /// <summary>
+    /// Bank services vm service
+    /// </summary>
+    /// <seealso cref="IBankServicesVmService"/>
     public class BankServicesVmService: IBankServicesVmService
     {
         private readonly ISavingAccountRepository savingAccountRepository;
         private readonly IAccountRepository accountRepository;
         private readonly ILoanRepository loanRepository;
 
+        /// <summary>
+        /// Initializes new instance of bank services vm service
+        /// </summary>
+        /// <param name="_savingAccountRepository">Saving account repository</param>
+        /// <param name="_accountRepository">Account repository</param>
+        /// <param name="_loanRepository">Loan repository</param>
         public BankServicesVmService
         (ISavingAccountRepository _savingAccountRepository,
             IAccountRepository _accountRepository,

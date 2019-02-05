@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Vm;
 using MobiFinanceBank.VmService.Interfaces;
-using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.VmService
 {
+    /// <summary>
+    /// Client overview view model service
+    /// </summary>
+    /// <seealso cref="IClientOverviewVmService"/>
     public class ClientOverviewVmService: IClientOverviewVmService
     {
         private readonly IClientRepository clientRepository;
 
+        /// <summary>
+        /// Initializes new instance of client overview view model service
+        /// </summary>
+        /// <param name="_clientRepository">Client repository</param>
         public ClientOverviewVmService(IClientRepository _clientRepository)
         {
             this.clientRepository = _clientRepository;
