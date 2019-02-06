@@ -22,7 +22,7 @@ namespace MobiFinanceBank.Forms
     /// Login form
     /// </summary>
     /// <seealso cref="TemplateForm"/>
-    public partial class LoginForm : TemplateForm
+    public partial class LoginForm : TemplateForm , ILoginForm
     {
         private IMenuForm menuForm;
 
