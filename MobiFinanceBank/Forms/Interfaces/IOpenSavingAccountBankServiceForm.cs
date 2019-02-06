@@ -4,6 +4,6 @@ namespace MobiFinanceBank.Forms.Interfaces
 {
     public interface IOpenSavingAccountBankServiceForm
     {
-        void Show(Client client);
+        void Show(Client client, SavingAccountType savingAccountType);
     }
 }

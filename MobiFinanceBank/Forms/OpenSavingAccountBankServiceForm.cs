@@ -22,6 +22,14 @@ namespace MobiFinanceBank.Forms
         public bool IsStandingOrderChecked { get; set; } = false;
 
         /// <summary>
+        /// Gets or sets the saving account type
+        /// </summary>
+        /// <value>
+        /// Saving account type
+        /// </value>
+        public SavingAccountType SavingAccountType { get; set; }
+
+        /// <summary>
         /// Gets or sets the client
         /// </summary>
         /// <value>
@@ -51,9 +59,11 @@ namespace MobiFinanceBank.Forms
         /// Hides base show method
         /// </summary>
         /// <param name="client">The client</param>
-        public new void Show(Client client)
+        /// <param name="savingAccountType">Saving account type</param>
+        public new void Show(Client client, SavingAccountType savingAccountType)
         {
             this.Client = client;
+            this.SavingAccountType = savingAccountType;
 
             // Calls base show method
             base.Show();
@@ -93,6 +103,10 @@ namespace MobiFinanceBank.Forms
             oibLbl.Text = Client.OIB;
             addressLbl.Text = Client.Address;
             incomeLbl.Text = Client.Income.ToString();
+
+            accountNameLbl.Text = SavingAccountType.Name;
+            foreignCurrencyLbl.Checked = SavingAccountType.IsForeignCurrency;
+            currencyLbl.Text = SavingAccountType.Currency;
         }
 
         /// <summary>

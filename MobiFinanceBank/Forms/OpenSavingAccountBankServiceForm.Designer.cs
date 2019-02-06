@@ -39,6 +39,28 @@
             this.standingOrderChb = new System.Windows.Forms.CheckBox();
             this.capitalNum = new System.Windows.Forms.NumericUpDown();
             this.accountsDgv = new System.Windows.Forms.DataGridView();
+            this.openSavingAccountBtn = new System.Windows.Forms.Button();
+            this.addressLbl = new System.Windows.Forms.Label();
+            this.addressTitleLbl = new System.Windows.Forms.Label();
+            this.incomeLbl = new System.Windows.Forms.Label();
+            this.oibTitleLbl = new System.Windows.Forms.Label();
+            this.oibLbl = new System.Windows.Forms.Label();
+            this.incomeTitleLbl = new System.Windows.Forms.Label();
+            this.lastNameLbl = new System.Windows.Forms.Label();
+            this.lastNameTitleLbl = new System.Windows.Forms.Label();
+            this.firstNameLbl = new System.Windows.Forms.Label();
+            this.firstNameTitleLbl = new System.Windows.Forms.Label();
+            this.clientDetails = new System.Windows.Forms.Label();
+            this.foreignCurrencyLbl = new System.Windows.Forms.CheckBox();
+            this.incomeBottomLineTitleLbl = new System.Windows.Forms.Label();
+            this.interestRateLbl = new System.Windows.Forms.Label();
+            this.currencyTitleLbl = new System.Windows.Forms.Label();
+            this.currencyLbl = new System.Windows.Forms.Label();
+            this.interestRateTitleLbl = new System.Windows.Forms.Label();
+            this.foreignCurrencyTitleLbl = new System.Windows.Forms.Label();
+            this.accountNameLbl = new System.Windows.Forms.Label();
+            this.accountNameTitleLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iBANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,18 +75,9 @@
             this.loansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.savingAccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.openSavingAccountBtn = new System.Windows.Forms.Button();
-            this.addressLbl = new System.Windows.Forms.Label();
-            this.addressTitleLbl = new System.Windows.Forms.Label();
-            this.incomeLbl = new System.Windows.Forms.Label();
-            this.oibTitleLbl = new System.Windows.Forms.Label();
-            this.oibLbl = new System.Windows.Forms.Label();
-            this.incomeTitleLbl = new System.Windows.Forms.Label();
-            this.lastNameLbl = new System.Windows.Forms.Label();
-            this.lastNameTitleLbl = new System.Windows.Forms.Label();
-            this.firstNameLbl = new System.Windows.Forms.Label();
-            this.firstNameTitleLbl = new System.Windows.Forms.Label();
-            this.clientDetails = new System.Windows.Forms.Label();
+            this.fixedTermLbl = new System.Windows.Forms.CheckBox();
+            this.fixedTermPeriodTitleLbl = new System.Windows.Forms.Label();
+            this.fixedTermPeriodLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.capitalNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
@@ -73,7 +86,7 @@
             // capitalLbl
             // 
             this.capitalLbl.AutoSize = true;
-            this.capitalLbl.Location = new System.Drawing.Point(16, 109);
+            this.capitalLbl.Location = new System.Drawing.Point(11, 125);
             this.capitalLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.capitalLbl.Name = "capitalLbl";
             this.capitalLbl.Size = new System.Drawing.Size(49, 13);
@@ -83,7 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 150);
+            this.label2.Location = new System.Drawing.Point(11, 166);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
@@ -93,7 +106,7 @@
             // standingOrderLbl
             // 
             this.standingOrderLbl.AutoSize = true;
-            this.standingOrderLbl.Location = new System.Drawing.Point(16, 189);
+            this.standingOrderLbl.Location = new System.Drawing.Point(11, 205);
             this.standingOrderLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.standingOrderLbl.Name = "standingOrderLbl";
             this.standingOrderLbl.Size = new System.Drawing.Size(62, 13);
@@ -102,7 +115,7 @@
             // 
             // startDateDtp
             // 
-            this.startDateDtp.Location = new System.Drawing.Point(128, 150);
+            this.startDateDtp.Location = new System.Drawing.Point(123, 166);
             this.startDateDtp.Margin = new System.Windows.Forms.Padding(2);
             this.startDateDtp.Name = "startDateDtp";
             this.startDateDtp.Size = new System.Drawing.Size(151, 20);
@@ -111,7 +124,7 @@
             // standingOrderChb
             // 
             this.standingOrderChb.AutoSize = true;
-            this.standingOrderChb.Location = new System.Drawing.Point(128, 189);
+            this.standingOrderChb.Location = new System.Drawing.Point(123, 205);
             this.standingOrderChb.Margin = new System.Windows.Forms.Padding(2);
             this.standingOrderChb.Name = "standingOrderChb";
             this.standingOrderChb.Size = new System.Drawing.Size(15, 14);
@@ -121,7 +134,7 @@
             // 
             // capitalNum
             // 
-            this.capitalNum.Location = new System.Drawing.Point(128, 109);
+            this.capitalNum.Location = new System.Drawing.Point(123, 125);
             this.capitalNum.Margin = new System.Windows.Forms.Padding(2);
             this.capitalNum.Name = "capitalNum";
             this.capitalNum.Size = new System.Drawing.Size(90, 20);
@@ -153,107 +166,10 @@
             this.accountsDgv.Size = new System.Drawing.Size(436, 225);
             this.accountsDgv.TabIndex = 16;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iBANDataGridViewTextBoxColumn
-            // 
-            this.iBANDataGridViewTextBoxColumn.DataPropertyName = "IBAN";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.iBANDataGridViewTextBoxColumn.HeaderText = "IBAN";
-            this.iBANDataGridViewTextBoxColumn.Name = "iBANDataGridViewTextBoxColumn";
-            // 
-            // cardNumberDataGridViewTextBoxColumn
-            // 
-            this.cardNumberDataGridViewTextBoxColumn.DataPropertyName = "CardNumber";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.cardNumberDataGridViewTextBoxColumn.HeaderText = "CardNumber";
-            this.cardNumberDataGridViewTextBoxColumn.Name = "cardNumberDataGridViewTextBoxColumn";
-            // 
-            // balanceDataGridViewTextBoxColumn
-            // 
-            this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
-            this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
-            // 
-            // blockedDataGridViewCheckBoxColumn
-            // 
-            this.blockedDataGridViewCheckBoxColumn.DataPropertyName = "Blocked";
-            this.blockedDataGridViewCheckBoxColumn.HeaderText = "Blocked";
-            this.blockedDataGridViewCheckBoxColumn.Name = "blockedDataGridViewCheckBoxColumn";
-            // 
-            // clientIdDataGridViewTextBoxColumn
-            // 
-            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
-            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
-            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
-            this.clientIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // accountTypeIdDataGridViewTextBoxColumn
-            // 
-            this.accountTypeIdDataGridViewTextBoxColumn.DataPropertyName = "AccountTypeId";
-            this.accountTypeIdDataGridViewTextBoxColumn.HeaderText = "AccountTypeId";
-            this.accountTypeIdDataGridViewTextBoxColumn.Name = "accountTypeIdDataGridViewTextBoxColumn";
-            this.accountTypeIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // employeeIdDataGridViewTextBoxColumn
-            // 
-            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
-            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
-            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
-            this.employeeIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // clientDataGridViewTextBoxColumn
-            // 
-            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
-            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
-            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
-            this.clientDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // accountTypeDataGridViewTextBoxColumn
-            // 
-            this.accountTypeDataGridViewTextBoxColumn.DataPropertyName = "AccountType";
-            this.accountTypeDataGridViewTextBoxColumn.HeaderText = "AccountType";
-            this.accountTypeDataGridViewTextBoxColumn.Name = "accountTypeDataGridViewTextBoxColumn";
-            this.accountTypeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // employeeDataGridViewTextBoxColumn
-            // 
-            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
-            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
-            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
-            this.employeeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // loansDataGridViewTextBoxColumn
-            // 
-            this.loansDataGridViewTextBoxColumn.DataPropertyName = "Loans";
-            this.loansDataGridViewTextBoxColumn.HeaderText = "Loans";
-            this.loansDataGridViewTextBoxColumn.Name = "loansDataGridViewTextBoxColumn";
-            this.loansDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // savingAccountsDataGridViewTextBoxColumn
-            // 
-            this.savingAccountsDataGridViewTextBoxColumn.DataPropertyName = "SavingAccounts";
-            this.savingAccountsDataGridViewTextBoxColumn.HeaderText = "SavingAccounts";
-            this.savingAccountsDataGridViewTextBoxColumn.Name = "savingAccountsDataGridViewTextBoxColumn";
-            this.savingAccountsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.Account);
-            // 
             // openSavingAccountBtn
             // 
             this.openSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.openSavingAccountBtn.Location = new System.Drawing.Point(199, 266);
+            this.openSavingAccountBtn.Location = new System.Drawing.Point(194, 282);
             this.openSavingAccountBtn.Margin = new System.Windows.Forms.Padding(2);
             this.openSavingAccountBtn.Name = "openSavingAccountBtn";
             this.openSavingAccountBtn.Size = new System.Drawing.Size(80, 29);
@@ -362,11 +278,239 @@
             this.clientDetails.TabIndex = 24;
             this.clientDetails.Text = "Detalji klijenta:";
             // 
+            // foreignCurrencyLbl
+            // 
+            this.foreignCurrencyLbl.AutoSize = true;
+            this.foreignCurrencyLbl.Location = new System.Drawing.Point(465, 390);
+            this.foreignCurrencyLbl.Name = "foreignCurrencyLbl";
+            this.foreignCurrencyLbl.Size = new System.Drawing.Size(15, 14);
+            this.foreignCurrencyLbl.TabIndex = 48;
+            this.foreignCurrencyLbl.UseVisualStyleBackColor = true;
+            // 
+            // incomeBottomLineTitleLbl
+            // 
+            this.incomeBottomLineTitleLbl.AutoSize = true;
+            this.incomeBottomLineTitleLbl.Location = new System.Drawing.Point(361, 491);
+            this.incomeBottomLineTitleLbl.Name = "incomeBottomLineTitleLbl";
+            this.incomeBottomLineTitleLbl.Size = new System.Drawing.Size(88, 13);
+            this.incomeBottomLineTitleLbl.TabIndex = 46;
+            this.incomeBottomLineTitleLbl.Text = "Oročena štednja:";
+            // 
+            // interestRateLbl
+            // 
+            this.interestRateLbl.AutoSize = true;
+            this.interestRateLbl.Location = new System.Drawing.Point(462, 457);
+            this.interestRateLbl.Name = "interestRateLbl";
+            this.interestRateLbl.Size = new System.Drawing.Size(35, 13);
+            this.interestRateLbl.TabIndex = 45;
+            this.interestRateLbl.Text = "label9";
+            // 
+            // currencyTitleLbl
+            // 
+            this.currencyTitleLbl.AutoSize = true;
+            this.currencyTitleLbl.Location = new System.Drawing.Point(364, 421);
+            this.currencyTitleLbl.Name = "currencyTitleLbl";
+            this.currencyTitleLbl.Size = new System.Drawing.Size(40, 13);
+            this.currencyTitleLbl.TabIndex = 44;
+            this.currencyTitleLbl.Text = "Valuta:";
+            // 
+            // currencyLbl
+            // 
+            this.currencyLbl.AutoSize = true;
+            this.currencyLbl.Location = new System.Drawing.Point(462, 421);
+            this.currencyLbl.Name = "currencyLbl";
+            this.currencyLbl.Size = new System.Drawing.Size(35, 13);
+            this.currencyLbl.TabIndex = 43;
+            this.currencyLbl.Text = "label7";
+            // 
+            // interestRateTitleLbl
+            // 
+            this.interestRateTitleLbl.AutoSize = true;
+            this.interestRateTitleLbl.Location = new System.Drawing.Point(361, 457);
+            this.interestRateTitleLbl.Name = "interestRateTitleLbl";
+            this.interestRateTitleLbl.Size = new System.Drawing.Size(46, 13);
+            this.interestRateTitleLbl.TabIndex = 42;
+            this.interestRateTitleLbl.Text = "Kamata:";
+            // 
+            // foreignCurrencyTitleLbl
+            // 
+            this.foreignCurrencyTitleLbl.AutoSize = true;
+            this.foreignCurrencyTitleLbl.Location = new System.Drawing.Point(364, 387);
+            this.foreignCurrencyTitleLbl.Name = "foreignCurrencyTitleLbl";
+            this.foreignCurrencyTitleLbl.Size = new System.Drawing.Size(45, 13);
+            this.foreignCurrencyTitleLbl.TabIndex = 41;
+            this.foreignCurrencyTitleLbl.Text = "Devizni:";
+            // 
+            // accountNameLbl
+            // 
+            this.accountNameLbl.AutoSize = true;
+            this.accountNameLbl.Location = new System.Drawing.Point(462, 359);
+            this.accountNameLbl.Name = "accountNameLbl";
+            this.accountNameLbl.Size = new System.Drawing.Size(35, 13);
+            this.accountNameLbl.TabIndex = 40;
+            this.accountNameLbl.Text = "label3";
+            // 
+            // accountNameTitleLbl
+            // 
+            this.accountNameTitleLbl.AutoSize = true;
+            this.accountNameTitleLbl.Location = new System.Drawing.Point(364, 355);
+            this.accountNameTitleLbl.Name = "accountNameTitleLbl";
+            this.accountNameTitleLbl.Size = new System.Drawing.Size(37, 13);
+            this.accountNameTitleLbl.TabIndex = 39;
+            this.accountNameTitleLbl.Text = "Naziv:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(328, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 20);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Tip štednog računa:";
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iBANDataGridViewTextBoxColumn
+            // 
+            this.iBANDataGridViewTextBoxColumn.DataPropertyName = "IBAN";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.iBANDataGridViewTextBoxColumn.HeaderText = "IBAN";
+            this.iBANDataGridViewTextBoxColumn.Name = "iBANDataGridViewTextBoxColumn";
+            // 
+            // cardNumberDataGridViewTextBoxColumn
+            // 
+            this.cardNumberDataGridViewTextBoxColumn.DataPropertyName = "CardNumber";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.cardNumberDataGridViewTextBoxColumn.HeaderText = "CardNumber";
+            this.cardNumberDataGridViewTextBoxColumn.Name = "cardNumberDataGridViewTextBoxColumn";
+            // 
+            // balanceDataGridViewTextBoxColumn
+            // 
+            this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
+            this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
+            // 
+            // blockedDataGridViewCheckBoxColumn
+            // 
+            this.blockedDataGridViewCheckBoxColumn.DataPropertyName = "Blocked";
+            this.blockedDataGridViewCheckBoxColumn.HeaderText = "Blocked";
+            this.blockedDataGridViewCheckBoxColumn.Name = "blockedDataGridViewCheckBoxColumn";
+            // 
+            // clientIdDataGridViewTextBoxColumn
+            // 
+            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
+            this.clientIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // accountTypeIdDataGridViewTextBoxColumn
+            // 
+            this.accountTypeIdDataGridViewTextBoxColumn.DataPropertyName = "AccountTypeId";
+            this.accountTypeIdDataGridViewTextBoxColumn.HeaderText = "AccountTypeId";
+            this.accountTypeIdDataGridViewTextBoxColumn.Name = "accountTypeIdDataGridViewTextBoxColumn";
+            this.accountTypeIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeIdDataGridViewTextBoxColumn
+            // 
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
+            this.employeeIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            this.clientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // accountTypeDataGridViewTextBoxColumn
+            // 
+            this.accountTypeDataGridViewTextBoxColumn.DataPropertyName = "AccountType";
+            this.accountTypeDataGridViewTextBoxColumn.HeaderText = "AccountType";
+            this.accountTypeDataGridViewTextBoxColumn.Name = "accountTypeDataGridViewTextBoxColumn";
+            this.accountTypeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeDataGridViewTextBoxColumn
+            // 
+            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
+            this.employeeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // loansDataGridViewTextBoxColumn
+            // 
+            this.loansDataGridViewTextBoxColumn.DataPropertyName = "Loans";
+            this.loansDataGridViewTextBoxColumn.HeaderText = "Loans";
+            this.loansDataGridViewTextBoxColumn.Name = "loansDataGridViewTextBoxColumn";
+            this.loansDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // savingAccountsDataGridViewTextBoxColumn
+            // 
+            this.savingAccountsDataGridViewTextBoxColumn.DataPropertyName = "SavingAccounts";
+            this.savingAccountsDataGridViewTextBoxColumn.HeaderText = "SavingAccounts";
+            this.savingAccountsDataGridViewTextBoxColumn.Name = "savingAccountsDataGridViewTextBoxColumn";
+            this.savingAccountsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.Account);
+            // 
+            // fixedTermLbl
+            // 
+            this.fixedTermLbl.AutoSize = true;
+            this.fixedTermLbl.Location = new System.Drawing.Point(465, 491);
+            this.fixedTermLbl.Name = "fixedTermLbl";
+            this.fixedTermLbl.Size = new System.Drawing.Size(15, 14);
+            this.fixedTermLbl.TabIndex = 49;
+            this.fixedTermLbl.UseVisualStyleBackColor = true;
+            // 
+            // fixedTermPeriodTitleLbl
+            // 
+            this.fixedTermPeriodTitleLbl.AutoSize = true;
+            this.fixedTermPeriodTitleLbl.Location = new System.Drawing.Point(361, 525);
+            this.fixedTermPeriodTitleLbl.Name = "fixedTermPeriodTitleLbl";
+            this.fixedTermPeriodTitleLbl.Size = new System.Drawing.Size(84, 13);
+            this.fixedTermPeriodTitleLbl.TabIndex = 50;
+            this.fixedTermPeriodTitleLbl.Text = "Period oročenja:";
+            // 
+            // fixedTermPeriodLbl
+            // 
+            this.fixedTermPeriodLbl.AutoSize = true;
+            this.fixedTermPeriodLbl.Location = new System.Drawing.Point(462, 525);
+            this.fixedTermPeriodLbl.Name = "fixedTermPeriodLbl";
+            this.fixedTermPeriodLbl.Size = new System.Drawing.Size(35, 13);
+            this.fixedTermPeriodLbl.TabIndex = 51;
+            this.fixedTermPeriodLbl.Text = "label9";
+            // 
             // OpenSavingAccountBankServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 518);
+            this.ClientSize = new System.Drawing.Size(1063, 567);
+            this.Controls.Add(this.fixedTermPeriodLbl);
+            this.Controls.Add(this.fixedTermPeriodTitleLbl);
+            this.Controls.Add(this.fixedTermLbl);
+            this.Controls.Add(this.foreignCurrencyLbl);
+            this.Controls.Add(this.incomeBottomLineTitleLbl);
+            this.Controls.Add(this.interestRateLbl);
+            this.Controls.Add(this.currencyTitleLbl);
+            this.Controls.Add(this.currencyLbl);
+            this.Controls.Add(this.interestRateTitleLbl);
+            this.Controls.Add(this.foreignCurrencyTitleLbl);
+            this.Controls.Add(this.accountNameLbl);
+            this.Controls.Add(this.accountNameTitleLbl);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.addressLbl);
             this.Controls.Add(this.addressTitleLbl);
             this.Controls.Add(this.incomeLbl);
@@ -408,6 +552,19 @@
             this.Controls.SetChildIndex(this.incomeLbl, 0);
             this.Controls.SetChildIndex(this.addressTitleLbl, 0);
             this.Controls.SetChildIndex(this.addressLbl, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.accountNameTitleLbl, 0);
+            this.Controls.SetChildIndex(this.accountNameLbl, 0);
+            this.Controls.SetChildIndex(this.foreignCurrencyTitleLbl, 0);
+            this.Controls.SetChildIndex(this.interestRateTitleLbl, 0);
+            this.Controls.SetChildIndex(this.currencyLbl, 0);
+            this.Controls.SetChildIndex(this.currencyTitleLbl, 0);
+            this.Controls.SetChildIndex(this.interestRateLbl, 0);
+            this.Controls.SetChildIndex(this.incomeBottomLineTitleLbl, 0);
+            this.Controls.SetChildIndex(this.foreignCurrencyLbl, 0);
+            this.Controls.SetChildIndex(this.fixedTermLbl, 0);
+            this.Controls.SetChildIndex(this.fixedTermPeriodTitleLbl, 0);
+            this.Controls.SetChildIndex(this.fixedTermPeriodLbl, 0);
             ((System.ComponentModel.ISupportInitialize)(this.capitalNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
@@ -451,5 +608,18 @@
         private System.Windows.Forms.Label firstNameLbl;
         private System.Windows.Forms.Label firstNameTitleLbl;
         private System.Windows.Forms.Label clientDetails;
+        private System.Windows.Forms.CheckBox foreignCurrencyLbl;
+        private System.Windows.Forms.Label incomeBottomLineTitleLbl;
+        private System.Windows.Forms.Label interestRateLbl;
+        private System.Windows.Forms.Label currencyTitleLbl;
+        private System.Windows.Forms.Label currencyLbl;
+        private System.Windows.Forms.Label interestRateTitleLbl;
+        private System.Windows.Forms.Label foreignCurrencyTitleLbl;
+        private System.Windows.Forms.Label accountNameLbl;
+        private System.Windows.Forms.Label accountNameTitleLbl;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox fixedTermLbl;
+        private System.Windows.Forms.Label fixedTermPeriodTitleLbl;
+        private System.Windows.Forms.Label fixedTermPeriodLbl;
     }
 }

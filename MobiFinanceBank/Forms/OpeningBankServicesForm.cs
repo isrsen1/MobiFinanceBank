@@ -201,7 +201,14 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void createSavingAccountBtn_Click(object sender, EventArgs e)
         {
-            this.openSavingAccountBankServiceForm.Show(this.Client);
+            // If row is selected
+            if (savingAccountDgv.SelectedRows.Count != 0)
+            {
+                // Cast row data to account type object
+                var row = this.accountDgv.SelectedRows[0];
+                var savingAccountType = (SavingAccountType)row.DataBoundItem;
+                this.openSavingAccountBankServiceForm.Show(this.Client, savingAccountType);
+            }
         }
     }
 }
