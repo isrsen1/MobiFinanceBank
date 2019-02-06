@@ -40,9 +40,10 @@
             this.btnPregledKlijenata.ForeColor = System.Drawing.Color.Black;
             this.btnPregledKlijenata.Image = global::MobiFinanceBank.Properties.Resources.search;
             this.btnPregledKlijenata.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPregledKlijenata.Location = new System.Drawing.Point(352, 162);
+            this.btnPregledKlijenata.Location = new System.Drawing.Point(238, 187);
+            this.btnPregledKlijenata.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPregledKlijenata.Name = "btnPregledKlijenata";
-            this.btnPregledKlijenata.Size = new System.Drawing.Size(216, 82);
+            this.btnPregledKlijenata.Size = new System.Drawing.Size(162, 67);
             this.btnPregledKlijenata.TabIndex = 5;
             this.btnPregledKlijenata.Text = "Pregled klijenata";
             this.btnPregledKlijenata.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -56,9 +57,10 @@
             this.btnMjenjacnica.ForeColor = System.Drawing.Color.Black;
             this.btnMjenjacnica.Image = global::MobiFinanceBank.Properties.Resources.exchange;
             this.btnMjenjacnica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMjenjacnica.Location = new System.Drawing.Point(352, 311);
+            this.btnMjenjacnica.Location = new System.Drawing.Point(238, 308);
+            this.btnMjenjacnica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMjenjacnica.Name = "btnMjenjacnica";
-            this.btnMjenjacnica.Size = new System.Drawing.Size(216, 82);
+            this.btnMjenjacnica.Size = new System.Drawing.Size(162, 67);
             this.btnMjenjacnica.TabIndex = 6;
             this.btnMjenjacnica.Text = "Mjenjačnica";
             this.btnMjenjacnica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -72,9 +74,10 @@
             this.btnOtvaranjeUsluga.ForeColor = System.Drawing.Color.Black;
             this.btnOtvaranjeUsluga.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
             this.btnOtvaranjeUsluga.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOtvaranjeUsluga.Location = new System.Drawing.Point(900, 311);
+            this.btnOtvaranjeUsluga.Location = new System.Drawing.Point(649, 308);
+            this.btnOtvaranjeUsluga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOtvaranjeUsluga.Name = "btnOtvaranjeUsluga";
-            this.btnOtvaranjeUsluga.Size = new System.Drawing.Size(222, 82);
+            this.btnOtvaranjeUsluga.Size = new System.Drawing.Size(166, 67);
             this.btnOtvaranjeUsluga.TabIndex = 13;
             this.btnOtvaranjeUsluga.Text = "Otvaranje računa";
             this.btnOtvaranjeUsluga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -88,9 +91,10 @@
             this.btnZaposlenici.ForeColor = System.Drawing.Color.Black;
             this.btnZaposlenici.Image = global::MobiFinanceBank.Properties.Resources.emp1;
             this.btnZaposlenici.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZaposlenici.Location = new System.Drawing.Point(900, 162);
+            this.btnZaposlenici.Location = new System.Drawing.Point(649, 187);
+            this.btnZaposlenici.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnZaposlenici.Name = "btnZaposlenici";
-            this.btnZaposlenici.Size = new System.Drawing.Size(222, 82);
+            this.btnZaposlenici.Size = new System.Drawing.Size(166, 67);
             this.btnZaposlenici.TabIndex = 12;
             this.btnZaposlenici.Text = "Zaposlenici";
             this.btnZaposlenici.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -100,9 +104,9 @@
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1417, 638);
+            this.ClientSize = new System.Drawing.Size(1063, 518);
             this.Controls.Add(this.btnOtvaranjeUsluga);
             this.Controls.Add(this.btnZaposlenici);
             this.Controls.Add(this.btnMjenjacnica);

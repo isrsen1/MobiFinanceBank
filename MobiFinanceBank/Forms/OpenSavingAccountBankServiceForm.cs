@@ -87,6 +87,12 @@ namespace MobiFinanceBank.Forms
         private void OpenSavingAccountBankServiceForm_Load(object sender, EventArgs e)
         {
             accountsDgv.Visible = false;
+
+            firstNameLbl.Text = Client.FirstName;
+            lastNameLbl.Text = Client.LastName;
+            oibLbl.Text = Client.OIB;
+            addressLbl.Text = Client.Address;
+            incomeLbl.Text = Client.Income.ToString();
         }
 
         /// <summary>

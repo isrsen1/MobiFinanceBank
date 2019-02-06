@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
@@ -69,6 +70,22 @@ namespace MobiFinanceBank.Forms
             };
 
             this.accountRepository.Add(account);
+        }
+
+        private void OpenAccountBankServiceForm_Load(object sender, EventArgs e)
+        {
+            firstNameLbl.Text = Client.FirstName;
+            lastNameLbl.Text = Client.LastName;
+            oibLbl.Text = Client.OIB;
+            addressLbl.Text = Client.Address;
+            incomeLbl.Text = Client.Income.ToString();
+
+            accountNameLbl.Text = AccountType.Name;
+            foreignCurrencyLbl.Checked = AccountType.IsForeignCurrency;
+            currencyLbl.Text = AccountType.Currency;
+            negativeBalanceLbl.Text = AccountType.NegativeBalanceLimit.ToString(CultureInfo.InvariantCulture);
+            incomeBottomLineLbl.Text = AccountType.IncomeBottomLimit.ToString(CultureInfo.CurrentCulture);
+            negativeBalanceMonthlyFeeLbl.Text = (AccountType.NegativeBalanceMonthlyFee * 100).ToString() + "%";
         }
     }
 }
