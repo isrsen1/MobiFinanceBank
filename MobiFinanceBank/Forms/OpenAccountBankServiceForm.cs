@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
@@ -24,6 +26,8 @@ namespace MobiFinanceBank.Forms
         /// The account type
         /// </value>
         public AccountType AccountType { get; set; }
+
+        private readonly string ibanRegex = @"^[H]{1}[R]{1}[0-9]{19}$";
 
         private readonly IAccountRepository accountRepository;
 
@@ -58,6 +62,16 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
+            var iban = ibanTb.Text;
+
+            var match = Regex.Match(iban, ibanRegex);
+            if (match.Success)
+                MessageBox.Show("Uspjelo");
+            else
+            {
+                return;
+            }
+
             // Retrieves account
             var account = new Account()
             {

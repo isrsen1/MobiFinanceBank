@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
@@ -107,6 +108,9 @@ namespace MobiFinanceBank.Forms
             accountNameLbl.Text = SavingAccountType.Name;
             foreignCurrencyLbl.Checked = SavingAccountType.IsForeignCurrency;
             currencyLbl.Text = SavingAccountType.Currency;
+            interestRateLbl.Text = (SavingAccountType.InterestRate * 100).ToString() + "%";
+            fixedTermLbl.Checked = SavingAccountType.IsFixedTerm;
+            fixedTermPeriodLbl.Text = SavingAccountType.FixedTermDepositingPeriod.ToString();
         }
 
         /// <summary>
@@ -116,22 +120,31 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void openSavingAccountBtn_Click(object sender, EventArgs e)
         {
+            Account account = null;
+
             // If row is selected
             if (accountsDgv.SelectedRows.Count != 0)
             {
                 // Retrieve row data and cast to account object
                 var row = this.accountsDgv.SelectedRows[0];
-                var account = (Account)row.DataBoundItem;
-                var savingAccount = new SavingAccount()
-                {
-                    Account = account,
-                    Capital = (double) capitalNum.Value,
-                    IsStandingOrderActive = IsStandingOrderChecked,
-                    FixedTermDepositingStartDate = startDateDtp.Value
-                };
-
-                this.savingAccountRepository.Add(savingAccount);
+                account = (Account)row.DataBoundItem;
             }
+
+            if (startDateDtp.Value < DateTime.Now.Date)
+            {
+                MessageBox.Show($@"Datum ne smije biti manji od {DateTime.Now.Date}");
+                return;
+            }
+
+            var savingAccount = new SavingAccount()
+            {
+                Account = account,
+                Capital = (double)capitalNum.Value,
+                IsStandingOrderActive = IsStandingOrderChecked,
+                FixedTermDepositingStartDate = startDateDtp.Value
+            };
+
+            this.savingAccountRepository.Add(savingAccount);
         }
     }
 }

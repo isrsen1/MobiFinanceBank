@@ -205,7 +205,7 @@ namespace MobiFinanceBank.Forms
             if (savingAccountDgv.SelectedRows.Count != 0)
             {
                 // Cast row data to account type object
-                var row = this.accountDgv.SelectedRows[0];
+                var row = this.savingAccountDgv.SelectedRows[0];
                 var savingAccountType = (SavingAccountType)row.DataBoundItem;
                 this.openSavingAccountBankServiceForm.Show(this.Client, savingAccountType);
             }

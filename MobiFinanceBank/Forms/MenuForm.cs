@@ -50,6 +50,7 @@ namespace MobiFinanceBank.Forms
         private void btnPregledKlijenata_Click(object sender, EventArgs e)
         {
             this._clientOverviewForm.Show();
+            this.Close();
         }
 
         private void btnOtvaranjeUsluga_Click(object sender, EventArgs e)

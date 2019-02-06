@@ -32,6 +32,15 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         Client Get(long personId);
 
         /// <summary>
+        /// Get client by personal identification number
+        /// </summary>
+        /// <param name="OIB">Personal identification number</param>
+        /// <returns>
+        /// The client
+        /// </returns>
+        Client GetByOIB(string OIB);
+
+        /// <summary>
         /// Edits the specified client.
         /// </summary>
         /// <param name="client">Client</param>

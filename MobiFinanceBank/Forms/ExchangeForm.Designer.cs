@@ -39,15 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.currencyExchangeRateDgv = new System.Windows.Forms.DataGridView();
-            this.exchangeRateListDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buyingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currencyExchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateFromPicker = new System.Windows.Forms.DateTimePicker();
             this.filterLbl = new System.Windows.Forms.Label();
@@ -58,6 +49,15 @@
             this.currencyLbl = new System.Windows.Forms.Label();
             this.applyBtn = new System.Windows.Forms.Button();
             this.addCurrencyBtn = new System.Windows.Forms.Button();
+            this.exchangeRateListDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buyingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.currencyExchangeRateDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currencyExchangeRateBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -79,97 +79,8 @@
             this.currencyExchangeRateDgv.DataSource = this.currencyExchangeRateBindingSource;
             this.currencyExchangeRateDgv.Location = new System.Drawing.Point(12, 139);
             this.currencyExchangeRateDgv.Name = "currencyExchangeRateDgv";
-            this.currencyExchangeRateDgv.Size = new System.Drawing.Size(985, 273);
+            this.currencyExchangeRateDgv.Size = new System.Drawing.Size(947, 273);
             this.currencyExchangeRateDgv.TabIndex = 3;
-            // 
-            // exchangeRateListDataGridViewTextBoxColumn
-            // 
-            this.exchangeRateListDataGridViewTextBoxColumn.DataPropertyName = "ExchangeRateList";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.exchangeRateListDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.exchangeRateListDataGridViewTextBoxColumn.HeaderText = "ExchangeRateList";
-            this.exchangeRateListDataGridViewTextBoxColumn.Name = "exchangeRateListDataGridViewTextBoxColumn";
-            this.exchangeRateListDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // applicationDateDataGridViewTextBoxColumn
-            // 
-            this.applicationDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.applicationDateDataGridViewTextBoxColumn.DataPropertyName = "ApplicationDate";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.applicationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.applicationDateDataGridViewTextBoxColumn.HeaderText = "ApplicationDate";
-            this.applicationDateDataGridViewTextBoxColumn.Name = "applicationDateDataGridViewTextBoxColumn";
-            this.applicationDateDataGridViewTextBoxColumn.Width = 136;
-            // 
-            // countryDataGridViewTextBoxColumn
-            // 
-            this.countryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.countryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            this.countryDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // currencyCodeDataGridViewTextBoxColumn
-            // 
-            this.currencyCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.currencyCodeDataGridViewTextBoxColumn.DataPropertyName = "CurrencyCode";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.currencyCodeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.currencyCodeDataGridViewTextBoxColumn.HeaderText = "CurrencyCode";
-            this.currencyCodeDataGridViewTextBoxColumn.Name = "currencyCodeDataGridViewTextBoxColumn";
-            this.currencyCodeDataGridViewTextBoxColumn.Width = 127;
-            // 
-            // currencyDataGridViewTextBoxColumn
-            // 
-            this.currencyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.currencyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
-            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
-            this.currencyDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.unitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // buyingDataGridViewTextBoxColumn
-            // 
-            this.buyingDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.buyingDataGridViewTextBoxColumn.DataPropertyName = "Buying";
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.buyingDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.buyingDataGridViewTextBoxColumn.HeaderText = "Buying";
-            this.buyingDataGridViewTextBoxColumn.Name = "buyingDataGridViewTextBoxColumn";
-            this.buyingDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // middleDataGridViewTextBoxColumn
-            // 
-            this.middleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.middleDataGridViewTextBoxColumn.DataPropertyName = "Middle";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.middleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.middleDataGridViewTextBoxColumn.HeaderText = "Middle";
-            this.middleDataGridViewTextBoxColumn.Name = "middleDataGridViewTextBoxColumn";
-            this.middleDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // sellingDataGridViewTextBoxColumn
-            // 
-            this.sellingDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sellingDataGridViewTextBoxColumn.DataPropertyName = "Selling";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.sellingDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.sellingDataGridViewTextBoxColumn.HeaderText = "Selling";
-            this.sellingDataGridViewTextBoxColumn.Name = "sellingDataGridViewTextBoxColumn";
-            this.sellingDataGridViewTextBoxColumn.Width = 79;
             // 
             // currencyExchangeRateBindingSource
             // 
@@ -262,6 +173,95 @@
             this.addCurrencyBtn.UseVisualStyleBackColor = true;
             this.addCurrencyBtn.Click += new System.EventHandler(this.addCurrencyBtn_Click);
             // 
+            // exchangeRateListDataGridViewTextBoxColumn
+            // 
+            this.exchangeRateListDataGridViewTextBoxColumn.DataPropertyName = "ExchangeRateList";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.exchangeRateListDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.exchangeRateListDataGridViewTextBoxColumn.HeaderText = "ExchangeRateList";
+            this.exchangeRateListDataGridViewTextBoxColumn.Name = "exchangeRateListDataGridViewTextBoxColumn";
+            this.exchangeRateListDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // applicationDateDataGridViewTextBoxColumn
+            // 
+            this.applicationDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.applicationDateDataGridViewTextBoxColumn.DataPropertyName = "ApplicationDate";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.applicationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.applicationDateDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.applicationDateDataGridViewTextBoxColumn.Name = "applicationDateDataGridViewTextBoxColumn";
+            this.applicationDateDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // countryDataGridViewTextBoxColumn
+            // 
+            this.countryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.countryDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.countryDataGridViewTextBoxColumn.HeaderText = "Država";
+            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.countryDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // currencyCodeDataGridViewTextBoxColumn
+            // 
+            this.currencyCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.currencyCodeDataGridViewTextBoxColumn.DataPropertyName = "CurrencyCode";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.currencyCodeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.currencyCodeDataGridViewTextBoxColumn.HeaderText = "Kod valute";
+            this.currencyCodeDataGridViewTextBoxColumn.Name = "currencyCodeDataGridViewTextBoxColumn";
+            this.currencyCodeDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // currencyDataGridViewTextBoxColumn
+            // 
+            this.currencyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.currencyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.currencyDataGridViewTextBoxColumn.HeaderText = "Valuta";
+            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
+            this.currencyDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.unitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Jedinica";
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // buyingDataGridViewTextBoxColumn
+            // 
+            this.buyingDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.buyingDataGridViewTextBoxColumn.DataPropertyName = "Buying";
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.buyingDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.buyingDataGridViewTextBoxColumn.HeaderText = "Kupovni";
+            this.buyingDataGridViewTextBoxColumn.Name = "buyingDataGridViewTextBoxColumn";
+            this.buyingDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // middleDataGridViewTextBoxColumn
+            // 
+            this.middleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.middleDataGridViewTextBoxColumn.DataPropertyName = "Middle";
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.middleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.middleDataGridViewTextBoxColumn.HeaderText = "Srednji";
+            this.middleDataGridViewTextBoxColumn.Name = "middleDataGridViewTextBoxColumn";
+            this.middleDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // sellingDataGridViewTextBoxColumn
+            // 
+            this.sellingDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sellingDataGridViewTextBoxColumn.DataPropertyName = "Selling";
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.sellingDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.sellingDataGridViewTextBoxColumn.HeaderText = "Prodajni";
+            this.sellingDataGridViewTextBoxColumn.Name = "sellingDataGridViewTextBoxColumn";
+            this.sellingDataGridViewTextBoxColumn.Width = 89;
+            // 
             // ExchangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -301,15 +301,6 @@
 
         private System.Windows.Forms.DataGridView currencyExchangeRateDgv;
         private System.Windows.Forms.BindingSource currencyExchangeRateBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn exchangeRateListDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn applicationDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn currencyCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn currencyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn buyingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn middleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DateTimePicker dateFromPicker;
         private System.Windows.Forms.Label filterLbl;
         private System.Windows.Forms.Label dateFromLbl;
@@ -319,5 +310,14 @@
         private System.Windows.Forms.Label currencyLbl;
         private System.Windows.Forms.Button applyBtn;
         private System.Windows.Forms.Button addCurrencyBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exchangeRateListDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applicationDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currencyCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currencyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn buyingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellingDataGridViewTextBoxColumn;
     }
 }

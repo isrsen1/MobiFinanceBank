@@ -72,7 +72,7 @@ namespace MobiFinanceBank.Forms
             // Set data sources and windows size
             this.SetDataSources();
             this.SetDataGridViewSize(750, 300);
-
+            
             // Connect services with data grid views - necessary for hiding data grid views
             ServicesDictionary = new Dictionary<BankServices, DataGridView>()
             {

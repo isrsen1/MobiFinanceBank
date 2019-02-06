@@ -73,6 +73,18 @@ namespace MobiFinanceBank.DAL.Repositories
         {
             return this.context.Clients.FirstOrDefault(client => client.Id == clientId);
         }
+
+        /// <summary>
+        /// Get client by personal identification number
+        /// </summary>
+        /// <param name="OIB">Personal identification number</param>
+        /// <returns>
+        /// The client
+        /// </returns>
+        public Client GetByOIB(string OIB)
+        {
+            return this.context.Clients.FirstOrDefault(client => client.OIB == OIB);
+        }
         
         /// <summary>
         /// Edits the specified client.
