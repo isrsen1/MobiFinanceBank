@@ -47,11 +47,14 @@ namespace MobiFinanceBank.Services
             }
 
             double assessment = 0;
-
+            
+            // if client is employed
             if (client.IsEmployed)
             {
+                // If client income is higher than average salary, is on a fixed term contract and not risky profession
                 if (client.Income >= averageSalary && client.IsFixedTermContract && !client.IsUnusualProfession)
                 {
+                    // Calculate assessment
                     var requiredLoanMonthlyAmount =
                         (requiredLoan.Capital * requiredLoan.LoanType.InterestRate + requiredLoan.Capital)/(requiredLoan.LoanDuration * 12);
                     assessment = (clientIncome - fixedAmmount - currentLoansAmount)/requiredLoanMonthlyAmount;
