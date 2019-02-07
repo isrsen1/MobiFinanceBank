@@ -88,6 +88,18 @@
     <Compile Include="Migrations\201902041825068_SavingAccountTypeIsFixedTermAdded.Designer.cs">
       <DependentUpon>201902041825068_SavingAccountTypeIsFixedTermAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902060746238_AccountType.cs" />
+    <Compile Include="Migrations\201902060746238_AccountType.Designer.cs">
+      <DependentUpon>201902060746238_AccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902060759473_SavingAccountType.cs" />
+    <Compile Include="Migrations\201902060759473_SavingAccountType.Designer.cs">
+      <DependentUpon>201902060759473_SavingAccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902060805221_SavingAccountTypeValueTypeChanged.cs" />
+    <Compile Include="Migrations\201902060805221_SavingAccountTypeValueTypeChanged.Designer.cs">
+      <DependentUpon>201902060805221_SavingAccountTypeValueTypeChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -147,6 +159,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902041825068_SavingAccountTypeIsFixedTermAdded.resx">
       <DependentUpon>201902041825068_SavingAccountTypeIsFixedTermAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902060746238_AccountType.resx">
+      <DependentUpon>201902060746238_AccountType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902060759473_SavingAccountType.resx">
+      <DependentUpon>201902060759473_SavingAccountType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902060805221_SavingAccountTypeValueTypeChanged.resx">
+      <DependentUpon>201902060805221_SavingAccountTypeValueTypeChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

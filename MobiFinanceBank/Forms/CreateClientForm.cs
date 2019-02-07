@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
-using MobiFinanceBank.Vm;
 
 namespace MobiFinanceBank.Forms
 {
@@ -95,7 +88,7 @@ namespace MobiFinanceBank.Forms
         {
             // Retrieve selected client type and set state
             var clientType = (ClientType) clientTypeCb.SelectedItem;
-            var isPrivateClient = clientType.Name == "Privatni" ? true : false;
+            var isPrivateClient = clientType.Name == Model.Enums.ClientType.Privatni.ToString() ? true : false;
 
             // Hide/show items based on client type
             firstNameLbl.Visible = isPrivateClient;
@@ -116,19 +109,58 @@ namespace MobiFinanceBank.Forms
             // Retrieve selected client type
             var clientType = (ClientType)clientTypeCb.SelectedItem;
 
-            // Add client
-            this.clientRepository.Add(new Client()
+            var isValid = !string.IsNullOrEmpty(oibTb.Text)
+                          && !string.IsNullOrEmpty(emailTb.Text)
+                          && !string.IsNullOrEmpty(contactTb.Text)
+                          && !string.IsNullOrEmpty(addressTb.Text);
+
+            if (clientType.Name == Model.Enums.ClientType.Privatni.ToString())
+                isValid = isValid && !string.IsNullOrEmpty(firstNameTb.Text) 
+                                  && !string.IsNullOrEmpty(lastNameTb.Text);
+            else
             {
-                FirstName = firstNameTb.Text,
-                LastName = lastNameTb.Text,
-                OIB = oibTb.Text,
-                CompanyName = companyTb.Text,
-                Email = emailTb.Text,
-                Income = double.Parse(monthlyIncomeTb.Text),
-                PhoneNumber = contactTb.Text,
-                Address = addressTb.Text,
-                ClientTypeId = clientType.Id
-            });
+                isValid = isValid && !string.IsNullOrEmpty(companyTb.Text);
+            }
+
+            if (!string.IsNullOrEmpty(oibTb.Text))
+            {
+                var clientByOib = this.clientRepository.GetByOIB(oibTb.Text);
+                if (clientByOib != null)
+                {
+                    isValid = false;
+                    MessageBox.Show(@"Klijent s upisanim osobnim identifikacijskim brojem vec postoji");
+                }
+            }
+
+            if (isValid)
+            {
+                try
+                {
+                    // Add client
+                    this.clientRepository.Add(new Client()
+                    {
+                        FirstName = firstNameTb.Text,
+                        LastName = lastNameTb.Text,
+                        OIB = oibTb.Text,
+                        CompanyName = companyTb.Text,
+                        Email = emailTb.Text,
+                        Income = (double) monthlyIncomeNum.Value,
+                        PhoneNumber = contactTb.Text,
+                        Address = addressTb.Text,
+                        ClientTypeId = clientType.Id
+                    });
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(@"Neuspješan unos klijenta");
+                }
+
+                MessageBox.Show(@"Klijent uspješno kreiran");
+            }
+            else
+            {
+                MessageBox.Show(@"Morate unijeti sve podatke");
+            }
         }
     }
 }

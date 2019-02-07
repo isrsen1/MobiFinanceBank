@@ -147,6 +147,7 @@
     <Compile Include="Forms\OpeningBankServicesForm.Designer.cs">
       <DependentUpon>OpeningBankServicesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GridButton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates\TemplateForm.cs">
@@ -338,6 +339,11 @@
   <ItemGroup>
     <None Include="Resources\uplatnica.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

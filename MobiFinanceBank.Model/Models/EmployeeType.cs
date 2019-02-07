@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MobiFinanceBank.Model.Models
 {
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Employee type database model class.

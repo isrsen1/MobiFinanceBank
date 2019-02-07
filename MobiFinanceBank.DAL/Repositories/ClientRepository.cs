@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;
@@ -75,6 +72,18 @@ namespace MobiFinanceBank.DAL.Repositories
         public Client Get(long clientId)
         {
             return this.context.Clients.FirstOrDefault(client => client.Id == clientId);
+        }
+
+        /// <summary>
+        /// Get client by personal identification number
+        /// </summary>
+        /// <param name="OIB">Personal identification number</param>
+        /// <returns>
+        /// The client
+        /// </returns>
+        public Client GetByOIB(string OIB)
+        {
+            return this.context.Clients.FirstOrDefault(client => client.OIB == OIB);
         }
         
         /// <summary>

@@ -57,8 +57,21 @@
             this.clientTypeCb = new System.Windows.Forms.ComboBox();
             this.bankServicesOverviewBtn = new System.Windows.Forms.Button();
             this.openingBankServicesBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.firstNameFilterLbl = new System.Windows.Forms.Label();
+            this.firstNameFilterTb = new System.Windows.Forms.TextBox();
+            this.lastNameFilterLbl = new System.Windows.Forms.Label();
+            this.lastNameFilterTb = new System.Windows.Forms.TextBox();
+            this.companyFilterLb = new System.Windows.Forms.Label();
+            this.companyFilterTb = new System.Windows.Forms.TextBox();
+            this.applyFilterBtn = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // clientOverviewDgv
@@ -82,7 +95,8 @@
             this.savingAccountsDataGridViewTextBoxColumn,
             this.clientTypeDataGridViewTextBoxColumn});
             this.clientOverviewDgv.DataSource = this.clientBindingSource;
-            this.clientOverviewDgv.Location = new System.Drawing.Point(12, 114);
+            this.clientOverviewDgv.Location = new System.Drawing.Point(12, 178);
+            this.clientOverviewDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clientOverviewDgv.MultiSelect = false;
             this.clientOverviewDgv.Name = "clientOverviewDgv";
             this.clientOverviewDgv.RowTemplate.Height = 24;
@@ -98,67 +112,83 @@
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
+            this.firstNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.firstNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Ime";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 59;
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
+            this.lastNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.lastNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Prezime";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Width = 88;
             // 
             // companyNameDataGridViewTextBoxColumn
             // 
+            this.companyNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             this.companyNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.HeaderText = "Tvrtka";
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            this.companyNameDataGridViewTextBoxColumn.Width = 77;
             // 
             // oIBDataGridViewTextBoxColumn
             // 
+            this.oIBDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.oIBDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
             this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
+            this.oIBDataGridViewTextBoxColumn.Width = 60;
             // 
             // emailDataGridViewTextBoxColumn
             // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 71;
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
+            this.phoneNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             this.phoneNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Broj telefona";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 117;
             // 
             // incomeDataGridViewTextBoxColumn
             // 
+            this.incomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.incomeDataGridViewTextBoxColumn.DataPropertyName = "Income";
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             this.incomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.incomeDataGridViewTextBoxColumn.HeaderText = "Income";
+            this.incomeDataGridViewTextBoxColumn.HeaderText = "Prihod";
             this.incomeDataGridViewTextBoxColumn.Name = "incomeDataGridViewTextBoxColumn";
+            this.incomeDataGridViewTextBoxColumn.Width = 78;
             // 
             // addressDataGridViewTextBoxColumn
             // 
+            this.addressDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
             this.addressDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Adresa";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Width = 82;
             // 
             // clientTypeIdDataGridViewTextBoxColumn
             // 
@@ -209,9 +239,10 @@
             // clientTypeCb
             // 
             this.clientTypeCb.FormattingEnabled = true;
-            this.clientTypeCb.Location = new System.Drawing.Point(970, 114);
+            this.clientTypeCb.Location = new System.Drawing.Point(1029, 193);
+            this.clientTypeCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clientTypeCb.Name = "clientTypeCb";
-            this.clientTypeCb.Size = new System.Drawing.Size(246, 24);
+            this.clientTypeCb.Size = new System.Drawing.Size(247, 24);
             this.clientTypeCb.TabIndex = 4;
             this.clientTypeCb.SelectedIndexChanged += new System.EventHandler(this.clientTypeCb_SelectedIndexChanged);
             // 
@@ -221,11 +252,12 @@
             this.bankServicesOverviewBtn.ForeColor = System.Drawing.Color.Black;
             this.bankServicesOverviewBtn.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
             this.bankServicesOverviewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bankServicesOverviewBtn.Location = new System.Drawing.Point(970, 300);
+            this.bankServicesOverviewBtn.Location = new System.Drawing.Point(1028, 434);
+            this.bankServicesOverviewBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bankServicesOverviewBtn.Name = "bankServicesOverviewBtn";
-            this.bankServicesOverviewBtn.Size = new System.Drawing.Size(241, 64);
+            this.bankServicesOverviewBtn.Size = new System.Drawing.Size(332, 64);
             this.bankServicesOverviewBtn.TabIndex = 14;
-            this.bankServicesOverviewBtn.Text = "Pregled usluga";
+            this.bankServicesOverviewBtn.Text = "Pregled postojećih usluga";
             this.bankServicesOverviewBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bankServicesOverviewBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bankServicesOverviewBtn.UseVisualStyleBackColor = true;
@@ -237,25 +269,139 @@
             this.openingBankServicesBtn.ForeColor = System.Drawing.Color.Black;
             this.openingBankServicesBtn.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
             this.openingBankServicesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openingBankServicesBtn.Location = new System.Drawing.Point(970, 370);
+            this.openingBankServicesBtn.Location = new System.Drawing.Point(1028, 502);
+            this.openingBankServicesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.openingBankServicesBtn.Name = "openingBankServicesBtn";
-            this.openingBankServicesBtn.Size = new System.Drawing.Size(241, 64);
+            this.openingBankServicesBtn.Size = new System.Drawing.Size(332, 64);
             this.openingBankServicesBtn.TabIndex = 15;
-            this.openingBankServicesBtn.Text = "Otvaranje usluga";
+            this.openingBankServicesBtn.Text = "Otvaranje novih usluga";
             this.openingBankServicesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.openingBankServicesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.openingBankServicesBtn.UseVisualStyleBackColor = true;
             this.openingBankServicesBtn.Click += new System.EventHandler(this.openingBankServicesBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1025, 171);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 18);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Odaberi tip klijenta:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1024, 129);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 29);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Filter";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.firstNameFilterLbl);
+            this.flowLayoutPanel1.Controls.Add(this.firstNameFilterTb);
+            this.flowLayoutPanel1.Controls.Add(this.lastNameFilterLbl);
+            this.flowLayoutPanel1.Controls.Add(this.lastNameFilterTb);
+            this.flowLayoutPanel1.Controls.Add(this.companyFilterLb);
+            this.flowLayoutPanel1.Controls.Add(this.companyFilterTb);
+            this.flowLayoutPanel1.Controls.Add(this.applyFilterBtn);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1029, 222);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 178);
+            this.flowLayoutPanel1.TabIndex = 18;
+            // 
+            // firstNameFilterLbl
+            // 
+            this.firstNameFilterLbl.AutoSize = true;
+            this.firstNameFilterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameFilterLbl.Location = new System.Drawing.Point(3, 0);
+            this.firstNameFilterLbl.Name = "firstNameFilterLbl";
+            this.firstNameFilterLbl.Size = new System.Drawing.Size(36, 18);
+            this.firstNameFilterLbl.TabIndex = 0;
+            this.firstNameFilterLbl.Text = "Ime:";
+            // 
+            // firstNameFilterTb
+            // 
+            this.firstNameFilterTb.Location = new System.Drawing.Point(3, 21);
+            this.firstNameFilterTb.Name = "firstNameFilterTb";
+            this.firstNameFilterTb.Size = new System.Drawing.Size(172, 22);
+            this.firstNameFilterTb.TabIndex = 1;
+            // 
+            // lastNameFilterLbl
+            // 
+            this.lastNameFilterLbl.AutoSize = true;
+            this.lastNameFilterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameFilterLbl.Location = new System.Drawing.Point(3, 46);
+            this.lastNameFilterLbl.Name = "lastNameFilterLbl";
+            this.lastNameFilterLbl.Size = new System.Drawing.Size(67, 18);
+            this.lastNameFilterLbl.TabIndex = 2;
+            this.lastNameFilterLbl.Text = "Prezime:";
+            // 
+            // lastNameFilterTb
+            // 
+            this.lastNameFilterTb.Location = new System.Drawing.Point(3, 67);
+            this.lastNameFilterTb.Name = "lastNameFilterTb";
+            this.lastNameFilterTb.Size = new System.Drawing.Size(172, 22);
+            this.lastNameFilterTb.TabIndex = 3;
+            // 
+            // companyFilterLb
+            // 
+            this.companyFilterLb.AutoSize = true;
+            this.companyFilterLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companyFilterLb.Location = new System.Drawing.Point(3, 92);
+            this.companyFilterLb.Name = "companyFilterLb";
+            this.companyFilterLb.Size = new System.Drawing.Size(53, 18);
+            this.companyFilterLb.TabIndex = 4;
+            this.companyFilterLb.Text = "Tvrtka:";
+            // 
+            // companyFilterTb
+            // 
+            this.companyFilterTb.Location = new System.Drawing.Point(3, 113);
+            this.companyFilterTb.Name = "companyFilterTb";
+            this.companyFilterTb.Size = new System.Drawing.Size(172, 22);
+            this.companyFilterTb.TabIndex = 5;
+            // 
+            // applyFilterBtn
+            // 
+            this.applyFilterBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.applyFilterBtn.Location = new System.Drawing.Point(3, 141);
+            this.applyFilterBtn.Name = "applyFilterBtn";
+            this.applyFilterBtn.Size = new System.Drawing.Size(75, 27);
+            this.applyFilterBtn.TabIndex = 6;
+            this.applyFilterBtn.Text = "Primijeni";
+            this.applyFilterBtn.UseVisualStyleBackColor = true;
+            this.applyFilterBtn.Click += new System.EventHandler(this.applyFilterBtn_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MobiFinanceBank.Properties.Resources.home1;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 114);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(39, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
             // ClientOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 503);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.openingBankServicesBtn);
             this.Controls.Add(this.bankServicesOverviewBtn);
             this.Controls.Add(this.clientTypeCb);
             this.Controls.Add(this.clientOverviewDgv);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientOverviewForm";
             this.Text = "ClientOverviewForm";
             this.Load += new System.EventHandler(this.ClientOverview_Load);
@@ -263,9 +409,17 @@
             this.Controls.SetChildIndex(this.clientTypeCb, 0);
             this.Controls.SetChildIndex(this.bankServicesOverviewBtn, 0);
             this.Controls.SetChildIndex(this.openingBankServicesBtn, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.pictureBox3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -274,6 +428,18 @@
         private System.Windows.Forms.DataGridView clientOverviewDgv;
         private System.Windows.Forms.ComboBox clientTypeCb;
         private System.Windows.Forms.BindingSource clientBindingSource;
+        private System.Windows.Forms.Button bankServicesOverviewBtn;
+        private System.Windows.Forms.Button openingBankServicesBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label firstNameFilterLbl;
+        private System.Windows.Forms.TextBox firstNameFilterTb;
+        private System.Windows.Forms.Label lastNameFilterLbl;
+        private System.Windows.Forms.Label companyFilterLb;
+        private System.Windows.Forms.TextBox companyFilterTb;
+        private System.Windows.Forms.Button applyFilterBtn;
+        private System.Windows.Forms.TextBox lastNameFilterTb;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
@@ -289,7 +455,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn accountsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn savingAccountsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button bankServicesOverviewBtn;
-        private System.Windows.Forms.Button openingBankServicesBtn;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

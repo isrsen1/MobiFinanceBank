@@ -1,7 +1,6 @@
 namespace MobiFinanceBank.Model.Models
 {
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
@@ -35,6 +34,22 @@ namespace MobiFinanceBank.Model.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the value indicating if account is in foreign currency
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if account is in foreign currency, otherwise <c>false</c>
+        /// </value>
+        public bool IsForeignCurrency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the currency
+        /// </summary>
+        /// <value>
+        /// The currency
+        /// </value>
+        public string Currency { get; set; }
+
+        /// <summary>
         /// Gets or sets saving account interest
         /// </summary>
         /// <value>
@@ -56,7 +71,7 @@ namespace MobiFinanceBank.Model.Models
         /// <value>
         /// <c>true</c> if this saving account type is fixed term, otherwise <c>false</c>
         /// </value>
-        public int IsFixedTerm { get; set; }
+        public bool IsFixedTerm { get; set; }
 
         /// <summary>
         /// Gets or sets saving accounts

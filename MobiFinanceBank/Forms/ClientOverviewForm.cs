@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Infrastructure;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MobiFinanceBank.DAL.Repositories;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
-using MobiFinanceBank.VmService;
 using MobiFinanceBank.VmService.Interfaces;
+using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.Forms
 {
@@ -36,6 +27,7 @@ namespace MobiFinanceBank.Forms
         /// <param name="_clientOverviewVmService">The client overview view model service</param>
         /// <param name="bankServicesOverviewForm">Bank services overview form</param>
         /// <param name="_openingBankServicesForm">Opening bank services form</param>
+        /// <param name="_menuForm">Menu form</param>
         public ClientOverviewForm
             (IClientTypeRepository _clientTypeRepository, 
             IClientOverviewVmService _clientOverviewVmService,
@@ -70,9 +62,32 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void clientTypeCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Parses client type combobox selected item into client type enum
-            var clientType = (ClientType)clientTypeCb.SelectedItem;
-            Model.Enums.ClientType.TryParse(clientType.Name, true, out Model.Enums.ClientType selectedClientType);
+            // Parses client type combo box selected item into client type enum
+            var clientType = this.clientTypeCb.GetItemText(this.clientTypeCb.SelectedItem);
+            Enum.TryParse(clientType, true, out ClientType selectedClientType);
+
+            if (selectedClientType == ClientType.Privatni)
+            {
+                companyFilterTb.Visible = false;
+                companyFilterLb.Visible = false;
+
+                firstNameFilterTb.Visible = true;
+                firstNameFilterLbl.Visible = true;
+
+                lastNameFilterLbl.Visible = true;
+                lastNameFilterTb.Visible = true;
+            }
+            else
+            {
+                companyFilterTb.Visible = true;
+                companyFilterLb.Visible = true;
+
+                firstNameFilterTb.Visible = false;
+                firstNameFilterLbl.Visible = false;
+
+                lastNameFilterLbl.Visible = false;
+                lastNameFilterTb.Visible = false;
+            }
 
             // Client overview filter
             var filter = new ClientOverviewFilter()
@@ -115,5 +130,33 @@ namespace MobiFinanceBank.Forms
                 this.openingBankServicesForm.Show(client);
             }
         }
+
+        private void applyFilterBtn_Click(object sender, EventArgs e)
+        {
+            // Parses client type combo box selected item into client type enum
+            var clientType = this.clientTypeCb.GetItemText(this.clientTypeCb.SelectedItem);
+            Enum.TryParse(clientType, true, out ClientType selectedClientType);
+
+            // Client overview filter
+            var filter = new ClientOverviewFilter()
+            {
+                ClientType = selectedClientType,
+                FirstName = firstNameFilterTb.Text,
+                LastName = lastNameFilterTb.Text,
+                Company = companyFilterTb.Text
+            };
+
+            // Sets client overview data grid view data source
+            clientOverviewDgv.DataSource = this.clientOverviewVmService.GetClientOverview(filter);
+        }
+
+        //private void pictureBox3_Click(object sender, EventArgs e)
+        //{
+        //    var response = MessageBox.Show(@"Jeste li sigurni da želite zatvoriti formu?", "Pregled klijenata", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //    if (response == DialogResult.OK)
+        //    {
+        //        this.Close();
+        //    }
+        //}
     }
 }

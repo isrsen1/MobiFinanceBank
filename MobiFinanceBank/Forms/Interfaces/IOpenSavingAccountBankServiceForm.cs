@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MobiFinanceBank.Model.Models;
+﻿using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.Forms.Interfaces
 {
     public interface IOpenSavingAccountBankServiceForm
     {
-        void Show(Client client);
+        void Show(Client client, SavingAccountType savingAccountType);
     }
 }

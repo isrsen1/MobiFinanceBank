@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Templates;
 
@@ -58,6 +50,7 @@ namespace MobiFinanceBank.Forms
         private void btnPregledKlijenata_Click(object sender, EventArgs e)
         {
             this._clientOverviewForm.Show();
+            this.Close();
         }
 
         private void btnOtvaranjeUsluga_Click(object sender, EventArgs e)

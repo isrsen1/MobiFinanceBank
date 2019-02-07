@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
@@ -28,6 +21,14 @@ namespace MobiFinanceBank.Forms
         /// <c>true</c> if standing order is checked, otherwise <c>false</c>
         /// </value>
         public bool IsStandingOrderChecked { get; set; } = false;
+
+        /// <summary>
+        /// Gets or sets the saving account type
+        /// </summary>
+        /// <value>
+        /// Saving account type
+        /// </value>
+        public SavingAccountType SavingAccountType { get; set; }
 
         /// <summary>
         /// Gets or sets the client
@@ -59,9 +60,11 @@ namespace MobiFinanceBank.Forms
         /// Hides base show method
         /// </summary>
         /// <param name="client">The client</param>
-        public new void Show(Client client)
+        /// <param name="savingAccountType">Saving account type</param>
+        public new void Show(Client client, SavingAccountType savingAccountType)
         {
             this.Client = client;
+            this.SavingAccountType = savingAccountType;
 
             // Calls base show method
             base.Show();
@@ -95,6 +98,19 @@ namespace MobiFinanceBank.Forms
         private void OpenSavingAccountBankServiceForm_Load(object sender, EventArgs e)
         {
             accountsDgv.Visible = false;
+
+            firstNameLbl.Text = Client.FirstName;
+            lastNameLbl.Text = Client.LastName;
+            oibLbl.Text = Client.OIB;
+            addressLbl.Text = Client.Address;
+            incomeLbl.Text = Client.Income.ToString();
+
+            accountNameLbl.Text = SavingAccountType.Name;
+            foreignCurrencyLbl.Checked = SavingAccountType.IsForeignCurrency;
+            currencyLbl.Text = SavingAccountType.Currency;
+            interestRateLbl.Text = (SavingAccountType.InterestRate * 100).ToString() + "%";
+            fixedTermLbl.Checked = SavingAccountType.IsFixedTerm;
+            fixedTermPeriodLbl.Text = SavingAccountType.FixedTermDepositingPeriod.ToString();
         }
 
         /// <summary>
@@ -104,22 +120,31 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void openSavingAccountBtn_Click(object sender, EventArgs e)
         {
+            Account account = null;
+
             // If row is selected
             if (accountsDgv.SelectedRows.Count != 0)
             {
                 // Retrieve row data and cast to account object
                 var row = this.accountsDgv.SelectedRows[0];
-                var account = (Account)row.DataBoundItem;
-                var savingAccount = new SavingAccount()
-                {
-                    Account = account,
-                    Capital = (double) capitalNum.Value,
-                    IsStandingOrderActive = IsStandingOrderChecked,
-                    FixedTermDepositingStartDate = startDateDtp.Value
-                };
-
-                this.savingAccountRepository.Add(savingAccount);
+                account = (Account)row.DataBoundItem;
             }
+
+            if (startDateDtp.Value < DateTime.Now.Date)
+            {
+                MessageBox.Show($@"Datum ne smije biti manji od {DateTime.Now.Date}");
+                return;
+            }
+
+            var savingAccount = new SavingAccount()
+            {
+                Account = account,
+                Capital = (double)capitalNum.Value,
+                IsStandingOrderActive = IsStandingOrderChecked,
+                FixedTermDepositingStartDate = startDateDtp.Value
+            };
+
+            this.savingAccountRepository.Add(savingAccount);
         }
     }
 }

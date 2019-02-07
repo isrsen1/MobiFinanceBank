@@ -4,6 +4,7 @@ using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Vm;
 using MobiFinanceBank.VmService.Interfaces;
+using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.VmService
 {
@@ -32,6 +33,21 @@ namespace MobiFinanceBank.VmService
         public IEnumerable<Client> GetClientOverview(ClientOverviewFilter overviewFilter)
         {
             var clients = this.clientRepository.GetAsQueryable();
+
+            if (overviewFilter.ClientType == ClientType.Privatni)
+            {
+                if (!string.IsNullOrEmpty(overviewFilter.FirstName))
+                    clients = clients.Where(client => client.FirstName.Contains(overviewFilter.FirstName));
+
+                if (!string.IsNullOrEmpty(overviewFilter.LastName))
+                    clients = clients.Where(client => client.LastName.Contains(overviewFilter.LastName));
+            }
+
+            if (overviewFilter.ClientType == ClientType.Poslovni)
+            {
+                if (!string.IsNullOrEmpty(overviewFilter.Company))
+                    clients = clients.Where(client => client.CompanyName.Contains(overviewFilter.Company));
+            }
 
             var clientsFiltered = clients.Where(client => client.ClientType.Name == overviewFilter.ClientType.ToString()).ToList();
 

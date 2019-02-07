@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
@@ -31,6 +26,8 @@ namespace MobiFinanceBank.Forms
         /// The account type
         /// </value>
         public AccountType AccountType { get; set; }
+
+        private readonly string ibanRegex = @"^[H]{1}[R]{1}[0-9]{19}$";
 
         private readonly IAccountRepository accountRepository;
 
@@ -65,6 +62,16 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void createAccountBtn_Click(object sender, EventArgs e)
         {
+            var iban = ibanTb.Text;
+
+            var match = Regex.Match(iban, ibanRegex);
+            if (match.Success)
+                MessageBox.Show("Uspjelo");
+            else
+            {
+                return;
+            }
+
             // Retrieves account
             var account = new Account()
             {
@@ -77,6 +84,22 @@ namespace MobiFinanceBank.Forms
             };
 
             this.accountRepository.Add(account);
+        }
+
+        private void OpenAccountBankServiceForm_Load(object sender, EventArgs e)
+        {
+            firstNameLbl.Text = Client.FirstName;
+            lastNameLbl.Text = Client.LastName;
+            oibLbl.Text = Client.OIB;
+            addressLbl.Text = Client.Address;
+            incomeLbl.Text = Client.Income.ToString();
+
+            accountNameLbl.Text = AccountType.Name;
+            foreignCurrencyLbl.Checked = AccountType.IsForeignCurrency;
+            currencyLbl.Text = AccountType.Currency;
+            negativeBalanceLbl.Text = AccountType.NegativeBalanceLimit.ToString(CultureInfo.InvariantCulture);
+            incomeBottomLineLbl.Text = AccountType.IncomeBottomLimit.ToString(CultureInfo.CurrentCulture);
+            negativeBalanceMonthlyFeeLbl.Text = (AccountType.NegativeBalanceMonthlyFee * 100).ToString() + "%";
         }
     }
 }
