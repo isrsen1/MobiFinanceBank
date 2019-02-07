@@ -23,6 +23,9 @@ namespace MobiFinanceBank
         static void Main()
         {
             var container = new UnityContainer();
+            container.RegisterType<ILoginForm, LoginForm>();
+            container.RegisterType<ILoginVmService, LoginVmService>();
+            container.RegisterType<ILoginService, LoginService>();
             container.RegisterType<IMenuForm, MenuForm>();
             container.RegisterType<IExchangeForm, ExchangeForm>();
             container.RegisterType<IExchangeService, ExchangeService>();

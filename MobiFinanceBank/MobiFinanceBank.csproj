@@ -162,11 +162,14 @@
     <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
     <Compile Include="VmService\Interfaces\IBankServicesVmService.cs" />
     <Compile Include="VmService\BankServicesVmService.cs" />
+    <Compile Include="VmService\Interfaces\ILoginVmService.cs" />
+    <Compile Include="VmService\LoginVmService.cs" />
     <Compile Include="Vm\AccountOverviewFilter.cs" />
     <Compile Include="Vm\ClientOverviewFilter.cs" />
     <Compile Include="Vm\ClientViewModel.cs" />
     <Compile Include="Vm\CurrencyExchangeRate.cs" />
     <Compile Include="Vm\LoanOverviewFilter.cs" />
+    <Compile Include="Vm\LoginEmployeeData.cs" />
     <Compile Include="Vm\SavingOverviewFilter.cs" />
     <EmbeddedResource Include="Forms\ClientOverviewForm.resx">
       <DependentUpon>ClientOverviewForm.cs</DependentUpon>

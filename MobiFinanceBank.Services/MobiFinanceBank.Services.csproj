@@ -54,6 +54,8 @@
     <Compile Include="LoanAssessment.cs" />
     <Compile Include="Interfaces\IExchangeService.cs" />
     <Compile Include="Interfaces\IEmployeeService.cs" />
+    <Compile Include="Interfaces\ILoginService.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
