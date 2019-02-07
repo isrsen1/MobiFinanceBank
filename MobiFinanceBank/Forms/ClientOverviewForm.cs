@@ -19,6 +19,7 @@ namespace MobiFinanceBank.Forms
         private readonly IClientOverviewVmService clientOverviewVmService;
         private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
         private readonly IOpeningBankServicesForm openingBankServicesForm;
+        private readonly ICreateClientForm createClientForm;
         private readonly IMenuForm menuForm;
 
         /// <summary>
@@ -33,7 +34,8 @@ namespace MobiFinanceBank.Forms
             (IClientTypeRepository _clientTypeRepository, 
             IClientOverviewVmService _clientOverviewVmService,
             IBankServicesOverviewForm bankServicesOverviewForm,
-            IOpeningBankServicesForm _openingBankServicesForm)
+            IOpeningBankServicesForm _openingBankServicesForm,
+            ICreateClientForm _createClientForm)
         {
             InitializeComponent();
 
@@ -41,6 +43,7 @@ namespace MobiFinanceBank.Forms
             this.clientOverviewVmService = _clientOverviewVmService;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
             this.openingBankServicesForm = _openingBankServicesForm;
+            this.createClientForm = _createClientForm;
         }
 
         /// <summary>
@@ -167,6 +170,22 @@ namespace MobiFinanceBank.Forms
             if (response == DialogResult.OK)
             {
                 this.Close();
+            }
+        }
+
+        private void editClientButton_Click(object sender, EventArgs e)
+        {
+            // Retrieve client from selected data grid view row
+            if (clientOverviewDgv.SelectedRows.Count != 0)
+            {
+                var row = this.clientOverviewDgv.SelectedRows[0];
+                var client = (Client)row.DataBoundItem;
+                this.createClientForm.Show(client);
+            }
+            else
+            {
+                MessageBox.Show("Odaberite klijenta", "Pregled klijenata", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
     }
