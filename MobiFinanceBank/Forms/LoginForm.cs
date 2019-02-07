@@ -13,6 +13,7 @@ using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
+using MobiFinanceBank.VmService.Interfaces;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -25,15 +26,17 @@ namespace MobiFinanceBank.Forms
     public partial class LoginForm : TemplateForm , ILoginForm
     {
         private IMenuForm menuForm;
+        private ILoginVmService loginVmService;
 
         /// <summary>
         /// Initializes new instance of login form
         /// </summary>
         /// <param name="_menuForm">Menu form</param>
-        public LoginForm(IMenuForm _menuForm)
+        public LoginForm(IMenuForm _menuForm, ILoginVmService _loginVmService)
         {
             InitializeComponent();
             this.menuForm = _menuForm;
+            this.loginVmService = _loginVmService;
         }
         
         private void button1_Click(object sender, EventArgs e)

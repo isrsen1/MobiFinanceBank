@@ -32,9 +32,7 @@ namespace MobiFinanceBank.VmService
         /// <summary>
         /// Retrieves the collection of exchange rates
         /// </summary>
-        /// <param name="currencies">Collection of currencies</param>
-        /// <param name="fromDate">From date filter</param>
-        /// <param name="toDate">To date filter</param>
+        /// <param name="loginEmployee">Login information of the employee </param>
         /// <returns></returns>
         public IEnumerable<Employee> GetLoginData(LoginEmployeeData loginEmployee)
         {
