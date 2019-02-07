@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
@@ -136,6 +137,13 @@ namespace MobiFinanceBank.Forms
                 return;
             }
 
+            if (IsStandingOrderChecked && account == null)
+            {
+                MessageBox.Show(@"Niste izabrali račun koji će se trajno teretiti", "Otvaranje štednje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var savingAccount = new SavingAccount()
             {
                 Account = account,
@@ -144,7 +152,17 @@ namespace MobiFinanceBank.Forms
                 FixedTermDepositingStartDate = startDateDtp.Value
             };
 
-            this.savingAccountRepository.Add(savingAccount);
+            try
+            {
+                this.savingAccountRepository.Add(savingAccount);
+                MessageBox.Show(@"Uspješno otvaranje štednog računa", "Otvaranje štednje", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(@"Neuspješno otvaranje štednog računa", "Otvaranje štednje", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

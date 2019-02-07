@@ -116,6 +116,14 @@
     <Compile Include="Migrations\201902071410472_LoanDates.Designer.cs">
       <DependentUpon>201902071410472_LoanDates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902071418218_LoanTypeCurrency.cs" />
+    <Compile Include="Migrations\201902071418218_LoanTypeCurrency.Designer.cs">
+      <DependentUpon>201902071418218_LoanTypeCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902071421524_MigratingLoanDurationToLoan.cs" />
+    <Compile Include="Migrations\201902071421524_MigratingLoanDurationToLoan.Designer.cs">
+      <DependentUpon>201902071421524_MigratingLoanDurationToLoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -196,6 +204,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902071410472_LoanDates.resx">
       <DependentUpon>201902071410472_LoanDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902071418218_LoanTypeCurrency.resx">
+      <DependentUpon>201902071418218_LoanTypeCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902071421524_MigratingLoanDurationToLoan.resx">
+      <DependentUpon>201902071421524_MigratingLoanDurationToLoan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

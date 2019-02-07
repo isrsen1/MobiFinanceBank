@@ -44,6 +44,8 @@ namespace MobiFinanceBank
             container.RegisterType<IOpeningBankServicesForm, OpeningBankServicesForm>();
             container.RegisterType<IOpenAccountBankServiceForm, OpenAccountBankServiceForm>();
             container.RegisterType<IOpenSavingAccountBankServiceForm, OpenSavingAccountBankServiceForm>();
+            container.RegisterType<IOpenLoanBankServiceForm, OpenLoanBankServiceForm>();
+            container.RegisterType<ILoanAssessment, LoanAssessment>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

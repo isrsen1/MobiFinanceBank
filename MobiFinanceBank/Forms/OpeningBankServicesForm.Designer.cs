@@ -39,13 +39,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.savingAccountDgv = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.interestRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fixedTermDepositingPeriodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.savingAccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.savingAccountTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accountDgv = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.negativeBalanceLimitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.incomeBottomLimitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loanDgv = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.interestRateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loanTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bankServicesCb = new System.Windows.Forms.ComboBox();
             this.createAccountBtn = new System.Windows.Forms.Button();
@@ -54,22 +68,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.interestRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fixedTermDepositingPeriodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.savingAccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.negativeBalanceLimitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.incomeBottomLimitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loanDurationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.interestRateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountTypeBindingSource)).BeginInit();
@@ -109,124 +107,6 @@
             this.savingAccountDgv.Size = new System.Drawing.Size(357, 202);
             this.savingAccountDgv.TabIndex = 0;
             // 
-            // savingAccountTypeBindingSource
-            // 
-            this.savingAccountTypeBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.SavingAccountType);
-            // 
-            // accountDgv
-            // 
-            this.accountDgv.AutoGenerateColumns = false;
-            this.accountDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.accountDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn1,
-            this.negativeBalanceLimitDataGridViewTextBoxColumn,
-            this.incomeBottomLimitDataGridViewTextBoxColumn,
-            this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.accountsDataGridViewTextBoxColumn});
-            this.accountDgv.DataSource = this.accountTypeBindingSource;
-            this.accountDgv.Location = new System.Drawing.Point(366, 3);
-            this.accountDgv.Name = "accountDgv";
-            this.accountDgv.Size = new System.Drawing.Size(288, 202);
-            this.accountDgv.TabIndex = 2;
-            // 
-            // accountTypeBindingSource
-            // 
-            this.accountTypeBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.AccountType);
-            // 
-            // loanDgv
-            // 
-            this.loanDgv.AutoGenerateColumns = false;
-            this.loanDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loanDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.nameDataGridViewTextBoxColumn2,
-            this.loanDurationDataGridViewTextBoxColumn,
-            this.interestRateDataGridViewTextBoxColumn1});
-            this.loanDgv.DataSource = this.loanTypeBindingSource;
-            this.loanDgv.Location = new System.Drawing.Point(660, 3);
-            this.loanDgv.Name = "loanDgv";
-            this.loanDgv.Size = new System.Drawing.Size(275, 202);
-            this.loanDgv.TabIndex = 1;
-            // 
-            // loanTypeBindingSource
-            // 
-            this.loanTypeBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.LoanType);
-            // 
-            // bankServicesCb
-            // 
-            this.bankServicesCb.FormattingEnabled = true;
-            this.bankServicesCb.Location = new System.Drawing.Point(1044, 188);
-            this.bankServicesCb.Name = "bankServicesCb";
-            this.bankServicesCb.Size = new System.Drawing.Size(203, 24);
-            this.bankServicesCb.TabIndex = 4;
-            this.bankServicesCb.SelectedIndexChanged += new System.EventHandler(this.bankServicesCb_SelectedIndexChanged);
-            // 
-            // createAccountBtn
-            // 
-            this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createAccountBtn.Location = new System.Drawing.Point(3, 43);
-            this.createAccountBtn.Name = "createAccountBtn";
-            this.createAccountBtn.Size = new System.Drawing.Size(110, 34);
-            this.createAccountBtn.TabIndex = 5;
-            this.createAccountBtn.Text = "Otvori račun";
-            this.createAccountBtn.UseVisualStyleBackColor = true;
-            this.createAccountBtn.Click += new System.EventHandler(this.createAccountBtn_Click);
-            // 
-            // createLoanBtn
-            // 
-            this.createLoanBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createLoanBtn.Location = new System.Drawing.Point(3, 3);
-            this.createLoanBtn.Name = "createLoanBtn";
-            this.createLoanBtn.Size = new System.Drawing.Size(110, 34);
-            this.createLoanBtn.TabIndex = 6;
-            this.createLoanBtn.Text = "Otvori kredit";
-            this.createLoanBtn.UseVisualStyleBackColor = true;
-            // 
-            // createSavingAccountBtn
-            // 
-            this.createSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createSavingAccountBtn.Location = new System.Drawing.Point(119, 3);
-            this.createSavingAccountBtn.Name = "createSavingAccountBtn";
-            this.createSavingAccountBtn.Size = new System.Drawing.Size(112, 34);
-            this.createSavingAccountBtn.TabIndex = 7;
-            this.createSavingAccountBtn.Text = "Otvori štednju";
-            this.createSavingAccountBtn.UseVisualStyleBackColor = true;
-            this.createSavingAccountBtn.Click += new System.EventHandler(this.createSavingAccountBtn_Click);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Controls.Add(this.createLoanBtn);
-            this.flowLayoutPanel2.Controls.Add(this.createAccountBtn);
-            this.flowLayoutPanel2.Controls.Add(this.createSavingAccountBtn);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1044, 218);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(242, 100);
-            this.flowLayoutPanel2.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(994, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 29);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Filter:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1025, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Tip usluge:";
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -264,6 +144,28 @@
             this.savingAccountsDataGridViewTextBoxColumn.HeaderText = "SavingAccounts";
             this.savingAccountsDataGridViewTextBoxColumn.Name = "savingAccountsDataGridViewTextBoxColumn";
             this.savingAccountsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // savingAccountTypeBindingSource
+            // 
+            this.savingAccountTypeBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.SavingAccountType);
+            // 
+            // accountDgv
+            // 
+            this.accountDgv.AutoGenerateColumns = false;
+            this.accountDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.negativeBalanceLimitDataGridViewTextBoxColumn,
+            this.incomeBottomLimitDataGridViewTextBoxColumn,
+            this.negativeBalanceMonthlyFeeDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.accountsDataGridViewTextBoxColumn});
+            this.accountDgv.DataSource = this.accountTypeBindingSource;
+            this.accountDgv.Location = new System.Drawing.Point(366, 3);
+            this.accountDgv.Name = "accountDgv";
+            this.accountDgv.Size = new System.Drawing.Size(288, 202);
+            this.accountDgv.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -320,6 +222,24 @@
             this.accountsDataGridViewTextBoxColumn.Name = "accountsDataGridViewTextBoxColumn";
             this.accountsDataGridViewTextBoxColumn.Visible = false;
             // 
+            // accountTypeBindingSource
+            // 
+            this.accountTypeBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.AccountType);
+            // 
+            // loanDgv
+            // 
+            this.loanDgv.AutoGenerateColumns = false;
+            this.loanDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loanDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.nameDataGridViewTextBoxColumn2,
+            this.interestRateDataGridViewTextBoxColumn1});
+            this.loanDgv.DataSource = this.loanTypeBindingSource;
+            this.loanDgv.Location = new System.Drawing.Point(660, 3);
+            this.loanDgv.Name = "loanDgv";
+            this.loanDgv.Size = new System.Drawing.Size(275, 202);
+            this.loanDgv.TabIndex = 1;
+            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
@@ -335,21 +255,91 @@
             this.nameDataGridViewTextBoxColumn2.HeaderText = "Naziv";
             this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
             // 
-            // loanDurationDataGridViewTextBoxColumn
-            // 
-            this.loanDurationDataGridViewTextBoxColumn.DataPropertyName = "LoanDuration";
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.loanDurationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.loanDurationDataGridViewTextBoxColumn.HeaderText = "Trajanje kredita";
-            this.loanDurationDataGridViewTextBoxColumn.Name = "loanDurationDataGridViewTextBoxColumn";
-            // 
             // interestRateDataGridViewTextBoxColumn1
             // 
             this.interestRateDataGridViewTextBoxColumn1.DataPropertyName = "InterestRate";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.interestRateDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.interestRateDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle10;
             this.interestRateDataGridViewTextBoxColumn1.HeaderText = "Kamata";
             this.interestRateDataGridViewTextBoxColumn1.Name = "interestRateDataGridViewTextBoxColumn1";
+            // 
+            // loanTypeBindingSource
+            // 
+            this.loanTypeBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.LoanType);
+            // 
+            // bankServicesCb
+            // 
+            this.bankServicesCb.FormattingEnabled = true;
+            this.bankServicesCb.Location = new System.Drawing.Point(1044, 188);
+            this.bankServicesCb.Name = "bankServicesCb";
+            this.bankServicesCb.Size = new System.Drawing.Size(203, 24);
+            this.bankServicesCb.TabIndex = 4;
+            this.bankServicesCb.SelectedIndexChanged += new System.EventHandler(this.bankServicesCb_SelectedIndexChanged);
+            // 
+            // createAccountBtn
+            // 
+            this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.createAccountBtn.Location = new System.Drawing.Point(3, 43);
+            this.createAccountBtn.Name = "createAccountBtn";
+            this.createAccountBtn.Size = new System.Drawing.Size(110, 34);
+            this.createAccountBtn.TabIndex = 5;
+            this.createAccountBtn.Text = "Otvori račun";
+            this.createAccountBtn.UseVisualStyleBackColor = true;
+            this.createAccountBtn.Click += new System.EventHandler(this.createAccountBtn_Click);
+            // 
+            // createLoanBtn
+            // 
+            this.createLoanBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.createLoanBtn.Location = new System.Drawing.Point(3, 3);
+            this.createLoanBtn.Name = "createLoanBtn";
+            this.createLoanBtn.Size = new System.Drawing.Size(110, 34);
+            this.createLoanBtn.TabIndex = 6;
+            this.createLoanBtn.Text = "Otvori kredit";
+            this.createLoanBtn.UseVisualStyleBackColor = true;
+            this.createLoanBtn.Click += new System.EventHandler(this.createLoanBtn_Click);
+            // 
+            // createSavingAccountBtn
+            // 
+            this.createSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.createSavingAccountBtn.Location = new System.Drawing.Point(119, 3);
+            this.createSavingAccountBtn.Name = "createSavingAccountBtn";
+            this.createSavingAccountBtn.Size = new System.Drawing.Size(112, 34);
+            this.createSavingAccountBtn.TabIndex = 7;
+            this.createSavingAccountBtn.Text = "Otvori štednju";
+            this.createSavingAccountBtn.UseVisualStyleBackColor = true;
+            this.createSavingAccountBtn.Click += new System.EventHandler(this.createSavingAccountBtn_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.Controls.Add(this.createLoanBtn);
+            this.flowLayoutPanel2.Controls.Add(this.createAccountBtn);
+            this.flowLayoutPanel2.Controls.Add(this.createSavingAccountBtn);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1044, 218);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(242, 100);
+            this.flowLayoutPanel2.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(994, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 29);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Filter:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1025, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Tip usluge:";
             // 
             // OpeningBankServicesForm
             // 

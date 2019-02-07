@@ -36,18 +36,29 @@ namespace MobiFinanceBank.Model.Models
         public string Name { get; set; }
         
         /// <summary>
-        /// Gets or sets the loan duration - unit - year
-        /// </summary>
-        /// <value>
-        /// Loan duration
-        /// </value>
-        public int LoanDuration { get; set; }
-
-        /// <summary>
         /// Gets or sets loan interest rate
         /// </summary>
+        /// <value>
+        /// Interest rate
+        /// </value>
         public double InterestRate { get; set; }
-        
+
+        /// <summary>
+        /// Gets or sets the value indicating if account is in foreign currency
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if account is in foreign currency, otherwise <c>false</c>
+        /// </value>
+        public bool IsForeignCurrency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the currency
+        /// </summary>
+        /// <value>
+        /// The currency
+        /// </value>
+        public string Currency { get; set; }
+
         /// <summary>
         /// Gets or sets repayment plans
         /// </summary>

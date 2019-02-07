@@ -16,44 +16,49 @@ namespace MobiFinanceBank.Services
     public class LoanAssessment: ILoanAssessment
     {
         private readonly IClientRepository clientRepository;
+        private readonly ILoanRepository loanRepository;
 
         private readonly double averageSalary = 6237;
         private readonly double fixedAmmountUnusualProfession = 4158;
         private readonly double fixedAmmount = 2500;
 
-        public LoanAssessment(IClientRepository _clientRepository)
+        public LoanAssessment(IClientRepository _clientRepository, ILoanRepository _loanRepository)
         {
             this.clientRepository = _clientRepository;
+            this.loanRepository = _loanRepository;
         }
 
         public double CalculateLoanAssessmentForPrivateClients(long clientId, Loan requiredLoan)
         {
             // Get client and client loans
             var client = this.clientRepository.Get(clientId);
-            var clientLoans = client.Loans;
+            var clientLoans = this.loanRepository.GetByClientId(client.Id);
 
             double currentLoansAmount = 0;
             var clientIncome = client.Income;
+
             // Calculate monthly loan amount from all client loans
             foreach (var loan in clientLoans)
             {
                 var loanCapital = loan.Capital;
                 var loanInterestRate = loan.LoanType.InterestRate;
-                var loanDurationMonths = loan.LoanType.LoanDuration * 12;
-                currentLoansAmount += (loanCapital * loanInterestRate + loanCapital) / 12;
+                var loanDurationMonths = loan.LoanDuration * 12;
+                currentLoansAmount += (loanCapital * loanInterestRate + loanCapital) / loanDurationMonths;
             }
+
+            double assessment = 0;
 
             if (client.IsEmployed)
             {
                 if (client.Income >= averageSalary && client.IsFixedTermContract && !client.IsUnusualProfession)
                 {
                     var requiredLoanMonthlyAmount =
-                        (requiredLoan.Capital * requiredLoan.LoanType.InterestRate + requiredLoan.Capital)/12;
-                    var assessment = (clientIncome - fixedAmmount - currentLoansAmount)/requiredLoanMonthlyAmount;
+                        (requiredLoan.Capital * requiredLoan.LoanType.InterestRate + requiredLoan.Capital)/(requiredLoan.LoanDuration * 12);
+                    assessment = (clientIncome - fixedAmmount - currentLoansAmount)/requiredLoanMonthlyAmount;
                 }
             }
 
-            return 0;
+            return assessment/3;
         }
 
         public double CalculateLoanAssessmentForBusinessClients(long clientId)

@@ -97,6 +97,14 @@ namespace MobiFinanceBank.Forms
             firstNameTb.Visible = isPrivateClient;
             lastNameLbl.Visible = isPrivateClient;
             lastNameTb.Visible = isPrivateClient;
+
+            employedLbl.Visible = isPrivateClient;
+            employedChb.Visible = isPrivateClient;
+            fixedTermContractLbl.Visible = isPrivateClient;
+            fixedTermContractChb.Visible = isPrivateClient;
+            riskProfessionLbl.Visible = isPrivateClient;
+            riskProfessionChb.Visible = isPrivateClient;
+
             companyLbl.Visible = !isPrivateClient;
             companyTb.Visible = !isPrivateClient;
         }
@@ -149,7 +157,10 @@ namespace MobiFinanceBank.Forms
                         Income = (double) monthlyIncomeNum.Value,
                         PhoneNumber = contactTb.Text,
                         Address = addressTb.Text,
-                        ClientTypeId = clientType.Id
+                        ClientTypeId = clientType.Id,
+                        IsEmployed = employedChb.Checked,
+                        IsFixedTermContract = fixedTermContractChb.Checked,
+                        IsUnusualProfession = riskProfessionChb.Checked
                     });
                 }
                 catch (Exception)

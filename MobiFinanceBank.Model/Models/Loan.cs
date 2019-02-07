@@ -52,6 +52,14 @@ namespace MobiFinanceBank.Model.Models
         public DateTime LoanEndDate { get; set; }
 
         /// <summary>
+        /// Gets or sets the loan duration - unit - year
+        /// </summary>
+        /// <value>
+        /// Loan duration
+        /// </value>
+        public int LoanDuration { get; set; }
+
+        /// <summary>
         /// Gets or sets the loan capital
         /// </summary>
         /// <value>

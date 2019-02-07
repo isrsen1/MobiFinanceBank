@@ -25,6 +25,7 @@ namespace MobiFinanceBank.Forms
 
         private readonly IOpenAccountBankServiceForm openAccountBankServiceForm;
         private readonly IOpenSavingAccountBankServiceForm openSavingAccountBankServiceForm;
+        private readonly IOpenLoanBankServiceForm openLoanBankServiceForm;
 
         /// <summary>
         /// Gets or sets the client
@@ -58,12 +59,14 @@ namespace MobiFinanceBank.Forms
         /// <param name="_loanTypeRepository">Loan type repository</param>
         /// <param name="_openAccountBankServiceForm">Open account bank service form</param>
         /// <param name="_openSavingAccountBankServiceForm">Open saving account bank service form</param>
+        /// <param name="_openLoanBankServiceForm">Open loan bank service form</param>
         public OpeningBankServicesForm
             (ISavingAccountTypeRepository _savingAccountTypeRepository, 
             IAccountTypeRepository _accountTypeRepository,
             ILoanTypeRepository _loanTypeRepository,
             IOpenAccountBankServiceForm _openAccountBankServiceForm,
-            IOpenSavingAccountBankServiceForm _openSavingAccountBankServiceForm)
+            IOpenSavingAccountBankServiceForm _openSavingAccountBankServiceForm,
+            IOpenLoanBankServiceForm _openLoanBankServiceForm)
         {
             InitializeComponent();
 
@@ -72,6 +75,7 @@ namespace MobiFinanceBank.Forms
             this.loanTypeRepository = _loanTypeRepository;
             this.openAccountBankServiceForm = _openAccountBankServiceForm;
             this.openSavingAccountBankServiceForm = _openSavingAccountBankServiceForm;
+            this.openLoanBankServiceForm = _openLoanBankServiceForm;
         }
 
         /// <summary>
@@ -199,6 +203,11 @@ namespace MobiFinanceBank.Forms
                 }
                 this.openAccountBankServiceForm.Show(this.Client, accountType);
             }
+            else
+            {
+                MessageBox.Show("Odaberite tip računa", "Otvaranje usluga", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
 
         /// <summary>
@@ -215,6 +224,28 @@ namespace MobiFinanceBank.Forms
                 var row = this.savingAccountDgv.SelectedRows[0];
                 var savingAccountType = (SavingAccountType)row.DataBoundItem;
                 this.openSavingAccountBankServiceForm.Show(this.Client, savingAccountType);
+            }
+            else
+            {
+                MessageBox.Show("Odaberite tip štednog računa", "Otvaranje usluga", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void createLoanBtn_Click(object sender, EventArgs e)
+        {
+            // If row is selected
+            if (loanDgv.SelectedRows.Count != 0)
+            {
+                // Cast row data to account type object
+                var row = this.loanDgv.SelectedRows[0];
+                var loanType = (LoanType)row.DataBoundItem;
+                this.openLoanBankServiceForm.Show(this.Client, loanType);
+            }
+            else
+            {
+                MessageBox.Show("Odaberite tip kredita", "Otvaranje usluga", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
     }

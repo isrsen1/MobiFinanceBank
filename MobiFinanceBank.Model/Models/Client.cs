@@ -117,6 +117,9 @@ namespace MobiFinanceBank.Model.Models
         /// <summary>
         /// Gets or sets clients type id
         /// </summary>
+        /// <value>
+        /// Client type id
+        /// </value>
         public int ClientTypeId { get; set; }
 
         /// <summary>

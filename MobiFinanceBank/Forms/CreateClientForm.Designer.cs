@@ -34,6 +34,7 @@
             this.companyTb = new System.Windows.Forms.TextBox();
             this.oibTb = new System.Windows.Forms.TextBox();
             this.emailTb = new System.Windows.Forms.TextBox();
+            this.monthlyIncomeNum = new System.Windows.Forms.NumericUpDown();
             this.contactTb = new System.Windows.Forms.TextBox();
             this.addressTb = new System.Windows.Forms.TextBox();
             this.clientTypeCb = new System.Windows.Forms.ComboBox();
@@ -47,10 +48,15 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.companyLbl = new System.Windows.Forms.Label();
             this.addClientBtn = new System.Windows.Forms.Button();
-            this.monthlyIncomeNum = new System.Windows.Forms.NumericUpDown();
+            this.employedLbl = new System.Windows.Forms.Label();
+            this.fixedTermContractLbl = new System.Windows.Forms.Label();
+            this.riskProfessionLbl = new System.Windows.Forms.Label();
+            this.employedChb = new System.Windows.Forms.CheckBox();
+            this.fixedTermContractChb = new System.Windows.Forms.CheckBox();
+            this.riskProfessionChb = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monthlyIncomeNum)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lastNameTb
@@ -79,10 +85,13 @@
             this.flowLayoutPanel1.Controls.Add(this.monthlyIncomeNum);
             this.flowLayoutPanel1.Controls.Add(this.contactTb);
             this.flowLayoutPanel1.Controls.Add(this.addressTb);
+            this.flowLayoutPanel1.Controls.Add(this.employedChb);
+            this.flowLayoutPanel1.Controls.Add(this.fixedTermContractChb);
+            this.flowLayoutPanel1.Controls.Add(this.riskProfessionChb);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(175, 169);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 224);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 330);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // companyTb
@@ -107,6 +116,13 @@
             this.emailTb.TabIndex = 5;
             this.emailTb.Enter += new System.EventHandler(this.emailTb_Enter);
             this.emailTb.Leave += new System.EventHandler(this.emailTb_Leave);
+            // 
+            // monthlyIncomeNum
+            // 
+            this.monthlyIncomeNum.Location = new System.Drawing.Point(3, 143);
+            this.monthlyIncomeNum.Name = "monthlyIncomeNum";
+            this.monthlyIncomeNum.Size = new System.Drawing.Size(143, 22);
+            this.monthlyIncomeNum.TabIndex = 18;
             // 
             // contactTb
             // 
@@ -220,10 +236,13 @@
             this.flowLayoutPanel2.Controls.Add(this.monthlyIncomeLbl);
             this.flowLayoutPanel2.Controls.Add(this.contactLbl);
             this.flowLayoutPanel2.Controls.Add(this.addressLbl);
+            this.flowLayoutPanel2.Controls.Add(this.employedLbl);
+            this.flowLayoutPanel2.Controls.Add(this.fixedTermContractLbl);
+            this.flowLayoutPanel2.Controls.Add(this.riskProfessionLbl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 169);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(157, 221);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(157, 344);
             this.flowLayoutPanel2.TabIndex = 16;
             // 
             // companyLbl
@@ -248,12 +267,68 @@
             this.addClientBtn.UseVisualStyleBackColor = true;
             this.addClientBtn.Click += new System.EventHandler(this.addClientBtn_Click);
             // 
-            // monthlyIncomeNum
+            // employedLbl
             // 
-            this.monthlyIncomeNum.Location = new System.Drawing.Point(3, 143);
-            this.monthlyIncomeNum.Name = "monthlyIncomeNum";
-            this.monthlyIncomeNum.Size = new System.Drawing.Size(143, 22);
-            this.monthlyIncomeNum.TabIndex = 18;
+            this.employedLbl.AutoSize = true;
+            this.employedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employedLbl.Location = new System.Drawing.Point(3, 226);
+            this.employedLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.employedLbl.Name = "employedLbl";
+            this.employedLbl.Size = new System.Drawing.Size(69, 18);
+            this.employedLbl.TabIndex = 16;
+            this.employedLbl.Text = "Zaposlen";
+            // 
+            // fixedTermContractLbl
+            // 
+            this.fixedTermContractLbl.AutoSize = true;
+            this.fixedTermContractLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fixedTermContractLbl.Location = new System.Drawing.Point(3, 254);
+            this.fixedTermContractLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.fixedTermContractLbl.Name = "fixedTermContractLbl";
+            this.fixedTermContractLbl.Size = new System.Drawing.Size(87, 36);
+            this.fixedTermContractLbl.TabIndex = 17;
+            this.fixedTermContractLbl.Text = "Ugovor na neodređeno";
+            // 
+            // riskProfessionLbl
+            // 
+            this.riskProfessionLbl.AutoSize = true;
+            this.riskProfessionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.riskProfessionLbl.Location = new System.Drawing.Point(3, 300);
+            this.riskProfessionLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.riskProfessionLbl.Name = "riskProfessionLbl";
+            this.riskProfessionLbl.Size = new System.Drawing.Size(129, 36);
+            this.riskProfessionLbl.TabIndex = 18;
+            this.riskProfessionLbl.Text = "Financijski rizično zanimanje";
+            // 
+            // employedChb
+            // 
+            this.employedChb.AutoSize = true;
+            this.employedChb.Location = new System.Drawing.Point(3, 230);
+            this.employedChb.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.employedChb.Name = "employedChb";
+            this.employedChb.Size = new System.Drawing.Size(18, 17);
+            this.employedChb.TabIndex = 19;
+            this.employedChb.UseVisualStyleBackColor = true;
+            // 
+            // fixedTermContractChb
+            // 
+            this.fixedTermContractChb.AutoSize = true;
+            this.fixedTermContractChb.Location = new System.Drawing.Point(3, 270);
+            this.fixedTermContractChb.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.fixedTermContractChb.Name = "fixedTermContractChb";
+            this.fixedTermContractChb.Size = new System.Drawing.Size(18, 17);
+            this.fixedTermContractChb.TabIndex = 20;
+            this.fixedTermContractChb.UseVisualStyleBackColor = true;
+            // 
+            // riskProfessionChb
+            // 
+            this.riskProfessionChb.AutoSize = true;
+            this.riskProfessionChb.Location = new System.Drawing.Point(3, 310);
+            this.riskProfessionChb.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.riskProfessionChb.Name = "riskProfessionChb";
+            this.riskProfessionChb.Size = new System.Drawing.Size(18, 17);
+            this.riskProfessionChb.TabIndex = 21;
+            this.riskProfessionChb.UseVisualStyleBackColor = true;
             // 
             // CreateClientForm
             // 
@@ -273,9 +348,9 @@
             this.Controls.SetChildIndex(this.addClientBtn, 0);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyIncomeNum)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyIncomeNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +378,11 @@
         private System.Windows.Forms.Label companyLbl;
         private System.Windows.Forms.Button addClientBtn;
         private System.Windows.Forms.NumericUpDown monthlyIncomeNum;
+        private System.Windows.Forms.Label employedLbl;
+        private System.Windows.Forms.Label fixedTermContractLbl;
+        private System.Windows.Forms.Label riskProfessionLbl;
+        private System.Windows.Forms.CheckBox employedChb;
+        private System.Windows.Forms.CheckBox fixedTermContractChb;
+        private System.Windows.Forms.CheckBox riskProfessionChb;
     }
 }
