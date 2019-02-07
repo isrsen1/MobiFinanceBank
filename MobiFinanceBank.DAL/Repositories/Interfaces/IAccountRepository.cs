@@ -39,6 +39,20 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         IEnumerable<Account> GetByClient(int clientId);
 
         /// <summary>
+        /// Get account by IBAN
+        /// </summary>
+        /// <param name="IBAN">IBAN</param>
+        /// <returns>Account</returns>
+        Account GetByIBAN(string IBAN);
+
+        /// <summary>
+        /// Get account by card number
+        /// </summary>
+        /// <param name="IBAN">Card number</param>
+        /// <returns>Account</returns>
+        Account GetByCardNumber(string cardNumber);
+
+        /// <summary>
         /// Edits the specified account.
         /// </summary>
         /// <param name="account">Account</param>

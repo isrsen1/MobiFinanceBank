@@ -80,6 +80,26 @@ namespace MobiFinanceBank.DAL.Repositories
         }
 
         /// <summary>
+        /// Get account by IBAN
+        /// </summary>
+        /// <param name="IBAN">IBAN</param>
+        /// <returns>Account</returns>
+        public Account GetByIBAN(string IBAN)
+        {
+            return this.context.Accounts.FirstOrDefault(ac => ac.IBAN == IBAN);
+        }
+
+        /// <summary>
+        /// Get account by card number
+        /// </summary>
+        /// <param name="IBAN">Card number</param>
+        /// <returns>Account</returns>
+        public Account GetByCardNumber(string cardNumber)
+        {
+            return this.context.Accounts.FirstOrDefault(ac => ac.CardNumber == cardNumber);
+        }
+
+        /// <summary>
         /// Edits the account
         /// </summary>
         /// <param name="account">The account</param>

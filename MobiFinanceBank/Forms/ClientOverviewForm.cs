@@ -19,6 +19,7 @@ namespace MobiFinanceBank.Forms
         private readonly IClientOverviewVmService clientOverviewVmService;
         private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
         private readonly IOpeningBankServicesForm openingBankServicesForm;
+        private readonly IMenuForm menuForm;
 
         /// <summary>
         /// Initializes new instance of client overview form
@@ -150,13 +151,13 @@ namespace MobiFinanceBank.Forms
             clientOverviewDgv.DataSource = this.clientOverviewVmService.GetClientOverview(filter);
         }
 
-        //private void pictureBox3_Click(object sender, EventArgs e)
-        //{
-        //    var response = MessageBox.Show(@"Jeste li sigurni da želite zatvoriti formu?", "Pregled klijenata", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        //    if (response == DialogResult.OK)
-        //    {
-        //        this.Close();
-        //    }
-        //}
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            var response = MessageBox.Show(@"Jeste li sigurni da želite zatvoriti formu?", "Pregled klijenata", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (response == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }

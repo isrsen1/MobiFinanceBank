@@ -61,6 +61,7 @@ namespace MobiFinanceBank.Forms
             // Remove text if placeholder
             if (emailTb.Text == emailPlaceholder)
             {
+                emailTb.ForeColor = Color.Black;
                 emailTb.Text = "";
             }
         }
@@ -75,6 +76,7 @@ namespace MobiFinanceBank.Forms
             // if empty, set placeholder
             if (emailTb.Text == "")
             {
+                emailTb.ForeColor = Color.Gray;
                 emailTb.Text = emailPlaceholder;
             }
         }

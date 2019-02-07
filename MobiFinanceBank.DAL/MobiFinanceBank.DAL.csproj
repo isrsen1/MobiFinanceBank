@@ -100,6 +100,14 @@
     <Compile Include="Migrations\201902060805221_SavingAccountTypeValueTypeChanged.Designer.cs">
       <DependentUpon>201902060805221_SavingAccountTypeValueTypeChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902061837040_IncomeRequired.cs" />
+    <Compile Include="Migrations\201902061837040_IncomeRequired.Designer.cs">
+      <DependentUpon>201902061837040_IncomeRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902070745261_ClientUpgraded.cs" />
+    <Compile Include="Migrations\201902070745261_ClientUpgraded.Designer.cs">
+      <DependentUpon>201902070745261_ClientUpgraded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -168,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902060805221_SavingAccountTypeValueTypeChanged.resx">
       <DependentUpon>201902060805221_SavingAccountTypeValueTypeChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902061837040_IncomeRequired.resx">
+      <DependentUpon>201902061837040_IncomeRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902070745261_ClientUpgraded.resx">
+      <DependentUpon>201902070745261_ClientUpgraded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

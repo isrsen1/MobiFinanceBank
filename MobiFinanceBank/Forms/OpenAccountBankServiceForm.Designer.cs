@@ -96,6 +96,8 @@
             this.ibanTb.Name = "ibanTb";
             this.ibanTb.Size = new System.Drawing.Size(231, 22);
             this.ibanTb.TabIndex = 8;
+            this.ibanTb.Enter += new System.EventHandler(this.ibanTb_Enter);
+            this.ibanTb.Leave += new System.EventHandler(this.ibanTb_Leave);
             // 
             // cardNumberTb
             // 
@@ -104,6 +106,8 @@
             this.cardNumberTb.Name = "cardNumberTb";
             this.cardNumberTb.Size = new System.Drawing.Size(231, 22);
             this.cardNumberTb.TabIndex = 9;
+            this.cardNumberTb.Enter += new System.EventHandler(this.cardNumberTb_Enter);
+            this.cardNumberTb.Leave += new System.EventHandler(this.cardNumberTb_Leave);
             // 
             // paymentNum
             // 

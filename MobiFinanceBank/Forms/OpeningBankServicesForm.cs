@@ -190,6 +190,13 @@ namespace MobiFinanceBank.Forms
                 // Cast row data to account type object
                 var row = this.accountDgv.SelectedRows[0];
                 var accountType = (AccountType)row.DataBoundItem;
+
+                if (Client.Income < accountType.IncomeBottomLimit)
+                {
+                    MessageBox.Show(@"Korisnikovi prihodi nisu dovoljni za otvaranje ovog tipa računa",
+                        @"Otvaranje usluga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 this.openAccountBankServiceForm.Show(this.Client, accountType);
             }
         }
