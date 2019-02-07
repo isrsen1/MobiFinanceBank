@@ -108,6 +108,14 @@
     <Compile Include="Migrations\201902070745261_ClientUpgraded.Designer.cs">
       <DependentUpon>201902070745261_ClientUpgraded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902071333305_LoanForeignToType.cs" />
+    <Compile Include="Migrations\201902071333305_LoanForeignToType.Designer.cs">
+      <DependentUpon>201902071333305_LoanForeignToType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902071410472_LoanDates.cs" />
+    <Compile Include="Migrations\201902071410472_LoanDates.Designer.cs">
+      <DependentUpon>201902071410472_LoanDates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -182,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902070745261_ClientUpgraded.resx">
       <DependentUpon>201902070745261_ClientUpgraded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902071333305_LoanForeignToType.resx">
+      <DependentUpon>201902071333305_LoanForeignToType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902071410472_LoanDates.resx">
+      <DependentUpon>201902071410472_LoanDates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

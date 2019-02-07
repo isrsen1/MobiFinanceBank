@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.Services.Interfaces
 {
@@ -17,7 +18,7 @@ namespace MobiFinanceBank.Services.Interfaces
         /// <returns>
         /// Decimal number between 0 and 1 
         /// </returns>
-        double CalculateLoanAssessmentForPrivateClients(long clientId);
+        double CalculateLoanAssessmentForPrivateClients(long clientId, Loan requiredLoan);
 
         /// <summary>
         /// Calculates loan assessment for business clients

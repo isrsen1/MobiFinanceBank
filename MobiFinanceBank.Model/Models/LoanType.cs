@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MobiFinanceBank.Model.Models
 {
@@ -9,11 +11,20 @@ namespace MobiFinanceBank.Model.Models
     public class LoanType
     {
         /// <summary>
+        /// Initializes new loan
+        /// </summary>
+        public LoanType()
+        {
+            Loans = new HashSet<Loan>();
+        }
+
+        /// <summary>
         /// Gets or sets the loan type id
         /// </summary>
         /// <value>
         /// Loan type id
         /// </value>
+        [Key]
         public int Id { get; set; }
 
         /// <summary>
@@ -36,5 +47,13 @@ namespace MobiFinanceBank.Model.Models
         /// Gets or sets loan interest rate
         /// </summary>
         public double InterestRate { get; set; }
+        
+        /// <summary>
+        /// Gets or sets repayment plans
+        /// </summary>
+        /// <value>
+        /// Repayment plans collection
+        /// </value>
+        public virtual ICollection<Loan> Loans { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace MobiFinanceBank.Model.Models
+﻿using System;
+
+namespace MobiFinanceBank.Model.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -32,7 +34,23 @@
         /// Loan status
         /// </value>
         public int Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the loan start date
+        /// </summary>
+        /// <value>
+        /// Loan start date
+        /// </value>
+        public DateTime LoanStartDate { get; set; }
         
+        /// <summary>
+        /// Gets or sets the loan end date
+        /// </summary>
+        /// <value>
+        /// Loan end date
+        /// </value>
+        public DateTime LoanEndDate { get; set; }
+
         /// <summary>
         /// Gets or sets the loan capital
         /// </summary>
@@ -66,6 +84,14 @@
         public int ClientId { get; set; }
         
         /// <summary>
+        /// Gets or sets the loan type id
+        /// </summary>
+        /// <value>
+        /// Loan type id
+        /// </value>
+        public int LoanTypeId { get; set; }
+
+        /// <summary>
         /// Gets or sets the account id
         /// </summary>
         /// <value>
@@ -80,6 +106,15 @@
         /// </value>
         [ForeignKey("ClientId")]
         public virtual Client Client { get; set; }
+
+        /// <summary>
+        /// Gets or sets loan type
+        /// </summary>
+        /// <value>
+        /// Loan type
+        /// </value>
+        [ForeignKey("LoanTypeId")]
+        public virtual LoanType LoanType { get; set; }
 
         /// <summary>
         /// Gets or sets employee which issued loan
