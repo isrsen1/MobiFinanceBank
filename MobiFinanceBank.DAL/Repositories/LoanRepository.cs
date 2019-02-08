@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;
@@ -69,6 +67,16 @@ namespace MobiFinanceBank.DAL.Repositories
         public Loan Get(long loanId)
         {
             return this.context.Loans.FirstOrDefault(loan => loan.Id == loanId);
+        }
+
+        /// <summary>
+        /// Get all loans by client
+        /// </summary>
+        /// <param name="clientId">Client id</param>
+        /// <returns>Collection of loans</returns>
+        public IEnumerable<Loan> GetByClientId(int clientId)
+        {
+            return this.context.Loans.Where(loan => loan.ClientId == clientId).ToList();
         }
 
         /// <summary>

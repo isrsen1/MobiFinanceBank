@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.DAL.Repositories.Interfaces
@@ -39,6 +37,20 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="clientId">Client id</param>
         /// <returns>Saving account collection</returns>
         IEnumerable<Account> GetByClient(int clientId);
+
+        /// <summary>
+        /// Get account by IBAN
+        /// </summary>
+        /// <param name="IBAN">IBAN</param>
+        /// <returns>Account</returns>
+        Account GetByIBAN(string IBAN);
+
+        /// <summary>
+        /// Get account by card number
+        /// </summary>
+        /// <param name="IBAN">Card number</param>
+        /// <returns>Account</returns>
+        Account GetByCardNumber(string cardNumber);
 
         /// <summary>
         /// Edits the specified account.

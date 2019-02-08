@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
 using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
-using MobiFinanceBank.Vm;
 
 namespace MobiFinanceBank.Forms
 {
@@ -29,6 +25,7 @@ namespace MobiFinanceBank.Forms
 
         private readonly IOpenAccountBankServiceForm openAccountBankServiceForm;
         private readonly IOpenSavingAccountBankServiceForm openSavingAccountBankServiceForm;
+        private readonly IOpenLoanBankServiceForm openLoanBankServiceForm;
 
         /// <summary>
         /// Gets or sets the client
@@ -44,7 +41,7 @@ namespace MobiFinanceBank.Forms
         /// <value>
         /// Key value pair of bank services and corresponding data grid views
         /// </value>
-        public Dictionary<BankServices, DataGridView> ServicesDictionary { get; set; }
+        public Dictionary<BankServices, GridButton> ServicesDictionary { get; set; }
 
         /// <summary>
         /// Gets or sets the current service filter
@@ -62,12 +59,14 @@ namespace MobiFinanceBank.Forms
         /// <param name="_loanTypeRepository">Loan type repository</param>
         /// <param name="_openAccountBankServiceForm">Open account bank service form</param>
         /// <param name="_openSavingAccountBankServiceForm">Open saving account bank service form</param>
+        /// <param name="_openLoanBankServiceForm">Open loan bank service form</param>
         public OpeningBankServicesForm
             (ISavingAccountTypeRepository _savingAccountTypeRepository, 
             IAccountTypeRepository _accountTypeRepository,
             ILoanTypeRepository _loanTypeRepository,
             IOpenAccountBankServiceForm _openAccountBankServiceForm,
-            IOpenSavingAccountBankServiceForm _openSavingAccountBankServiceForm)
+            IOpenSavingAccountBankServiceForm _openSavingAccountBankServiceForm,
+            IOpenLoanBankServiceForm _openLoanBankServiceForm)
         {
             InitializeComponent();
 
@@ -76,6 +75,7 @@ namespace MobiFinanceBank.Forms
             this.loanTypeRepository = _loanTypeRepository;
             this.openAccountBankServiceForm = _openAccountBankServiceForm;
             this.openSavingAccountBankServiceForm = _openSavingAccountBankServiceForm;
+            this.openLoanBankServiceForm = _openLoanBankServiceForm;
         }
 
         /// <summary>
@@ -100,11 +100,18 @@ namespace MobiFinanceBank.Forms
             this.SetDataSources();
             this.SetDataGridViewSize(900, 300);
 
-            ServicesDictionary = new Dictionary<BankServices, DataGridView>()
+            var serviceButton = new Dictionary<DataGridView, Button>()
             {
-                {BankServices.Kredit, loanDgv},
-                {BankServices.Račun, accountDgv },
-                {BankServices.Štednja, savingAccountDgv}
+                {loanDgv, createLoanBtn},
+                {accountDgv, createAccountBtn },
+                {savingAccountDgv, createSavingAccountBtn }
+            };
+
+            ServicesDictionary = new Dictionary<BankServices, GridButton>()
+            {
+                {BankServices.Kredit, new GridButton(){Button = createLoanBtn, DataGridView = loanDgv}},
+                {BankServices.Račun, new GridButton(){Button = createAccountBtn, DataGridView = accountDgv}},
+                {BankServices.Štednja, new GridButton(){Button = createSavingAccountBtn, DataGridView = savingAccountDgv}}
             };
         }
         
@@ -128,8 +135,11 @@ namespace MobiFinanceBank.Forms
                 this.CurrentServiceFilter = item;
 
                 // Hide based on filter
-                current.Value.Visible = true;
-                past.Value.Visible = false;
+                current.Value.Button.Visible = true;
+                current.Value.DataGridView.Visible = true;
+
+                past.Value.DataGridView.Visible = false;
+                past.Value.Button.Visible = false;
             }
             catch (Exception eas)
             {
@@ -149,6 +159,9 @@ namespace MobiFinanceBank.Forms
             // Initial hide
             loanDgv.Visible = false;
             savingAccountDgv.Visible = false;
+
+            createLoanBtn.Visible = false;
+            createSavingAccountBtn.Visible = false;
 
             // Set data sources for all grid views
             savingAccountDgv.DataSource = this.savingAccountTypeRepository.GetAll();
@@ -181,7 +194,19 @@ namespace MobiFinanceBank.Forms
                 // Cast row data to account type object
                 var row = this.accountDgv.SelectedRows[0];
                 var accountType = (AccountType)row.DataBoundItem;
+
+                if (Client.Income < accountType.IncomeBottomLimit)
+                {
+                    MessageBox.Show(@"Korisnikovi prihodi nisu dovoljni za otvaranje ovog tipa računa",
+                        @"Otvaranje usluga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 this.openAccountBankServiceForm.Show(this.Client, accountType);
+            }
+            else
+            {
+                MessageBox.Show("Odaberite tip računa", "Otvaranje usluga", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
 
@@ -192,7 +217,36 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void createSavingAccountBtn_Click(object sender, EventArgs e)
         {
-            this.openSavingAccountBankServiceForm.Show(this.Client);
+            // If row is selected
+            if (savingAccountDgv.SelectedRows.Count != 0)
+            {
+                // Cast row data to account type object
+                var row = this.savingAccountDgv.SelectedRows[0];
+                var savingAccountType = (SavingAccountType)row.DataBoundItem;
+                this.openSavingAccountBankServiceForm.Show(this.Client, savingAccountType);
+            }
+            else
+            {
+                MessageBox.Show("Odaberite tip štednog računa", "Otvaranje usluga", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void createLoanBtn_Click(object sender, EventArgs e)
+        {
+            // If row is selected
+            if (loanDgv.SelectedRows.Count != 0)
+            {
+                // Cast row data to account type object
+                var row = this.loanDgv.SelectedRows[0];
+                var loanType = (LoanType)row.DataBoundItem;
+                this.openLoanBankServiceForm.Show(this.Client, loanType);
+            }
+            else
+            {
+                MessageBox.Show("Odaberite tip kredita", "Otvaranje usluga", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
     }
 }

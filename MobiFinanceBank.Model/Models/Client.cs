@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MobiFinanceBank.Model.Models
@@ -81,7 +80,7 @@ namespace MobiFinanceBank.Model.Models
         /// <value>
         /// Clients income
         /// </value>
-        public double? Income { get; set; }
+        public double Income { get; set; }
 
         /// <summary>
         /// Gets or sets clients address
@@ -92,8 +91,35 @@ namespace MobiFinanceBank.Model.Models
         public string Address { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether this client is employed
+        /// </summary>
+        /// <value>
+        /// <c>true</c>if this client is employed, otherwise <c>false</c>
+        /// </value>
+        public bool IsEmployed { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this client is on a fixed term contract
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if the client is on a fixed term contract, otherwise <c>false</c>
+        /// </value>
+        public bool IsFixedTermContract { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this client has unusual profession
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if unusual profession, otherwise <c>false</c>
+        /// </value>
+        public bool IsUnusualProfession { get; set; }
+
+        /// <summary>
         /// Gets or sets clients type id
         /// </summary>
+        /// <value>
+        /// Client type id
+        /// </value>
         public int ClientTypeId { get; set; }
 
         /// <summary>

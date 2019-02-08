@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.Forms.Interfaces
 {
@@ -11,6 +7,6 @@ namespace MobiFinanceBank.Forms.Interfaces
     /// </summary>
     public interface ICreateClientForm
     {
-        void Show();
+        void Show(Client client);
     }
 }

@@ -2,8 +2,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MobiFinanceBank.Model.Models
 {
-    using System.ComponentModel.DataAnnotations;
-
     /// <summary>
     /// Liability database model class.
     /// </summary>

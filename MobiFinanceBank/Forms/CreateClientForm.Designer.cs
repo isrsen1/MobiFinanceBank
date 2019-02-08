@@ -34,9 +34,12 @@
             this.companyTb = new System.Windows.Forms.TextBox();
             this.oibTb = new System.Windows.Forms.TextBox();
             this.emailTb = new System.Windows.Forms.TextBox();
-            this.monthlyIncomeTb = new System.Windows.Forms.TextBox();
+            this.monthlyIncomeNum = new System.Windows.Forms.NumericUpDown();
             this.contactTb = new System.Windows.Forms.TextBox();
             this.addressTb = new System.Windows.Forms.TextBox();
+            this.employedChb = new System.Windows.Forms.CheckBox();
+            this.fixedTermContractChb = new System.Windows.Forms.CheckBox();
+            this.riskProfessionChb = new System.Windows.Forms.CheckBox();
             this.clientTypeCb = new System.Windows.Forms.ComboBox();
             this.firstNameLbl = new System.Windows.Forms.Label();
             this.lastNameLbl = new System.Windows.Forms.Label();
@@ -47,9 +50,15 @@
             this.addressLbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.companyLbl = new System.Windows.Forms.Label();
+            this.employedLbl = new System.Windows.Forms.Label();
+            this.fixedTermContractLbl = new System.Windows.Forms.Label();
+            this.riskProfessionLbl = new System.Windows.Forms.Label();
             this.addClientBtn = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyIncomeNum)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // lastNameTb
@@ -75,13 +84,16 @@
             this.flowLayoutPanel1.Controls.Add(this.companyTb);
             this.flowLayoutPanel1.Controls.Add(this.oibTb);
             this.flowLayoutPanel1.Controls.Add(this.emailTb);
-            this.flowLayoutPanel1.Controls.Add(this.monthlyIncomeTb);
+            this.flowLayoutPanel1.Controls.Add(this.monthlyIncomeNum);
             this.flowLayoutPanel1.Controls.Add(this.contactTb);
             this.flowLayoutPanel1.Controls.Add(this.addressTb);
+            this.flowLayoutPanel1.Controls.Add(this.employedChb);
+            this.flowLayoutPanel1.Controls.Add(this.fixedTermContractChb);
+            this.flowLayoutPanel1.Controls.Add(this.riskProfessionChb);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(317, 169);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(175, 169);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 224);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 330);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // companyTb
@@ -107,12 +119,17 @@
             this.emailTb.Enter += new System.EventHandler(this.emailTb_Enter);
             this.emailTb.Leave += new System.EventHandler(this.emailTb_Leave);
             // 
-            // monthlyIncomeTb
+            // monthlyIncomeNum
             // 
-            this.monthlyIncomeTb.Location = new System.Drawing.Point(3, 143);
-            this.monthlyIncomeTb.Name = "monthlyIncomeTb";
-            this.monthlyIncomeTb.Size = new System.Drawing.Size(226, 22);
-            this.monthlyIncomeTb.TabIndex = 6;
+            this.monthlyIncomeNum.Location = new System.Drawing.Point(3, 143);
+            this.monthlyIncomeNum.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.monthlyIncomeNum.Name = "monthlyIncomeNum";
+            this.monthlyIncomeNum.Size = new System.Drawing.Size(143, 22);
+            this.monthlyIncomeNum.TabIndex = 18;
             // 
             // contactTb
             // 
@@ -128,11 +145,41 @@
             this.addressTb.Size = new System.Drawing.Size(226, 22);
             this.addressTb.TabIndex = 8;
             // 
+            // employedChb
+            // 
+            this.employedChb.AutoSize = true;
+            this.employedChb.Location = new System.Drawing.Point(3, 230);
+            this.employedChb.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.employedChb.Name = "employedChb";
+            this.employedChb.Size = new System.Drawing.Size(18, 17);
+            this.employedChb.TabIndex = 19;
+            this.employedChb.UseVisualStyleBackColor = true;
+            // 
+            // fixedTermContractChb
+            // 
+            this.fixedTermContractChb.AutoSize = true;
+            this.fixedTermContractChb.Location = new System.Drawing.Point(3, 270);
+            this.fixedTermContractChb.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.fixedTermContractChb.Name = "fixedTermContractChb";
+            this.fixedTermContractChb.Size = new System.Drawing.Size(18, 17);
+            this.fixedTermContractChb.TabIndex = 20;
+            this.fixedTermContractChb.UseVisualStyleBackColor = true;
+            // 
+            // riskProfessionChb
+            // 
+            this.riskProfessionChb.AutoSize = true;
+            this.riskProfessionChb.Location = new System.Drawing.Point(3, 310);
+            this.riskProfessionChb.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.riskProfessionChb.Name = "riskProfessionChb";
+            this.riskProfessionChb.Size = new System.Drawing.Size(18, 17);
+            this.riskProfessionChb.TabIndex = 21;
+            this.riskProfessionChb.UseVisualStyleBackColor = true;
+            // 
             // clientTypeCb
             // 
             this.clientTypeCb.DisplayMember = "ClientType";
             this.clientTypeCb.FormattingEnabled = true;
-            this.clientTypeCb.Location = new System.Drawing.Point(584, 169);
+            this.clientTypeCb.Location = new System.Drawing.Point(469, 168);
             this.clientTypeCb.Name = "clientTypeCb";
             this.clientTypeCb.Size = new System.Drawing.Size(145, 24);
             this.clientTypeCb.TabIndex = 7;
@@ -142,63 +189,76 @@
             // firstNameLbl
             // 
             this.firstNameLbl.AutoSize = true;
+            this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstNameLbl.Location = new System.Drawing.Point(3, 0);
             this.firstNameLbl.Name = "firstNameLbl";
-            this.firstNameLbl.Size = new System.Drawing.Size(30, 17);
+            this.firstNameLbl.Size = new System.Drawing.Size(32, 18);
             this.firstNameLbl.TabIndex = 8;
             this.firstNameLbl.Text = "Ime";
             // 
             // lastNameLbl
             // 
             this.lastNameLbl.AutoSize = true;
-            this.lastNameLbl.Location = new System.Drawing.Point(3, 17);
+            this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLbl.Location = new System.Drawing.Point(3, 29);
+            this.lastNameLbl.Margin = new System.Windows.Forms.Padding(3, 11, 3, 0);
             this.lastNameLbl.Name = "lastNameLbl";
-            this.lastNameLbl.Size = new System.Drawing.Size(59, 17);
+            this.lastNameLbl.Size = new System.Drawing.Size(63, 18);
             this.lastNameLbl.TabIndex = 9;
             this.lastNameLbl.Text = "Prezime";
             // 
             // oibLbl
             // 
             this.oibLbl.AutoSize = true;
-            this.oibLbl.Location = new System.Drawing.Point(3, 51);
+            this.oibLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oibLbl.Location = new System.Drawing.Point(3, 86);
+            this.oibLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.oibLbl.Name = "oibLbl";
-            this.oibLbl.Size = new System.Drawing.Size(31, 17);
+            this.oibLbl.Size = new System.Drawing.Size(33, 18);
             this.oibLbl.TabIndex = 10;
             this.oibLbl.Text = "OIB";
             // 
             // emailLbl
             // 
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Location = new System.Drawing.Point(3, 68);
+            this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLbl.Location = new System.Drawing.Point(3, 114);
+            this.emailLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(42, 17);
+            this.emailLbl.Size = new System.Drawing.Size(45, 18);
             this.emailLbl.TabIndex = 11;
             this.emailLbl.Text = "Email";
             // 
             // monthlyIncomeLbl
             // 
             this.monthlyIncomeLbl.AutoSize = true;
-            this.monthlyIncomeLbl.Location = new System.Drawing.Point(3, 85);
+            this.monthlyIncomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthlyIncomeLbl.Location = new System.Drawing.Point(3, 142);
+            this.monthlyIncomeLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.monthlyIncomeLbl.Name = "monthlyIncomeLbl";
-            this.monthlyIncomeLbl.Size = new System.Drawing.Size(126, 17);
+            this.monthlyIncomeLbl.Size = new System.Drawing.Size(132, 18);
             this.monthlyIncomeLbl.TabIndex = 12;
             this.monthlyIncomeLbl.Text = "Mjesečna primanja";
             // 
             // contactLbl
             // 
             this.contactLbl.AutoSize = true;
-            this.contactLbl.Location = new System.Drawing.Point(3, 102);
+            this.contactLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactLbl.Location = new System.Drawing.Point(3, 170);
+            this.contactLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.contactLbl.Name = "contactLbl";
-            this.contactLbl.Size = new System.Drawing.Size(56, 17);
+            this.contactLbl.Size = new System.Drawing.Size(59, 18);
             this.contactLbl.TabIndex = 13;
             this.contactLbl.Text = "Kontakt";
             // 
             // addressLbl
             // 
             this.addressLbl.AutoSize = true;
-            this.addressLbl.Location = new System.Drawing.Point(3, 119);
+            this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLbl.Location = new System.Drawing.Point(3, 198);
+            this.addressLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.addressLbl.Name = "addressLbl";
-            this.addressLbl.Size = new System.Drawing.Size(53, 17);
+            this.addressLbl.Size = new System.Drawing.Size(54, 18);
             this.addressLbl.TabIndex = 14;
             this.addressLbl.Text = "Adresa";
             // 
@@ -213,25 +273,63 @@
             this.flowLayoutPanel2.Controls.Add(this.monthlyIncomeLbl);
             this.flowLayoutPanel2.Controls.Add(this.contactLbl);
             this.flowLayoutPanel2.Controls.Add(this.addressLbl);
+            this.flowLayoutPanel2.Controls.Add(this.employedLbl);
+            this.flowLayoutPanel2.Controls.Add(this.fixedTermContractLbl);
+            this.flowLayoutPanel2.Controls.Add(this.riskProfessionLbl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(83, 172);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 169);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(132, 149);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(157, 344);
             this.flowLayoutPanel2.TabIndex = 16;
             // 
             // companyLbl
             // 
             this.companyLbl.AutoSize = true;
-            this.companyLbl.Location = new System.Drawing.Point(3, 34);
+            this.companyLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companyLbl.Location = new System.Drawing.Point(3, 58);
+            this.companyLbl.Margin = new System.Windows.Forms.Padding(3, 11, 3, 0);
             this.companyLbl.Name = "companyLbl";
-            this.companyLbl.Size = new System.Drawing.Size(48, 17);
+            this.companyLbl.Size = new System.Drawing.Size(49, 18);
             this.companyLbl.TabIndex = 15;
             this.companyLbl.Text = "Tvrtka";
+            // 
+            // employedLbl
+            // 
+            this.employedLbl.AutoSize = true;
+            this.employedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employedLbl.Location = new System.Drawing.Point(3, 226);
+            this.employedLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.employedLbl.Name = "employedLbl";
+            this.employedLbl.Size = new System.Drawing.Size(69, 18);
+            this.employedLbl.TabIndex = 16;
+            this.employedLbl.Text = "Zaposlen";
+            // 
+            // fixedTermContractLbl
+            // 
+            this.fixedTermContractLbl.AutoSize = true;
+            this.fixedTermContractLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fixedTermContractLbl.Location = new System.Drawing.Point(3, 254);
+            this.fixedTermContractLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.fixedTermContractLbl.Name = "fixedTermContractLbl";
+            this.fixedTermContractLbl.Size = new System.Drawing.Size(87, 36);
+            this.fixedTermContractLbl.TabIndex = 17;
+            this.fixedTermContractLbl.Text = "Ugovor na neodređeno";
+            // 
+            // riskProfessionLbl
+            // 
+            this.riskProfessionLbl.AutoSize = true;
+            this.riskProfessionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.riskProfessionLbl.Location = new System.Drawing.Point(3, 300);
+            this.riskProfessionLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.riskProfessionLbl.Name = "riskProfessionLbl";
+            this.riskProfessionLbl.Size = new System.Drawing.Size(129, 36);
+            this.riskProfessionLbl.TabIndex = 18;
+            this.riskProfessionLbl.Text = "Financijski rizično zanimanje";
             // 
             // addClientBtn
             // 
             this.addClientBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addClientBtn.Location = new System.Drawing.Point(584, 223);
+            this.addClientBtn.Location = new System.Drawing.Point(469, 200);
             this.addClientBtn.Name = "addClientBtn";
             this.addClientBtn.Size = new System.Drawing.Size(145, 34);
             this.addClientBtn.TabIndex = 17;
@@ -239,11 +337,22 @@
             this.addClientBtn.UseVisualStyleBackColor = true;
             this.addClientBtn.Click += new System.EventHandler(this.addClientBtn_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MobiFinanceBank.Properties.Resources.clienthelper;
+            this.pictureBox3.Location = new System.Drawing.Point(913, 169);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(492, 344);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
+            // 
             // CreateClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 503);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.addClientBtn);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.clientTypeCb);
@@ -255,10 +364,13 @@
             this.Controls.SetChildIndex(this.clientTypeCb, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
             this.Controls.SetChildIndex(this.addClientBtn, 0);
+            this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyIncomeNum)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +383,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox oibTb;
         private System.Windows.Forms.TextBox emailTb;
-        private System.Windows.Forms.TextBox monthlyIncomeTb;
         private System.Windows.Forms.TextBox contactTb;
         private System.Windows.Forms.TextBox addressTb;
         private System.Windows.Forms.ComboBox clientTypeCb;
@@ -286,5 +397,13 @@
         private System.Windows.Forms.TextBox companyTb;
         private System.Windows.Forms.Label companyLbl;
         private System.Windows.Forms.Button addClientBtn;
+        private System.Windows.Forms.NumericUpDown monthlyIncomeNum;
+        private System.Windows.Forms.Label employedLbl;
+        private System.Windows.Forms.Label fixedTermContractLbl;
+        private System.Windows.Forms.Label riskProfessionLbl;
+        private System.Windows.Forms.CheckBox employedChb;
+        private System.Windows.Forms.CheckBox fixedTermContractChb;
+        private System.Windows.Forms.CheckBox riskProfessionChb;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

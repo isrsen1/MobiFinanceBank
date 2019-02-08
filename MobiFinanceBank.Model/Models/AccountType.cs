@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace MobiFinanceBank.Model.Models
 {
@@ -33,6 +32,22 @@ namespace MobiFinanceBank.Model.Models
         /// The account type name
         /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value indicating if account is in foreign currency
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if account is in foreign currency, otherwise <c>false</c>
+        /// </value>
+        public bool IsForeignCurrency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the currency
+        /// </summary>
+        /// <value>
+        /// The currency
+        /// </value>
+        public string Currency { get; set; }
 
         /// <summary>
         /// Gets or sets the account negative balance limit

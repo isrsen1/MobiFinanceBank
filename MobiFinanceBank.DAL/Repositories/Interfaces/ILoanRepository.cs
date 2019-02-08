@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.DAL.Repositories.Interfaces
@@ -33,6 +31,13 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="personId">The person identifier.</param>
         /// <returns>Returns account </returns>
         Loan Get(long personId);
+
+        /// <summary>
+        /// Get all loans by client
+        /// </summary>
+        /// <param name="clientId">Client id</param>
+        /// <returns>Collection of loans</returns>
+        IEnumerable<Loan> GetByClientId(int clientId);
 
         /// <summary>
         /// Edits the specified loan.

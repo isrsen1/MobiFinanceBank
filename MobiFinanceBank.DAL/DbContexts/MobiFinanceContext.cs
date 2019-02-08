@@ -232,6 +232,12 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .WithRequired(e => e.Employee)
                 .HasForeignKey(e => e.EmployeeId)
                 .WillCascadeOnDelete();
+
+            modelBuilder.Entity<LoanType>()
+                .HasMany(e => e.Loans)
+                .WithRequired(e => e.LoanType)
+                .HasForeignKey(e => e.LoanTypeId)
+                .WillCascadeOnDelete();
         }
     }
 }

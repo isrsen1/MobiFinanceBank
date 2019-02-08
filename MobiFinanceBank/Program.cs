@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.DbContexts;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
@@ -47,6 +44,8 @@ namespace MobiFinanceBank
             container.RegisterType<IOpeningBankServicesForm, OpeningBankServicesForm>();
             container.RegisterType<IOpenAccountBankServiceForm, OpenAccountBankServiceForm>();
             container.RegisterType<IOpenSavingAccountBankServiceForm, OpenSavingAccountBankServiceForm>();
+            container.RegisterType<IOpenLoanBankServiceForm, OpenLoanBankServiceForm>();
+            container.RegisterType<ILoanAssessment, LoanAssessment>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

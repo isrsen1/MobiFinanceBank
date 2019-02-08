@@ -50,11 +50,17 @@
   <ItemGroup>
     <Compile Include="EmployeeService.cs" />
     <Compile Include="ExchangeService.cs" />
+    <Compile Include="Interfaces\ILoanAssessment.cs" />
+    <Compile Include="LoanAssessment.cs" />
     <Compile Include="Interfaces\IExchangeService.cs" />
     <Compile Include="Interfaces\IEmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MobiFinanceBank.DAL\MobiFinanceBank.DAL.csproj">
+      <Project>{A3853D4A-166B-4897-AF5E-297AAF474DF9}</Project>
+      <Name>MobiFinanceBank.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MobiFinanceBank.Model\MobiFinanceBank.Model.csproj">
       <Project>{8C9BE3A6-9C4B-48B7-93A7-3263950BED47}</Project>
       <Name>MobiFinanceBank.Model</Name>

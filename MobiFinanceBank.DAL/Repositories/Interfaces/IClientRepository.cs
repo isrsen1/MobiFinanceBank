@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.DAL.Repositories.Interfaces
@@ -33,6 +30,15 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="personId">The person identifier.</param>
         /// <returns>Returns account </returns>
         Client Get(long personId);
+
+        /// <summary>
+        /// Get client by personal identification number
+        /// </summary>
+        /// <param name="OIB">Personal identification number</param>
+        /// <returns>
+        /// The client
+        /// </returns>
+        Client GetByOIB(string OIB);
 
         /// <summary>
         /// Edits the specified client.

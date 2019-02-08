@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
-using MobiFinanceBank.Vm;
 
 namespace MobiFinanceBank.Forms
 {
@@ -27,12 +20,20 @@ namespace MobiFinanceBank.Forms
         private string emailPlaceholder = "e.g. isrsen1@foi.hr";
 
         /// <summary>
+        /// Gets or sets the client
+        /// </summary>
+        /// <value>
+        /// Client to modify
+        /// </value>
+        public Client ClientToModify { get; set; }
+
+        /// <summary>
         /// Initializes new instance of create client form
         /// </summary>
         /// <param name="_clientTypeRepository">Client type repository</param>
         /// <param name="_clientRepository">Client repository</param>
         public CreateClientForm
-            (IClientTypeRepository _clientTypeRepository, 
+            (IClientTypeRepository _clientTypeRepository,
             IClientRepository _clientRepository)
         {
             InitializeComponent();
@@ -56,6 +57,36 @@ namespace MobiFinanceBank.Forms
             // Email text box placeholder
             emailTb.Text = emailPlaceholder;
             emailTb.ForeColor = Color.Gray;
+
+            if (ClientToModify != null)
+            {
+                firstNameTb.Text = ClientToModify.FirstName;
+                lastNameTb.Text = ClientToModify.LastName;
+                oibTb.Text = ClientToModify.OIB;
+                companyTb.Text = ClientToModify.CompanyName;
+                emailTb.Text = ClientToModify.Email;
+                monthlyIncomeNum.Value = (decimal)ClientToModify.Income;
+                contactTb.Text = ClientToModify.PhoneNumber;
+                addressTb.Text = ClientToModify.Address;
+                employedChb.Checked = ClientToModify.IsEmployed;
+                fixedTermContractChb.Checked = ClientToModify.IsFixedTermContract;
+                riskProfessionChb.Checked = ClientToModify.IsUnusualProfession;
+                addClientBtn.Text = @"Uredi klijenta";
+            }
+
+        }
+
+        /// <summary>
+        /// Hides base show method
+        /// </summary>
+        /// <param name="client">The client</param>
+        /// <param name="accountType">Account type</param>
+        public new void Show(Client client)
+        {
+            this.ClientToModify = client;
+
+            // Calls base show method
+            base.Show();
         }
 
         /// <summary>
@@ -68,6 +99,7 @@ namespace MobiFinanceBank.Forms
             // Remove text if placeholder
             if (emailTb.Text == emailPlaceholder)
             {
+                emailTb.ForeColor = Color.Black;
                 emailTb.Text = "";
             }
         }
@@ -82,6 +114,7 @@ namespace MobiFinanceBank.Forms
             // if empty, set placeholder
             if (emailTb.Text == "")
             {
+                emailTb.ForeColor = Color.Gray;
                 emailTb.Text = emailPlaceholder;
             }
         }
@@ -94,14 +127,22 @@ namespace MobiFinanceBank.Forms
         private void clientTypeCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Retrieve selected client type and set state
-            var clientType = (ClientType) clientTypeCb.SelectedItem;
-            var isPrivateClient = clientType.Name == "Privatni" ? true : false;
+            var clientType = (ClientType)clientTypeCb.SelectedItem;
+            var isPrivateClient = clientType.Name == Model.Enums.ClientType.Privatni.ToString() ? true : false;
 
             // Hide/show items based on client type
             firstNameLbl.Visible = isPrivateClient;
             firstNameTb.Visible = isPrivateClient;
             lastNameLbl.Visible = isPrivateClient;
             lastNameTb.Visible = isPrivateClient;
+
+            employedLbl.Visible = isPrivateClient;
+            employedChb.Visible = isPrivateClient;
+            fixedTermContractLbl.Visible = isPrivateClient;
+            fixedTermContractChb.Visible = isPrivateClient;
+            riskProfessionLbl.Visible = isPrivateClient;
+            riskProfessionChb.Visible = isPrivateClient;
+
             companyLbl.Visible = !isPrivateClient;
             companyTb.Visible = !isPrivateClient;
         }
@@ -116,19 +157,84 @@ namespace MobiFinanceBank.Forms
             // Retrieve selected client type
             var clientType = (ClientType)clientTypeCb.SelectedItem;
 
-            // Add client
-            this.clientRepository.Add(new Client()
+            var isValid = !string.IsNullOrEmpty(oibTb.Text)
+                          && !string.IsNullOrEmpty(emailTb.Text)
+                          && !string.IsNullOrEmpty(contactTb.Text)
+                          && !string.IsNullOrEmpty(addressTb.Text);
+
+            if (clientType.Name == Model.Enums.ClientType.Privatni.ToString())
+                isValid = isValid && !string.IsNullOrEmpty(firstNameTb.Text)
+                                  && !string.IsNullOrEmpty(lastNameTb.Text);
+            else
             {
-                FirstName = firstNameTb.Text,
-                LastName = lastNameTb.Text,
-                OIB = oibTb.Text,
-                CompanyName = companyTb.Text,
-                Email = emailTb.Text,
-                Income = double.Parse(monthlyIncomeTb.Text),
-                PhoneNumber = contactTb.Text,
-                Address = addressTb.Text,
-                ClientTypeId = clientType.Id
-            });
+                isValid = isValid && !string.IsNullOrEmpty(companyTb.Text);
+            }
+
+            if (!string.IsNullOrEmpty(oibTb.Text))
+            {
+                var clientByOib = this.clientRepository.GetByOIB(oibTb.Text);
+                if (clientByOib != null && ClientToModify == null)
+                {
+                    isValid = false;
+                    MessageBox.Show(@"Klijent s upisanim osobnim identifikacijskim brojem vec postoji");
+                }
+            }
+
+            if (isValid)
+            {
+                try
+                {
+                    var client = new Client()
+                    {
+                        FirstName = firstNameTb.Text,
+                        LastName = lastNameTb.Text,
+                        OIB = oibTb.Text,
+                        CompanyName = companyTb.Text,
+                        Email = emailTb.Text,
+                        Income = (double)monthlyIncomeNum.Value,
+                        PhoneNumber = contactTb.Text,
+                        Address = addressTb.Text,
+                        ClientTypeId = clientType.Id,
+                        IsEmployed = employedChb.Checked,
+                        IsFixedTermContract = fixedTermContractChb.Checked,
+                        IsUnusualProfession = riskProfessionChb.Checked
+                    };
+
+                    if (ClientToModify == null)
+                    {
+                        // Add client
+                        this.clientRepository.Add(client);
+                    }
+                    else
+                    {
+                        ClientToModify.FirstName = firstNameTb.Text;
+                        ClientToModify.LastName = lastNameTb.Text;
+                        ClientToModify.OIB = oibTb.Text;
+                        ClientToModify.CompanyName = companyTb.Text;
+                        ClientToModify.Email = emailTb.Text;
+                        ClientToModify.Income = (double)monthlyIncomeNum.Value;
+                        ClientToModify.PhoneNumber = contactTb.Text;
+                        ClientToModify.Address = addressTb.Text;
+                        ClientToModify.ClientTypeId = clientType.Id;
+                        ClientToModify.IsEmployed = employedChb.Checked;
+                        ClientToModify.IsFixedTermContract = fixedTermContractChb.Checked;
+                        ClientToModify.IsUnusualProfession = riskProfessionChb.Checked;
+
+                        this.clientRepository.Edit(ClientToModify);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(@"Neuspješan unos klijenta");
+                    return;
+                }
+
+                MessageBox.Show(@"Klijent uspješno kreiran");
+            }
+            else
+            {
+                MessageBox.Show(@"Morate unijeti sve podatke");
+            }
         }
     }
 }

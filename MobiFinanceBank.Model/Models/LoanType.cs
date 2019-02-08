@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MobiFinanceBank.Model.Models
 {
@@ -14,11 +11,20 @@ namespace MobiFinanceBank.Model.Models
     public class LoanType
     {
         /// <summary>
+        /// Initializes new loan
+        /// </summary>
+        public LoanType()
+        {
+            Loans = new HashSet<Loan>();
+        }
+
+        /// <summary>
         /// Gets or sets the loan type id
         /// </summary>
         /// <value>
         /// Loan type id
         /// </value>
+        [Key]
         public int Id { get; set; }
 
         /// <summary>
@@ -30,16 +36,35 @@ namespace MobiFinanceBank.Model.Models
         public string Name { get; set; }
         
         /// <summary>
-        /// Gets or sets the loan duration - unit - year
-        /// </summary>
-        /// <value>
-        /// Loan duration
-        /// </value>
-        public int LoanDuration { get; set; }
-
-        /// <summary>
         /// Gets or sets loan interest rate
         /// </summary>
+        /// <value>
+        /// Interest rate
+        /// </value>
         public double InterestRate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value indicating if account is in foreign currency
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if account is in foreign currency, otherwise <c>false</c>
+        /// </value>
+        public bool IsForeignCurrency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the currency
+        /// </summary>
+        /// <value>
+        /// The currency
+        /// </value>
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// Gets or sets repayment plans
+        /// </summary>
+        /// <value>
+        /// Repayment plans collection
+        /// </value>
+        public virtual ICollection<Loan> Loans { get; set; }
     }
 }

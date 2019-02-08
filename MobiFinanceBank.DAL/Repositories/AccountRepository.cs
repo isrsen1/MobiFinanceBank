@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Model.Models;
@@ -79,6 +77,26 @@ namespace MobiFinanceBank.DAL.Repositories
         public IEnumerable<Account> GetByClient(int clientId)
         {
             return this.context.Accounts.Where(acc => acc.ClientId == clientId).ToList();
+        }
+
+        /// <summary>
+        /// Get account by IBAN
+        /// </summary>
+        /// <param name="IBAN">IBAN</param>
+        /// <returns>Account</returns>
+        public Account GetByIBAN(string IBAN)
+        {
+            return this.context.Accounts.FirstOrDefault(ac => ac.IBAN == IBAN);
+        }
+
+        /// <summary>
+        /// Get account by card number
+        /// </summary>
+        /// <param name="IBAN">Card number</param>
+        /// <returns>Account</returns>
+        public Account GetByCardNumber(string cardNumber)
+        {
+            return this.context.Accounts.FirstOrDefault(ac => ac.CardNumber == cardNumber);
         }
 
         /// <summary>
