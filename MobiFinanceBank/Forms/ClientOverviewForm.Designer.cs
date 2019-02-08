@@ -29,30 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.clientOverviewDgv = new System.Windows.Forms.DataGridView();
-            this.clientTypeCb = new System.Windows.Forms.ComboBox();
-            this.bankServicesOverviewBtn = new System.Windows.Forms.Button();
-            this.openingBankServicesBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.firstNameFilterLbl = new System.Windows.Forms.Label();
-            this.firstNameFilterTb = new System.Windows.Forms.TextBox();
-            this.lastNameFilterLbl = new System.Windows.Forms.Label();
-            this.lastNameFilterTb = new System.Windows.Forms.TextBox();
-            this.companyFilterLb = new System.Windows.Forms.Label();
-            this.companyFilterTb = new System.Windows.Forms.TextBox();
-            this.applyFilterBtn = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,10 +56,26 @@
             this.accountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.savingAccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientTypeCb = new System.Windows.Forms.ComboBox();
+            this.bankServicesOverviewBtn = new System.Windows.Forms.Button();
+            this.openingBankServicesBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.firstNameFilterLbl = new System.Windows.Forms.Label();
+            this.firstNameFilterTb = new System.Windows.Forms.TextBox();
+            this.lastNameFilterLbl = new System.Windows.Forms.Label();
+            this.lastNameFilterTb = new System.Windows.Forms.TextBox();
+            this.companyFilterLb = new System.Windows.Forms.Label();
+            this.companyFilterTb = new System.Windows.Forms.TextBox();
+            this.applyFilterBtn = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.editClientButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // clientOverviewDgv
@@ -108,6 +109,141 @@
             this.clientOverviewDgv.RowTemplate.Height = 24;
             this.clientOverviewDgv.Size = new System.Drawing.Size(952, 320);
             this.clientOverviewDgv.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.firstNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.lastNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // companyNameDataGridViewTextBoxColumn
+            // 
+            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.companyNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            // 
+            // oIBDataGridViewTextBoxColumn
+            // 
+            this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.oIBDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
+            this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            this.phoneNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            // 
+            // incomeDataGridViewTextBoxColumn
+            // 
+            this.incomeDataGridViewTextBoxColumn.DataPropertyName = "Income";
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.incomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.incomeDataGridViewTextBoxColumn.HeaderText = "Income";
+            this.incomeDataGridViewTextBoxColumn.Name = "incomeDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.addressDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // isEmployedDataGridViewCheckBoxColumn
+            // 
+            this.isEmployedDataGridViewCheckBoxColumn.DataPropertyName = "IsEmployed";
+            this.isEmployedDataGridViewCheckBoxColumn.HeaderText = "IsEmployed";
+            this.isEmployedDataGridViewCheckBoxColumn.Name = "isEmployedDataGridViewCheckBoxColumn";
+            // 
+            // isFixedTermContractDataGridViewCheckBoxColumn
+            // 
+            this.isFixedTermContractDataGridViewCheckBoxColumn.DataPropertyName = "IsFixedTermContract";
+            this.isFixedTermContractDataGridViewCheckBoxColumn.HeaderText = "IsFixedTermContract";
+            this.isFixedTermContractDataGridViewCheckBoxColumn.Name = "isFixedTermContractDataGridViewCheckBoxColumn";
+            // 
+            // isUnusualProfessionDataGridViewCheckBoxColumn
+            // 
+            this.isUnusualProfessionDataGridViewCheckBoxColumn.DataPropertyName = "IsUnusualProfession";
+            this.isUnusualProfessionDataGridViewCheckBoxColumn.HeaderText = "IsUnusualProfession";
+            this.isUnusualProfessionDataGridViewCheckBoxColumn.Name = "isUnusualProfessionDataGridViewCheckBoxColumn";
+            // 
+            // clientTypeIdDataGridViewTextBoxColumn
+            // 
+            this.clientTypeIdDataGridViewTextBoxColumn.DataPropertyName = "ClientTypeId";
+            this.clientTypeIdDataGridViewTextBoxColumn.HeaderText = "ClientTypeId";
+            this.clientTypeIdDataGridViewTextBoxColumn.Name = "clientTypeIdDataGridViewTextBoxColumn";
+            this.clientTypeIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // balanceSheetsDataGridViewTextBoxColumn
+            // 
+            this.balanceSheetsDataGridViewTextBoxColumn.DataPropertyName = "BalanceSheets";
+            this.balanceSheetsDataGridViewTextBoxColumn.HeaderText = "BalanceSheets";
+            this.balanceSheetsDataGridViewTextBoxColumn.Name = "balanceSheetsDataGridViewTextBoxColumn";
+            this.balanceSheetsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // loansDataGridViewTextBoxColumn
+            // 
+            this.loansDataGridViewTextBoxColumn.DataPropertyName = "Loans";
+            this.loansDataGridViewTextBoxColumn.HeaderText = "Loans";
+            this.loansDataGridViewTextBoxColumn.Name = "loansDataGridViewTextBoxColumn";
+            this.loansDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // accountsDataGridViewTextBoxColumn
+            // 
+            this.accountsDataGridViewTextBoxColumn.DataPropertyName = "Accounts";
+            this.accountsDataGridViewTextBoxColumn.HeaderText = "Accounts";
+            this.accountsDataGridViewTextBoxColumn.Name = "accountsDataGridViewTextBoxColumn";
+            this.accountsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // savingAccountsDataGridViewTextBoxColumn
+            // 
+            this.savingAccountsDataGridViewTextBoxColumn.DataPropertyName = "SavingAccounts";
+            this.savingAccountsDataGridViewTextBoxColumn.HeaderText = "SavingAccounts";
+            this.savingAccountsDataGridViewTextBoxColumn.Name = "savingAccountsDataGridViewTextBoxColumn";
+            this.savingAccountsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clientTypeDataGridViewTextBoxColumn
+            // 
+            this.clientTypeDataGridViewTextBoxColumn.DataPropertyName = "ClientType";
+            this.clientTypeDataGridViewTextBoxColumn.HeaderText = "ClientType";
+            this.clientTypeDataGridViewTextBoxColumn.Name = "clientTypeDataGridViewTextBoxColumn";
+            this.clientTypeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.Client);
             // 
             // clientTypeCb
             // 
@@ -262,146 +398,23 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // clientBindingSource
+            // editClientButton
             // 
-            this.clientBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.Client);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.firstNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.lastNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // companyNameDataGridViewTextBoxColumn
-            // 
-            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.companyNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
-            // 
-            // oIBDataGridViewTextBoxColumn
-            // 
-            this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.oIBDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
-            this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.phoneNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            // 
-            // incomeDataGridViewTextBoxColumn
-            // 
-            this.incomeDataGridViewTextBoxColumn.DataPropertyName = "Income";
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.incomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.incomeDataGridViewTextBoxColumn.HeaderText = "Income";
-            this.incomeDataGridViewTextBoxColumn.Name = "incomeDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.addressDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // isEmployedDataGridViewCheckBoxColumn
-            // 
-            this.isEmployedDataGridViewCheckBoxColumn.DataPropertyName = "IsEmployed";
-            this.isEmployedDataGridViewCheckBoxColumn.HeaderText = "IsEmployed";
-            this.isEmployedDataGridViewCheckBoxColumn.Name = "isEmployedDataGridViewCheckBoxColumn";
-            // 
-            // isFixedTermContractDataGridViewCheckBoxColumn
-            // 
-            this.isFixedTermContractDataGridViewCheckBoxColumn.DataPropertyName = "IsFixedTermContract";
-            this.isFixedTermContractDataGridViewCheckBoxColumn.HeaderText = "IsFixedTermContract";
-            this.isFixedTermContractDataGridViewCheckBoxColumn.Name = "isFixedTermContractDataGridViewCheckBoxColumn";
-            // 
-            // isUnusualProfessionDataGridViewCheckBoxColumn
-            // 
-            this.isUnusualProfessionDataGridViewCheckBoxColumn.DataPropertyName = "IsUnusualProfession";
-            this.isUnusualProfessionDataGridViewCheckBoxColumn.HeaderText = "IsUnusualProfession";
-            this.isUnusualProfessionDataGridViewCheckBoxColumn.Name = "isUnusualProfessionDataGridViewCheckBoxColumn";
-            // 
-            // clientTypeIdDataGridViewTextBoxColumn
-            // 
-            this.clientTypeIdDataGridViewTextBoxColumn.DataPropertyName = "ClientTypeId";
-            this.clientTypeIdDataGridViewTextBoxColumn.HeaderText = "ClientTypeId";
-            this.clientTypeIdDataGridViewTextBoxColumn.Name = "clientTypeIdDataGridViewTextBoxColumn";
-            this.clientTypeIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // balanceSheetsDataGridViewTextBoxColumn
-            // 
-            this.balanceSheetsDataGridViewTextBoxColumn.DataPropertyName = "BalanceSheets";
-            this.balanceSheetsDataGridViewTextBoxColumn.HeaderText = "BalanceSheets";
-            this.balanceSheetsDataGridViewTextBoxColumn.Name = "balanceSheetsDataGridViewTextBoxColumn";
-            this.balanceSheetsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // loansDataGridViewTextBoxColumn
-            // 
-            this.loansDataGridViewTextBoxColumn.DataPropertyName = "Loans";
-            this.loansDataGridViewTextBoxColumn.HeaderText = "Loans";
-            this.loansDataGridViewTextBoxColumn.Name = "loansDataGridViewTextBoxColumn";
-            this.loansDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // accountsDataGridViewTextBoxColumn
-            // 
-            this.accountsDataGridViewTextBoxColumn.DataPropertyName = "Accounts";
-            this.accountsDataGridViewTextBoxColumn.HeaderText = "Accounts";
-            this.accountsDataGridViewTextBoxColumn.Name = "accountsDataGridViewTextBoxColumn";
-            this.accountsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // savingAccountsDataGridViewTextBoxColumn
-            // 
-            this.savingAccountsDataGridViewTextBoxColumn.DataPropertyName = "SavingAccounts";
-            this.savingAccountsDataGridViewTextBoxColumn.HeaderText = "SavingAccounts";
-            this.savingAccountsDataGridViewTextBoxColumn.Name = "savingAccountsDataGridViewTextBoxColumn";
-            this.savingAccountsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // clientTypeDataGridViewTextBoxColumn
-            // 
-            this.clientTypeDataGridViewTextBoxColumn.DataPropertyName = "ClientType";
-            this.clientTypeDataGridViewTextBoxColumn.HeaderText = "ClientType";
-            this.clientTypeDataGridViewTextBoxColumn.Name = "clientTypeDataGridViewTextBoxColumn";
-            this.clientTypeDataGridViewTextBoxColumn.Visible = false;
+            this.editClientButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.editClientButton.Location = new System.Drawing.Point(798, 532);
+            this.editClientButton.Name = "editClientButton";
+            this.editClientButton.Size = new System.Drawing.Size(116, 38);
+            this.editClientButton.TabIndex = 20;
+            this.editClientButton.Text = "Uredi klijenta";
+            this.editClientButton.UseVisualStyleBackColor = true;
+            this.editClientButton.Click += new System.EventHandler(this.editClientButton_Click);
             // 
             // ClientOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1417, 638);
+            this.Controls.Add(this.editClientButton);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label2);
@@ -422,11 +435,12 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.pictureBox3, 0);
+            this.Controls.SetChildIndex(this.editClientButton, 0);
             ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,5 +482,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn savingAccountsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource clientBindingSource;
+        private System.Windows.Forms.Button editClientButton;
     }
 }

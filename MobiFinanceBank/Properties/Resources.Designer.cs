@@ -163,6 +163,16 @@ namespace MobiFinanceBank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clienthelper {
+            get {
+                object obj = ResourceManager.GetObject("clienthelper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emp {
             get {
                 object obj = ResourceManager.GetObject("emp", resourceCulture);

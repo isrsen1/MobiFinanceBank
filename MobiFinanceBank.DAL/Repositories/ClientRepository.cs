@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Data.Entity;
 using System.Linq;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
@@ -45,10 +46,15 @@ namespace MobiFinanceBank.DAL.Repositories
             try
             {
                 var isPrivateClient = (ClientType) client.ClientTypeId == ClientType.Privatni ? true : false;
+
                 client.FirstName = isPrivateClient ? client.FirstName : "";
                 client.LastName = isPrivateClient ? client.LastName : "";
                 client.CompanyName = !isPrivateClient ? client.CompanyName : "";
-                
+
+                client.IsEmployed = isPrivateClient && client.IsEmployed;
+                client.IsFixedTermContract = isPrivateClient && client.IsFixedTermContract;
+                client.IsUnusualProfession = isPrivateClient && client.IsUnusualProfession;
+
                 // Adds client instance to database 
                 this.context.Clients.Add(client);
 
@@ -99,11 +105,27 @@ namespace MobiFinanceBank.DAL.Repositories
             if (client == null)
                 throw new ArgumentNullException(nameof(client), "Client is not instantiated");
 
+            var clientToModify = this.Get(client.Id);
+
+            
+            if (clientToModify == null)
+                throw new NullReferenceException("Client not found in database");
+
+            clientToModify.FirstName = client.FirstName;
+            clientToModify.LastName = client.LastName;
+            clientToModify.OIB = client.OIB;
+            clientToModify.CompanyName = client.CompanyName;
+            clientToModify.Email = client.Email;
+            clientToModify.Income = client.Income;
+            clientToModify.PhoneNumber = client.PhoneNumber;
+            clientToModify.Address = client.Address;
+            clientToModify.ClientTypeId = client.ClientTypeId;
+            clientToModify.IsEmployed = client.IsEmployed;
+            clientToModify.IsFixedTermContract = client.IsFixedTermContract;
+            clientToModify.IsUnusualProfession = client.IsUnusualProfession;
+            
             try
             {
-                // Modifies client
-                this.context.Entry(client).State = EntityState.Modified;
-
                 // Saves changes
                 if (shouldSaveChanges)
                     this.SaveChanges();

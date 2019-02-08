@@ -44,7 +44,7 @@ namespace MobiFinanceBank.Forms
 
         private void btnZaposlenici_Click(object sender, EventArgs e)
         {
-            this._createClientForm.Show();
+            this._createClientForm.Show(null);
         }
 
         private void btnPregledKlijenata_Click(object sender, EventArgs e)
