@@ -36,7 +36,17 @@ namespace MobiFinanceBank.VmService
         /// <returns></returns>
         public IEnumerable<Employee> GetLoginData(LoginEmployeeData loginEmployee)
         {
-            return null;
+            try
+            {
+               // var result = LoginService.CheckCredentials(loginEmployee);
+               
+
+                return null;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

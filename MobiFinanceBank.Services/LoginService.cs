@@ -1,4 +1,5 @@
-﻿using MobiFinanceBank.Services.Interfaces;
+﻿using MobiFinanceBank.Model.Models;
+using MobiFinanceBank.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ namespace MobiFinanceBank.Services
 {
     public class LoginService : ILoginService
     {
-
+        public IEnumerable<Employee> CheckCredentials(string username, string password)
+        {
+            return null;
+        }
     }
 }

@@ -25,8 +25,11 @@ namespace MobiFinanceBank.Forms
     /// <seealso cref="TemplateForm"/>
     public partial class LoginForm : TemplateForm , ILoginForm
     {
+        private LoginEmployeeData data;
         private IMenuForm menuForm;
         private ILoginVmService loginVmService;
+        
+
 
         /// <summary>
         /// Initializes new instance of login form
@@ -37,11 +40,21 @@ namespace MobiFinanceBank.Forms
             InitializeComponent();
             this.menuForm = _menuForm;
             this.loginVmService = _loginVmService;
+            data = new LoginEmployeeData();
         }
         
         private void button1_Click(object sender, EventArgs e)
         {
             this.menuForm.Show();
+        }
+
+        private void btnUnesi_Click(object sender, EventArgs e)
+        {
+            
+            data.Username = userNameTxt.Text;
+            data.Password = passwordTxt.Text;
+            var result = loginVmService.GetLoginData(data);
+
         }
     }
 }
