@@ -15,6 +15,6 @@ namespace MobiFinanceBank.VmService.Interfaces
         /// </summary>
         /// <param name="loginEmployee">Login Employee</param>
         /// <returns> Login data </returns>
-        IEnumerable<Employee> GetLoginData(LoginEmployeeData loginEmployee);
+        Employee GetLoginData(LoginEmployeeData loginEmployee);
     }
 }

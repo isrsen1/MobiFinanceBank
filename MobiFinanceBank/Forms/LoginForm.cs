@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Enums;
+using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
@@ -54,6 +55,8 @@ namespace MobiFinanceBank.Forms
             data.Username = userNameTxt.Text;
             data.Password = passwordTxt.Text;
             var result = loginVmService.GetLoginData(data);
+           
+            
 
         }
     }

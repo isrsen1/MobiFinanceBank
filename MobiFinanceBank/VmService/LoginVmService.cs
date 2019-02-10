@@ -34,7 +34,7 @@ namespace MobiFinanceBank.VmService
         /// </summary>
         /// <param name="loginEmployee">Login information of the employee </param>
         /// <returns></returns>
-        public IEnumerable<Employee> GetLoginData(LoginEmployeeData loginEmployee)
+        public Employee GetLoginData(LoginEmployeeData loginEmployee)
         {
             try
             {

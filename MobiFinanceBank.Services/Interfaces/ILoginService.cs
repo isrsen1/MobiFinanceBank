@@ -7,11 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+ 
 namespace MobiFinanceBank.Services.Interfaces
 {
     public interface ILoginService
     {
+        
         /// <summary>
         /// Get currency exchange rates
         /// </summary>
@@ -19,6 +20,7 @@ namespace MobiFinanceBank.Services.Interfaces
         /// <returns>
         /// JSON result
         /// </returns>
-         IEnumerable<Employee> CheckCredentials(string username, string password);
+        /// 
+         Employee CheckCredentials(string username, string password);
     }
 }

@@ -44,5 +44,9 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// Saves the context changes.
         /// </summary>
         void SaveChanges();
+        /// <summary>
+        /// Gets employee by name.
+        /// </summary>
+        Employee GetEmployeeByName(string username);
     }
 }
