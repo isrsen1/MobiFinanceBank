@@ -26,6 +26,7 @@ namespace MobiFinanceBank
             container.RegisterType<ILoginForm, LoginForm>();
             container.RegisterType<ILoginVmService, LoginVmService>();
             container.RegisterType<ILoginService, LoginService>();
+            container.RegisterType<IEmployeeRepository, EmployeeRepository>();
             container.RegisterType<IMenuForm, MenuForm>();
             container.RegisterType<IExchangeForm, ExchangeForm>();
             container.RegisterType<IExchangeService, ExchangeService>();

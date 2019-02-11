@@ -11,7 +11,7 @@ namespace MobiFinanceBank.DAL.Repositories
     /// </summary>
     public class ClientTypeRepository: IClientTypeRepository
     {
-        private IMobiFinanceContext context;
+        private readonly IMobiFinanceContext context;
 
         public ClientTypeRepository(IMobiFinanceContext _context)
         {

@@ -27,11 +27,13 @@ namespace MobiFinanceBank.Model.Models
         /// Clients id
         /// </value>
         public int Id { get; set; }
-        
+
         /// <summary>
         /// Gets or sets clients first name
         /// </summary>
+        /// <value>
         /// Clients first name
+        /// </value>
         public string FirstName { get; set; }
         
         /// <summary>

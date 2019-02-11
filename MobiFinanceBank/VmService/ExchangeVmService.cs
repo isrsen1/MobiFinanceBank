@@ -13,13 +13,7 @@ namespace MobiFinanceBank.VmService
     /// </summary>
     public class ExchangeVmService: IExchangeVmService
     {
-        /// <summary>
-        /// Gets or sets the exchange service
-        /// </summary>
-        /// <value>
-        /// The exchange service
-        /// </value>
-        public IExchangeService ExchangeService { get; set; }
+        private readonly IExchangeService exchangeService;
 
         /// <summary>
         /// Initializes new instance of exchange view model service
@@ -27,7 +21,7 @@ namespace MobiFinanceBank.VmService
         /// <param name="_exchangeService">Exchange service</param>
         public ExchangeVmService(IExchangeService _exchangeService)
         {
-            this.ExchangeService = _exchangeService;
+            this.exchangeService = _exchangeService;
         }
 
         /// <summary>
@@ -42,7 +36,7 @@ namespace MobiFinanceBank.VmService
             try
             {
                 // Retrieve values from service
-                var result = this.ExchangeService.GetCurrencyExchangeRates(currencies, fromDate, toDate);
+                var result = this.exchangeService.GetCurrencyExchangeRates(currencies, fromDate, toDate);
                 var resultJson = JsonConvert.DeserializeObject<IEnumerable<CurrencyExchangeRate>>(result);
 
                 return resultJson;

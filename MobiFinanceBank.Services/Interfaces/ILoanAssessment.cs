@@ -19,13 +19,5 @@ namespace MobiFinanceBank.Services.Interfaces
         /// Decimal number between 0 and 1 
         /// </returns>
         double CalculateLoanAssessmentForPrivateClients(long clientId, Loan requiredLoan);
-
-        /// <summary>
-        /// Calculates loan assessment for business clients
-        /// </summary>
-        /// <returns>
-        /// Decimal number between 0 and 1 
-        /// </returns>
-        double CalculateLoanAssessmentForBusinessClients(long clientId);
     }
 }
