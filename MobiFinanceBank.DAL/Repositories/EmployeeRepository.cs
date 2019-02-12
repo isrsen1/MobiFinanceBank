@@ -14,6 +14,10 @@ namespace MobiFinanceBank.DAL.Repositories
     public class EmployeeRepository: IEmployeeRepository
     {
         private readonly IMobiFinanceContext context;
+        public EmployeeRepository(IMobiFinanceContext _context)
+        {
+            this.context = _context;
+        }
 
         /// <summary>
         /// Adds the specified employee.
@@ -21,6 +25,7 @@ namespace MobiFinanceBank.DAL.Repositories
         /// <param name="employee">Employee</param>
         /// <param name="shouldSaveChanges">if set to <c>true</c> it will save changes to db.</param>
         /// <returns>Returns newly created employee.</returns>
+       
         public Employee Add(Employee employee, bool shouldSaveChanges = true)
         {
             // Checks if employee is instantiated
@@ -110,6 +115,14 @@ namespace MobiFinanceBank.DAL.Repositories
                 }
             }
         }
+        /// <summary>
+        /// Returns Employee by username attribute.
+        /// </summary>
+        public Employee GetEmployeeByName(string username)
+        { 
+            return this.context.Employees.FirstOrDefault(employee => employee.UserName == username);
+
+        }
 
         /// <summary>
         /// Saves the context changes.
@@ -118,11 +131,6 @@ namespace MobiFinanceBank.DAL.Repositories
         {
             this.context.SaveChanges();
         }
-        public Employee GetEmployeeByName(string username)
-        {
-            
-            return this.context.Employees.FirstOrDefault(employee => employee.UserName == username);
-            
-        }
+
     }
 }

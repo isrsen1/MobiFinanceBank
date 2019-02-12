@@ -41,12 +41,15 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         void Remove(long employeeId, bool shouldSaveChanges = true);
 
         /// <summary>
-        /// Saves the context changes.
-        /// </summary>
-        void SaveChanges();
-        /// <summary>
         /// Gets employee by name.
         /// </summary>
         Employee GetEmployeeByName(string username);
+
+        /// <summary>
+        /// Saves the context changes.
+        /// </summary>
+        void SaveChanges();
+        
+        
     }
 }

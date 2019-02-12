@@ -8,33 +8,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MobiFinanceBank.Services
 {
     public class LoginService : ILoginService
     {
-        private IEmployeeRepository employeeRepository { get; set; }
-        public Employee employee;
+        private readonly IEmployeeRepository employeeRepository;
         private HashedPassword hash;
         
 
         public LoginService(IEmployeeRepository _employeeRepository)
-        {
-            this.employeeRepository = _employeeRepository;
-            employee = new Employee();
+        {          
+              this.employeeRepository = _employeeRepository;
             
-
         }
         public Employee CheckCredentials(string username, string password)
-        {
-            employee = employeeRepository.GetEmployeeByName(username);
-            hash = HashedPassword.New(password);
+        {         
             
+            var employee = this.employeeRepository.GetEmployeeByName(username);
+            //hash = employee.hashPassword.hash;
+            //&& hash.Check(password)
+            MessageBox.Show(employee.hashPassword);
 
-            if (employee != null)
+            if (employee != null && employee.hashPassword==password)
             {
-                
+                MessageBox.Show("prošlo");
                 return employee;
+                
             }
             else return null;
             

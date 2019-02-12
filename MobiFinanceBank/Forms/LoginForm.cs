@@ -39,7 +39,7 @@ namespace MobiFinanceBank.Forms
         public LoginForm(IMenuForm _menuForm, ILoginVmService _loginVmService)
         {
             InitializeComponent();
-            this.menuForm = _menuForm;
+            //this.menuForm = _menuForm;
             this.loginVmService = _loginVmService;
             data = new LoginEmployeeData();
         }
@@ -55,6 +55,17 @@ namespace MobiFinanceBank.Forms
             data.Username = userNameTxt.Text;
             data.Password = passwordTxt.Text;
             var result = loginVmService.GetLoginData(data);
+            try {
+                if (result != null)
+                {
+                    menuForm = new MenuForm(null,null,null,null,result);
+                    this.menuForm.Show();
+                }
+            }
+            catch(Exception er) {
+                throw;
+             }
+            
            
             
 

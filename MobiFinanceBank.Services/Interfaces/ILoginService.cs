@@ -21,6 +21,6 @@ namespace MobiFinanceBank.Services.Interfaces
         /// JSON result
         /// </returns>
         /// 
-         Employee CheckCredentials(string username, string password);
+         Employee CheckCredentials(string userName, string passWord);
     }
 }

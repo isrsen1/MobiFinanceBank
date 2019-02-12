@@ -38,10 +38,12 @@ namespace MobiFinanceBank.VmService
         {
             try
             {
-               // var result = LoginService.CheckCredentials(loginEmployee);
+                string userName = loginEmployee.Username;
+                string password = loginEmployee.Password;
+               var result = LoginService.CheckCredentials(userName,password);
                
 
-                return null;
+                return result;
             }
             catch (Exception e)
             {
