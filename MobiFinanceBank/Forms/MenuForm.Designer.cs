@@ -148,11 +148,12 @@
             // btnAdminPanel
             // 
             this.btnAdminPanel.Enabled = false;
+            this.btnAdminPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdminPanel.Location = new System.Drawing.Point(953, 160);
             this.btnAdminPanel.Name = "btnAdminPanel";
             this.btnAdminPanel.Size = new System.Drawing.Size(75, 23);
             this.btnAdminPanel.TabIndex = 18;
-            this.btnAdminPanel.Text = "button1";
+            this.btnAdminPanel.Text = "Admin Panel";
             this.btnAdminPanel.UseVisualStyleBackColor = true;
             // 
             // MenuForm

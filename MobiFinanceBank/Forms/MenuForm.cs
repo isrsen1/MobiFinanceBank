@@ -38,14 +38,19 @@ namespace MobiFinanceBank.Forms
             this._createClientForm = createClientForm;
             this._clientOverviewForm = clientOverviewForm;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
+
+
+        }
+        public void GetEmployee(Employee _employee)
+        {
+            
             this.employee = _employee;
             lblImePrezime.Text = employee.FirstName + " " + employee.LastName;
             lblPrava.Text = employee.EmployeeTypeId.ToString();
-            if(employee.EmployeeTypeId==2)
+            if (employee.EmployeeTypeId == 2)
             {
-                btnAdminPanel.Enabled=true;
+                btnAdminPanel.Enabled = true;
             }
-
         }
         
         private void btnMjenjacnica_Click(object sender, EventArgs e)

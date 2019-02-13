@@ -27,6 +27,7 @@ namespace MobiFinanceBank.Forms
     public partial class LoginForm : TemplateForm , ILoginForm
     {
         private LoginEmployeeData data;
+        
         private IMenuForm menuForm;
         private ILoginVmService loginVmService;
         
@@ -39,7 +40,7 @@ namespace MobiFinanceBank.Forms
         public LoginForm(IMenuForm _menuForm, ILoginVmService _loginVmService)
         {
             InitializeComponent();
-            //this.menuForm = _menuForm;
+            this.menuForm = _menuForm;
             this.loginVmService = _loginVmService;
             data = new LoginEmployeeData();
         }
@@ -58,7 +59,7 @@ namespace MobiFinanceBank.Forms
             try {
                 if (result != null)
                 {
-                    menuForm = new MenuForm(null,null,null,null,result);
+                    menuForm.GetEmployee(result);
                     this.menuForm.Show();
                 }
             }

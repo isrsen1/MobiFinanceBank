@@ -89,6 +89,7 @@
             // 
             // btnUnesi
             // 
+            this.btnUnesi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUnesi.Location = new System.Drawing.Point(652, 240);
             this.btnUnesi.Name = "btnUnesi";
             this.btnUnesi.Size = new System.Drawing.Size(75, 23);

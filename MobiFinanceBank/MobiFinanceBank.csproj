@@ -77,6 +77,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClientOverviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     <Compile Include="Vm\LoanOverviewFilter.cs" />
     <Compile Include="Vm\LoginEmployeeData.cs" />
     <Compile Include="Vm\SavingOverviewFilter.cs" />
+    <EmbeddedResource Include="Forms\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientOverviewForm.resx">
       <DependentUpon>ClientOverviewForm.cs</DependentUpon>
     </EmbeddedResource>
