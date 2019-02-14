@@ -1,5 +1,6 @@
 ﻿using System;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
 
 namespace MobiFinanceBank.Forms
@@ -11,6 +12,7 @@ namespace MobiFinanceBank.Forms
     /// <seealso cref="IMenuForm"/>
     public partial class MenuForm : TemplateForm, IMenuForm
     {
+        private Employee employee;
         private readonly IExchangeForm exchangeForm;
         private readonly ICreateClientForm _createClientForm;
         private readonly IClientOverviewForm _clientOverviewForm;
@@ -27,7 +29,8 @@ namespace MobiFinanceBank.Forms
             (IExchangeForm _exchangeForm, 
             ICreateClientForm createClientForm, 
             IClientOverviewForm clientOverviewForm,
-            IBankServicesOverviewForm bankServicesOverviewForm)
+            IBankServicesOverviewForm bankServicesOverviewForm,
+            Employee _employee)
         {
             InitializeComponent();
 
@@ -35,6 +38,19 @@ namespace MobiFinanceBank.Forms
             this._createClientForm = createClientForm;
             this._clientOverviewForm = clientOverviewForm;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
+
+
+        }
+        public void GetEmployee(Employee _employee)
+        {
+            
+            this.employee = _employee;
+            lblImePrezime.Text = employee.FirstName + " " + employee.LastName;
+            lblPrava.Text = employee.EmployeeType.Name;
+            if (employee.EmployeeTypeId == 2)
+            {
+                btnAdminPanel.Enabled = true;
+            }
         }
         
         private void btnMjenjacnica_Click(object sender, EventArgs e)

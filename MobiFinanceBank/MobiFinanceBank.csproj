@@ -57,6 +57,12 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.9.2\lib\net46\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.9.2\lib\net46\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -77,6 +83,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClientOverviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,7 @@
     <Compile Include="Forms\ExchangeForm.Designer.cs">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Interfaces\IAdminPanel.cs" />
     <Compile Include="Forms\Interfaces\IClientOverviewForm.cs" />
     <Compile Include="Forms\Interfaces\ICreateClientForm.cs" />
     <Compile Include="Forms\Interfaces\IExchangeForm.cs" />
@@ -162,12 +175,18 @@
     <Compile Include="VmService\Interfaces\IExchangeVmService.cs" />
     <Compile Include="VmService\Interfaces\IBankServicesVmService.cs" />
     <Compile Include="VmService\BankServicesVmService.cs" />
+    <Compile Include="VmService\Interfaces\ILoginVmService.cs" />
+    <Compile Include="VmService\LoginVmService.cs" />
     <Compile Include="Vm\AccountOverviewFilter.cs" />
     <Compile Include="Vm\ClientOverviewFilter.cs" />
     <Compile Include="Vm\ClientViewModel.cs" />
     <Compile Include="Vm\CurrencyExchangeRate.cs" />
     <Compile Include="Vm\LoanOverviewFilter.cs" />
+    <Compile Include="Vm\LoginEmployeeData.cs" />
     <Compile Include="Vm\SavingOverviewFilter.cs" />
+    <EmbeddedResource Include="Forms\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientOverviewForm.resx">
       <DependentUpon>ClientOverviewForm.cs</DependentUpon>
     </EmbeddedResource>

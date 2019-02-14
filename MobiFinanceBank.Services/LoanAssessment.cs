@@ -63,10 +63,5 @@ namespace MobiFinanceBank.Services
 
             return assessment/3;
         }
-
-        public double CalculateLoanAssessmentForBusinessClients(long clientId)
-        {
-            return 0;
-        }
     }
 }

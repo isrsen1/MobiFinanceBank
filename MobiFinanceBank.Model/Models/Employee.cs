@@ -41,7 +41,13 @@
         /// Employee's last name
         /// </value>
         public string LastName { get; set; }
-        
+        /// <summary>
+        /// Gets or sets OIB
+        /// </summary>
+        /// <value>
+        /// Personal Identity Number
+        /// </value>
+        public int OIB { get; set; }
         /// <summary>
         /// Gets or sets employee's email
         /// </summary>
@@ -81,7 +87,14 @@
         /// Employee's type id
         /// </value>
         public int EmployeeTypeId { get; set; }
-        
+        /// <summary>
+        /// Gets or sets employee's hash password ID
+        /// </summary>
+        /// <value>
+        /// Employee's hash password ID
+        /// </value>
+        public int HashPasswordId { get; set; }
+
         /// <summary>
         /// Gets or sets employee's password
         /// </summary>
@@ -105,7 +118,14 @@
         /// Employee's issued saving accounts
         /// </value>
         public virtual ICollection<SavingAccount> SavingAccounts { get; set; }
-
+        /// <summary>
+        /// Gets or sets the hashed password
+        /// </summary>
+        /// <value>
+        /// Employee's hashed password
+        /// </value>
+        [ForeignKey("HashPasswordId")]
+        public virtual HashedPassword HashedPassword { get; set; }
         /// <summary>
         /// Gets or sets employee's type
         /// </summary>
@@ -114,5 +134,6 @@
         /// </value>
         [ForeignKey("EmployeeTypeId")]
         public virtual EmployeeType EmployeeType { get; set; }
+        
     }
 }

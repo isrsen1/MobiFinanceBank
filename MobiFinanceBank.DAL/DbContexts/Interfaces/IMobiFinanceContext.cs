@@ -18,6 +18,7 @@ namespace MobiFinanceBank.DAL.DbContexts.Interfaces
         DbSet<SavingAccount> SavingAccounts { get; set; }
         DbSet<sysdiagram> sysdiagrams { get; set; }
         DbSet<EmployeeType> EmployeeTypes { get; set; }
+        DbSet<HashedPassword> HashedPasswords { get; set; }
         DbSet<AccountType> AccountTypes { get; set; }
         DbSet<SavingAccountType> SavingAccountTypes { get; set; }
         DbSet<Employee> Employees { get; set; }
