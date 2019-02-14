@@ -101,6 +101,7 @@
     <Compile Include="Forms\ExchangeForm.Designer.cs">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Interfaces\IAdminPanel.cs" />
     <Compile Include="Forms\Interfaces\IClientOverviewForm.cs" />
     <Compile Include="Forms\Interfaces\ICreateClientForm.cs" />
     <Compile Include="Forms\Interfaces\IExchangeForm.cs" />

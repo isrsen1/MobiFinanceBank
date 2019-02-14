@@ -46,7 +46,7 @@ namespace MobiFinanceBank.Forms
             
             this.employee = _employee;
             lblImePrezime.Text = employee.FirstName + " " + employee.LastName;
-            lblPrava.Text = employee.EmployeeTypeId.ToString();
+            lblPrava.Text = employee.EmployeeType.Name;
             if (employee.EmployeeTypeId == 2)
             {
                 btnAdminPanel.Enabled = true;

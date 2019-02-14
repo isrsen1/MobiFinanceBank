@@ -15,7 +15,7 @@ namespace MobiFinanceBank.Services
     public class LoginService : ILoginService
     {
         private readonly IEmployeeRepository employeeRepository;
-        private HashedPassword hash;
+        private HashLibrary.HashedPassword hash;
         
 
         public LoginService(IEmployeeRepository _employeeRepository)
@@ -27,6 +27,7 @@ namespace MobiFinanceBank.Services
         {         
             
             var employee = this.employeeRepository.GetEmployeeByName(username);
+            
             //hash = employee.hashPassword.hash;
             //&& hash.Check(password)
             MessageBox.Show(employee.hashPassword);

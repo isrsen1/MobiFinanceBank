@@ -1,4 +1,5 @@
-﻿using MobiFinanceBank.Templates;
+﻿using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Templates;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,12 @@ using System.Windows.Forms;
 
 namespace MobiFinanceBank.Forms
 {
-    public partial class AdminPanel : TemplateForm 
+    /// <summary>
+    /// Menu form
+    /// </summary>
+    /// <seealso cref="TemplateForm"/>
+    /// <seealso cref="IMenuPanel"/>
+    public partial class AdminPanel : TemplateForm, IAdminPanel
     {
         public AdminPanel()
         {

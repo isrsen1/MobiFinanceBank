@@ -124,6 +124,10 @@
     <Compile Include="Migrations\201902071421524_MigratingLoanDurationToLoan.Designer.cs">
       <DependentUpon>201902071421524_MigratingLoanDurationToLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902140102022_HashPasswordMigration.cs" />
+    <Compile Include="Migrations\201902140102022_HashPasswordMigration.Designer.cs">
+      <DependentUpon>201902140102022_HashPasswordMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -210,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902071421524_MigratingLoanDurationToLoan.resx">
       <DependentUpon>201902071421524_MigratingLoanDurationToLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902140102022_HashPasswordMigration.resx">
+      <DependentUpon>201902140102022_HashPasswordMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
