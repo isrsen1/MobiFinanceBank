@@ -93,7 +93,7 @@
         /// <value>
         /// Employee's hash password ID
         /// </value>
-        public int HashPasswordId { get; set; }
+        public string PasswordSalt { get; set; }
 
         /// <summary>
         /// Gets or sets employee's password
@@ -101,7 +101,7 @@
         /// <value>
         /// Employee's password
         /// </value>
-        public string hashPassword { get; set; }
+        public string PasswordHash { get; set; }
 
         /// <summary>
         /// Gets or sets employee's issued loans
@@ -118,14 +118,6 @@
         /// Employee's issued saving accounts
         /// </value>
         public virtual ICollection<SavingAccount> SavingAccounts { get; set; }
-        /// <summary>
-        /// Gets or sets the hashed password
-        /// </summary>
-        /// <value>
-        /// Employee's hashed password
-        /// </value>
-        [ForeignKey("HashPasswordId")]
-        public virtual HashedPassword HashedPassword { get; set; }
         /// <summary>
         /// Gets or sets employee's type
         /// </summary>

@@ -17,6 +17,7 @@ namespace MobiFinanceBank.Forms
         private readonly ICreateClientForm _createClientForm;
         private readonly IClientOverviewForm _clientOverviewForm;
         private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
+        private readonly IAdminPanel _adminPanel;
 
         /// <summary>
         /// Initializes new instance of menu form
@@ -30,6 +31,7 @@ namespace MobiFinanceBank.Forms
             ICreateClientForm createClientForm, 
             IClientOverviewForm clientOverviewForm,
             IBankServicesOverviewForm bankServicesOverviewForm,
+            IAdminPanel adminPanel,
             Employee _employee)
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace MobiFinanceBank.Forms
             this._createClientForm = createClientForm;
             this._clientOverviewForm = clientOverviewForm;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
+            this._adminPanel = adminPanel;
 
 
         }
@@ -70,7 +73,13 @@ namespace MobiFinanceBank.Forms
 
         private void btnOtvaranjeUsluga_Click(object sender, EventArgs e)
         {
+            
             this._bankServicesOverviewForm.Show(null);
+        }
+
+        private void btnAdminPanel_Click(object sender, EventArgs e)
+        {
+            this._adminPanel.Show();
         }
     }
 }

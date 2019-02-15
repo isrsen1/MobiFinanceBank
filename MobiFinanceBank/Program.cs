@@ -28,6 +28,7 @@ namespace MobiFinanceBank
             container.RegisterType<ILoginService, LoginService>();
             container.RegisterType<IEmployeeRepository, EmployeeRepository>();
             container.RegisterType<IMenuForm, MenuForm>();
+            container.RegisterType<IAdminPanel, AdminPanel>();
             container.RegisterType<IExchangeForm, ExchangeForm>();
             container.RegisterType<IExchangeService, ExchangeService>();
             container.RegisterType<IExchangeVmService, ExchangeVmService>();
@@ -40,7 +41,7 @@ namespace MobiFinanceBank
             container.RegisterType<IBankServicesVmService, BankServicesVmService>();
             container.RegisterType<IBankServicesOverviewForm, BankServicesOverviewForm>();
             container.RegisterType<IAccountRepository, AccountRepository>();
-            container.RegisterType<ISavingAccountRepository, SavingAccountRepository>();
+            container.RegisterType<ISavingAccountRepository, SavingAccountRepository>();          
             container.RegisterType<ILoanRepository, LoanRepository>();
             container.RegisterType<ILoanTypeRepository, LoanTypeRepository>();
             container.RegisterType<ISavingAccountTypeRepository, SavingAccountTypeRepository>();

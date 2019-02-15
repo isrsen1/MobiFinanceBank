@@ -34,7 +34,7 @@ namespace MobiFinanceBank.DAL.DbContexts
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual  DbSet<ClientType> ClientTypes { get; set; }
         public virtual DbSet<LoanType> LoanTypes { get; set; }
-        public virtual DbSet<HashedPassword> HashedPasswords { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -219,7 +219,7 @@ namespace MobiFinanceBank.DAL.DbContexts
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.hashPassword)
+                .Property(e => e.PasswordHash)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()

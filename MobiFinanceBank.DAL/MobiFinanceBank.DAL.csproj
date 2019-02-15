@@ -128,6 +128,14 @@
     <Compile Include="Migrations\201902140102022_HashPasswordMigration.Designer.cs">
       <DependentUpon>201902140102022_HashPasswordMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902151618188_HashPassword3NF.cs" />
+    <Compile Include="Migrations\201902151618188_HashPassword3NF.Designer.cs">
+      <DependentUpon>201902151618188_HashPassword3NF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902151630137_HashPass3NFmigracija.cs" />
+    <Compile Include="Migrations\201902151630137_HashPass3NFmigracija.Designer.cs">
+      <DependentUpon>201902151630137_HashPass3NFmigracija.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -138,7 +146,6 @@
     <Compile Include="Repositories\ClientType.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\EmployeeTypeRepository.cs" />
-    <Compile Include="Repositories\HashPasswordRepository.cs" />
     <Compile Include="Repositories\Interfaces\IAccountRepository.cs" />
     <Compile Include="Repositories\Interfaces\IAccountTypeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IAssetRepository.cs" />
@@ -147,7 +154,6 @@
     <Compile Include="Repositories\Interfaces\IClientType.cs" />
     <Compile Include="Repositories\Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IEmployeeTypeRepository.cs" />
-    <Compile Include="Repositories\Interfaces\IHashPasswordRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILiabilityRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILoanRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILoanTypeRepository.cs" />
@@ -219,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902140102022_HashPasswordMigration.resx">
       <DependentUpon>201902140102022_HashPasswordMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902151618188_HashPassword3NF.resx">
+      <DependentUpon>201902151618188_HashPassword3NF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902151630137_HashPass3NFmigracija.resx">
+      <DependentUpon>201902151630137_HashPass3NFmigracija.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
