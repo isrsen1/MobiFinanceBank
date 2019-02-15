@@ -36,6 +36,7 @@
             this.emailLbl = new System.Windows.Forms.Label();
             this.contactLbl = new System.Windows.Forms.Label();
             this.addressLbl = new System.Windows.Forms.Label();
+            this.tiplbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.firstNameTb = new System.Windows.Forms.TextBox();
             this.lastNameTb = new System.Windows.Forms.TextBox();
@@ -44,10 +45,12 @@
             this.emailTb = new System.Windows.Forms.TextBox();
             this.contactTb = new System.Windows.Forms.TextBox();
             this.addressTb = new System.Windows.Forms.TextBox();
-            this.tiplbl = new System.Windows.Forms.Label();
             this.tipTb = new System.Windows.Forms.TextBox();
+            this.clientOverviewDgv = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -62,7 +65,7 @@
             this.flowLayoutPanel2.Controls.Add(this.addressLbl);
             this.flowLayoutPanel2.Controls.Add(this.tiplbl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(360, 129);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(615, 127);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(118, 192);
@@ -145,6 +148,17 @@
             this.addressLbl.TabIndex = 14;
             this.addressLbl.Text = "Adresa";
             // 
+            // tiplbl
+            // 
+            this.tiplbl.AutoSize = true;
+            this.tiplbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tiplbl.Location = new System.Drawing.Point(2, 163);
+            this.tiplbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.tiplbl.Name = "tiplbl";
+            this.tiplbl.Size = new System.Drawing.Size(93, 15);
+            this.tiplbl.TabIndex = 16;
+            this.tiplbl.Text = "Tip zaposlenika";
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
@@ -158,7 +172,7 @@
             this.flowLayoutPanel1.Controls.Add(this.addressTb);
             this.flowLayoutPanel1.Controls.Add(this.tipTb);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(482, 129);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(737, 127);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(174, 192);
@@ -220,17 +234,6 @@
             this.addressTb.Size = new System.Drawing.Size(170, 20);
             this.addressTb.TabIndex = 8;
             // 
-            // tiplbl
-            // 
-            this.tiplbl.AutoSize = true;
-            this.tiplbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tiplbl.Location = new System.Drawing.Point(2, 163);
-            this.tiplbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
-            this.tiplbl.Name = "tiplbl";
-            this.tiplbl.Size = new System.Drawing.Size(93, 15);
-            this.tiplbl.TabIndex = 16;
-            this.tiplbl.Text = "Tip zaposlenika";
-            // 
             // tipTb
             // 
             this.tipTb.Location = new System.Drawing.Point(2, 170);
@@ -239,21 +242,46 @@
             this.tipTb.Size = new System.Drawing.Size(170, 20);
             this.tipTb.TabIndex = 9;
             // 
+            // clientOverviewDgv
+            // 
+            this.clientOverviewDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientOverviewDgv.Location = new System.Drawing.Point(33, 117);
+            this.clientOverviewDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.clientOverviewDgv.MultiSelect = false;
+            this.clientOverviewDgv.Name = "clientOverviewDgv";
+            this.clientOverviewDgv.RowTemplate.Height = 24;
+            this.clientOverviewDgv.Size = new System.Drawing.Size(545, 260);
+            this.clientOverviewDgv.TabIndex = 19;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(831, 353);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 37);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.clientOverviewDgv);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
+            this.Controls.SetChildIndex(this.clientOverviewDgv, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientOverviewDgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +307,7 @@
         private System.Windows.Forms.TextBox addressTb;
         private System.Windows.Forms.Label tiplbl;
         private System.Windows.Forms.TextBox tipTb;
+        private System.Windows.Forms.DataGridView clientOverviewDgv;
+        private System.Windows.Forms.Button button1;
     }
 }

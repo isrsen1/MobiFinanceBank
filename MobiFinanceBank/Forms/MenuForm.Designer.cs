@@ -109,6 +109,7 @@
             // 
             // btnImePrezime
             // 
+            this.btnImePrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnImePrezime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnImePrezime.Location = new System.Drawing.Point(796, 94);
             this.btnImePrezime.Name = "btnImePrezime";
@@ -120,14 +121,16 @@
             // lblImePrezime
             // 
             this.lblImePrezime.AutoSize = true;
+            this.lblImePrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblImePrezime.Location = new System.Drawing.Point(915, 99);
             this.lblImePrezime.Name = "lblImePrezime";
-            this.lblImePrezime.Size = new System.Drawing.Size(35, 13);
+            this.lblImePrezime.Size = new System.Drawing.Size(45, 16);
             this.lblImePrezime.TabIndex = 15;
             this.lblImePrezime.Text = "label1";
             // 
             // btnRazinaPrava
             // 
+            this.btnRazinaPrava.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRazinaPrava.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRazinaPrava.Location = new System.Drawing.Point(796, 123);
             this.btnRazinaPrava.Name = "btnRazinaPrava";
@@ -139,22 +142,28 @@
             // lblPrava
             // 
             this.lblPrava.AutoSize = true;
+            this.lblPrava.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPrava.Location = new System.Drawing.Point(915, 128);
             this.lblPrava.Name = "lblPrava";
-            this.lblPrava.Size = new System.Drawing.Size(35, 13);
+            this.lblPrava.Size = new System.Drawing.Size(45, 16);
             this.lblPrava.TabIndex = 17;
             this.lblPrava.Text = "label2";
             // 
             // btnAdminPanel
             // 
             this.btnAdminPanel.Enabled = false;
+            this.btnAdminPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdminPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdminPanel.Location = new System.Drawing.Point(953, 160);
+            this.btnAdminPanel.Image = global::MobiFinanceBank.Properties.Resources.AdminIcon;
+            this.btnAdminPanel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdminPanel.Location = new System.Drawing.Point(943, 164);
             this.btnAdminPanel.Name = "btnAdminPanel";
-            this.btnAdminPanel.Size = new System.Drawing.Size(75, 23);
+            this.btnAdminPanel.Size = new System.Drawing.Size(90, 73);
             this.btnAdminPanel.TabIndex = 18;
             this.btnAdminPanel.Text = "Admin Panel";
+            this.btnAdminPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdminPanel.UseVisualStyleBackColor = true;
+            this.btnAdminPanel.Click += new System.EventHandler(this.btnAdminPanel_Click);
             // 
             // MenuForm
             // 

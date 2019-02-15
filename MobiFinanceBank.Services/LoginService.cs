@@ -36,7 +36,7 @@ namespace MobiFinanceBank.Services
                // hash = HashLibrary.HashedPassword.New(password);                
                // Hashed = "ÙDĸÓê;ĩďu.¯&ĉYěL{'ÌgÎÆÜ*ĮìÃy®ŀ¹¢";
                // Salted = "r_¯ß]Ĵŀ5ĻÕÔø«4-ê_ÜoHĕÐ`?ĩëý½Ġïİė";
-                hash = new HashLibrary.HashedPassword(employee.HashedPassword.Hash, employee.HashedPassword.Salt);                             
+                hash = new HashLibrary.HashedPassword(employee.PasswordHash, employee.PasswordSalt);                             
             }
             catch (Exception exc)
             {
@@ -44,17 +44,14 @@ namespace MobiFinanceBank.Services
             }
             Console.WriteLine("hash: " + hash.Hash);
             Console.WriteLine("salt: " + hash.Salt);
-            //System.IO.File.WriteAllText(@"C:\Users\Public\WriteText.txt", Hashed+"\n"+Salted);      
+            //System.IO.File.WriteAllText(@"C:\Users\Public\HashSalt.txt", hash.Hash+"\n"+hash.Salt);      
             try
             {
-                if (hash.Check(password))
+                if (hash.Check(password)==false)
                 {
-                    MessageBox.Show("poklapa se");
+                    MessageBox.Show("Šifra je neispravna! Pokušajte ponovo.");
                 }
-                else
-                {
-                    MessageBox.Show("nepoklapa se");
-                }
+
             }
             catch (Exception exc)
             {
