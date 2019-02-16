@@ -18,10 +18,7 @@ namespace MobiFinanceBank.DAL.DbContexts
             : base("name=MobiFinanceContext")
         {
         }
-
-        public virtual DbSet<BalanceSheet> BalanceSheets { get; set; }
-        public virtual DbSet<Asset> Assets { get; set; }
-        public virtual DbSet<Liability> Liabilities { get; set; }
+        
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Loan> Loans { get; set; }
         public virtual DbSet<RepaymentPlan> RepaymentPlan { get; set; }
@@ -38,38 +35,6 @@ namespace MobiFinanceBank.DAL.DbContexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BalanceSheet>()
-                .HasMany(e => e.Assets)
-                .WithRequired(e => e.BalanceSheet)
-                .HasForeignKey(e => e.BalanceSheetId)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<BalanceSheet>()
-                .HasMany(e => e.Liabilities)
-                .WithRequired(e => e.BalanceSheet)
-                .HasForeignKey(e => e.BalanceSheetId)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Asset>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Asset>()
-                .Property(e => e.Category)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Liability>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Liability>()
-                .Property(e => e.LiabilityType)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Liability>()
-                .Property(e => e.Category)
-                .IsUnicode(false);
-
             modelBuilder.Entity<Client>()
                 .Property(e => e.FirstName)
                 .IsUnicode(false);
@@ -97,13 +62,7 @@ namespace MobiFinanceBank.DAL.DbContexts
             modelBuilder.Entity<Client>()
                 .Property(e => e.Address)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Client>()
-                .HasMany(e => e.BalanceSheets)
-                .WithRequired(e => e.Client)
-                .HasForeignKey(e => e.ClientId)
-                .WillCascadeOnDelete();
-
+            
             modelBuilder.Entity<Client>()
                 .HasMany(e => e.Loans)
                 .WithRequired(e => e.Client)

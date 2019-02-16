@@ -96,7 +96,7 @@ namespace MobiFinanceBank.Forms
                 MessageBox.Show(@"Broj kartice već postoji u bazi", @"Otvaranje računa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            
             // Retrieves account
             var account = new Account()
             {

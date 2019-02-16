@@ -5,6 +5,7 @@ using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Services.Interfaces;
 using MobiFinanceBank.Templates;
+using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.Forms
 {
@@ -107,7 +108,13 @@ namespace MobiFinanceBank.Forms
             accountNameLbl.Text = LoanType.Name;
             foreignCurrencyChb.Checked = LoanType.IsForeignCurrency;
             currencyLbl.Text = LoanType.Currency;
-            interestRateLbl.Text = (LoanType.InterestRate * 100).ToString() + "%";
+            interestRateLbl.Text = (LoanType.InterestRate * 100) + "%";
+
+            if (Client.ClientTypeId == (int) ClientType.Poslovni)
+            {
+                makeAssessmentBtn.Visible = false;
+                assessmentProgressBar.Visible = false;
+            }
         }
 
         private void loanRequestButton_Click(object sender, EventArgs e)
@@ -145,7 +152,7 @@ namespace MobiFinanceBank.Forms
                 LoanEndDate = startDateDtp.Value.AddYears((int)loanDurationNum.Value),
                 Status = 0,
                 LoanTypeId = LoanType.Id,
-                EmployeeId = 1,
+                EmployeeId = 3,
                 ClientId = Client.Id
             };
 

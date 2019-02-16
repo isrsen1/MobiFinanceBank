@@ -63,18 +63,18 @@
             // 
             // lastNameTb
             // 
-            this.lastNameTb.Location = new System.Drawing.Point(2, 26);
-            this.lastNameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastNameTb.Location = new System.Drawing.Point(3, 28);
+            this.lastNameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastNameTb.Name = "lastNameTb";
-            this.lastNameTb.Size = new System.Drawing.Size(170, 20);
+            this.lastNameTb.Size = new System.Drawing.Size(225, 22);
             this.lastNameTb.TabIndex = 2;
             // 
             // firstNameTb
             // 
-            this.firstNameTb.Location = new System.Drawing.Point(2, 2);
-            this.firstNameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstNameTb.Location = new System.Drawing.Point(3, 2);
+            this.firstNameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.firstNameTb.Name = "firstNameTb";
-            this.firstNameTb.Size = new System.Drawing.Size(170, 20);
+            this.firstNameTb.Size = new System.Drawing.Size(225, 22);
             this.firstNameTb.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -93,94 +93,100 @@
             this.flowLayoutPanel1.Controls.Add(this.fixedTermContractChb);
             this.flowLayoutPanel1.Controls.Add(this.riskProfessionChb);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(131, 137);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(175, 169);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(174, 277);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(231, 311);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // companyTb
             // 
-            this.companyTb.Location = new System.Drawing.Point(2, 50);
-            this.companyTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.companyTb.Location = new System.Drawing.Point(3, 54);
+            this.companyTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.companyTb.Name = "companyTb";
-            this.companyTb.Size = new System.Drawing.Size(170, 20);
+            this.companyTb.Size = new System.Drawing.Size(225, 22);
             this.companyTb.TabIndex = 3;
             // 
             // oibTb
             // 
-            this.oibTb.Location = new System.Drawing.Point(2, 74);
-            this.oibTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oibTb.Location = new System.Drawing.Point(3, 80);
+            this.oibTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.oibTb.Name = "oibTb";
-            this.oibTb.Size = new System.Drawing.Size(170, 20);
+            this.oibTb.Size = new System.Drawing.Size(225, 22);
             this.oibTb.TabIndex = 4;
             // 
             // emailTb
             // 
-            this.emailTb.Location = new System.Drawing.Point(2, 98);
-            this.emailTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTb.Location = new System.Drawing.Point(3, 106);
+            this.emailTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailTb.Name = "emailTb";
-            this.emailTb.Size = new System.Drawing.Size(170, 20);
+            this.emailTb.Size = new System.Drawing.Size(225, 22);
             this.emailTb.TabIndex = 5;
             this.emailTb.Enter += new System.EventHandler(this.emailTb_Enter);
             this.emailTb.Leave += new System.EventHandler(this.emailTb_Leave);
             // 
             // monthlyIncomeNum
             // 
-            this.monthlyIncomeNum.Location = new System.Drawing.Point(2, 122);
-            this.monthlyIncomeNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.monthlyIncomeNum.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.monthlyIncomeNum.Location = new System.Drawing.Point(3, 132);
+            this.monthlyIncomeNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.monthlyIncomeNum.Maximum = new decimal(new int[] {
             50000,
             0,
             0,
             0});
             this.monthlyIncomeNum.Name = "monthlyIncomeNum";
-            this.monthlyIncomeNum.Size = new System.Drawing.Size(107, 20);
+            this.monthlyIncomeNum.Size = new System.Drawing.Size(143, 22);
             this.monthlyIncomeNum.TabIndex = 18;
             // 
             // contactTb
             // 
-            this.contactTb.Location = new System.Drawing.Point(2, 146);
-            this.contactTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contactTb.Location = new System.Drawing.Point(3, 158);
+            this.contactTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contactTb.Name = "contactTb";
-            this.contactTb.Size = new System.Drawing.Size(170, 20);
+            this.contactTb.Size = new System.Drawing.Size(225, 22);
             this.contactTb.TabIndex = 7;
             // 
             // addressTb
             // 
-            this.addressTb.Location = new System.Drawing.Point(2, 170);
-            this.addressTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressTb.Location = new System.Drawing.Point(3, 184);
+            this.addressTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addressTb.Name = "addressTb";
-            this.addressTb.Size = new System.Drawing.Size(170, 20);
+            this.addressTb.Size = new System.Drawing.Size(225, 22);
             this.addressTb.TabIndex = 8;
             // 
             // employedChb
             // 
             this.employedChb.AutoSize = true;
-            this.employedChb.Location = new System.Drawing.Point(2, 197);
-            this.employedChb.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
+            this.employedChb.Location = new System.Drawing.Point(3, 214);
+            this.employedChb.Margin = new System.Windows.Forms.Padding(3, 6, 3, 2);
             this.employedChb.Name = "employedChb";
-            this.employedChb.Size = new System.Drawing.Size(15, 14);
+            this.employedChb.Size = new System.Drawing.Size(18, 17);
             this.employedChb.TabIndex = 19;
             this.employedChb.UseVisualStyleBackColor = true;
+            this.employedChb.CheckedChanged += new System.EventHandler(this.employedChb_CheckedChanged);
             // 
             // fixedTermContractChb
             // 
             this.fixedTermContractChb.AutoSize = true;
-            this.fixedTermContractChb.Location = new System.Drawing.Point(2, 229);
-            this.fixedTermContractChb.Margin = new System.Windows.Forms.Padding(2, 16, 2, 2);
+            this.fixedTermContractChb.Location = new System.Drawing.Point(3, 253);
+            this.fixedTermContractChb.Margin = new System.Windows.Forms.Padding(3, 20, 3, 2);
             this.fixedTermContractChb.Name = "fixedTermContractChb";
-            this.fixedTermContractChb.Size = new System.Drawing.Size(15, 14);
+            this.fixedTermContractChb.Size = new System.Drawing.Size(18, 17);
             this.fixedTermContractChb.TabIndex = 20;
             this.fixedTermContractChb.UseVisualStyleBackColor = true;
             // 
             // riskProfessionChb
             // 
             this.riskProfessionChb.AutoSize = true;
-            this.riskProfessionChb.Location = new System.Drawing.Point(2, 261);
-            this.riskProfessionChb.Margin = new System.Windows.Forms.Padding(2, 16, 2, 2);
+            this.riskProfessionChb.Location = new System.Drawing.Point(3, 292);
+            this.riskProfessionChb.Margin = new System.Windows.Forms.Padding(3, 20, 3, 2);
             this.riskProfessionChb.Name = "riskProfessionChb";
-            this.riskProfessionChb.Size = new System.Drawing.Size(15, 14);
+            this.riskProfessionChb.Size = new System.Drawing.Size(18, 17);
             this.riskProfessionChb.TabIndex = 21;
             this.riskProfessionChb.UseVisualStyleBackColor = true;
             // 
@@ -188,10 +194,10 @@
             // 
             this.clientTypeCb.DisplayMember = "ClientType";
             this.clientTypeCb.FormattingEnabled = true;
-            this.clientTypeCb.Location = new System.Drawing.Point(352, 136);
-            this.clientTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientTypeCb.Location = new System.Drawing.Point(469, 167);
+            this.clientTypeCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clientTypeCb.Name = "clientTypeCb";
-            this.clientTypeCb.Size = new System.Drawing.Size(110, 21);
+            this.clientTypeCb.Size = new System.Drawing.Size(145, 24);
             this.clientTypeCb.TabIndex = 7;
             this.clientTypeCb.ValueMember = "ClientType";
             this.clientTypeCb.SelectedIndexChanged += new System.EventHandler(this.clientTypeCb_SelectedIndexChanged);
@@ -200,10 +206,9 @@
             // 
             this.firstNameLbl.AutoSize = true;
             this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLbl.Location = new System.Drawing.Point(2, 0);
-            this.firstNameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.firstNameLbl.Location = new System.Drawing.Point(3, 0);
             this.firstNameLbl.Name = "firstNameLbl";
-            this.firstNameLbl.Size = new System.Drawing.Size(28, 15);
+            this.firstNameLbl.Size = new System.Drawing.Size(32, 18);
             this.firstNameLbl.TabIndex = 8;
             this.firstNameLbl.Text = "Ime";
             // 
@@ -211,10 +216,10 @@
             // 
             this.lastNameLbl.AutoSize = true;
             this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameLbl.Location = new System.Drawing.Point(2, 24);
-            this.lastNameLbl.Margin = new System.Windows.Forms.Padding(2, 9, 2, 0);
+            this.lastNameLbl.Location = new System.Drawing.Point(3, 29);
+            this.lastNameLbl.Margin = new System.Windows.Forms.Padding(3, 11, 3, 0);
             this.lastNameLbl.Name = "lastNameLbl";
-            this.lastNameLbl.Size = new System.Drawing.Size(53, 15);
+            this.lastNameLbl.Size = new System.Drawing.Size(63, 18);
             this.lastNameLbl.TabIndex = 9;
             this.lastNameLbl.Text = "Prezime";
             // 
@@ -222,10 +227,10 @@
             // 
             this.oibLbl.AutoSize = true;
             this.oibLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oibLbl.Location = new System.Drawing.Point(2, 71);
-            this.oibLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.oibLbl.Location = new System.Drawing.Point(3, 86);
+            this.oibLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.oibLbl.Name = "oibLbl";
-            this.oibLbl.Size = new System.Drawing.Size(27, 15);
+            this.oibLbl.Size = new System.Drawing.Size(33, 18);
             this.oibLbl.TabIndex = 10;
             this.oibLbl.Text = "OIB";
             // 
@@ -233,10 +238,10 @@
             // 
             this.emailLbl.AutoSize = true;
             this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLbl.Location = new System.Drawing.Point(2, 94);
-            this.emailLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.emailLbl.Location = new System.Drawing.Point(3, 114);
+            this.emailLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(39, 15);
+            this.emailLbl.Size = new System.Drawing.Size(45, 18);
             this.emailLbl.TabIndex = 11;
             this.emailLbl.Text = "Email";
             // 
@@ -244,10 +249,10 @@
             // 
             this.monthlyIncomeLbl.AutoSize = true;
             this.monthlyIncomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthlyIncomeLbl.Location = new System.Drawing.Point(2, 117);
-            this.monthlyIncomeLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.monthlyIncomeLbl.Location = new System.Drawing.Point(3, 142);
+            this.monthlyIncomeLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.monthlyIncomeLbl.Name = "monthlyIncomeLbl";
-            this.monthlyIncomeLbl.Size = new System.Drawing.Size(113, 15);
+            this.monthlyIncomeLbl.Size = new System.Drawing.Size(132, 18);
             this.monthlyIncomeLbl.TabIndex = 12;
             this.monthlyIncomeLbl.Text = "Mjesečna primanja";
             // 
@@ -255,10 +260,10 @@
             // 
             this.contactLbl.AutoSize = true;
             this.contactLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactLbl.Location = new System.Drawing.Point(2, 140);
-            this.contactLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.contactLbl.Location = new System.Drawing.Point(3, 170);
+            this.contactLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.contactLbl.Name = "contactLbl";
-            this.contactLbl.Size = new System.Drawing.Size(48, 15);
+            this.contactLbl.Size = new System.Drawing.Size(59, 18);
             this.contactLbl.TabIndex = 13;
             this.contactLbl.Text = "Kontakt";
             // 
@@ -266,10 +271,10 @@
             // 
             this.addressLbl.AutoSize = true;
             this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressLbl.Location = new System.Drawing.Point(2, 163);
-            this.addressLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.addressLbl.Location = new System.Drawing.Point(3, 198);
+            this.addressLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.addressLbl.Name = "addressLbl";
-            this.addressLbl.Size = new System.Drawing.Size(45, 15);
+            this.addressLbl.Size = new System.Drawing.Size(54, 18);
             this.addressLbl.TabIndex = 14;
             this.addressLbl.Text = "Adresa";
             // 
@@ -288,20 +293,20 @@
             this.flowLayoutPanel2.Controls.Add(this.fixedTermContractLbl);
             this.flowLayoutPanel2.Controls.Add(this.riskProfessionLbl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 137);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 169);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(118, 280);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(157, 345);
             this.flowLayoutPanel2.TabIndex = 16;
             // 
             // companyLbl
             // 
             this.companyLbl.AutoSize = true;
             this.companyLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companyLbl.Location = new System.Drawing.Point(2, 48);
-            this.companyLbl.Margin = new System.Windows.Forms.Padding(2, 9, 2, 0);
+            this.companyLbl.Location = new System.Drawing.Point(3, 58);
+            this.companyLbl.Margin = new System.Windows.Forms.Padding(3, 11, 3, 0);
             this.companyLbl.Name = "companyLbl";
-            this.companyLbl.Size = new System.Drawing.Size(39, 15);
+            this.companyLbl.Size = new System.Drawing.Size(49, 18);
             this.companyLbl.TabIndex = 15;
             this.companyLbl.Text = "Tvrtka";
             // 
@@ -309,10 +314,10 @@
             // 
             this.employedLbl.AutoSize = true;
             this.employedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employedLbl.Location = new System.Drawing.Point(2, 186);
-            this.employedLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.employedLbl.Location = new System.Drawing.Point(3, 226);
+            this.employedLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.employedLbl.Name = "employedLbl";
-            this.employedLbl.Size = new System.Drawing.Size(58, 15);
+            this.employedLbl.Size = new System.Drawing.Size(69, 18);
             this.employedLbl.TabIndex = 16;
             this.employedLbl.Text = "Zaposlen";
             // 
@@ -320,10 +325,10 @@
             // 
             this.fixedTermContractLbl.AutoSize = true;
             this.fixedTermContractLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fixedTermContractLbl.Location = new System.Drawing.Point(2, 209);
-            this.fixedTermContractLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.fixedTermContractLbl.Location = new System.Drawing.Point(3, 254);
+            this.fixedTermContractLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.fixedTermContractLbl.Name = "fixedTermContractLbl";
-            this.fixedTermContractLbl.Size = new System.Drawing.Size(74, 30);
+            this.fixedTermContractLbl.Size = new System.Drawing.Size(87, 36);
             this.fixedTermContractLbl.TabIndex = 17;
             this.fixedTermContractLbl.Text = "Ugovor na neodređeno";
             // 
@@ -331,20 +336,20 @@
             // 
             this.riskProfessionLbl.AutoSize = true;
             this.riskProfessionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.riskProfessionLbl.Location = new System.Drawing.Point(2, 247);
-            this.riskProfessionLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.riskProfessionLbl.Location = new System.Drawing.Point(3, 300);
+            this.riskProfessionLbl.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.riskProfessionLbl.Name = "riskProfessionLbl";
-            this.riskProfessionLbl.Size = new System.Drawing.Size(107, 30);
+            this.riskProfessionLbl.Size = new System.Drawing.Size(129, 36);
             this.riskProfessionLbl.TabIndex = 18;
             this.riskProfessionLbl.Text = "Financijski rizično zanimanje";
             // 
             // addClientBtn
             // 
             this.addClientBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addClientBtn.Location = new System.Drawing.Point(352, 162);
-            this.addClientBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addClientBtn.Location = new System.Drawing.Point(469, 199);
+            this.addClientBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addClientBtn.Name = "addClientBtn";
-            this.addClientBtn.Size = new System.Drawing.Size(109, 28);
+            this.addClientBtn.Size = new System.Drawing.Size(145, 34);
             this.addClientBtn.TabIndex = 17;
             this.addClientBtn.Text = "Stvori klijenta";
             this.addClientBtn.UseVisualStyleBackColor = true;
@@ -353,24 +358,25 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::MobiFinanceBank.Properties.Resources.clienthelper;
-            this.pictureBox3.Location = new System.Drawing.Point(685, 137);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(913, 169);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(369, 280);
+            this.pictureBox3.Size = new System.Drawing.Size(492, 345);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
             // CreateClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 518);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.addClientBtn);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.clientTypeCb);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateClientForm";
             this.Text = "CreateClientForm";
             this.Load += new System.EventHandler(this.CreateClient_Load);

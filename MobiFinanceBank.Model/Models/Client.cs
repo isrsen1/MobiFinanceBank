@@ -14,7 +14,6 @@ namespace MobiFinanceBank.Model.Models
         /// </summary>
         public Client()
         {
-            BalanceSheets = new HashSet<BalanceSheet>();
             Loans = new HashSet<Loan>();
             Accounts = new HashSet<Account>();
             SavingAccounts = new HashSet<SavingAccount>();
@@ -123,13 +122,7 @@ namespace MobiFinanceBank.Model.Models
         /// Client type id
         /// </value>
         public int ClientTypeId { get; set; }
-
-        /// <summary>
-        /// Gets or sets clients balance sheets
-        /// </summary>
-        /// Clients balance sheets collection
-        public virtual ICollection<BalanceSheet> BalanceSheets { get; set; }
-
+        
         /// <summary>
         /// Gets or sets clients loans 
         /// </summary>

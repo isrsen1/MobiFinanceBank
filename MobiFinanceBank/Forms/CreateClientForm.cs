@@ -18,7 +18,7 @@ namespace MobiFinanceBank.Forms
         private readonly IClientTypeRepository clientTypeRepository;
         private readonly IClientRepository clientRepository;
         private string emailPlaceholder = "e.g. isrsen1@foi.hr";
-
+        
         /// <summary>
         /// Gets or sets the client
         /// </summary>
@@ -53,6 +53,18 @@ namespace MobiFinanceBank.Forms
             clientTypeCb.ValueMember = "Id";
             clientTypeCb.DisplayMember = "Name";
             clientTypeCb.DataSource = new BindingSource(this.clientTypeRepository.GetAll(), null);
+
+            if (ClientToModify == null)
+            {
+                monthlyIncomeLbl.Visible = false;
+                monthlyIncomeNum.Visible = false;
+
+                riskProfessionChb.Visible = false;
+                riskProfessionLbl.Visible = false;
+
+                fixedTermContractLbl.Visible = false;
+                fixedTermContractChb.Visible = false;
+            }
 
             // Email text box placeholder
             emailTb.Text = emailPlaceholder;
@@ -235,6 +247,26 @@ namespace MobiFinanceBank.Forms
             {
                 MessageBox.Show(@"Morate unijeti sve podatke");
             }
+        }
+
+        private void employedChb_CheckedChanged(object sender, EventArgs e)
+        {
+            SetIsEmployedVisibilityCase();
+        }
+
+        private void SetIsEmployedVisibilityCase()
+        {
+            monthlyIncomeLbl.Visible = !monthlyIncomeLbl.Visible;
+            monthlyIncomeNum.Visible = !monthlyIncomeNum.Visible;
+
+            riskProfessionChb.Visible = !riskProfessionChb.Visible;
+            riskProfessionLbl.Visible = !riskProfessionLbl.Visible;
+
+            fixedTermContractLbl.Visible = !fixedTermContractLbl.Visible;
+            fixedTermContractChb.Visible = !fixedTermContractChb.Visible;
+
+            riskProfessionChb.Checked = false;
+            fixedTermContractChb.Checked = false;
         }
     }
 }

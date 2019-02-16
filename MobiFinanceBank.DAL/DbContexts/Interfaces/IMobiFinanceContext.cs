@@ -8,9 +8,6 @@ namespace MobiFinanceBank.DAL.DbContexts.Interfaces
     /// </summary>
     public interface IMobiFinanceContext: IDbContext
     {
-        DbSet<BalanceSheet> BalanceSheets { get; set; }
-        DbSet<Asset> Assets { get; set; }
-        DbSet<Liability> Liabilities { get; set; }
         DbSet<Client> Clients { get; set; }
         DbSet<Loan> Loans { get; set; }
         DbSet<RepaymentPlan> RepaymentPlan { get; set; }

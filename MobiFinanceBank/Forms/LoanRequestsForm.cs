@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Templates;
 
@@ -14,9 +15,12 @@ namespace MobiFinanceBank.Forms
 {
     public partial class LoanRequestsForm : TemplateForm, ILoanRequestsForm
     {
-        public LoanRequestsForm()
+        private readonly ILoanRepository loanRepository;
+        public LoanRequestsForm(ILoanRepository _loanRepository)
         {
             InitializeComponent();
+            this.loanRepository = _loanRepository;
+            loanRequestsDgv.DataSource = this.loanRepository.GetAllLoanRequests().ToList();
         }
     }
 }
