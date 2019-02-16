@@ -15,7 +15,7 @@ namespace MobiFinanceBank.Forms
     /// <seealso cref="IExchangeForm"/>
     public partial class ExchangeForm : TemplateForm, IExchangeForm
     {
-        private IExchangeVmService exchangeVmService;
+        private readonly IExchangeVmService exchangeVmService;
 
         /// <summary>
         /// Gets or sets list of currencies

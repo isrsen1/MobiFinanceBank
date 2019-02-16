@@ -29,7 +29,7 @@ namespace MobiFinanceBank.Forms
         public AccountType AccountType { get; set; }
 
         private readonly string ibanRegex = @"^[H]{1}[R]{1}[0-9]{19}$";
-        private readonly string cardNumberRegex = @"^[0-9]{4}[ ]{1}[0-9]{4}[0-9]{4}[ ]{1}[0-9]{4}$";
+        private readonly string cardNumberRegex = @"^[0-9]{4}[ ]{1}[0-9]{4}[ ]{1}[0-9]{4}[ ]{1}[0-9]{4}$";
         private readonly string ibanPlaceholder = "HR1234567891234567891";
         private readonly string cardNumberPlaceholder = "1234 1234 1234 1234";
         private readonly IAccountRepository accountRepository;
@@ -105,7 +105,7 @@ namespace MobiFinanceBank.Forms
                 Balance = (double) paymentNum.Value,
                 ClientId = Client.Id,
                 AccountTypeId = AccountType.Id,
-                EmployeeId = 1
+                EmployeeId = 3
             };
 
             this.accountRepository.Add(account);

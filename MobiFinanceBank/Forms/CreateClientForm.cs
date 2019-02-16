@@ -15,8 +15,8 @@ namespace MobiFinanceBank.Forms
     /// <seealso cref="ICreateClientForm"/>
     public partial class CreateClientForm : TemplateForm, ICreateClientForm
     {
-        private IClientTypeRepository clientTypeRepository;
-        private IClientRepository clientRepository;
+        private readonly IClientTypeRepository clientTypeRepository;
+        private readonly IClientRepository clientRepository;
         private string emailPlaceholder = "e.g. isrsen1@foi.hr";
 
         /// <summary>

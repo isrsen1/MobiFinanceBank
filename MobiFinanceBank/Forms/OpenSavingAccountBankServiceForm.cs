@@ -41,6 +41,7 @@ namespace MobiFinanceBank.Forms
 
         private readonly IAccountRepository accountRepository;
         private readonly ISavingAccountRepository savingAccountRepository;
+        private readonly ISavingAccountTypeRepository savingAccountTypeRepository;
 
         /// <summary>
         /// Initializes new instance of open saving account bank service form
@@ -49,12 +50,14 @@ namespace MobiFinanceBank.Forms
         /// <param name="_savingAccountRepository">Saving account repository</param>
         public OpenSavingAccountBankServiceForm
             (IAccountRepository _accountRepository,
-            ISavingAccountRepository _savingAccountRepository)
+            ISavingAccountRepository _savingAccountRepository,
+            ISavingAccountTypeRepository _savingAccountTypeRepository)
         {
             InitializeComponent();
 
             this.accountRepository = _accountRepository;
             this.savingAccountRepository = _savingAccountRepository;
+            this.savingAccountTypeRepository = _savingAccountTypeRepository;
         }
 
         /// <summary>
@@ -107,10 +110,10 @@ namespace MobiFinanceBank.Forms
             incomeLbl.Text = Client.Income.ToString();
 
             accountNameLbl.Text = SavingAccountType.Name;
-            foreignCurrencyLbl.Checked = SavingAccountType.IsForeignCurrency;
+            foreignCurrencyChb.Checked = SavingAccountType.IsForeignCurrency;
             currencyLbl.Text = SavingAccountType.Currency;
             interestRateLbl.Text = (SavingAccountType.InterestRate * 100).ToString() + "%";
-            fixedTermLbl.Checked = SavingAccountType.IsFixedTerm;
+            fixedTermChb.Checked = SavingAccountType.IsFixedTerm;
             fixedTermPeriodLbl.Text = SavingAccountType.FixedTermDepositingPeriod.ToString();
         }
 
@@ -149,7 +152,11 @@ namespace MobiFinanceBank.Forms
                 Account = account,
                 Capital = (double)capitalNum.Value,
                 IsStandingOrderActive = IsStandingOrderChecked,
-                FixedTermDepositingStartDate = startDateDtp.Value
+                FixedTermDepositingStartDate = startDateDtp.Value,
+                SavingAccountTypeId = this.SavingAccountType.Id,
+                FixedTermDepositingEndDate = startDateDtp.Value.AddYears(SavingAccountType.FixedTermDepositingPeriod),
+                EmployeeId = 3,
+                ClientId = Client.Id
             };
 
             try
