@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
+using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.DAL.Repositories
@@ -77,6 +78,11 @@ namespace MobiFinanceBank.DAL.Repositories
         public IEnumerable<Loan> GetByClientId(int clientId)
         {
             return this.context.Loans.Where(loan => loan.ClientId == clientId).ToList();
+        }
+
+        public IEnumerable<Loan> GetAllLoanRequests()
+        {
+            return this.context.Loans.Where(loan => loan.Status == (int) LoanStatus.Zahtjev);
         }
 
         /// <summary>

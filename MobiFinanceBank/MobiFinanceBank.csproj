@@ -161,6 +161,7 @@
     <Compile Include="Forms\Interfaces\IClientOverviewForm.cs" />
     <Compile Include="Forms\Interfaces\ICreateClientForm.cs" />
     <Compile Include="Forms\Interfaces\IExchangeForm.cs" />
+    <Compile Include="Forms\Interfaces\ILoanRequestsForm.cs" />
     <Compile Include="Forms\Interfaces\ILoginForm.cs" />
     <Compile Include="Forms\Interfaces\IMenuForm.cs" />
     <Compile Include="Forms\Interfaces\IBankServicesOverviewForm.cs" />
@@ -168,6 +169,12 @@
     <Compile Include="Forms\Interfaces\IOpeningBankServicesForm.cs" />
     <Compile Include="Forms\Interfaces\IOpenLoanBankServiceForm.cs" />
     <Compile Include="Forms\Interfaces\IOpenSavingAccountBankServiceForm.cs" />
+    <Compile Include="Forms\LoanRequestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoanRequestsForm.Designer.cs">
+      <DependentUpon>LoanRequestsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OpenLoanBankServiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExchangeForm.resx">
       <DependentUpon>ExchangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoanRequestsForm.resx">
+      <DependentUpon>LoanRequestsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -19,7 +19,7 @@ namespace MobiFinanceBank.Forms
     /// <seealso cref="IBankServicesOverviewForm"/>
     public partial class BankServicesOverviewForm : TemplateForm, IBankServicesOverviewForm
     {
-        private IBankServicesVmService bankServicesVmService;
+        private readonly IBankServicesVmService bankServicesVmService;
 
         /// <summary>
         /// Gets or sets the client

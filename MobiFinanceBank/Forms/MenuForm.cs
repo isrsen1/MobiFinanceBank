@@ -18,6 +18,7 @@ namespace MobiFinanceBank.Forms
         private readonly IClientOverviewForm _clientOverviewForm;
         private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
         private readonly IAdminPanel _adminPanel;
+        private readonly ILoanRequestsForm loanRequestsForm;
 
         /// <summary>
         /// Initializes new instance of menu form
@@ -32,6 +33,7 @@ namespace MobiFinanceBank.Forms
             IClientOverviewForm clientOverviewForm,
             IBankServicesOverviewForm bankServicesOverviewForm,
             IAdminPanel adminPanel,
+            ILoanRequestsForm _loanRequestsForm,
             Employee _employee)
         {
             InitializeComponent();
@@ -83,6 +85,11 @@ namespace MobiFinanceBank.Forms
         private void btnAdminPanel_Click(object sender, EventArgs e)
         {
             this._adminPanel.Show();
+        }
+
+        private void loanRequestsBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
