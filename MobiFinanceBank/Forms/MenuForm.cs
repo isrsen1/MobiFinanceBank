@@ -43,7 +43,7 @@ namespace MobiFinanceBank.Forms
             this._clientOverviewForm = clientOverviewForm;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
             this._adminPanel = adminPanel;
-
+            this.loanRequestsForm = _loanRequestsForm;
 
         }
         public void GetEmployee(Employee _employee)
@@ -86,7 +86,7 @@ namespace MobiFinanceBank.Forms
 
         private void loanRequestsBtn_Click(object sender, EventArgs e)
         {
-
+            this.loanRequestsForm.Show();
         }
     }
 }

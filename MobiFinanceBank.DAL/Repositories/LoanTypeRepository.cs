@@ -26,5 +26,10 @@ namespace MobiFinanceBank.DAL.Repositories
         {
             return this.context.LoanTypes.ToList();
         }
+
+        public LoanType GetById(int loanTypeId)
+        {
+            return this.context.LoanTypes.FirstOrDefault(lt => lt.Id == loanTypeId);
+        }
     }
 }

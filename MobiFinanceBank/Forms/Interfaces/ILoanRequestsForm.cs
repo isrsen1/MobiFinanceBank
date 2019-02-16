@@ -8,5 +8,6 @@ namespace MobiFinanceBank.Forms.Interfaces
 {
     public interface ILoanRequestsForm
     {
+        void Show();
     }
 }
