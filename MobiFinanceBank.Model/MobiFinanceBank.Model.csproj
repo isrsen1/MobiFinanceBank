@@ -55,7 +55,6 @@
     <Compile Include="Models\BalanceSheet.cs" />
     <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\ClientType.cs" />
-    <Compile Include="Models\HashedPassword.cs" />
     <Compile Include="Models\Liability.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Loan.cs" />
