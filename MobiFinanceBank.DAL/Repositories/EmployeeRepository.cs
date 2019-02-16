@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
@@ -14,6 +15,7 @@ namespace MobiFinanceBank.DAL.Repositories
     /// <seealso cref="IEmployeeRepository"/>
     public class EmployeeRepository: IEmployeeRepository
     {
+        
         private readonly IMobiFinanceContext context;
         public EmployeeRepository(IMobiFinanceContext _context)
         {
@@ -26,7 +28,6 @@ namespace MobiFinanceBank.DAL.Repositories
         /// <param name="employee">Employee</param>
         /// <param name="shouldSaveChanges">if set to <c>true</c> it will save changes to db.</param>
         /// <returns>Returns newly created employee.</returns>
-       
         public Employee Add(Employee employee, bool shouldSaveChanges = true)
         {
             // Checks if employee is instantiated
@@ -38,6 +39,10 @@ namespace MobiFinanceBank.DAL.Repositories
                 // Adds employee instance to database 
                 this.context.Employees.Add(employee);
 
+               // string Sql = "INSERT INTO [dbo].[Employee] VALUES ('"+employee.FirstName+"','"+employee.LastName+"','"+employee.Email+"','"+employee.Address+"',"+employee.PhoneNumber+",'"+employee.UserName+"',"+employee.EmployeeTypeId+","+employee.OIB+",N'"+employee.PasswordSalt+"',N'"+employee.PasswordHash+"')";
+               // System.IO.File.WriteAllText(@"C:\Users\Public\HashSaltRepo.txt", employee.PasswordHash + "\n" + employee.PasswordSalt);
+                //var zaposlenik = new List<Employee>(context.Employees.SqlQuery(Sql));
+                
                 // Saves changes
                 if (shouldSaveChanges)
                     this.SaveChanges();
@@ -75,8 +80,25 @@ namespace MobiFinanceBank.DAL.Repositories
 
             try
             {
-                // Modifies client
-                this.context.Entry(employee).State = EntityState.Modified;
+                // Modifies employee
+                var employeeToModify = this.GetByOIB(employee.OIB);
+                //Console.WriteLine(employeeToModify.UserName);
+                if (employeeToModify == null)
+                { 
+                    throw new NullReferenceException("Employee not found in database");
+                }
+                    
+
+                employeeToModify.FirstName = employee.FirstName;
+                employeeToModify.LastName = employee.LastName;
+                employeeToModify.OIB = employee.OIB;
+                employeeToModify.UserName = employee.UserName;
+                employeeToModify.PasswordHash = employee.PasswordHash;
+                employeeToModify.PasswordSalt = employee.PasswordSalt;
+                employeeToModify.Email = employee.Email;
+                employeeToModify.PhoneNumber = employee.PhoneNumber;
+                employeeToModify.Address = employee.Address;
+                employeeToModify.EmployeeTypeId = employee.EmployeeTypeId;
 
                 // Saves changes
                 if (shouldSaveChanges)
@@ -119,11 +141,22 @@ namespace MobiFinanceBank.DAL.Repositories
         /// <summary>
         /// Returns Employee by username attribute.
         /// </summary>
-        public Employee GetEmployeeByName(string username)
+        public Employee GetEmployeeByUserName(string username)
         { 
             return this.context.Employees.FirstOrDefault(employee => employee.UserName == username);
 
         }
+        /// <summary>
+        /// Finds specified employee by OIB
+        /// </summary>
+        /// <param name="OIB">OIB</param>
+        public Employee GetByOIB(string OIB)
+        {
+            return this.context.Employees.FirstOrDefault(employee => employee.OIB == OIB);
+        }
+        /// <summary>
+        /// Gets all employeed
+        /// </summary>
         public IEnumerable<Employee> GetAll()
         {
             return this.context.Employees.ToList();

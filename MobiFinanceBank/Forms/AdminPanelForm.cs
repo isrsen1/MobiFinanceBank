@@ -24,6 +24,7 @@ namespace MobiFinanceBank.Forms
     {
         private readonly IEmployeeTypeRepository employeeTypeRepository;
         private readonly IEmployeeRepository employeeRepository;
+        private Employee newEmployee;
 
         public AdminPanelForm(IEmployeeTypeRepository _employeeTypeRepository,
             IEmployeeRepository _employeeRepository)
@@ -53,7 +54,11 @@ namespace MobiFinanceBank.Forms
             this.employeeDgv.Columns["SavingAccounts"].Visible = false;
 
         }
-
+        /// <summary>
+        /// Executes when dataGridView is clicked
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
         private void employeeDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (employeeDgv.SelectedRows.Count != 0)
@@ -78,30 +83,49 @@ namespace MobiFinanceBank.Forms
                     MessageBoxIcon.Warning);
             }
         }
+        /// <summary>
+        /// Checks if page input is valid
+        /// </summary>
+        private bool checkValid()
+        {
+            var employeeType = (EmployeeType)employeeTypeCb.SelectedItem;
 
+            var isValid = !string.IsNullOrEmpty(oibTb.Text)
+                          && !string.IsNullOrEmpty(emailTb.Text)
+                          && !string.IsNullOrEmpty(contactTb.Text)
+                          && !string.IsNullOrEmpty(addressTb.Text)
+                          && !string.IsNullOrEmpty(firstNameTb.Text)
+                          && !string.IsNullOrEmpty(lastNameTb.Text)
+                          && !string.IsNullOrEmpty(passwordTb.Text);
+
+            return isValid;
+        }
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            //moze isto provjera opet dali postoji
-            //this.employeeRepository.Edit;
-
         }
-
+        /// <summary>
+        /// Adds or edits employee
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
         private void newBtn_Click(object sender, EventArgs e)
-        {
-            //this.employeeRepository.GetbyOIB
-            //if postoji then ne mozes editat samo unjet
-            //also input provjera
-            //else
-            var isValid = true;
-            if (isValid)
+        {     
+
+            if (checkValid())
             {
+
                 try
                 {
                     //creates employee object and populates it with values
-                    var newEmployee = new Employee();
+                    newEmployee = new Employee();
                     newEmployee.FirstName = firstNameTb.Text;
                     newEmployee.LastName = lastNameTb.Text;
-                    newEmployee.OIB = Convert.ToInt32(oibTb.Text);
+                    newEmployee.OIB = (oibTb.Text);
                     newEmployee.UserName = usernameTb.Text;
                     newEmployee.Email = emailTb.Text;
                     newEmployee.PhoneNumber = contactTb.Text;
@@ -109,26 +133,57 @@ namespace MobiFinanceBank.Forms
                     newEmployee.EmployeeTypeId = Convert.ToInt32(employeeTypeCb.SelectedValue);
 
                     //generates new password hash and salt from the entered plaintext password
-                    var hashedPassword = HashedPassword.New(passwordTb.ToString());
-                    newEmployee.PasswordHash = hashedPassword.Hash;
-                    newEmployee.PasswordSalt = hashedPassword.Salt;
-                    //adds new employee to database
+                    var hashedPassword = HashedPassword.New(passwordTb.Text);
 
-                   // this.employeeRepository.Add(newEmployee);
-                   
+                    var hashi = Base64Encode(hashedPassword.Hash);
+                    var salty = Base64Encode(hashedPassword.Salt);
+
+                    newEmployee.PasswordHash = hashi;
+                    newEmployee.PasswordSalt = salty;
+                    if (hashedPassword.Check(passwordTb.Text))
+                    {                    
+                        System.IO.File.WriteAllText(@"C:\Users\Public\HashSalt.txt", hashi+ "\n" + salty);
+                        MessageBox.Show(@"Poklapaju se!");
+                    }
+                    
+                    //checks if employee already exists, edits if it does
+                    if (!string.IsNullOrEmpty(oibTb.Text))
+                    {
+                        var employeeByOib = this.employeeRepository.GetByOIB(oibTb.Text);
+                        if (employeeByOib != null)
+                        {                           
+                            
+                            this.employeeRepository.Edit(newEmployee);
+                            employeeDgv.Update();
+                            employeeDgv.Refresh();
+                            MessageBox.Show("Zaposlenik izmjenjen");
+
+                        }
+                        else
+                        {
+                            //adds new employee to database
+                            this.employeeRepository.Add(newEmployee);
+                            employeeDgv.Update();
+                            employeeDgv.Refresh();
+                            MessageBox.Show(@"Zaposlenik uspješno unesen");
+
+                        }
+                    }
+
+
                 }                                                   
                 catch (Exception)
                 {
                     MessageBox.Show(@"Neuspješan unos zaposlenika");
                     return;
                 }
-
-                MessageBox.Show(@"Zaposlenik uspješno unesen");
+                
             }
             else
             {
                 MessageBox.Show(@"Morate unijeti sve podatke");
             }
         }
+
     }
 }

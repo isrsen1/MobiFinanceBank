@@ -140,6 +140,10 @@
     <Compile Include="Migrations\201902161338355_BalanceSheetDeleted.Designer.cs">
       <DependentUpon>201902161338355_BalanceSheetDeleted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902162104248_Base64Encode.cs" />
+    <Compile Include="Migrations\201902162104248_Base64Encode.Designer.cs">
+      <DependentUpon>201902162104248_Base64Encode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -232,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902161338355_BalanceSheetDeleted.resx">
       <DependentUpon>201902161338355_BalanceSheetDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902162104248_Base64Encode.resx">
+      <DependentUpon>201902162104248_Base64Encode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

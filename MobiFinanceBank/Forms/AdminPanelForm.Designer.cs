@@ -33,6 +33,7 @@
             this.firstNameLbl = new System.Windows.Forms.Label();
             this.lastNameLbl = new System.Windows.Forms.Label();
             this.usernamelbl = new System.Windows.Forms.Label();
+            this.passwordlbl = new System.Windows.Forms.Label();
             this.oibLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
             this.contactLbl = new System.Windows.Forms.Label();
@@ -42,16 +43,14 @@
             this.firstNameTb = new System.Windows.Forms.TextBox();
             this.lastNameTb = new System.Windows.Forms.TextBox();
             this.usernameTb = new System.Windows.Forms.TextBox();
+            this.passwordTb = new System.Windows.Forms.TextBox();
             this.oibTb = new System.Windows.Forms.TextBox();
             this.emailTb = new System.Windows.Forms.TextBox();
             this.contactTb = new System.Windows.Forms.TextBox();
             this.addressTb = new System.Windows.Forms.TextBox();
             this.employeeTypeCb = new System.Windows.Forms.ComboBox();
             this.employeeDgv = new System.Windows.Forms.DataGridView();
-            this.updateBtn = new System.Windows.Forms.Button();
             this.newBtn = new System.Windows.Forms.Button();
-            this.passwordTb = new System.Windows.Forms.TextBox();
-            this.passwordlbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
@@ -73,94 +72,105 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(615, 127);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(118, 207);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(118, 219);
             this.flowLayoutPanel2.TabIndex = 18;
             // 
             // firstNameLbl
             // 
             this.firstNameLbl.AutoSize = true;
-            this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.firstNameLbl.Location = new System.Drawing.Point(2, 0);
             this.firstNameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.firstNameLbl.Name = "firstNameLbl";
-            this.firstNameLbl.Size = new System.Drawing.Size(28, 15);
+            this.firstNameLbl.Size = new System.Drawing.Size(30, 16);
             this.firstNameLbl.TabIndex = 8;
             this.firstNameLbl.Text = "Ime";
             // 
             // lastNameLbl
             // 
             this.lastNameLbl.AutoSize = true;
-            this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameLbl.Location = new System.Drawing.Point(2, 24);
+            this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lastNameLbl.Location = new System.Drawing.Point(2, 25);
             this.lastNameLbl.Margin = new System.Windows.Forms.Padding(2, 9, 2, 0);
             this.lastNameLbl.Name = "lastNameLbl";
-            this.lastNameLbl.Size = new System.Drawing.Size(53, 15);
+            this.lastNameLbl.Size = new System.Drawing.Size(57, 16);
             this.lastNameLbl.TabIndex = 9;
             this.lastNameLbl.Text = "Prezime";
             // 
             // usernamelbl
             // 
             this.usernamelbl.AutoSize = true;
-            this.usernamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernamelbl.Location = new System.Drawing.Point(2, 48);
+            this.usernamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.usernamelbl.Location = new System.Drawing.Point(2, 50);
             this.usernamelbl.Margin = new System.Windows.Forms.Padding(2, 9, 2, 0);
             this.usernamelbl.Name = "usernamelbl";
-            this.usernamelbl.Size = new System.Drawing.Size(65, 15);
+            this.usernamelbl.Size = new System.Drawing.Size(71, 16);
             this.usernamelbl.TabIndex = 15;
             this.usernamelbl.Text = "Username";
+            // 
+            // passwordlbl
+            // 
+            this.passwordlbl.AutoSize = true;
+            this.passwordlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.passwordlbl.Location = new System.Drawing.Point(2, 74);
+            this.passwordlbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.passwordlbl.Name = "passwordlbl";
+            this.passwordlbl.Size = new System.Drawing.Size(35, 16);
+            this.passwordlbl.TabIndex = 17;
+            this.passwordlbl.Text = "Šifra";
             // 
             // oibLbl
             // 
             this.oibLbl.AutoSize = true;
-            this.oibLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oibLbl.Location = new System.Drawing.Point(2, 94);
+            this.oibLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.oibLbl.Location = new System.Drawing.Point(2, 98);
             this.oibLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
             this.oibLbl.Name = "oibLbl";
-            this.oibLbl.Size = new System.Drawing.Size(27, 15);
+            this.oibLbl.Size = new System.Drawing.Size(30, 16);
             this.oibLbl.TabIndex = 10;
             this.oibLbl.Text = "OIB";
             // 
             // emailLbl
             // 
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLbl.Location = new System.Drawing.Point(2, 117);
+            this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.emailLbl.Location = new System.Drawing.Point(2, 122);
             this.emailLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(39, 15);
+            this.emailLbl.Size = new System.Drawing.Size(42, 16);
             this.emailLbl.TabIndex = 11;
             this.emailLbl.Text = "Email";
             // 
             // contactLbl
             // 
             this.contactLbl.AutoSize = true;
-            this.contactLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactLbl.Location = new System.Drawing.Point(2, 140);
+            this.contactLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.contactLbl.Location = new System.Drawing.Point(2, 146);
             this.contactLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
             this.contactLbl.Name = "contactLbl";
-            this.contactLbl.Size = new System.Drawing.Size(48, 15);
+            this.contactLbl.Size = new System.Drawing.Size(52, 16);
             this.contactLbl.TabIndex = 13;
             this.contactLbl.Text = "Kontakt";
             // 
             // addressLbl
             // 
             this.addressLbl.AutoSize = true;
-            this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressLbl.Location = new System.Drawing.Point(2, 163);
+            this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addressLbl.Location = new System.Drawing.Point(2, 170);
             this.addressLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
             this.addressLbl.Name = "addressLbl";
-            this.addressLbl.Size = new System.Drawing.Size(45, 15);
+            this.addressLbl.Size = new System.Drawing.Size(52, 16);
             this.addressLbl.TabIndex = 14;
             this.addressLbl.Text = "Adresa";
             // 
             // tiplbl
             // 
             this.tiplbl.AutoSize = true;
-            this.tiplbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tiplbl.Location = new System.Drawing.Point(2, 186);
+            this.tiplbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tiplbl.Location = new System.Drawing.Point(2, 194);
             this.tiplbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
             this.tiplbl.Name = "tiplbl";
-            this.tiplbl.Size = new System.Drawing.Size(93, 15);
+            this.tiplbl.Size = new System.Drawing.Size(104, 16);
             this.tiplbl.TabIndex = 16;
             this.tiplbl.Text = "Tip zaposlenika";
             // 
@@ -207,6 +217,15 @@
             this.usernameTb.Name = "usernameTb";
             this.usernameTb.Size = new System.Drawing.Size(170, 20);
             this.usernameTb.TabIndex = 3;
+            // 
+            // passwordTb
+            // 
+            this.passwordTb.Location = new System.Drawing.Point(2, 74);
+            this.passwordTb.Margin = new System.Windows.Forms.Padding(2);
+            this.passwordTb.Name = "passwordTb";
+            this.passwordTb.PasswordChar = '*';
+            this.passwordTb.Size = new System.Drawing.Size(170, 20);
+            this.passwordTb.TabIndex = 11;
             // 
             // oibTb
             // 
@@ -268,47 +287,17 @@
             this.employeeDgv.TabIndex = 19;
             this.employeeDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellClick);
             // 
-            // updateBtn
-            // 
-            this.updateBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateBtn.Location = new System.Drawing.Point(636, 367);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(97, 37);
-            this.updateBtn.TabIndex = 20;
-            this.updateBtn.Text = "Ažuriraj korisnika";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
             // newBtn
             // 
+            this.newBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.newBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.newBtn.Location = new System.Drawing.Point(789, 367);
+            this.newBtn.Location = new System.Drawing.Point(715, 364);
             this.newBtn.Name = "newBtn";
-            this.newBtn.Size = new System.Drawing.Size(97, 37);
+            this.newBtn.Size = new System.Drawing.Size(135, 37);
             this.newBtn.TabIndex = 21;
-            this.newBtn.Text = "Dodaj novog korisnika";
+            this.newBtn.Text = "Prihvati";
             this.newBtn.UseVisualStyleBackColor = true;
             this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
-            // 
-            // passwordTb
-            // 
-            this.passwordTb.Location = new System.Drawing.Point(2, 74);
-            this.passwordTb.Margin = new System.Windows.Forms.Padding(2);
-            this.passwordTb.Name = "passwordTb";
-            this.passwordTb.PasswordChar = '*';
-            this.passwordTb.Size = new System.Drawing.Size(170, 20);
-            this.passwordTb.TabIndex = 11;
-            // 
-            // passwordlbl
-            // 
-            this.passwordlbl.AutoSize = true;
-            this.passwordlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordlbl.Location = new System.Drawing.Point(2, 71);
-            this.passwordlbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
-            this.passwordlbl.Name = "passwordlbl";
-            this.passwordlbl.Size = new System.Drawing.Size(32, 15);
-            this.passwordlbl.TabIndex = 17;
-            this.passwordlbl.Text = "Šifra";
             // 
             // AdminPanelForm
             // 
@@ -316,7 +305,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 450);
             this.Controls.Add(this.newBtn);
-            this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.employeeDgv);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -326,7 +314,6 @@
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
             this.Controls.SetChildIndex(this.employeeDgv, 0);
-            this.Controls.SetChildIndex(this.updateBtn, 0);
             this.Controls.SetChildIndex(this.newBtn, 0);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
@@ -358,10 +345,9 @@
         private System.Windows.Forms.TextBox addressTb;
         private System.Windows.Forms.Label tiplbl;
         private System.Windows.Forms.DataGridView employeeDgv;
-        private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.ComboBox employeeTypeCb;
-        private System.Windows.Forms.Button newBtn;
         private System.Windows.Forms.Label passwordlbl;
         private System.Windows.Forms.TextBox passwordTb;
+        private System.Windows.Forms.Button newBtn;
     }
 }

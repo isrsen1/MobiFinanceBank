@@ -49,8 +49,11 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <summary>
         /// Gets employee by name.
         /// </summary>
-        Employee GetEmployeeByName(string username);
-
+        Employee GetEmployeeByUserName(string username);
+        /// <summary>
+        /// Gets employee by OIB.
+        /// </summary>
+        Employee GetByOIB(string OIB);
         /// <summary>
         /// Saves the context changes.
         /// </summary>
