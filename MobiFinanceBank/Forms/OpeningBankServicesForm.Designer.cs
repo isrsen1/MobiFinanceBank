@@ -39,7 +39,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.bankServicesFlp = new System.Windows.Forms.FlowLayoutPanel();
             this.savingAccountDgv = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,30 +65,31 @@
             this.createAccountBtn = new System.Windows.Forms.Button();
             this.createLoanBtn = new System.Windows.Forms.Button();
             this.createSavingAccountBtn = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.buttonsFlp = new System.Windows.Forms.FlowLayoutPanel();
+            this.filterLbl = new System.Windows.Forms.Label();
+            this.serviceTypeLbl = new System.Windows.Forms.Label();
+            this.bankServicesFlp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanTypeBindingSource)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.buttonsFlp.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // bankServicesFlp
             // 
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.savingAccountDgv);
-            this.flowLayoutPanel1.Controls.Add(this.accountDgv);
-            this.flowLayoutPanel1.Controls.Add(this.loanDgv);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 129);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(949, 259);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.bankServicesFlp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bankServicesFlp.Controls.Add(this.savingAccountDgv);
+            this.bankServicesFlp.Controls.Add(this.accountDgv);
+            this.bankServicesFlp.Controls.Add(this.loanDgv);
+            this.bankServicesFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.bankServicesFlp.Location = new System.Drawing.Point(9, 105);
+            this.bankServicesFlp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bankServicesFlp.Name = "bankServicesFlp";
+            this.bankServicesFlp.Size = new System.Drawing.Size(712, 210);
+            this.bankServicesFlp.TabIndex = 3;
             // 
             // savingAccountDgv
             // 
@@ -101,10 +102,11 @@
             this.fixedTermDepositingPeriodDataGridViewTextBoxColumn,
             this.savingAccountsDataGridViewTextBoxColumn});
             this.savingAccountDgv.DataSource = this.savingAccountTypeBindingSource;
-            this.savingAccountDgv.Location = new System.Drawing.Point(3, 3);
+            this.savingAccountDgv.Location = new System.Drawing.Point(2, 2);
+            this.savingAccountDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.savingAccountDgv.Name = "savingAccountDgv";
             this.savingAccountDgv.RowTemplate.Height = 24;
-            this.savingAccountDgv.Size = new System.Drawing.Size(357, 202);
+            this.savingAccountDgv.Size = new System.Drawing.Size(268, 164);
             this.savingAccountDgv.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -162,9 +164,10 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.accountsDataGridViewTextBoxColumn});
             this.accountDgv.DataSource = this.accountTypeBindingSource;
-            this.accountDgv.Location = new System.Drawing.Point(366, 3);
+            this.accountDgv.Location = new System.Drawing.Point(274, 2);
+            this.accountDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.accountDgv.Name = "accountDgv";
-            this.accountDgv.Size = new System.Drawing.Size(288, 202);
+            this.accountDgv.Size = new System.Drawing.Size(216, 164);
             this.accountDgv.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn1
@@ -235,9 +238,10 @@
             this.nameDataGridViewTextBoxColumn2,
             this.interestRateDataGridViewTextBoxColumn1});
             this.loanDgv.DataSource = this.loanTypeBindingSource;
-            this.loanDgv.Location = new System.Drawing.Point(660, 3);
+            this.loanDgv.Location = new System.Drawing.Point(494, 2);
+            this.loanDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loanDgv.Name = "loanDgv";
-            this.loanDgv.Size = new System.Drawing.Size(275, 202);
+            this.loanDgv.Size = new System.Drawing.Size(206, 164);
             this.loanDgv.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn2
@@ -270,18 +274,20 @@
             // bankServicesCb
             // 
             this.bankServicesCb.FormattingEnabled = true;
-            this.bankServicesCb.Location = new System.Drawing.Point(1044, 188);
+            this.bankServicesCb.Location = new System.Drawing.Point(783, 153);
+            this.bankServicesCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bankServicesCb.Name = "bankServicesCb";
-            this.bankServicesCb.Size = new System.Drawing.Size(203, 24);
+            this.bankServicesCb.Size = new System.Drawing.Size(153, 21);
             this.bankServicesCb.TabIndex = 4;
             this.bankServicesCb.SelectedIndexChanged += new System.EventHandler(this.bankServicesCb_SelectedIndexChanged);
             // 
             // createAccountBtn
             // 
             this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createAccountBtn.Location = new System.Drawing.Point(3, 43);
+            this.createAccountBtn.Location = new System.Drawing.Point(2, 34);
+            this.createAccountBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.createAccountBtn.Name = "createAccountBtn";
-            this.createAccountBtn.Size = new System.Drawing.Size(110, 34);
+            this.createAccountBtn.Size = new System.Drawing.Size(82, 28);
             this.createAccountBtn.TabIndex = 5;
             this.createAccountBtn.Text = "Otvori račun";
             this.createAccountBtn.UseVisualStyleBackColor = true;
@@ -290,9 +296,10 @@
             // createLoanBtn
             // 
             this.createLoanBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createLoanBtn.Location = new System.Drawing.Point(3, 3);
+            this.createLoanBtn.Location = new System.Drawing.Point(2, 2);
+            this.createLoanBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.createLoanBtn.Name = "createLoanBtn";
-            this.createLoanBtn.Size = new System.Drawing.Size(110, 34);
+            this.createLoanBtn.Size = new System.Drawing.Size(82, 28);
             this.createLoanBtn.TabIndex = 6;
             this.createLoanBtn.Text = "Otvori kredit";
             this.createLoanBtn.UseVisualStyleBackColor = true;
@@ -301,72 +308,76 @@
             // createSavingAccountBtn
             // 
             this.createSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.createSavingAccountBtn.Location = new System.Drawing.Point(119, 3);
+            this.createSavingAccountBtn.Location = new System.Drawing.Point(88, 2);
+            this.createSavingAccountBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.createSavingAccountBtn.Name = "createSavingAccountBtn";
-            this.createSavingAccountBtn.Size = new System.Drawing.Size(112, 34);
+            this.createSavingAccountBtn.Size = new System.Drawing.Size(84, 28);
             this.createSavingAccountBtn.TabIndex = 7;
             this.createSavingAccountBtn.Text = "Otvori štednju";
             this.createSavingAccountBtn.UseVisualStyleBackColor = true;
             this.createSavingAccountBtn.Click += new System.EventHandler(this.createSavingAccountBtn_Click);
             // 
-            // flowLayoutPanel2
+            // buttonsFlp
             // 
-            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Controls.Add(this.createLoanBtn);
-            this.flowLayoutPanel2.Controls.Add(this.createAccountBtn);
-            this.flowLayoutPanel2.Controls.Add(this.createSavingAccountBtn);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1044, 218);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(242, 100);
-            this.flowLayoutPanel2.TabIndex = 8;
+            this.buttonsFlp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonsFlp.Controls.Add(this.createLoanBtn);
+            this.buttonsFlp.Controls.Add(this.createAccountBtn);
+            this.buttonsFlp.Controls.Add(this.createSavingAccountBtn);
+            this.buttonsFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.buttonsFlp.Location = new System.Drawing.Point(783, 177);
+            this.buttonsFlp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonsFlp.Name = "buttonsFlp";
+            this.buttonsFlp.Size = new System.Drawing.Size(182, 81);
+            this.buttonsFlp.TabIndex = 8;
             // 
-            // label1
+            // filterLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(994, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 29);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Filter:";
+            this.filterLbl.AutoSize = true;
+            this.filterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterLbl.Location = new System.Drawing.Point(746, 105);
+            this.filterLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.filterLbl.Name = "filterLbl";
+            this.filterLbl.Size = new System.Drawing.Size(56, 24);
+            this.filterLbl.TabIndex = 9;
+            this.filterLbl.Text = "Filter:";
             // 
-            // label2
+            // serviceTypeLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1025, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Tip usluge:";
+            this.serviceTypeLbl.AutoSize = true;
+            this.serviceTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serviceTypeLbl.Location = new System.Drawing.Point(769, 136);
+            this.serviceTypeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.serviceTypeLbl.Name = "serviceTypeLbl";
+            this.serviceTypeLbl.Size = new System.Drawing.Size(67, 15);
+            this.serviceTypeLbl.TabIndex = 10;
+            this.serviceTypeLbl.Text = "Tip usluge:";
             // 
             // OpeningBankServicesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1417, 638);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.ClientSize = new System.Drawing.Size(1063, 518);
+            this.Controls.Add(this.serviceTypeLbl);
+            this.Controls.Add(this.filterLbl);
+            this.Controls.Add(this.buttonsFlp);
             this.Controls.Add(this.bankServicesCb);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.bankServicesFlp);
             this.Name = "OpeningBankServicesForm";
             this.Text = "OpeningBankServicesForm";
             this.Load += new System.EventHandler(this.OpeningBankServicesForm_Load);
-            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.bankServicesFlp, 0);
             this.Controls.SetChildIndex(this.bankServicesCb, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Controls.SetChildIndex(this.buttonsFlp, 0);
+            this.Controls.SetChildIndex(this.filterLbl, 0);
+            this.Controls.SetChildIndex(this.serviceTypeLbl, 0);
+            this.bankServicesFlp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanTypeBindingSource)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
+            this.buttonsFlp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,9 +385,8 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel bankServicesFlp;
         private System.Windows.Forms.DataGridView savingAccountDgv;
-        private System.Windows.Forms.DataGridView accountDgv;
         private System.Windows.Forms.DataGridView loanDgv;
         private System.Windows.Forms.ComboBox bankServicesCb;
         private System.Windows.Forms.BindingSource savingAccountTypeBindingSource;
@@ -385,9 +395,9 @@
         private System.Windows.Forms.Button createAccountBtn;
         private System.Windows.Forms.Button createLoanBtn;
         private System.Windows.Forms.Button createSavingAccountBtn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel buttonsFlp;
+        private System.Windows.Forms.Label filterLbl;
+        private System.Windows.Forms.Label serviceTypeLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn interestRateDataGridViewTextBoxColumn;
@@ -404,5 +414,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn loanDurationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn interestRateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView accountDgv;
     }
 }

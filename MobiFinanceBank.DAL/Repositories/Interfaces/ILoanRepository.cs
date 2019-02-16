@@ -39,6 +39,8 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <returns>Collection of loans</returns>
         IEnumerable<Loan> GetByClientId(int clientId);
 
+        IEnumerable<Loan> GetAllLoanRequests();
+
         /// <summary>
         /// Edits the specified loan.
         /// </summary>

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.foreignCurrencyLbl = new System.Windows.Forms.CheckBox();
+            this.foreignCurrencyChb = new System.Windows.Forms.CheckBox();
             this.interestRateLbl = new System.Windows.Forms.Label();
             this.currencyTitleLbl = new System.Windows.Forms.Label();
             this.currencyLbl = new System.Windows.Forms.Label();
@@ -36,7 +36,7 @@
             this.foreignCurrencyTitleLbl = new System.Windows.Forms.Label();
             this.accountNameLbl = new System.Windows.Forms.Label();
             this.accountNameTitleLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.loanTypeLbl = new System.Windows.Forms.Label();
             this.addressLbl = new System.Windows.Forms.Label();
             this.addressTitleLbl = new System.Windows.Forms.Label();
             this.incomeLbl = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.startDateDtp = new System.Windows.Forms.DateTimePicker();
             this.standingOrderChb = new System.Windows.Forms.CheckBox();
             this.capitalLbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dateFromLbl = new System.Windows.Forms.Label();
             this.standingOrderLbl = new System.Windows.Forms.Label();
             this.loanDurationTitleLbl = new System.Windows.Forms.Label();
             this.loanDurationNum = new System.Windows.Forms.NumericUpDown();
@@ -65,20 +65,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.loanDurationNum)).BeginInit();
             this.SuspendLayout();
             // 
-            // foreignCurrencyLbl
+            // foreignCurrencyChb
             // 
-            this.foreignCurrencyLbl.AutoSize = true;
-            this.foreignCurrencyLbl.Location = new System.Drawing.Point(555, 209);
-            this.foreignCurrencyLbl.Margin = new System.Windows.Forms.Padding(4);
-            this.foreignCurrencyLbl.Name = "foreignCurrencyLbl";
-            this.foreignCurrencyLbl.Size = new System.Drawing.Size(18, 17);
-            this.foreignCurrencyLbl.TabIndex = 80;
-            this.foreignCurrencyLbl.UseVisualStyleBackColor = true;
+            this.foreignCurrencyChb.AutoSize = true;
+            this.foreignCurrencyChb.Location = new System.Drawing.Point(555, 209);
+            this.foreignCurrencyChb.Margin = new System.Windows.Forms.Padding(4);
+            this.foreignCurrencyChb.Name = "foreignCurrencyChb";
+            this.foreignCurrencyChb.Size = new System.Drawing.Size(18, 17);
+            this.foreignCurrencyChb.TabIndex = 80;
+            this.foreignCurrencyChb.UseVisualStyleBackColor = true;
             // 
             // interestRateLbl
             // 
             this.interestRateLbl.AutoSize = true;
-            this.interestRateLbl.Location = new System.Drawing.Point(551, 291);
+            this.interestRateLbl.Location = new System.Drawing.Point(551, 290);
             this.interestRateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.interestRateLbl.Name = "interestRateLbl";
             this.interestRateLbl.Size = new System.Drawing.Size(46, 17);
@@ -108,7 +108,7 @@
             // interestRateTitleLbl
             // 
             this.interestRateTitleLbl.AutoSize = true;
-            this.interestRateTitleLbl.Location = new System.Drawing.Point(416, 291);
+            this.interestRateTitleLbl.Location = new System.Drawing.Point(416, 290);
             this.interestRateTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.interestRateTitleLbl.Name = "interestRateTitleLbl";
             this.interestRateTitleLbl.Size = new System.Drawing.Size(60, 17);
@@ -118,7 +118,7 @@
             // foreignCurrencyTitleLbl
             // 
             this.foreignCurrencyTitleLbl.AutoSize = true;
-            this.foreignCurrencyTitleLbl.Location = new System.Drawing.Point(420, 205);
+            this.foreignCurrencyTitleLbl.Location = new System.Drawing.Point(420, 206);
             this.foreignCurrencyTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.foreignCurrencyTitleLbl.Name = "foreignCurrencyTitleLbl";
             this.foreignCurrencyTitleLbl.Size = new System.Drawing.Size(58, 17);
@@ -145,16 +145,16 @@
             this.accountNameTitleLbl.TabIndex = 72;
             this.accountNameTitleLbl.Text = "Naziv:";
             // 
-            // label1
+            // loanTypeLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(387, 124);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 25);
-            this.label1.TabIndex = 71;
-            this.label1.Text = "Tip kredita:";
+            this.loanTypeLbl.AutoSize = true;
+            this.loanTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanTypeLbl.Location = new System.Drawing.Point(387, 124);
+            this.loanTypeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.loanTypeLbl.Name = "loanTypeLbl";
+            this.loanTypeLbl.Size = new System.Drawing.Size(109, 25);
+            this.loanTypeLbl.TabIndex = 71;
+            this.loanTypeLbl.Text = "Tip kredita:";
             // 
             // addressLbl
             // 
@@ -291,6 +291,11 @@
             // 
             // capitalNum
             // 
+            this.capitalNum.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.capitalNum.Location = new System.Drawing.Point(293, 420);
             this.capitalNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.capitalNum.Maximum = new decimal(new int[] {
@@ -298,9 +303,19 @@
             0,
             0,
             0});
+            this.capitalNum.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.capitalNum.Name = "capitalNum";
             this.capitalNum.Size = new System.Drawing.Size(120, 22);
             this.capitalNum.TabIndex = 57;
+            this.capitalNum.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // startDateDtp
             // 
@@ -330,19 +345,19 @@
             this.capitalLbl.TabIndex = 52;
             this.capitalLbl.Text = "Glavnica";
             // 
-            // label2
+            // dateFromLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 470);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
-            this.label2.TabIndex = 53;
-            this.label2.Text = "Datum početka";
+            this.dateFromLbl.AutoSize = true;
+            this.dateFromLbl.Location = new System.Drawing.Point(144, 470);
+            this.dateFromLbl.Name = "dateFromLbl";
+            this.dateFromLbl.Size = new System.Drawing.Size(103, 17);
+            this.dateFromLbl.TabIndex = 53;
+            this.dateFromLbl.Text = "Datum početka";
             // 
             // standingOrderLbl
             // 
             this.standingOrderLbl.AutoSize = true;
-            this.standingOrderLbl.Location = new System.Drawing.Point(146, 558);
+            this.standingOrderLbl.Location = new System.Drawing.Point(147, 558);
             this.standingOrderLbl.Name = "standingOrderLbl";
             this.standingOrderLbl.Size = new System.Drawing.Size(83, 17);
             this.standingOrderLbl.TabIndex = 54;
@@ -351,7 +366,7 @@
             // loanDurationTitleLbl
             // 
             this.loanDurationTitleLbl.AutoSize = true;
-            this.loanDurationTitleLbl.Location = new System.Drawing.Point(146, 515);
+            this.loanDurationTitleLbl.Location = new System.Drawing.Point(147, 514);
             this.loanDurationTitleLbl.Name = "loanDurationTitleLbl";
             this.loanDurationTitleLbl.Size = new System.Drawing.Size(117, 17);
             this.loanDurationTitleLbl.TabIndex = 84;
@@ -359,20 +374,31 @@
             // 
             // loanDurationNum
             // 
-            this.loanDurationNum.Location = new System.Drawing.Point(293, 515);
+            this.loanDurationNum.Location = new System.Drawing.Point(293, 514);
             this.loanDurationNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loanDurationNum.Maximum = new decimal(new int[] {
             40,
             0,
             0,
             0});
+            this.loanDurationNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.loanDurationNum.Name = "loanDurationNum";
             this.loanDurationNum.Size = new System.Drawing.Size(65, 22);
             this.loanDurationNum.TabIndex = 85;
+            this.loanDurationNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // assessmentProgressBar
             // 
             this.assessmentProgressBar.Location = new System.Drawing.Point(408, 517);
+            this.assessmentProgressBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.assessmentProgressBar.Name = "assessmentProgressBar";
             this.assessmentProgressBar.Size = new System.Drawing.Size(303, 23);
             this.assessmentProgressBar.TabIndex = 86;
@@ -381,8 +407,9 @@
             // 
             this.makeAssessmentBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.makeAssessmentBtn.Location = new System.Drawing.Point(408, 546);
+            this.makeAssessmentBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeAssessmentBtn.Name = "makeAssessmentBtn";
-            this.makeAssessmentBtn.Size = new System.Drawing.Size(128, 35);
+            this.makeAssessmentBtn.Size = new System.Drawing.Size(128, 34);
             this.makeAssessmentBtn.TabIndex = 87;
             this.makeAssessmentBtn.Text = "Napravi procjenu";
             this.makeAssessmentBtn.UseVisualStyleBackColor = true;
@@ -397,7 +424,7 @@
             this.Controls.Add(this.assessmentProgressBar);
             this.Controls.Add(this.loanDurationNum);
             this.Controls.Add(this.loanDurationTitleLbl);
-            this.Controls.Add(this.foreignCurrencyLbl);
+            this.Controls.Add(this.foreignCurrencyChb);
             this.Controls.Add(this.interestRateLbl);
             this.Controls.Add(this.currencyTitleLbl);
             this.Controls.Add(this.currencyLbl);
@@ -405,7 +432,7 @@
             this.Controls.Add(this.foreignCurrencyTitleLbl);
             this.Controls.Add(this.accountNameLbl);
             this.Controls.Add(this.accountNameTitleLbl);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.loanTypeLbl);
             this.Controls.Add(this.addressLbl);
             this.Controls.Add(this.addressTitleLbl);
             this.Controls.Add(this.incomeLbl);
@@ -423,13 +450,14 @@
             this.Controls.Add(this.startDateDtp);
             this.Controls.Add(this.standingOrderChb);
             this.Controls.Add(this.capitalLbl);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dateFromLbl);
             this.Controls.Add(this.standingOrderLbl);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OpenLoanBankServiceForm";
             this.Text = "OpenLoanBankServiceForm";
             this.Load += new System.EventHandler(this.OpenLoanBankServiceForm_Load);
             this.Controls.SetChildIndex(this.standingOrderLbl, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.dateFromLbl, 0);
             this.Controls.SetChildIndex(this.capitalLbl, 0);
             this.Controls.SetChildIndex(this.standingOrderChb, 0);
             this.Controls.SetChildIndex(this.startDateDtp, 0);
@@ -447,7 +475,7 @@
             this.Controls.SetChildIndex(this.incomeLbl, 0);
             this.Controls.SetChildIndex(this.addressTitleLbl, 0);
             this.Controls.SetChildIndex(this.addressLbl, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.loanTypeLbl, 0);
             this.Controls.SetChildIndex(this.accountNameTitleLbl, 0);
             this.Controls.SetChildIndex(this.accountNameLbl, 0);
             this.Controls.SetChildIndex(this.foreignCurrencyTitleLbl, 0);
@@ -455,7 +483,7 @@
             this.Controls.SetChildIndex(this.currencyLbl, 0);
             this.Controls.SetChildIndex(this.currencyTitleLbl, 0);
             this.Controls.SetChildIndex(this.interestRateLbl, 0);
-            this.Controls.SetChildIndex(this.foreignCurrencyLbl, 0);
+            this.Controls.SetChildIndex(this.foreignCurrencyChb, 0);
             this.Controls.SetChildIndex(this.loanDurationTitleLbl, 0);
             this.Controls.SetChildIndex(this.loanDurationNum, 0);
             this.Controls.SetChildIndex(this.assessmentProgressBar, 0);
@@ -469,7 +497,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox foreignCurrencyLbl;
+        private System.Windows.Forms.CheckBox foreignCurrencyChb;
         private System.Windows.Forms.Label interestRateLbl;
         private System.Windows.Forms.Label currencyTitleLbl;
         private System.Windows.Forms.Label currencyLbl;
@@ -477,7 +505,7 @@
         private System.Windows.Forms.Label foreignCurrencyTitleLbl;
         private System.Windows.Forms.Label accountNameLbl;
         private System.Windows.Forms.Label accountNameTitleLbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label loanTypeLbl;
         private System.Windows.Forms.Label addressLbl;
         private System.Windows.Forms.Label addressTitleLbl;
         private System.Windows.Forms.Label incomeLbl;
@@ -491,15 +519,15 @@
         private System.Windows.Forms.Label clientDetails;
         private System.Windows.Forms.Button loanRequestButton;
         private System.Windows.Forms.DataGridView accountsDgv;
-        private System.Windows.Forms.NumericUpDown capitalNum;
         private System.Windows.Forms.DateTimePicker startDateDtp;
         private System.Windows.Forms.CheckBox standingOrderChb;
         private System.Windows.Forms.Label capitalLbl;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label dateFromLbl;
         private System.Windows.Forms.Label standingOrderLbl;
         private System.Windows.Forms.Label loanDurationTitleLbl;
         private System.Windows.Forms.NumericUpDown loanDurationNum;
         private System.Windows.Forms.ProgressBar assessmentProgressBar;
         private System.Windows.Forms.Button makeAssessmentBtn;
+        private System.Windows.Forms.NumericUpDown capitalNum;
     }
 }

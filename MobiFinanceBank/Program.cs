@@ -28,7 +28,7 @@ namespace MobiFinanceBank
             container.RegisterType<ILoginService, LoginService>();
             container.RegisterType<IEmployeeRepository, EmployeeRepository>();
             container.RegisterType<IMenuForm, MenuForm>();
-            container.RegisterType<IAdminPanel, AdminPanel>();
+            container.RegisterType<IAdminPanel, AdminPanelForm>();
             container.RegisterType<IExchangeForm, ExchangeForm>();
             container.RegisterType<IExchangeService, ExchangeService>();
             container.RegisterType<IExchangeVmService, ExchangeVmService>();
@@ -40,6 +40,7 @@ namespace MobiFinanceBank
             container.RegisterType<IClientOverviewVmService, ClientOverviewVmService>();
             container.RegisterType<IBankServicesVmService, BankServicesVmService>();
             container.RegisterType<IBankServicesOverviewForm, BankServicesOverviewForm>();
+            container.RegisterType<IEmployeeTypeRepository, EmployeeTypeRepository>();
             container.RegisterType<IAccountRepository, AccountRepository>();
             container.RegisterType<ISavingAccountRepository, SavingAccountRepository>();          
             container.RegisterType<ILoanRepository, LoanRepository>();
@@ -51,6 +52,7 @@ namespace MobiFinanceBank
             container.RegisterType<IOpenSavingAccountBankServiceForm, OpenSavingAccountBankServiceForm>();
             container.RegisterType<IOpenLoanBankServiceForm, OpenLoanBankServiceForm>();
             container.RegisterType<ILoanAssessment, LoanAssessment>();
+            container.RegisterType<ILoanRequestsForm, LoanRequestsForm>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

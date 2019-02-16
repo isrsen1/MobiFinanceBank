@@ -26,25 +26,31 @@ namespace MobiFinanceBank.Services
               this.employeeRepository = _employeeRepository;
             
         }
+        public static string Base64Decode(string base64EncodedData)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
         public Employee CheckCredentials(string username, string password)
         {
-             //Employee employee=new Employee();
-             var employee = this.employeeRepository.GetEmployeeByName(username);
+             
+             var employee = this.employeeRepository.GetEmployeeByUserName(username);
+            var hashy = Base64Decode(employee.PasswordHash);
+            var salty = Base64Decode(employee.PasswordSalt);
             
             try
             {
-               // hash = HashLibrary.HashedPassword.New(password);                
-               // Hashed = "ÙDĸÓê;ĩďu.¯&ĉYěL{'ÌgÎÆÜ*ĮìÃy®ŀ¹¢";
-               // Salted = "r_¯ß]Ĵŀ5ĻÕÔø«4-ê_ÜoHĕÐ`?ĩëý½Ġïİė";
-                hash = new HashLibrary.HashedPassword(employee.PasswordHash, employee.PasswordSalt);                             
+                // hash = HashLibrary.HashedPassword.New(password);                
+                 Hashed = "O_¸¯°íó7ÚS§ÊįāĨkÙZµį4g}BÞo.óDxßT";
+                 Salted = "¥ĎP¢ċÎ³ðsĤĩçÍĴÃČðp×}õĐ­£ŀ_`ð?îy=";
+                hash = new HashLibrary.HashedPassword(hashy, salty);    
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.ToString());
             }
-            Console.WriteLine("hash: " + hash.Hash);
-            Console.WriteLine("salt: " + hash.Salt);
-            //System.IO.File.WriteAllText(@"C:\Users\Public\HashSalt.txt", hash.Hash+"\n"+hash.Salt);      
+
+            System.IO.File.WriteAllText(@"C:\Users\Public\HashSaltLogin.txt", hash.Hash+"\n"+hash.Salt);      
             try
             {
                 if (hash.Check(password)==false)

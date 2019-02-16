@@ -5,6 +5,7 @@ using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Services.Interfaces;
 using MobiFinanceBank.Templates;
+using ClientType = MobiFinanceBank.Model.Enums.ClientType;
 
 namespace MobiFinanceBank.Forms
 {
@@ -78,7 +79,7 @@ namespace MobiFinanceBank.Forms
         /// </summary>
         /// <param name="sender">Sender object</param>
         /// <param name="e">Event args</param>
-        private void standingOrderChb_CheckedChanged(object sender, System.EventArgs e)
+        private void standingOrderChb_CheckedChanged(object sender, EventArgs e)
         {
             // Show additional UI if standing order is checked
             this.IsStandingOrderChecked = !this.IsStandingOrderChecked;
@@ -94,7 +95,7 @@ namespace MobiFinanceBank.Forms
             }
         }
 
-        private void OpenLoanBankServiceForm_Load(object sender, System.EventArgs e)
+        private void OpenLoanBankServiceForm_Load(object sender, EventArgs e)
         {
             accountsDgv.Visible = false;
 
@@ -105,12 +106,18 @@ namespace MobiFinanceBank.Forms
             incomeLbl.Text = Client.Income.ToString();
 
             accountNameLbl.Text = LoanType.Name;
-            foreignCurrencyLbl.Checked = LoanType.IsForeignCurrency;
+            foreignCurrencyChb.Checked = LoanType.IsForeignCurrency;
             currencyLbl.Text = LoanType.Currency;
-            interestRateLbl.Text = (LoanType.InterestRate * 100).ToString() + "%";
+            interestRateLbl.Text = (LoanType.InterestRate * 100) + "%";
+
+            if (Client.ClientTypeId == (int) ClientType.Poslovni)
+            {
+                makeAssessmentBtn.Visible = false;
+                assessmentProgressBar.Visible = false;
+            }
         }
 
-        private void loanRequestButton_Click(object sender, System.EventArgs e)
+        private void loanRequestButton_Click(object sender, EventArgs e)
         {
             Account account = null;
 
@@ -145,7 +152,7 @@ namespace MobiFinanceBank.Forms
                 LoanEndDate = startDateDtp.Value.AddYears((int)loanDurationNum.Value),
                 Status = 0,
                 LoanTypeId = LoanType.Id,
-                EmployeeId = 1,
+                EmployeeId = 3,
                 ClientId = Client.Id
             };
 

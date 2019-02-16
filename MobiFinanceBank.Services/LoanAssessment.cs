@@ -59,6 +59,22 @@ namespace MobiFinanceBank.Services
                         (requiredLoan.Capital * requiredLoan.LoanType.InterestRate + requiredLoan.Capital)/(requiredLoan.LoanDuration * 12);
                     assessment = (clientIncome - fixedAmmount - currentLoansAmount)/requiredLoanMonthlyAmount;
                 }
+
+                if (client.Income >= averageSalary && (client.IsFixedTermContract || client.IsUnusualProfession))
+                {
+                    // Calculate assessment
+                    var requiredLoanMonthlyAmount =
+                        (requiredLoan.Capital * requiredLoan.LoanType.InterestRate + requiredLoan.Capital) / (requiredLoan.LoanDuration * 12);
+                    assessment = (clientIncome - fixedAmmountUnusualProfession - currentLoansAmount) / requiredLoanMonthlyAmount;
+                }
+
+                if (client.Income < averageSalary)
+                {
+                    // Calculate assessment
+                    var requiredLoanMonthlyAmount =
+                        (requiredLoan.Capital * requiredLoan.LoanType.InterestRate + requiredLoan.Capital) / (requiredLoan.LoanDuration * 12);
+                    assessment = ((clientIncome / 3) - currentLoansAmount) / requiredLoanMonthlyAmount;
+                }
             }
 
             return assessment/3;

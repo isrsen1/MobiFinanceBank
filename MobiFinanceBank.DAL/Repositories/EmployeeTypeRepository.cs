@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
@@ -15,6 +16,10 @@ namespace MobiFinanceBank.DAL.Repositories
     {
         private readonly IMobiFinanceContext context;
 
+        public EmployeeTypeRepository(IMobiFinanceContext _context)
+        {
+            this.context = _context;
+        }
         /// <summary>
         /// Adds the specified employee type.
         /// </summary>
@@ -109,6 +114,10 @@ namespace MobiFinanceBank.DAL.Repositories
                     throw;
                 }
             }
+        }
+        public IEnumerable<EmployeeType> GetAll()
+        {
+            return this.context.EmployeeTypes.ToList();
         }
 
         /// <summary>

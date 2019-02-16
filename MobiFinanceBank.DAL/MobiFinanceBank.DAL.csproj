@@ -136,31 +136,33 @@
     <Compile Include="Migrations\201902151630137_HashPass3NFmigracija.Designer.cs">
       <DependentUpon>201902151630137_HashPass3NFmigracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902161338355_BalanceSheetDeleted.cs" />
+    <Compile Include="Migrations\201902161338355_BalanceSheetDeleted.Designer.cs">
+      <DependentUpon>201902161338355_BalanceSheetDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902162104248_Base64Encode.cs" />
+    <Compile Include="Migrations\201902162104248_Base64Encode.Designer.cs">
+      <DependentUpon>201902162104248_Base64Encode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\AccountTypeRepository.cs" />
-    <Compile Include="Repositories\AssetRepository.cs" />
-    <Compile Include="Repositories\BalanceSheetRepository.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
     <Compile Include="Repositories\ClientType.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\EmployeeTypeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IAccountRepository.cs" />
     <Compile Include="Repositories\Interfaces\IAccountTypeRepository.cs" />
-    <Compile Include="Repositories\Interfaces\IAssetRepository.cs" />
-    <Compile Include="Repositories\Interfaces\IBalanceSheetRepository.cs" />
     <Compile Include="Repositories\Interfaces\IClientRepository.cs" />
     <Compile Include="Repositories\Interfaces\IClientType.cs" />
     <Compile Include="Repositories\Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IEmployeeTypeRepository.cs" />
-    <Compile Include="Repositories\Interfaces\ILiabilityRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILoanRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILoanTypeRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepaymentPlanRepository.cs" />
     <Compile Include="Repositories\Interfaces\ISavingAccountRepository.cs" />
     <Compile Include="Repositories\Interfaces\ISavingAccountTypeRepository.cs" />
-    <Compile Include="Repositories\LiabilityRepository.cs" />
     <Compile Include="Repositories\LoanRepository.cs" />
     <Compile Include="Repositories\LoanTypeRepository.cs" />
     <Compile Include="Repositories\RepaymentPlanRepository.cs" />
@@ -231,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902151630137_HashPass3NFmigracija.resx">
       <DependentUpon>201902151630137_HashPass3NFmigracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902161338355_BalanceSheetDeleted.resx">
+      <DependentUpon>201902161338355_BalanceSheetDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902162104248_Base64Encode.resx">
+      <DependentUpon>201902162104248_Base64Encode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
