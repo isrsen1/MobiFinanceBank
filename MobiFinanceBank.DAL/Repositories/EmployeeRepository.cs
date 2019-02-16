@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using MobiFinanceBank.DAL.DbContexts.Interfaces;
@@ -122,6 +123,10 @@ namespace MobiFinanceBank.DAL.Repositories
         { 
             return this.context.Employees.FirstOrDefault(employee => employee.UserName == username);
 
+        }
+        public IEnumerable<Employee> GetAll()
+        {
+            return this.context.Employees.ToList();
         }
 
         /// <summary>

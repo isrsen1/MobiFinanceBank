@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.DAL.Repositories.Interfaces
@@ -23,6 +24,11 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="personId">The person identifier.</param>
         /// <returns>Returns account </returns>
         Employee Get(long personId);
+        /// <summary>
+        /// Returns all employees
+        /// </summary>
+        /// <returns>Returns account </returns>
+        IEnumerable<Employee> GetAll();
 
         /// <summary>
         /// Edits the specified employee.

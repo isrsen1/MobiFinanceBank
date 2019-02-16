@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MobiFinanceBank.Model.Models;
 
 namespace MobiFinanceBank.DAL.Repositories.Interfaces
@@ -40,6 +41,7 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// <param name="shouldSaveChanges">if set to true it will save changes to db.</param>
         void Remove(long employeeTypeId, bool shouldSaveChanges = true);
 
+        IEnumerable<EmployeeType> GetAll();
         /// <summary>
         /// Saves the context changes.
         /// </summary>

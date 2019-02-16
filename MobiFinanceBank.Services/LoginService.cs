@@ -28,7 +28,7 @@ namespace MobiFinanceBank.Services
         }
         public Employee CheckCredentials(string username, string password)
         {
-             //Employee employee=new Employee();
+             
              var employee = this.employeeRepository.GetEmployeeByName(username);
             
             try
