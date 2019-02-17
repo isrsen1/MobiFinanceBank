@@ -51,10 +51,9 @@ namespace MobiFinanceBank.Services
             
             try
             {
-                //example of hash and password after decoding
-                // hash = HashLibrary.HashedPassword.New(password);                
-                // Hashed = "O_¸¯°íó7ÚS§ÊįāĨkÙZµį4g}BÞo.óDxßT";
-                // Salted = "¥ĎP¢ċÎ³ðsĤĩçÍĴÃČðp×}õĐ­£ŀ_`ð?îy=";
+                //example of hash and password after decoding             
+                // Hash = "O_¸¯°íó7ÚS§ÊįāĨkÙZµį4g}BÞo.óDxßT";
+                // Salt = "¥ĎP¢ċÎ³ðsĤĩçÍĴÃČðp×}õĐ­£ŀ_`ð?îy=";
 
                 //passes the decoded data into the HashedPassword class constructor
                 hash = new HashLibrary.HashedPassword(hashDecode, saltDecode);    
@@ -62,10 +61,7 @@ namespace MobiFinanceBank.Services
             catch (Exception exc)
             {
                 MessageBox.Show(exc.ToString());
-            }
-
-            //used for testing
-            //System.IO.File.WriteAllText(@"C:\Users\Public\HashSaltLogin.txt", hash.Hash+"\n"+hash.Salt);      
+            }     
             try
             {
                 //checks the hash against the plaintext
@@ -73,13 +69,17 @@ namespace MobiFinanceBank.Services
                 {
                     MessageBox.Show("Šifra je neispravna! Pokušajte ponovo.");
                 }
+                if (employee.IsActive == false)
+                {
+                    MessageBox.Show("Zaposlenik nije aktivan, kontaktirajte administratora.");
+                }
 
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.ToString());
             }
-            if (employee != null && hash.Check(password))
+            if (employee != null && hash.Check(password) && employee.IsActive==true)
             {
                 return employee;              
             }

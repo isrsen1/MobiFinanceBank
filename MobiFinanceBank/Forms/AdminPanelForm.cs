@@ -104,8 +104,7 @@ namespace MobiFinanceBank.Forms
                           && !string.IsNullOrEmpty(contactTb.Text)
                           && !string.IsNullOrEmpty(addressTb.Text)
                           && !string.IsNullOrEmpty(firstNameTb.Text)
-                          && !string.IsNullOrEmpty(lastNameTb.Text)
-                          && !string.IsNullOrEmpty(passwordTb.Text);
+                          && !string.IsNullOrEmpty(lastNameTb.Text);                         
 
             return isValid;
         }
@@ -117,9 +116,6 @@ namespace MobiFinanceBank.Forms
         {
             var hashBytes = System.Text.Encoding.UTF8.GetBytes(hash);
             return System.Convert.ToBase64String(hashBytes);
-        }
-        private void updateBtn_Click(object sender, EventArgs e)
-        {
         }
         /// <summary>
         /// Adds or edits employee
@@ -144,23 +140,29 @@ namespace MobiFinanceBank.Forms
                     newEmployee.PhoneNumber = contactTb.Text;
                     newEmployee.Address = addressTb.Text;
                     newEmployee.EmployeeTypeId = Convert.ToInt32(employeeTypeCb.SelectedValue);
+                    newEmployee.IsActive = aktivanChb.Checked;
 
-                    //generates new password hash and salt from the entered plaintext password
-                    var hashedPassword = HashedPassword.New(passwordTb.Text);
-                    //encodes the hash and salt for storage in the database
-                    var encodedHash = Base64Encode(hashedPassword.Hash);
-                    var encodedSalt = Base64Encode(hashedPassword.Salt);
 
-                    newEmployee.PasswordHash = encodedHash;
-                    newEmployee.PasswordSalt = encodedSalt;
-                   
+
+                    if (!string.IsNullOrEmpty(passwordTb.Text))
+                    {
+                        //generates new password hash and salt from the entered plaintext password
+                        var hashedPassword = HashedPassword.New(passwordTb.Text);
+                        //encodes the hash and salt for storage in the database
+                        var encodedHash = Base64Encode(hashedPassword.Hash);
+                        var encodedSalt = Base64Encode(hashedPassword.Salt);
+
+                        newEmployee.PasswordHash = encodedHash;
+                        newEmployee.PasswordSalt = encodedSalt;
+                    }
+                                
                     //checks if employee already exists, edits if it does
                     if (!string.IsNullOrEmpty(oibTb.Text))
                     {
                         var employeeByOib = this.employeeRepository.GetByOIB(oibTb.Text);
                         if (employeeByOib != null)
-                        {                           
-                            
+                        {
+
                             this.employeeRepository.Edit(newEmployee);
                             employeeDgv.Update();
                             employeeDgv.Refresh();
@@ -170,13 +172,17 @@ namespace MobiFinanceBank.Forms
                         }
                         else
                         {
-                            //adds new employee to database
-                            this.employeeRepository.Add(newEmployee);
-                            employeeDgv.Update();
-                            employeeDgv.Refresh();
-                            RefreshElements();
-                            MessageBox.Show(@"Zaposlenik uspješno unesen");
+                            //if we are adding a new employee, the password must be entered as well
+                            if (!string.IsNullOrEmpty(passwordTb.Text))
+                            {
+                                //adds new employee to database
+                                this.employeeRepository.Add(newEmployee);
+                                employeeDgv.Update();
+                                employeeDgv.Refresh();
+                                RefreshElements();
+                                MessageBox.Show(@"Zaposlenik uspješno unesen");
 
+                            }
                         }
                     }
 

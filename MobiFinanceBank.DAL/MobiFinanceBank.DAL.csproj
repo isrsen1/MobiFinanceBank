@@ -144,6 +144,10 @@
     <Compile Include="Migrations\201902162104248_Base64Encode.Designer.cs">
       <DependentUpon>201902162104248_Base64Encode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902171649464_EmployeeActiveBool.cs" />
+    <Compile Include="Migrations\201902171649464_EmployeeActiveBool.Designer.cs">
+      <DependentUpon>201902171649464_EmployeeActiveBool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -239,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902162104248_Base64Encode.resx">
       <DependentUpon>201902162104248_Base64Encode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902171649464_EmployeeActiveBool.resx">
+      <DependentUpon>201902171649464_EmployeeActiveBool.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
