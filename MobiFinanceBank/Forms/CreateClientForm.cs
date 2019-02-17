@@ -89,6 +89,18 @@ namespace MobiFinanceBank.Forms
                 fixedTermContractChb.Checked = ClientToModify.IsFixedTermContract;
                 riskProfessionChb.Checked = ClientToModify.IsUnusualProfession;
                 addClientBtn.Text = @"Uredi klijenta";
+
+                if (!ClientToModify.IsEmployed)
+                {
+                    monthlyIncomeLbl.Visible = false;
+                    monthlyIncomeNum.Visible = false;
+
+                    riskProfessionChb.Visible = false;
+                    riskProfessionLbl.Visible = false;
+
+                    fixedTermContractLbl.Visible = false;
+                    fixedTermContractChb.Visible = false;
+                }
             }
 
         }
@@ -284,7 +296,7 @@ namespace MobiFinanceBank.Forms
                     return;
                 }
 
-                MessageBox.Show(@"Klijent uspješno kreiran");
+                MessageBox.Show(ClientToModify == null ? @"Klijent uspješno kreiran" : @"Klijent uspješno ažuriran");
             }
             else
             {

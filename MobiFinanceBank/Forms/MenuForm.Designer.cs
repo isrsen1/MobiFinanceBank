@@ -113,7 +113,7 @@
             this.btnImePrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnImePrezime.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnImePrezime.Location = new System.Drawing.Point(1061, 116);
-            this.btnImePrezime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImePrezime.Margin = new System.Windows.Forms.Padding(4);
             this.btnImePrezime.Name = "btnImePrezime";
             this.btnImePrezime.Size = new System.Drawing.Size(139, 28);
             this.btnImePrezime.TabIndex = 14;
@@ -136,7 +136,7 @@
             this.btnRazinaPrava.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRazinaPrava.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRazinaPrava.Location = new System.Drawing.Point(1061, 151);
-            this.btnRazinaPrava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRazinaPrava.Margin = new System.Windows.Forms.Padding(4);
             this.btnRazinaPrava.Name = "btnRazinaPrava";
             this.btnRazinaPrava.Size = new System.Drawing.Size(139, 28);
             this.btnRazinaPrava.TabIndex = 16;
@@ -162,7 +162,7 @@
             this.btnAdminPanel.Image = global::MobiFinanceBank.Properties.Resources.AdminIcon;
             this.btnAdminPanel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdminPanel.Location = new System.Drawing.Point(1257, 202);
-            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdminPanel.Name = "btnAdminPanel";
             this.btnAdminPanel.Size = new System.Drawing.Size(120, 90);
             this.btnAdminPanel.TabIndex = 18;
@@ -177,10 +177,10 @@
             this.loanRequestsBtn.ForeColor = System.Drawing.Color.Black;
             this.loanRequestsBtn.Image = global::MobiFinanceBank.Properties.Resources.search;
             this.loanRequestsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loanRequestsBtn.Location = new System.Drawing.Point(599, 289);
+            this.loanRequestsBtn.Location = new System.Drawing.Point(579, 287);
             this.loanRequestsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loanRequestsBtn.Name = "loanRequestsBtn";
-            this.loanRequestsBtn.Size = new System.Drawing.Size(216, 82);
+            this.loanRequestsBtn.Size = new System.Drawing.Size(239, 82);
             this.loanRequestsBtn.TabIndex = 19;
             this.loanRequestsBtn.Text = "Kreditni zahtjevi";
             this.loanRequestsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -203,9 +203,10 @@
             this.Controls.Add(this.btnZaposlenici);
             this.Controls.Add(this.btnMjenjacnica);
             this.Controls.Add(this.btnPregledKlijenata);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
+            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.Controls.SetChildIndex(this.btnPregledKlijenata, 0);
             this.Controls.SetChildIndex(this.btnMjenjacnica, 0);
             this.Controls.SetChildIndex(this.btnZaposlenici, 0);

@@ -136,6 +136,7 @@ namespace MobiFinanceBank.Forms
             {
                 var row = this.clientOverviewDgv.SelectedRows[0];
                 var client = (Client)row.DataBoundItem;
+                
                 this.openingBankServicesForm.Show(client);
             }
             else

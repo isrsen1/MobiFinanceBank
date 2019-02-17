@@ -99,7 +99,7 @@ namespace MobiFinanceBank.Forms
         {
             this.SetDataSources();
             this.SetDataGridViewSize(900, 300);
-
+            
             var serviceButton = new Dictionary<DataGridView, Button>()
             {
                 {loanDgv, createLoanBtn},

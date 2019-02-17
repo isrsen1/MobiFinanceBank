@@ -28,57 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.AppName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.exitPb = new System.Windows.Forms.PictureBox();
+            this.logoPb = new System.Windows.Forms.PictureBox();
+            this.titlePanel = new System.Windows.Forms.Panel();
+            this.appNameLbl = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPb)).BeginInit();
+            this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // exitPb
             // 
-            this.pictureBox2.Image = global::MobiFinanceBank.Properties.Resources.exit;
-            this.pictureBox2.Location = new System.Drawing.Point(1305, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 53);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.exitPb.Image = global::MobiFinanceBank.Properties.Resources.exit;
+            this.exitPb.Location = new System.Drawing.Point(1305, 3);
+            this.exitPb.Name = "exitPb";
+            this.exitPb.Size = new System.Drawing.Size(80, 53);
+            this.exitPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitPb.TabIndex = 1;
+            this.exitPb.TabStop = false;
+            this.exitPb.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox1
+            // logoPb
             // 
-            this.pictureBox1.Image = global::MobiFinanceBank.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.logoPb.Image = global::MobiFinanceBank.Properties.Resources.logo;
+            this.logoPb.Location = new System.Drawing.Point(-2, -2);
+            this.logoPb.Name = "logoPb";
+            this.logoPb.Size = new System.Drawing.Size(123, 96);
+            this.logoPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPb.TabIndex = 0;
+            this.logoPb.TabStop = false;
             // 
-            // panel1
+            // titlePanel
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.AppName);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1392, 96);
-            this.panel1.TabIndex = 2;
+            this.titlePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.titlePanel.Controls.Add(this.exitPb);
+            this.titlePanel.Controls.Add(this.appNameLbl);
+            this.titlePanel.Controls.Add(this.logoPb);
+            this.titlePanel.Location = new System.Drawing.Point(12, 12);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(1392, 96);
+            this.titlePanel.TabIndex = 2;
             // 
-            // AppName
+            // appNameLbl
             // 
-            this.AppName.AutoSize = true;
-            this.AppName.Font = new System.Drawing.Font("Franklin Gothic Medium", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppName.Location = new System.Drawing.Point(619, 18);
-            this.AppName.Name = "AppName";
-            this.AppName.Size = new System.Drawing.Size(281, 50);
-            this.AppName.TabIndex = 0;
-            this.AppName.Text = "Mobi Finance";
-            this.AppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.appNameLbl.AutoSize = true;
+            this.appNameLbl.Font = new System.Drawing.Font("Franklin Gothic Medium", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appNameLbl.Location = new System.Drawing.Point(619, 18);
+            this.appNameLbl.Name = "appNameLbl";
+            this.appNameLbl.Size = new System.Drawing.Size(281, 50);
+            this.appNameLbl.TabIndex = 0;
+            this.appNameLbl.Text = "Mobi Finance";
+            this.appNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TemplateForm
             // 
@@ -86,25 +86,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1417, 638);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.titlePanel);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TemplateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TemplateForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPb)).EndInit();
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label AppName;
+        private System.Windows.Forms.PictureBox logoPb;
+        private System.Windows.Forms.PictureBox exitPb;
+        private System.Windows.Forms.Panel titlePanel;
+        private System.Windows.Forms.Label appNameLbl;
     }
 }

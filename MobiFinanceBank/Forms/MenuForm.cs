@@ -1,5 +1,8 @@
 ﻿using System;
+using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
+using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
 
@@ -19,6 +22,7 @@ namespace MobiFinanceBank.Forms
         private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
         private readonly IAdminPanel _adminPanel;
         private readonly ILoanRequestsForm loanRequestsForm;
+        private readonly IEmployeeTypeRepository employeeTypeRepository;
 
         /// <summary>
         /// Initializes new instance of menu form
@@ -34,6 +38,7 @@ namespace MobiFinanceBank.Forms
             IBankServicesOverviewForm bankServicesOverviewForm,
             IAdminPanel adminPanel,
             ILoanRequestsForm _loanRequestsForm,
+            IEmployeeTypeRepository _employeeTypeRepository,
             Employee _employee)
         {
             InitializeComponent();
@@ -44,6 +49,8 @@ namespace MobiFinanceBank.Forms
             this._bankServicesOverviewForm = bankServicesOverviewForm;
             this._adminPanel = adminPanel;
             this.loanRequestsForm = _loanRequestsForm;
+            this.employeeTypeRepository = _employeeTypeRepository;
+
             //this.btnAdminPanel.Visible = false;
             btnAdminPanel.Enabled = true;
 
@@ -90,6 +97,14 @@ namespace MobiFinanceBank.Forms
         private void loanRequestsBtn_Click(object sender, EventArgs e)
         {
             this.loanRequestsForm.Show();
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            var currentUser = CurrentUser.GetEmployee();
+            var employeeType = this.employeeTypeRepository.Get(currentUser.EmployeeTypeId);
+            if (employeeType.Name == Enum.GetName(typeof(EmployeeTypeEnum), EmployeeTypeEnum.Zaposlenik))
+                loanRequestsBtn.Visible = false;
         }
     }
 }
