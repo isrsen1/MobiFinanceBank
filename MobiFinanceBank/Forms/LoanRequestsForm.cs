@@ -120,5 +120,11 @@ namespace MobiFinanceBank.Forms
         {
             loanRequestsDgv.DataSource = this.loanRepository.GetAllLoanRequests().ToList();
         }
+
+        private void LoanRequestsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

@@ -201,5 +201,10 @@ namespace MobiFinanceBank.Forms
             }
         }
 
+        private void AdminPanelForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

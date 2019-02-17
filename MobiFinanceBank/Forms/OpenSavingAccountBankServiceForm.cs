@@ -181,5 +181,11 @@ namespace MobiFinanceBank.Forms
                     MessageBoxIcon.Error);
             }
         }
+
+        private void OpenSavingAccountBankServiceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

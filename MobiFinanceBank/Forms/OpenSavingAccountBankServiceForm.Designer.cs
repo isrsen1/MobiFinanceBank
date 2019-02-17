@@ -397,7 +397,7 @@
             // 
             this.foreignCurrencyChb.AutoSize = true;
             this.foreignCurrencyChb.Location = new System.Drawing.Point(509, 206);
-            this.foreignCurrencyChb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foreignCurrencyChb.Margin = new System.Windows.Forms.Padding(4);
             this.foreignCurrencyChb.Name = "foreignCurrencyChb";
             this.foreignCurrencyChb.Size = new System.Drawing.Size(18, 17);
             this.foreignCurrencyChb.TabIndex = 48;
@@ -498,7 +498,7 @@
             // 
             this.fixedTermChb.AutoSize = true;
             this.fixedTermChb.Location = new System.Drawing.Point(509, 330);
-            this.fixedTermChb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fixedTermChb.Margin = new System.Windows.Forms.Padding(4);
             this.fixedTermChb.Name = "fixedTermChb";
             this.fixedTermChb.Size = new System.Drawing.Size(18, 17);
             this.fixedTermChb.TabIndex = 49;
@@ -561,9 +561,10 @@
             this.Controls.Add(this.capitalLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.standingOrderLbl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OpenSavingAccountBankServiceForm";
             this.Text = "OpenSavingAccountBankServiceForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenSavingAccountBankServiceForm_FormClosing);
             this.Load += new System.EventHandler(this.OpenSavingAccountBankServiceForm_Load);
             this.Controls.SetChildIndex(this.standingOrderLbl, 0);
             this.Controls.SetChildIndex(this.label2, 0);

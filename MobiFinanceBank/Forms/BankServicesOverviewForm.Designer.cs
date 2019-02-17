@@ -115,10 +115,10 @@
             this.bankServicesFlp.Controls.Add(this.loanDgv);
             this.bankServicesFlp.Controls.Add(this.savingAccountDgv);
             this.bankServicesFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.bankServicesFlp.Location = new System.Drawing.Point(9, 102);
-            this.bankServicesFlp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bankServicesFlp.Location = new System.Drawing.Point(12, 126);
+            this.bankServicesFlp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bankServicesFlp.Name = "bankServicesFlp";
-            this.bankServicesFlp.Size = new System.Drawing.Size(616, 269);
+            this.bankServicesFlp.Size = new System.Drawing.Size(821, 331);
             this.bankServicesFlp.TabIndex = 3;
             // 
             // accountDgv
@@ -142,11 +142,11 @@
             this.loansDataGridViewTextBoxColumn,
             this.savingAccountsDataGridViewTextBoxColumn});
             this.accountDgv.DataSource = this.accountBindingSource;
-            this.accountDgv.Location = new System.Drawing.Point(2, 2);
-            this.accountDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accountDgv.Location = new System.Drawing.Point(3, 2);
+            this.accountDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accountDgv.Name = "accountDgv";
             this.accountDgv.RowTemplate.Height = 24;
-            this.accountDgv.Size = new System.Drawing.Size(363, 122);
+            this.accountDgv.Size = new System.Drawing.Size(484, 150);
             this.accountDgv.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -164,7 +164,7 @@
             this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.iBANDataGridViewTextBoxColumn.HeaderText = "IBAN";
             this.iBANDataGridViewTextBoxColumn.Name = "iBANDataGridViewTextBoxColumn";
-            this.iBANDataGridViewTextBoxColumn.Width = 57;
+            this.iBANDataGridViewTextBoxColumn.Width = 68;
             // 
             // cardNumberDataGridViewTextBoxColumn
             // 
@@ -173,7 +173,7 @@
             this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.cardNumberDataGridViewTextBoxColumn.HeaderText = "CardNumber";
             this.cardNumberDataGridViewTextBoxColumn.Name = "cardNumberDataGridViewTextBoxColumn";
-            this.cardNumberDataGridViewTextBoxColumn.Width = 91;
+            this.cardNumberDataGridViewTextBoxColumn.Width = 117;
             // 
             // balanceDataGridViewTextBoxColumn
             // 
@@ -182,7 +182,7 @@
             this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
             this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
-            this.balanceDataGridViewTextBoxColumn.Width = 71;
+            this.balanceDataGridViewTextBoxColumn.Width = 88;
             // 
             // blockedDataGridViewCheckBoxColumn
             // 
@@ -193,7 +193,7 @@
             this.blockedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.blockedDataGridViewCheckBoxColumn.HeaderText = "Blocked";
             this.blockedDataGridViewCheckBoxColumn.Name = "blockedDataGridViewCheckBoxColumn";
-            this.blockedDataGridViewCheckBoxColumn.Width = 52;
+            this.blockedDataGridViewCheckBoxColumn.Width = 64;
             // 
             // clientIdDataGridViewTextBoxColumn
             // 
@@ -287,11 +287,11 @@
             this.accountDataGridViewTextBoxColumn,
             this.repaymentPlansDataGridViewTextBoxColumn});
             this.loanDgv.DataSource = this.loanBindingSource;
-            this.loanDgv.Location = new System.Drawing.Point(2, 128);
-            this.loanDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loanDgv.Location = new System.Drawing.Point(3, 156);
+            this.loanDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loanDgv.Name = "loanDgv";
             this.loanDgv.RowTemplate.Height = 24;
-            this.loanDgv.Size = new System.Drawing.Size(320, 122);
+            this.loanDgv.Size = new System.Drawing.Size(427, 150);
             this.loanDgv.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn1
@@ -309,7 +309,7 @@
             this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 62;
+            this.statusDataGridViewTextBoxColumn.Width = 77;
             // 
             // loanStartDateDataGridViewTextBoxColumn
             // 
@@ -318,7 +318,7 @@
             this.loanStartDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.loanStartDateDataGridViewTextBoxColumn.HeaderText = "LoanStartDate";
             this.loanStartDateDataGridViewTextBoxColumn.Name = "loanStartDateDataGridViewTextBoxColumn";
-            this.loanStartDateDataGridViewTextBoxColumn.Width = 101;
+            this.loanStartDateDataGridViewTextBoxColumn.Width = 129;
             // 
             // loanEndDateDataGridViewTextBoxColumn
             // 
@@ -327,7 +327,7 @@
             this.loanEndDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.loanEndDateDataGridViewTextBoxColumn.HeaderText = "LoanEndDate";
             this.loanEndDateDataGridViewTextBoxColumn.Name = "loanEndDateDataGridViewTextBoxColumn";
-            this.loanEndDateDataGridViewTextBoxColumn.Width = 98;
+            this.loanEndDateDataGridViewTextBoxColumn.Width = 124;
             // 
             // loanDurationDataGridViewTextBoxColumn
             // 
@@ -336,7 +336,7 @@
             this.loanDurationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.loanDurationDataGridViewTextBoxColumn.HeaderText = "LoanDuration";
             this.loanDurationDataGridViewTextBoxColumn.Name = "loanDurationDataGridViewTextBoxColumn";
-            this.loanDurationDataGridViewTextBoxColumn.Width = 96;
+            this.loanDurationDataGridViewTextBoxColumn.Width = 123;
             // 
             // capitalDataGridViewTextBoxColumn
             // 
@@ -345,7 +345,7 @@
             this.capitalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.capitalDataGridViewTextBoxColumn.HeaderText = "Capital";
             this.capitalDataGridViewTextBoxColumn.Name = "capitalDataGridViewTextBoxColumn";
-            this.capitalDataGridViewTextBoxColumn.Width = 64;
+            this.capitalDataGridViewTextBoxColumn.Width = 80;
             // 
             // isStandingOrderActiveDataGridViewCheckBoxColumn
             // 
@@ -356,7 +356,7 @@
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.HeaderText = "IsStandingOrderActive";
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.Name = "isStandingOrderActiveDataGridViewCheckBoxColumn";
-            this.isStandingOrderActiveDataGridViewCheckBoxColumn.Width = 119;
+            this.isStandingOrderActiveDataGridViewCheckBoxColumn.Width = 155;
             // 
             // employeeIdDataGridViewTextBoxColumn1
             // 
@@ -457,11 +457,11 @@
             this.employeeDataGridViewTextBoxColumn2,
             this.accountDataGridViewTextBoxColumn1});
             this.savingAccountDgv.DataSource = this.savingAccountBindingSource;
-            this.savingAccountDgv.Location = new System.Drawing.Point(369, 2);
-            this.savingAccountDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.savingAccountDgv.Location = new System.Drawing.Point(493, 2);
+            this.savingAccountDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.savingAccountDgv.Name = "savingAccountDgv";
             this.savingAccountDgv.RowTemplate.Height = 24;
-            this.savingAccountDgv.Size = new System.Drawing.Size(172, 122);
+            this.savingAccountDgv.Size = new System.Drawing.Size(229, 150);
             this.savingAccountDgv.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn2
@@ -481,7 +481,7 @@
             this.isActiveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.isActiveDataGridViewCheckBoxColumn.HeaderText = "IsActive";
             this.isActiveDataGridViewCheckBoxColumn.Name = "isActiveDataGridViewCheckBoxColumn";
-            this.isActiveDataGridViewCheckBoxColumn.Width = 51;
+            this.isActiveDataGridViewCheckBoxColumn.Width = 62;
             // 
             // capitalDataGridViewTextBoxColumn1
             // 
@@ -490,7 +490,7 @@
             this.capitalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle12;
             this.capitalDataGridViewTextBoxColumn1.HeaderText = "Capital";
             this.capitalDataGridViewTextBoxColumn1.Name = "capitalDataGridViewTextBoxColumn1";
-            this.capitalDataGridViewTextBoxColumn1.Width = 64;
+            this.capitalDataGridViewTextBoxColumn1.Width = 80;
             // 
             // balanceDataGridViewTextBoxColumn1
             // 
@@ -499,7 +499,7 @@
             this.balanceDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle13;
             this.balanceDataGridViewTextBoxColumn1.HeaderText = "Balance";
             this.balanceDataGridViewTextBoxColumn1.Name = "balanceDataGridViewTextBoxColumn1";
-            this.balanceDataGridViewTextBoxColumn1.Width = 71;
+            this.balanceDataGridViewTextBoxColumn1.Width = 88;
             // 
             // fixedTermDepositingStartDateDataGridViewTextBoxColumn
             // 
@@ -508,7 +508,7 @@
             this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.HeaderText = "FixedTermDepositingStartDate";
             this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.Name = "fixedTermDepositingStartDateDataGridViewTextBoxColumn";
-            this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.Width = 176;
+            this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.Width = 230;
             // 
             // fixedTermDepositingEndDateDataGridViewTextBoxColumn
             // 
@@ -517,7 +517,7 @@
             this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.HeaderText = "FixedTermDepositingEndDate";
             this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.Name = "fixedTermDepositingEndDateDataGridViewTextBoxColumn";
-            this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.Width = 173;
+            this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.Width = 225;
             // 
             // isStandingOrderActiveDataGridViewCheckBoxColumn1
             // 
@@ -528,7 +528,7 @@
             this.isStandingOrderActiveDataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle16;
             this.isStandingOrderActiveDataGridViewCheckBoxColumn1.HeaderText = "IsStandingOrderActive";
             this.isStandingOrderActiveDataGridViewCheckBoxColumn1.Name = "isStandingOrderActiveDataGridViewCheckBoxColumn1";
-            this.isStandingOrderActiveDataGridViewCheckBoxColumn1.Width = 119;
+            this.isStandingOrderActiveDataGridViewCheckBoxColumn1.Width = 155;
             // 
             // accountIdDataGridViewTextBoxColumn1
             // 
@@ -601,10 +601,10 @@
             // bankServicesCb
             // 
             this.bankServicesCb.FormattingEnabled = true;
-            this.bankServicesCb.Location = new System.Drawing.Point(776, 153);
-            this.bankServicesCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bankServicesCb.Location = new System.Drawing.Point(1035, 188);
+            this.bankServicesCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bankServicesCb.Name = "bankServicesCb";
-            this.bankServicesCb.Size = new System.Drawing.Size(147, 21);
+            this.bankServicesCb.Size = new System.Drawing.Size(195, 24);
             this.bankServicesCb.TabIndex = 4;
             this.bankServicesCb.SelectedIndexChanged += new System.EventHandler(this.bankServicesCb_SelectedIndexChanged);
             // 
@@ -612,10 +612,9 @@
             // 
             this.filterLbl.AutoSize = true;
             this.filterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterLbl.Location = new System.Drawing.Point(753, 104);
-            this.filterLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.filterLbl.Location = new System.Drawing.Point(1004, 128);
             this.filterLbl.Name = "filterLbl";
-            this.filterLbl.Size = new System.Drawing.Size(56, 24);
+            this.filterLbl.Size = new System.Drawing.Size(74, 29);
             this.filterLbl.TabIndex = 5;
             this.filterLbl.Text = "Filter:";
             // 
@@ -623,24 +622,25 @@
             // 
             this.serviceTypeLbl.AutoSize = true;
             this.serviceTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceTypeLbl.Location = new System.Drawing.Point(773, 136);
-            this.serviceTypeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.serviceTypeLbl.Location = new System.Drawing.Point(1031, 167);
             this.serviceTypeLbl.Name = "serviceTypeLbl";
-            this.serviceTypeLbl.Size = new System.Drawing.Size(67, 15);
+            this.serviceTypeLbl.Size = new System.Drawing.Size(79, 18);
             this.serviceTypeLbl.TabIndex = 6;
             this.serviceTypeLbl.Text = "Tip usluge:";
             // 
             // BankServicesOverviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 518);
+            this.ClientSize = new System.Drawing.Size(1417, 638);
             this.Controls.Add(this.serviceTypeLbl);
             this.Controls.Add(this.filterLbl);
             this.Controls.Add(this.bankServicesCb);
             this.Controls.Add(this.bankServicesFlp);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BankServicesOverviewForm";
             this.Text = "BankServicesOverviewForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BankServicesOverviewForm_FormClosing);
             this.Load += new System.EventHandler(this.SavingAndAccountOverviewForm_Load);
             this.Controls.SetChildIndex(this.bankServicesFlp, 0);
             this.Controls.SetChildIndex(this.bankServicesCb, 0);

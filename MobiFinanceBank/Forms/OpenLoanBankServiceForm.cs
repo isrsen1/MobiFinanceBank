@@ -232,5 +232,11 @@ namespace MobiFinanceBank.Forms
             
             assessmentProgressBar.Value = castAssessment;
         }
+
+        private void OpenLoanBankServiceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

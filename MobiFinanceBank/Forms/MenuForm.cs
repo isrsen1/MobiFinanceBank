@@ -1,4 +1,6 @@
 ﻿using System;
+using MobiFinanceBank.DAL.DbContexts;
+using MobiFinanceBank.DAL.Repositories;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Helpers;
@@ -19,12 +21,12 @@ namespace MobiFinanceBank.Forms
     {
         private Employee employee;
         private IExchangeForm exchangeForm;
-        private readonly ICreateClientForm _createClientForm;
-        private readonly IClientOverviewForm _clientOverviewForm;
-        private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
-        private readonly IAdminPanel _adminPanel;
-        private readonly ILoanRequestsForm loanRequestsForm;
-        private readonly IEmployeeTypeRepository employeeTypeRepository;
+        private ICreateClientForm _createClientForm;
+        private IClientOverviewForm _clientOverviewForm;
+        private IBankServicesOverviewForm _bankServicesOverviewForm;
+        private IAdminPanel _adminPanel;
+        private ILoanRequestsForm loanRequestsForm;
+        private IEmployeeTypeRepository employeeTypeRepository;
 
         /// <summary>
         /// Initializes new instance of menu form
@@ -74,19 +76,17 @@ namespace MobiFinanceBank.Forms
         
         private void btnMjenjacnica_Click(object sender, EventArgs e)
         {
-            if(exchangeForm == null)
-                exchangeForm = new ExchangeForm(new ExchangeVmService(new ExchangeService()));
-            exchangeForm.Show();
+                exchangeForm.Show();
         }
 
         private void btnZaposlenici_Click(object sender, EventArgs e)
         {
-            this._createClientForm.Show(null);
+                this._createClientForm.Show(null);
         }
 
         private void btnPregledKlijenata_Click(object sender, EventArgs e)
         {
-            this._clientOverviewForm.Show();
+                this._clientOverviewForm.Show();    
         }
 
         private void btnOtvaranjeUsluga_Click(object sender, EventArgs e)

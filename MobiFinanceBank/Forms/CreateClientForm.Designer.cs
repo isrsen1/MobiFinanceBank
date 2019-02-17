@@ -379,6 +379,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateClientForm";
             this.Text = "CreateClientForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateClientForm_FormClosing);
             this.Load += new System.EventHandler(this.CreateClient_Load);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.clientTypeCb, 0);

@@ -323,5 +323,11 @@ namespace MobiFinanceBank.Forms
             riskProfessionChb.Checked = false;
             fixedTermContractChb.Checked = false;
         }
+
+        private void CreateClientForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

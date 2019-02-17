@@ -519,6 +519,7 @@
             this.Controls.Add(this.loanRequestsDgv);
             this.Name = "LoanRequestsForm";
             this.Text = "LoanRequestsForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoanRequestsForm_FormClosing);
             this.Controls.SetChildIndex(this.loanRequestsDgv, 0);
             this.Controls.SetChildIndex(this.clientDetails, 0);
             this.Controls.SetChildIndex(this.firstNameTitleLbl, 0);

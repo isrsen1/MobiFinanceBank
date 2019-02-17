@@ -144,5 +144,11 @@ namespace MobiFinanceBank.Forms
             accountDgv.Size = new Size(width, height);
             loanDgv.Size = new Size(width, height);
         }
+
+        private void BankServicesOverviewForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

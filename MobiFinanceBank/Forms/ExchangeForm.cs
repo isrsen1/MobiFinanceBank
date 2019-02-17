@@ -81,5 +81,11 @@ namespace MobiFinanceBank.Forms
             var currency = Enum.Parse(typeof(Currency), currencyCb.SelectedValue.ToString());
             if(!Currencies.Contains((Currency)currency)) Currencies.Add((Currency)currency); 
         }
+
+        private void ExchangeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

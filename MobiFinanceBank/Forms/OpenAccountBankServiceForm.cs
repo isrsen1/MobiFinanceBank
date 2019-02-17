@@ -186,5 +186,11 @@ namespace MobiFinanceBank.Forms
                 cardNumberTb.Text = cardNumberPlaceholder;
             }
         }
+
+        private void OpenAccountBankServiceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

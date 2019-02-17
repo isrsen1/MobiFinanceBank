@@ -24,7 +24,8 @@ namespace MobiFinanceBank.VmService
         /// <param name="_accountRepository">Account repository</param>
         /// <param name="_loanRepository">Loan repository</param>
         public BankServicesVmService
-        (ISavingAccountRepository _savingAccountRepository,
+        (DAL.Repositories.SavingAccountRepository savingAccountRepository,
+            ISavingAccountRepository _savingAccountRepository,
             IAccountRepository _accountRepository,
             ILoanRepository _loanRepository)
         {

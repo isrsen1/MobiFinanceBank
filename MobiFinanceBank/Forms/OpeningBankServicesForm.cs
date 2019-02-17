@@ -248,5 +248,11 @@ namespace MobiFinanceBank.Forms
                     MessageBoxIcon.Warning);
             }
         }
+
+        private void OpeningBankServicesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

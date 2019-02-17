@@ -421,9 +421,10 @@
             this.Controls.Add(this.bankServicesOverviewBtn);
             this.Controls.Add(this.clientTypeCb);
             this.Controls.Add(this.clientOverviewDgv);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientOverviewForm";
             this.Text = "ClientOverviewForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientOverviewForm_FormClosing);
             this.Load += new System.EventHandler(this.ClientOverview_Load);
             this.Controls.SetChildIndex(this.clientOverviewDgv, 0);
             this.Controls.SetChildIndex(this.clientTypeCb, 0);
