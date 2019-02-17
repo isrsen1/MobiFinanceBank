@@ -61,6 +61,7 @@ namespace MobiFinanceBank.Forms
             this.employeeDgv.Columns["EmployeeTypeId"].Visible = false;
             this.employeeDgv.Columns["EmployeeType"].Visible = false;
             this.employeeDgv.Columns["SavingAccounts"].Visible = false;
+            
 
         }
         /// <summary>
@@ -74,6 +75,7 @@ namespace MobiFinanceBank.Forms
             {
                 var row = this.employeeDgv.SelectedRows[0];
                 var employee = (Employee)row.DataBoundItem;
+                this.aktivanChb.Checked = employee.IsActive;
                 if (employee!=null)
                 {
                     firstNameTb.Text = employee.FirstName;
@@ -200,13 +202,23 @@ namespace MobiFinanceBank.Forms
                 MessageBox.Show(@"Morate unijeti sve podatke");
             }
         }
+        /// <summary>
+        /// help file
+        /// </summary>
+        /// <seealso cref="sender"/>
+        /// <seealso cref="e"/>
         private void AdminPanelForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)
             {
-                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#29-kreiranje-novog-klijenta");
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#210-administratorski-panel");
             }
         }
+        /// <summary>
+        /// For dependency injection 
+        /// </summary>
+        /// <seealso cref="sender"/>
+        /// <seealso cref="e"/>
         private void AdminPanelForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();

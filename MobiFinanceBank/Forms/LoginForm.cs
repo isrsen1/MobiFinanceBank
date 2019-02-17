@@ -57,11 +57,7 @@ namespace MobiFinanceBank.Forms
             }
             catch(Exception er) {
                 throw;
-             }
-            
-           
-            
-
+             }         
         }
 
         private void LoginForm_KeyDown(object sender, KeyEventArgs e)
@@ -70,6 +66,13 @@ namespace MobiFinanceBank.Forms
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#12-prijava");
             }
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                this.Hide();
+                e.Cancel = true;
+            
         }
     }
 }

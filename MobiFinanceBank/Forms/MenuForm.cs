@@ -113,13 +113,27 @@ namespace MobiFinanceBank.Forms
             if (employeeType.Name == Enum.GetName(typeof(EmployeeTypeEnum), EmployeeTypeEnum.Zaposlenik))
                 loanRequestsBtn.Visible = false;
         }
-
+        /// <summary>
+        /// help file
+        /// </summary>
+        /// <seealso cref="sender"/>
+        /// <seealso cref="e"/>
         private void MenuForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#13-po%C4%8Detni-prikaz");
             }
+        }
+        /// <summary>
+        /// Dependency injection fix
+        /// </summary>
+        /// <seealso cref="TemplateForm"/>
+        /// <seealso cref="IMenuForm"/>
+        private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }
