@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
@@ -90,6 +91,14 @@ namespace MobiFinanceBank.Forms
         private void loanRequestsBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#13-po%C4%8Detni-prikaz");
+            }
         }
     }
 }

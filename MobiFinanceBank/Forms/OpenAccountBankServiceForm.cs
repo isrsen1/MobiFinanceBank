@@ -174,5 +174,13 @@ namespace MobiFinanceBank.Forms
                 cardNumberTb.Text = cardNumberPlaceholder;
             }
         }
+
+        private void OpenAccountBankServiceForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#261-otvaranje-usluge-ra%C4%8Dun");
+            }
+        }
     }
 }

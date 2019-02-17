@@ -103,10 +103,11 @@
             this.accountDataGridViewTextBoxColumn,
             this.repaymentPlansDataGridViewTextBoxColumn});
             this.loanRequestsDgv.DataSource = this.loanBindingSource;
-            this.loanRequestsDgv.Location = new System.Drawing.Point(12, 114);
+            this.loanRequestsDgv.Location = new System.Drawing.Point(9, 93);
+            this.loanRequestsDgv.Margin = new System.Windows.Forms.Padding(2);
             this.loanRequestsDgv.Name = "loanRequestsDgv";
             this.loanRequestsDgv.RowTemplate.Height = 24;
-            this.loanRequestsDgv.Size = new System.Drawing.Size(734, 263);
+            this.loanRequestsDgv.Size = new System.Drawing.Size(550, 214);
             this.loanRequestsDgv.TabIndex = 3;
             this.loanRequestsDgv.SelectionChanged += new System.EventHandler(this.loanRequestsDgv_SelectionChanged);
             // 
@@ -134,7 +135,7 @@
             this.loanStartDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.loanStartDateDataGridViewTextBoxColumn.HeaderText = "LoanStartDate";
             this.loanStartDateDataGridViewTextBoxColumn.Name = "loanStartDateDataGridViewTextBoxColumn";
-            this.loanStartDateDataGridViewTextBoxColumn.Width = 129;
+            this.loanStartDateDataGridViewTextBoxColumn.Width = 101;
             // 
             // loanEndDateDataGridViewTextBoxColumn
             // 
@@ -144,7 +145,7 @@
             this.loanEndDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.loanEndDateDataGridViewTextBoxColumn.HeaderText = "LoanEndDate";
             this.loanEndDateDataGridViewTextBoxColumn.Name = "loanEndDateDataGridViewTextBoxColumn";
-            this.loanEndDateDataGridViewTextBoxColumn.Width = 124;
+            this.loanEndDateDataGridViewTextBoxColumn.Width = 98;
             // 
             // loanDurationDataGridViewTextBoxColumn
             // 
@@ -154,7 +155,7 @@
             this.loanDurationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.loanDurationDataGridViewTextBoxColumn.HeaderText = "LoanDuration";
             this.loanDurationDataGridViewTextBoxColumn.Name = "loanDurationDataGridViewTextBoxColumn";
-            this.loanDurationDataGridViewTextBoxColumn.Width = 123;
+            this.loanDurationDataGridViewTextBoxColumn.Width = 96;
             // 
             // capitalDataGridViewTextBoxColumn
             // 
@@ -164,7 +165,7 @@
             this.capitalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.capitalDataGridViewTextBoxColumn.HeaderText = "Capital";
             this.capitalDataGridViewTextBoxColumn.Name = "capitalDataGridViewTextBoxColumn";
-            this.capitalDataGridViewTextBoxColumn.Width = 80;
+            this.capitalDataGridViewTextBoxColumn.Width = 64;
             // 
             // isStandingOrderActiveDataGridViewCheckBoxColumn
             // 
@@ -176,7 +177,7 @@
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.HeaderText = "IsStandingOrderActive";
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.Name = "isStandingOrderActiveDataGridViewCheckBoxColumn";
-            this.isStandingOrderActiveDataGridViewCheckBoxColumn.Width = 155;
+            this.isStandingOrderActiveDataGridViewCheckBoxColumn.Width = 119;
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 
@@ -248,80 +249,72 @@
             // foreignCurrencyChb
             // 
             this.foreignCurrencyChb.AutoSize = true;
-            this.foreignCurrencyChb.Location = new System.Drawing.Point(1214, 199);
-            this.foreignCurrencyChb.Margin = new System.Windows.Forms.Padding(4);
+            this.foreignCurrencyChb.Location = new System.Drawing.Point(910, 162);
             this.foreignCurrencyChb.Name = "foreignCurrencyChb";
-            this.foreignCurrencyChb.Size = new System.Drawing.Size(18, 17);
+            this.foreignCurrencyChb.Size = new System.Drawing.Size(15, 14);
             this.foreignCurrencyChb.TabIndex = 100;
             this.foreignCurrencyChb.UseVisualStyleBackColor = true;
             // 
             // interestRateLbl
             // 
             this.interestRateLbl.AutoSize = true;
-            this.interestRateLbl.Location = new System.Drawing.Point(1211, 280);
-            this.interestRateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.interestRateLbl.Location = new System.Drawing.Point(908, 228);
             this.interestRateLbl.Name = "interestRateLbl";
-            this.interestRateLbl.Size = new System.Drawing.Size(13, 17);
+            this.interestRateLbl.Size = new System.Drawing.Size(10, 13);
             this.interestRateLbl.TabIndex = 99;
             this.interestRateLbl.Text = "-";
             // 
             // currencyTitleLbl
             // 
             this.currencyTitleLbl.AutoSize = true;
-            this.currencyTitleLbl.Location = new System.Drawing.Point(1079, 237);
-            this.currencyTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currencyTitleLbl.Location = new System.Drawing.Point(809, 193);
             this.currencyTitleLbl.Name = "currencyTitleLbl";
-            this.currencyTitleLbl.Size = new System.Drawing.Size(52, 17);
+            this.currencyTitleLbl.Size = new System.Drawing.Size(40, 13);
             this.currencyTitleLbl.TabIndex = 98;
             this.currencyTitleLbl.Text = "Valuta:";
             // 
             // currencyLbl
             // 
             this.currencyLbl.AutoSize = true;
-            this.currencyLbl.Location = new System.Drawing.Point(1211, 237);
-            this.currencyLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currencyLbl.Location = new System.Drawing.Point(908, 193);
             this.currencyLbl.Name = "currencyLbl";
-            this.currencyLbl.Size = new System.Drawing.Size(13, 17);
+            this.currencyLbl.Size = new System.Drawing.Size(10, 13);
             this.currencyLbl.TabIndex = 97;
             this.currencyLbl.Text = "-";
             // 
             // interestRateTitleLbl
             // 
             this.interestRateTitleLbl.AutoSize = true;
-            this.interestRateTitleLbl.Location = new System.Drawing.Point(1079, 280);
-            this.interestRateTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.interestRateTitleLbl.Location = new System.Drawing.Point(809, 228);
             this.interestRateTitleLbl.Name = "interestRateTitleLbl";
-            this.interestRateTitleLbl.Size = new System.Drawing.Size(60, 17);
+            this.interestRateTitleLbl.Size = new System.Drawing.Size(46, 13);
             this.interestRateTitleLbl.TabIndex = 96;
             this.interestRateTitleLbl.Text = "Kamata:";
             // 
             // foreignCurrencyTitleLbl
             // 
             this.foreignCurrencyTitleLbl.AutoSize = true;
-            this.foreignCurrencyTitleLbl.Location = new System.Drawing.Point(1079, 198);
-            this.foreignCurrencyTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.foreignCurrencyTitleLbl.Location = new System.Drawing.Point(809, 161);
             this.foreignCurrencyTitleLbl.Name = "foreignCurrencyTitleLbl";
-            this.foreignCurrencyTitleLbl.Size = new System.Drawing.Size(58, 17);
+            this.foreignCurrencyTitleLbl.Size = new System.Drawing.Size(45, 13);
             this.foreignCurrencyTitleLbl.TabIndex = 95;
             this.foreignCurrencyTitleLbl.Text = "Devizni:";
             // 
             // accountNameLbl
             // 
             this.accountNameLbl.AutoSize = true;
-            this.accountNameLbl.Location = new System.Drawing.Point(1211, 160);
-            this.accountNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.accountNameLbl.Location = new System.Drawing.Point(908, 130);
             this.accountNameLbl.Name = "accountNameLbl";
-            this.accountNameLbl.Size = new System.Drawing.Size(13, 17);
+            this.accountNameLbl.Size = new System.Drawing.Size(10, 13);
             this.accountNameLbl.TabIndex = 94;
             this.accountNameLbl.Text = "-";
             // 
             // accountNameTitleLbl
             // 
             this.accountNameTitleLbl.AutoSize = true;
-            this.accountNameTitleLbl.Location = new System.Drawing.Point(1079, 160);
-            this.accountNameTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.accountNameTitleLbl.Location = new System.Drawing.Point(809, 130);
             this.accountNameTitleLbl.Name = "accountNameTitleLbl";
-            this.accountNameTitleLbl.Size = new System.Drawing.Size(47, 17);
+            this.accountNameTitleLbl.Size = new System.Drawing.Size(37, 13);
             this.accountNameTitleLbl.TabIndex = 93;
             this.accountNameTitleLbl.Text = "Naziv:";
             // 
@@ -329,110 +322,99 @@
             // 
             this.loanTypeLbl.AutoSize = true;
             this.loanTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loanTypeLbl.Location = new System.Drawing.Point(1046, 114);
-            this.loanTypeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.loanTypeLbl.Location = new System.Drawing.Point(784, 93);
             this.loanTypeLbl.Name = "loanTypeLbl";
-            this.loanTypeLbl.Size = new System.Drawing.Size(109, 25);
+            this.loanTypeLbl.Size = new System.Drawing.Size(86, 20);
             this.loanTypeLbl.TabIndex = 92;
             this.loanTypeLbl.Text = "Tip kredita:";
             // 
             // addressLbl
             // 
             this.addressLbl.AutoSize = true;
-            this.addressLbl.Location = new System.Drawing.Point(971, 327);
-            this.addressLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.addressLbl.Location = new System.Drawing.Point(728, 266);
             this.addressLbl.Name = "addressLbl";
-            this.addressLbl.Size = new System.Drawing.Size(13, 17);
+            this.addressLbl.Size = new System.Drawing.Size(10, 13);
             this.addressLbl.TabIndex = 91;
             this.addressLbl.Text = "-";
             // 
             // addressTitleLbl
             // 
             this.addressTitleLbl.AutoSize = true;
-            this.addressTitleLbl.Location = new System.Drawing.Point(831, 327);
-            this.addressTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.addressTitleLbl.Location = new System.Drawing.Point(623, 266);
             this.addressTitleLbl.Name = "addressTitleLbl";
-            this.addressTitleLbl.Size = new System.Drawing.Size(57, 17);
+            this.addressTitleLbl.Size = new System.Drawing.Size(43, 13);
             this.addressTitleLbl.TabIndex = 90;
             this.addressTitleLbl.Text = "Adresa:";
             // 
             // incomeLbl
             // 
             this.incomeLbl.AutoSize = true;
-            this.incomeLbl.Location = new System.Drawing.Point(971, 284);
-            this.incomeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.incomeLbl.Location = new System.Drawing.Point(728, 231);
             this.incomeLbl.Name = "incomeLbl";
-            this.incomeLbl.Size = new System.Drawing.Size(13, 17);
+            this.incomeLbl.Size = new System.Drawing.Size(10, 13);
             this.incomeLbl.TabIndex = 89;
             this.incomeLbl.Text = "-";
             // 
             // oibTitleLbl
             // 
             this.oibTitleLbl.AutoSize = true;
-            this.oibTitleLbl.Location = new System.Drawing.Point(831, 241);
-            this.oibTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.oibTitleLbl.Location = new System.Drawing.Point(623, 196);
             this.oibTitleLbl.Name = "oibTitleLbl";
-            this.oibTitleLbl.Size = new System.Drawing.Size(35, 17);
+            this.oibTitleLbl.Size = new System.Drawing.Size(28, 13);
             this.oibTitleLbl.TabIndex = 88;
             this.oibTitleLbl.Text = "OIB:";
             // 
             // oibLbl
             // 
             this.oibLbl.AutoSize = true;
-            this.oibLbl.Location = new System.Drawing.Point(971, 241);
-            this.oibLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.oibLbl.Location = new System.Drawing.Point(728, 196);
             this.oibLbl.Name = "oibLbl";
-            this.oibLbl.Size = new System.Drawing.Size(13, 17);
+            this.oibLbl.Size = new System.Drawing.Size(10, 13);
             this.oibLbl.TabIndex = 87;
             this.oibLbl.Text = "-";
             // 
             // incomeTitleLbl
             // 
             this.incomeTitleLbl.AutoSize = true;
-            this.incomeTitleLbl.Location = new System.Drawing.Point(831, 284);
-            this.incomeTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.incomeTitleLbl.Location = new System.Drawing.Point(623, 231);
             this.incomeTitleLbl.Name = "incomeTitleLbl";
-            this.incomeTitleLbl.Size = new System.Drawing.Size(111, 17);
+            this.incomeTitleLbl.Size = new System.Drawing.Size(84, 13);
             this.incomeTitleLbl.TabIndex = 86;
             this.incomeTitleLbl.Text = "Mjesečni prihod:";
             // 
             // lastNameLbl
             // 
             this.lastNameLbl.AutoSize = true;
-            this.lastNameLbl.Location = new System.Drawing.Point(971, 199);
-            this.lastNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lastNameLbl.Location = new System.Drawing.Point(728, 162);
             this.lastNameLbl.Name = "lastNameLbl";
-            this.lastNameLbl.Size = new System.Drawing.Size(13, 17);
+            this.lastNameLbl.Size = new System.Drawing.Size(10, 13);
             this.lastNameLbl.TabIndex = 85;
             this.lastNameLbl.Text = "-";
             // 
             // lastNameTitleLbl
             // 
             this.lastNameTitleLbl.AutoSize = true;
-            this.lastNameTitleLbl.Location = new System.Drawing.Point(831, 199);
-            this.lastNameTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lastNameTitleLbl.Location = new System.Drawing.Point(623, 162);
             this.lastNameTitleLbl.Name = "lastNameTitleLbl";
-            this.lastNameTitleLbl.Size = new System.Drawing.Size(63, 17);
+            this.lastNameTitleLbl.Size = new System.Drawing.Size(47, 13);
             this.lastNameTitleLbl.TabIndex = 84;
             this.lastNameTitleLbl.Text = "Prezime:";
             // 
             // firstNameLbl
             // 
             this.firstNameLbl.AutoSize = true;
-            this.firstNameLbl.Location = new System.Drawing.Point(971, 160);
-            this.firstNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.firstNameLbl.Location = new System.Drawing.Point(728, 130);
             this.firstNameLbl.Name = "firstNameLbl";
-            this.firstNameLbl.Size = new System.Drawing.Size(13, 17);
+            this.firstNameLbl.Size = new System.Drawing.Size(10, 13);
             this.firstNameLbl.TabIndex = 83;
             this.firstNameLbl.Text = "-";
             // 
             // firstNameTitleLbl
             // 
             this.firstNameTitleLbl.AutoSize = true;
-            this.firstNameTitleLbl.Location = new System.Drawing.Point(831, 160);
-            this.firstNameTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.firstNameTitleLbl.Location = new System.Drawing.Point(623, 130);
             this.firstNameTitleLbl.Name = "firstNameTitleLbl";
-            this.firstNameTitleLbl.Size = new System.Drawing.Size(34, 17);
+            this.firstNameTitleLbl.Size = new System.Drawing.Size(27, 13);
             this.firstNameTitleLbl.TabIndex = 82;
             this.firstNameTitleLbl.Text = "Ime:";
             // 
@@ -440,37 +422,36 @@
             // 
             this.clientDetails.AutoSize = true;
             this.clientDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientDetails.Location = new System.Drawing.Point(796, 114);
-            this.clientDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.clientDetails.Location = new System.Drawing.Point(597, 93);
             this.clientDetails.Name = "clientDetails";
-            this.clientDetails.Size = new System.Drawing.Size(136, 25);
+            this.clientDetails.Size = new System.Drawing.Size(110, 20);
             this.clientDetails.TabIndex = 81;
             this.clientDetails.Text = "Detalji klijenta:";
             // 
             // assessmentProgressBar
             // 
-            this.assessmentProgressBar.Location = new System.Drawing.Point(829, 403);
-            this.assessmentProgressBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.assessmentProgressBar.Location = new System.Drawing.Point(622, 327);
+            this.assessmentProgressBar.Margin = new System.Windows.Forms.Padding(2);
             this.assessmentProgressBar.Name = "assessmentProgressBar";
-            this.assessmentProgressBar.Size = new System.Drawing.Size(303, 23);
+            this.assessmentProgressBar.Size = new System.Drawing.Size(227, 19);
             this.assessmentProgressBar.TabIndex = 101;
             // 
             // makeAssessmentLbl
             // 
             this.makeAssessmentLbl.AutoSize = true;
-            this.makeAssessmentLbl.Location = new System.Drawing.Point(826, 375);
-            this.makeAssessmentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.makeAssessmentLbl.Location = new System.Drawing.Point(620, 305);
             this.makeAssessmentLbl.Name = "makeAssessmentLbl";
-            this.makeAssessmentLbl.Size = new System.Drawing.Size(68, 17);
+            this.makeAssessmentLbl.Size = new System.Drawing.Size(52, 13);
             this.makeAssessmentLbl.TabIndex = 102;
             this.makeAssessmentLbl.Text = "Procjena:";
             // 
             // approveLoanRequestBtn
             // 
             this.approveLoanRequestBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.approveLoanRequestBtn.Location = new System.Drawing.Point(829, 431);
+            this.approveLoanRequestBtn.Location = new System.Drawing.Point(622, 350);
+            this.approveLoanRequestBtn.Margin = new System.Windows.Forms.Padding(2);
             this.approveLoanRequestBtn.Name = "approveLoanRequestBtn";
-            this.approveLoanRequestBtn.Size = new System.Drawing.Size(186, 30);
+            this.approveLoanRequestBtn.Size = new System.Drawing.Size(140, 24);
             this.approveLoanRequestBtn.TabIndex = 103;
             this.approveLoanRequestBtn.Text = "Odobri kreditni zahtjev";
             this.approveLoanRequestBtn.UseVisualStyleBackColor = true;
@@ -479,9 +460,10 @@
             // declineLoanRequest
             // 
             this.declineLoanRequest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.declineLoanRequest.Location = new System.Drawing.Point(829, 467);
+            this.declineLoanRequest.Location = new System.Drawing.Point(622, 379);
+            this.declineLoanRequest.Margin = new System.Windows.Forms.Padding(2);
             this.declineLoanRequest.Name = "declineLoanRequest";
-            this.declineLoanRequest.Size = new System.Drawing.Size(186, 30);
+            this.declineLoanRequest.Size = new System.Drawing.Size(140, 24);
             this.declineLoanRequest.TabIndex = 104;
             this.declineLoanRequest.Text = "Odbij kreditni zahtjev";
             this.declineLoanRequest.UseVisualStyleBackColor = true;
@@ -489,9 +471,9 @@
             // 
             // LoanRequestsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1414, 572);
+            this.ClientSize = new System.Drawing.Size(1060, 465);
             this.Controls.Add(this.declineLoanRequest);
             this.Controls.Add(this.approveLoanRequestBtn);
             this.Controls.Add(this.makeAssessmentLbl);
@@ -517,8 +499,10 @@
             this.Controls.Add(this.firstNameTitleLbl);
             this.Controls.Add(this.clientDetails);
             this.Controls.Add(this.loanRequestsDgv);
+            this.KeyPreview = true;
             this.Name = "LoanRequestsForm";
             this.Text = "LoanRequestsForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoanRequestsForm_KeyDown);
             this.Controls.SetChildIndex(this.loanRequestsDgv, 0);
             this.Controls.SetChildIndex(this.clientDetails, 0);
             this.Controls.SetChildIndex(this.firstNameTitleLbl, 0);

@@ -51,7 +51,6 @@
             this.isFixedTermContractDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isUnusualProfessionDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clientTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balanceSheetsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.savingAccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,14 +95,13 @@
             this.isFixedTermContractDataGridViewCheckBoxColumn,
             this.isUnusualProfessionDataGridViewCheckBoxColumn,
             this.clientTypeIdDataGridViewTextBoxColumn,
-            this.balanceSheetsDataGridViewTextBoxColumn,
             this.loansDataGridViewTextBoxColumn,
             this.accountsDataGridViewTextBoxColumn,
             this.savingAccountsDataGridViewTextBoxColumn,
             this.clientTypeDataGridViewTextBoxColumn});
             this.clientOverviewDgv.DataSource = this.clientBindingSource;
             this.clientOverviewDgv.Location = new System.Drawing.Point(9, 145);
-            this.clientOverviewDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientOverviewDgv.Margin = new System.Windows.Forms.Padding(2);
             this.clientOverviewDgv.MultiSelect = false;
             this.clientOverviewDgv.Name = "clientOverviewDgv";
             this.clientOverviewDgv.RowTemplate.Height = 24;
@@ -206,13 +204,6 @@
             this.clientTypeIdDataGridViewTextBoxColumn.Name = "clientTypeIdDataGridViewTextBoxColumn";
             this.clientTypeIdDataGridViewTextBoxColumn.Visible = false;
             // 
-            // balanceSheetsDataGridViewTextBoxColumn
-            // 
-            this.balanceSheetsDataGridViewTextBoxColumn.DataPropertyName = "BalanceSheets";
-            this.balanceSheetsDataGridViewTextBoxColumn.HeaderText = "BalanceSheets";
-            this.balanceSheetsDataGridViewTextBoxColumn.Name = "balanceSheetsDataGridViewTextBoxColumn";
-            this.balanceSheetsDataGridViewTextBoxColumn.Visible = false;
-            // 
             // loansDataGridViewTextBoxColumn
             // 
             this.loansDataGridViewTextBoxColumn.DataPropertyName = "Loans";
@@ -249,7 +240,7 @@
             // 
             this.clientTypeCb.FormattingEnabled = true;
             this.clientTypeCb.Location = new System.Drawing.Point(772, 157);
-            this.clientTypeCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.clientTypeCb.Name = "clientTypeCb";
             this.clientTypeCb.Size = new System.Drawing.Size(186, 21);
             this.clientTypeCb.TabIndex = 4;
@@ -262,7 +253,7 @@
             this.bankServicesOverviewBtn.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
             this.bankServicesOverviewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bankServicesOverviewBtn.Location = new System.Drawing.Point(771, 353);
-            this.bankServicesOverviewBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bankServicesOverviewBtn.Margin = new System.Windows.Forms.Padding(2);
             this.bankServicesOverviewBtn.Name = "bankServicesOverviewBtn";
             this.bankServicesOverviewBtn.Size = new System.Drawing.Size(249, 52);
             this.bankServicesOverviewBtn.TabIndex = 14;
@@ -279,7 +270,7 @@
             this.openingBankServicesBtn.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
             this.openingBankServicesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.openingBankServicesBtn.Location = new System.Drawing.Point(771, 408);
-            this.openingBankServicesBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.openingBankServicesBtn.Margin = new System.Windows.Forms.Padding(2);
             this.openingBankServicesBtn.Name = "openingBankServicesBtn";
             this.openingBankServicesBtn.Size = new System.Drawing.Size(249, 52);
             this.openingBankServicesBtn.TabIndex = 15;
@@ -319,7 +310,7 @@
             this.flowLayoutPanel1.Controls.Add(this.companyFilterTb);
             this.flowLayoutPanel1.Controls.Add(this.applyFilterBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(772, 180);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(147, 145);
             this.flowLayoutPanel1.TabIndex = 18;
@@ -338,7 +329,7 @@
             // firstNameFilterTb
             // 
             this.firstNameFilterTb.Location = new System.Drawing.Point(2, 17);
-            this.firstNameFilterTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstNameFilterTb.Margin = new System.Windows.Forms.Padding(2);
             this.firstNameFilterTb.Name = "firstNameFilterTb";
             this.firstNameFilterTb.Size = new System.Drawing.Size(130, 20);
             this.firstNameFilterTb.TabIndex = 1;
@@ -357,7 +348,7 @@
             // lastNameFilterTb
             // 
             this.lastNameFilterTb.Location = new System.Drawing.Point(2, 56);
-            this.lastNameFilterTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastNameFilterTb.Margin = new System.Windows.Forms.Padding(2);
             this.lastNameFilterTb.Name = "lastNameFilterTb";
             this.lastNameFilterTb.Size = new System.Drawing.Size(130, 20);
             this.lastNameFilterTb.TabIndex = 3;
@@ -376,7 +367,7 @@
             // companyFilterTb
             // 
             this.companyFilterTb.Location = new System.Drawing.Point(2, 95);
-            this.companyFilterTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.companyFilterTb.Margin = new System.Windows.Forms.Padding(2);
             this.companyFilterTb.Name = "companyFilterTb";
             this.companyFilterTb.Size = new System.Drawing.Size(130, 20);
             this.companyFilterTb.TabIndex = 5;
@@ -385,7 +376,7 @@
             // 
             this.applyFilterBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.applyFilterBtn.Location = new System.Drawing.Point(2, 119);
-            this.applyFilterBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.applyFilterBtn.Margin = new System.Windows.Forms.Padding(2);
             this.applyFilterBtn.Name = "applyFilterBtn";
             this.applyFilterBtn.Size = new System.Drawing.Size(56, 22);
             this.applyFilterBtn.TabIndex = 6;
@@ -397,7 +388,7 @@
             // 
             this.pictureBox3.Image = global::MobiFinanceBank.Properties.Resources.home1;
             this.pictureBox3.Location = new System.Drawing.Point(9, 93);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 26);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -409,7 +400,7 @@
             // 
             this.editClientButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editClientButton.Location = new System.Drawing.Point(598, 432);
-            this.editClientButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editClientButton.Margin = new System.Windows.Forms.Padding(2);
             this.editClientButton.Name = "editClientButton";
             this.editClientButton.Size = new System.Drawing.Size(87, 31);
             this.editClientButton.TabIndex = 20;
@@ -431,10 +422,12 @@
             this.Controls.Add(this.bankServicesOverviewBtn);
             this.Controls.Add(this.clientTypeCb);
             this.Controls.Add(this.clientOverviewDgv);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "ClientOverviewForm";
-            this.Text = "ClientOverviewForm";
+            this.Text = "";
             this.Load += new System.EventHandler(this.ClientOverview_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ClientOverviewForm_KeyDown);
             this.Controls.SetChildIndex(this.clientOverviewDgv, 0);
             this.Controls.SetChildIndex(this.clientTypeCb, 0);
             this.Controls.SetChildIndex(this.bankServicesOverviewBtn, 0);

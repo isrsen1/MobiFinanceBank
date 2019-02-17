@@ -120,5 +120,14 @@ namespace MobiFinanceBank.Forms
         {
             loanRequestsDgv.DataSource = this.loanRepository.GetAllLoanRequests().ToList();
         }
+
+        private void LoanRequestsForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#28-odobravanje-zahtjeva-za-kreditom");
+            }
+            
+        }
     }
 }

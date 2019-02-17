@@ -69,6 +69,7 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void SavingAndAccountOverviewForm_Load(object sender, EventArgs e)
         {
+            
             // Set data sources and windows size
             this.SetDataSources();
             this.SetDataGridViewSize(750, 300);
@@ -143,6 +144,14 @@ namespace MobiFinanceBank.Forms
             savingAccountDgv.Size = new Size(width, height);
             accountDgv.Size = new Size(width, height);
             loanDgv.Size = new Size(width, height);
+        }
+
+        private void BankServicesOverviewForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#252-pregled-usluga");
+            }          
         }
     }
 }

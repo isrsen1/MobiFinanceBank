@@ -218,5 +218,13 @@ namespace MobiFinanceBank.Forms
             
             assessmentProgressBar.Value = castAssessment;
         }
+
+        private void OpenLoanBankServiceForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#263-otvaranje-zahtjeva-za-kredit");
+            }
+        }
     }
 }

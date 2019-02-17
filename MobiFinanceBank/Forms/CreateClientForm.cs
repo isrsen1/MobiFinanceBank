@@ -311,5 +311,13 @@ namespace MobiFinanceBank.Forms
             riskProfessionChb.Checked = false;
             fixedTermContractChb.Checked = false;
         }
+
+        private void CreateClientForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#29-kreiranje-novog-klijenta");
+            }
+        }
     }
 }

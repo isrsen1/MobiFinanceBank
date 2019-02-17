@@ -116,7 +116,7 @@
             // startDateDtp
             // 
             this.startDateDtp.Location = new System.Drawing.Point(202, 396);
-            this.startDateDtp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startDateDtp.Margin = new System.Windows.Forms.Padding(2);
             this.startDateDtp.Name = "startDateDtp";
             this.startDateDtp.Size = new System.Drawing.Size(151, 20);
             this.startDateDtp.TabIndex = 13;
@@ -125,7 +125,7 @@
             // 
             this.standingOrderChb.AutoSize = true;
             this.standingOrderChb.Location = new System.Drawing.Point(202, 435);
-            this.standingOrderChb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.standingOrderChb.Margin = new System.Windows.Forms.Padding(2);
             this.standingOrderChb.Name = "standingOrderChb";
             this.standingOrderChb.Size = new System.Drawing.Size(15, 14);
             this.standingOrderChb.TabIndex = 14;
@@ -135,7 +135,7 @@
             // capitalNum
             // 
             this.capitalNum.Location = new System.Drawing.Point(202, 355);
-            this.capitalNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.capitalNum.Margin = new System.Windows.Forms.Padding(2);
             this.capitalNum.Name = "capitalNum";
             this.capitalNum.Size = new System.Drawing.Size(90, 20);
             this.capitalNum.TabIndex = 15;
@@ -160,7 +160,7 @@
             this.savingAccountsDataGridViewTextBoxColumn});
             this.accountsDgv.DataSource = this.accountBindingSource;
             this.accountsDgv.Location = new System.Drawing.Point(482, 98);
-            this.accountsDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accountsDgv.Margin = new System.Windows.Forms.Padding(2);
             this.accountsDgv.Name = "accountsDgv";
             this.accountsDgv.RowTemplate.Height = 24;
             this.accountsDgv.Size = new System.Drawing.Size(436, 225);
@@ -267,7 +267,7 @@
             // 
             this.openSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.openSavingAccountBtn.Location = new System.Drawing.Point(272, 464);
-            this.openSavingAccountBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.openSavingAccountBtn.Margin = new System.Windows.Forms.Padding(2);
             this.openSavingAccountBtn.Name = "openSavingAccountBtn";
             this.openSavingAccountBtn.Size = new System.Drawing.Size(80, 29);
             this.openSavingAccountBtn.TabIndex = 17;
@@ -530,10 +530,12 @@
             this.Controls.Add(this.capitalLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.standingOrderLbl);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "OpenSavingAccountBankServiceForm";
             this.Text = "OpenSavingAccountBankServiceForm";
             this.Load += new System.EventHandler(this.OpenSavingAccountBankServiceForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OpenSavingAccountBankServiceForm_KeyDown);
             this.Controls.SetChildIndex(this.standingOrderLbl, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.capitalLbl, 0);

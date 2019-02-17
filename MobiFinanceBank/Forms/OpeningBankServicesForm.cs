@@ -248,5 +248,13 @@ namespace MobiFinanceBank.Forms
                     MessageBoxIcon.Warning);
             }
         }
+
+        private void OpeningBankServicesForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#26-otvaranje-usluga");
+            }
+        }
     }
 }

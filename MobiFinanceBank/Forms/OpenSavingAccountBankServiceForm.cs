@@ -171,5 +171,13 @@ namespace MobiFinanceBank.Forms
                     MessageBoxIcon.Error);
             }
         }
+
+        private void OpenSavingAccountBankServiceForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#262-otvaranje-usluge-%C5%A1tednja");
+            }
+        }
     }
 }

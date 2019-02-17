@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.firstNameLbl = new System.Windows.Forms.Label();
             this.lastNameLbl = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.contactLbl = new System.Windows.Forms.Label();
             this.addressLbl = new System.Windows.Forms.Label();
             this.tiplbl = new System.Windows.Forms.Label();
+            this.aktivanLbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.firstNameTb = new System.Windows.Forms.TextBox();
             this.lastNameTb = new System.Windows.Forms.TextBox();
@@ -49,10 +50,9 @@
             this.contactTb = new System.Windows.Forms.TextBox();
             this.addressTb = new System.Windows.Forms.TextBox();
             this.employeeTypeCb = new System.Windows.Forms.ComboBox();
+            this.aktivanChb = new System.Windows.Forms.CheckBox();
             this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.newBtn = new System.Windows.Forms.Button();
-            this.aktivanChb = new System.Windows.Forms.CheckBox();
-            this.aktivanLbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
@@ -177,6 +177,17 @@
             this.tiplbl.TabIndex = 16;
             this.tiplbl.Text = "Tip zaposlenika";
             // 
+            // aktivanLbl
+            // 
+            this.aktivanLbl.AutoSize = true;
+            this.aktivanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.aktivanLbl.Location = new System.Drawing.Point(2, 218);
+            this.aktivanLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.aktivanLbl.Name = "aktivanLbl";
+            this.aktivanLbl.Size = new System.Drawing.Size(62, 16);
+            this.aktivanLbl.TabIndex = 19;
+            this.aktivanLbl.Text = "Aktivnost";
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
@@ -271,17 +282,29 @@
             this.employeeTypeCb.Size = new System.Drawing.Size(169, 21);
             this.employeeTypeCb.TabIndex = 10;
             // 
+            // aktivanChb
+            // 
+            this.aktivanChb.AutoSize = true;
+            this.aktivanChb.Checked = true;
+            this.aktivanChb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.aktivanChb.Location = new System.Drawing.Point(3, 222);
+            this.aktivanChb.Name = "aktivanChb";
+            this.aktivanChb.Size = new System.Drawing.Size(62, 17);
+            this.aktivanChb.TabIndex = 12;
+            this.aktivanChb.Text = "Aktivan";
+            this.aktivanChb.UseVisualStyleBackColor = true;
+            // 
             // employeeDgv
             // 
             this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.employeeDgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.employeeDgv.DefaultCellStyle = dataGridViewCellStyle1;
             this.employeeDgv.Location = new System.Drawing.Point(33, 117);
             this.employeeDgv.Margin = new System.Windows.Forms.Padding(2);
             this.employeeDgv.MultiSelect = false;
@@ -303,29 +326,6 @@
             this.newBtn.UseVisualStyleBackColor = true;
             this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
             // 
-            // aktivanChb
-            // 
-            this.aktivanChb.AutoSize = true;
-            this.aktivanChb.Checked = true;
-            this.aktivanChb.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.aktivanChb.Location = new System.Drawing.Point(3, 222);
-            this.aktivanChb.Name = "aktivanChb";
-            this.aktivanChb.Size = new System.Drawing.Size(62, 17);
-            this.aktivanChb.TabIndex = 12;
-            this.aktivanChb.Text = "Aktivan";
-            this.aktivanChb.UseVisualStyleBackColor = true;
-            // 
-            // aktivanLbl
-            // 
-            this.aktivanLbl.AutoSize = true;
-            this.aktivanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.aktivanLbl.Location = new System.Drawing.Point(2, 218);
-            this.aktivanLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
-            this.aktivanLbl.Name = "aktivanLbl";
-            this.aktivanLbl.Size = new System.Drawing.Size(62, 16);
-            this.aktivanLbl.TabIndex = 19;
-            this.aktivanLbl.Text = "Aktivnost";
-            // 
             // AdminPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,9 +335,11 @@
             this.Controls.Add(this.employeeDgv);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.KeyPreview = true;
             this.Name = "AdminPanelForm";
             this.Text = "AdminPanel";
             this.Load += new System.EventHandler(this.AdminPanelForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminPanelForm_KeyDown);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
             this.Controls.SetChildIndex(this.employeeDgv, 0);
