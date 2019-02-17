@@ -200,6 +200,18 @@ namespace MobiFinanceBank.Forms
                 MessageBox.Show(@"Morate unijeti sve podatke");
             }
         }
+        private void AdminPanelForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#29-kreiranje-novog-klijenta");
+            }
+        }
+        private void AdminPanelForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
 
     }
 }
