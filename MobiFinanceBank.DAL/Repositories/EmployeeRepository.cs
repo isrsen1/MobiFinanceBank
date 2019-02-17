@@ -93,12 +93,16 @@ namespace MobiFinanceBank.DAL.Repositories
                 employeeToModify.LastName = employee.LastName;
                 employeeToModify.OIB = employee.OIB;
                 employeeToModify.UserName = employee.UserName;
-                employeeToModify.PasswordHash = employee.PasswordHash;
-                employeeToModify.PasswordSalt = employee.PasswordSalt;
                 employeeToModify.Email = employee.Email;
                 employeeToModify.PhoneNumber = employee.PhoneNumber;
                 employeeToModify.Address = employee.Address;
                 employeeToModify.EmployeeTypeId = employee.EmployeeTypeId;
+                employeeToModify.IsActive = employee.IsActive;
+                if (employee.PasswordHash!=null)
+                {
+                    employeeToModify.PasswordHash = employee.PasswordHash;
+                    employeeToModify.PasswordSalt = employee.PasswordSalt;
+                }
 
                 // Saves changes
                 if (shouldSaveChanges)

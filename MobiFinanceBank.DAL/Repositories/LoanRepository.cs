@@ -63,7 +63,7 @@ namespace MobiFinanceBank.DAL.Repositories
         /// <summary>
         /// Gets the asset
         /// </summary>
-        /// <param name="liabilityId">Liability id</param>
+        /// <param name="loanId">Liability id</param>
         /// <returns>Asset</returns>
         public Loan Get(long loanId)
         {
@@ -98,10 +98,12 @@ namespace MobiFinanceBank.DAL.Repositories
             if (loan == null)
                 throw new ArgumentNullException(nameof(loan), "Loan is not instantiated");
 
+            var loanToModify = this.Get(loan.Id);
+
+            loanToModify.Status = loan.Status;
+            
             try
             {
-                // Modifies loan
-                this.context.Entry(loan).State = EntityState.Modified;
 
                 // Saves changes
                 if (shouldSaveChanges)

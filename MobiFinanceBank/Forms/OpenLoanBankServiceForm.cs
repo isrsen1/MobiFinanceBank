@@ -150,6 +150,7 @@ namespace MobiFinanceBank.Forms
                 IsStandingOrderActive = IsStandingOrderChecked,
                 LoanStartDate = startDateDtp.Value, 
                 LoanEndDate = startDateDtp.Value.AddYears((int)loanDurationNum.Value),
+                LoanDuration = (int)loanDurationNum.Value,
                 Status = 0,
                 LoanTypeId = LoanType.Id,
                 EmployeeId = 3,
@@ -213,6 +214,7 @@ namespace MobiFinanceBank.Forms
 
             var castAssessment = (int) assessment;
             if (castAssessment > 100) castAssessment = 100;
+            if (castAssessment < 0) castAssessment = 0;
             
             assessmentProgressBar.Value = castAssessment;
         }

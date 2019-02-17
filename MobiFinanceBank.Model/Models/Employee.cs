@@ -81,6 +81,13 @@
         public string UserName { get; set; }
 
         /// <summary>
+        /// Gets or sets if employee can use its login
+        /// </summary>
+        /// <value>
+        /// Employee's login permission
+        /// </value>
+        public bool IsActive { get; set; }
+        /// <summary>
         /// Gets or sets employee's type id 
         /// </summary>
         /// <value>
