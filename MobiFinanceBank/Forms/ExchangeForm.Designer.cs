@@ -290,6 +290,7 @@
             this.KeyPreview = true;
             this.Name = "ExchangeForm";
             this.Text = "ExchangeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExchangeForm_FormClosing);
             this.Load += new System.EventHandler(this.ExchangeForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExchangeForm_KeyDown);
             this.Controls.SetChildIndex(this.currencyExchangeRateDgv, 0);

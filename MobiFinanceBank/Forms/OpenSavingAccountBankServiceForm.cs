@@ -3,6 +3,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
 
@@ -149,27 +150,42 @@ namespace MobiFinanceBank.Forms
 
             var savingAccount = new SavingAccount()
             {
-                Account = account,
+                AccountId = account?.Id,
                 Capital = (double)capitalNum.Value,
                 IsStandingOrderActive = IsStandingOrderChecked,
                 FixedTermDepositingStartDate = startDateDtp.Value,
                 SavingAccountTypeId = this.SavingAccountType.Id,
                 FixedTermDepositingEndDate = startDateDtp.Value.AddYears(SavingAccountType.FixedTermDepositingPeriod),
-                EmployeeId = 3,
+                EmployeeId = CurrentUser.GetEmployee().Id,
                 ClientId = Client.Id
             };
 
             try
             {
-                this.savingAccountRepository.Add(savingAccount);
-                MessageBox.Show(@"Uspješno otvaranje štednog računa", "Otvaranje štednje", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                var createdSavingAccount = this.savingAccountRepository.Add(savingAccount);
+                if (createdSavingAccount != null)
+                {
+                    MessageBox.Show(@"Uspješno otvaranje štednog računa", "Otvaranje štednje", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    capitalNum.Value = 0;
+                    startDateDtp.Value = DateTime.Now;
+                    fixedTermChb.Checked = false;
+                    IsStandingOrderChecked = false;
+                    accountsDgv.Visible = false;
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show(@"Neuspješno otvaranje štednog računa", "Otvaranje štednje", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void OpenSavingAccountBankServiceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
 
         private void OpenSavingAccountBankServiceForm_KeyDown(object sender, KeyEventArgs e)

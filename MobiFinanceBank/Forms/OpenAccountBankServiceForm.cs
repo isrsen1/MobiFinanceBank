@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Templates;
 
@@ -105,10 +106,21 @@ namespace MobiFinanceBank.Forms
                 Balance = (double) paymentNum.Value,
                 ClientId = Client.Id,
                 AccountTypeId = AccountType.Id,
-                EmployeeId = 3
+                EmployeeId = CurrentUser.GetEmployee().Id
             };
 
-            this.accountRepository.Add(account);
+            var createdAccount = this.accountRepository.Add(account);
+
+            if (createdAccount != null)
+                MessageBox.Show(@"Uspješno kreiran račun", @"Otvaranje računa", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            else
+                MessageBox.Show(@"Račun nije kreiran", @"Otvaranje računa", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+            ibanTb.Text = "";
+            cardNumberTb.Text = "";
+            paymentNum.Value = 0;
         }
 
         private void OpenAccountBankServiceForm_Load(object sender, EventArgs e)
@@ -173,6 +185,12 @@ namespace MobiFinanceBank.Forms
                 cardNumberTb.ForeColor = Color.Gray;
                 cardNumberTb.Text = cardNumberPlaceholder;
             }
+        }
+
+        private void OpenAccountBankServiceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
 
         private void OpenAccountBankServiceForm_KeyDown(object sender, KeyEventArgs e)

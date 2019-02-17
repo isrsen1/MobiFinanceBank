@@ -217,6 +217,7 @@
     <Compile Include="Forms\OpeningBankServicesForm.Designer.cs">
       <DependentUpon>OpeningBankServicesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CurrentUser.cs" />
     <Compile Include="Helpers\GridButton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -201,13 +201,5 @@ namespace MobiFinanceBank.Forms
             }
         }
 
-
-        private void AdminPanelForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.F1)
-            {
-                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#21-izra%C4%8Dun-otplatne-tablice-kredita");
-            }
-        }
     }
 }

@@ -390,6 +390,7 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "OpenAccountBankServiceForm";
             this.Text = "OpenAccountBankServiceForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenAccountBankServiceForm_FormClosing);
             this.Load += new System.EventHandler(this.OpenAccountBankServiceForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OpenAccountBankServiceForm_KeyDown);
             this.Controls.SetChildIndex(this.ibanLbl, 0);

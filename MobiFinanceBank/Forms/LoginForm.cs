@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
+using MobiFinanceBank.Model.Enums;
+using MobiFinanceBank.Model.Models;
+using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
 using MobiFinanceBank.VmService.Interfaces;
@@ -42,9 +46,11 @@ namespace MobiFinanceBank.Forms
             data.Username = userNameTxt.Text;
             data.Password = passwordTxt.Text;
             var result = loginVmService.GetLoginData(data);
+     
             try {
                 if (result != null)
                 {
+                    CurrentUser.SetEmployee(result);
                     menuForm.GetEmployee(result);
                     this.menuForm.Show();
                 }

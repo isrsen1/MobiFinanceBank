@@ -1,8 +1,15 @@
 ﻿using System;
+using MobiFinanceBank.DAL.DbContexts;
+using MobiFinanceBank.DAL.Repositories;
+using MobiFinanceBank.DAL.Repositories.Interfaces;
 using System.Windows.Forms;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
+using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
+using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
+using MobiFinanceBank.VmService;
 
 namespace MobiFinanceBank.Forms
 {
@@ -14,12 +21,13 @@ namespace MobiFinanceBank.Forms
     public partial class MenuForm : TemplateForm, IMenuForm
     {
         private Employee employee;
-        private readonly IExchangeForm exchangeForm;
-        private readonly ICreateClientForm _createClientForm;
-        private readonly IClientOverviewForm _clientOverviewForm;
-        private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
-        private readonly IAdminPanel _adminPanel;
-        private readonly ILoanRequestsForm loanRequestsForm;
+        private IExchangeForm exchangeForm;
+        private ICreateClientForm _createClientForm;
+        private IClientOverviewForm _clientOverviewForm;
+        private IBankServicesOverviewForm _bankServicesOverviewForm;
+        private IAdminPanel _adminPanel;
+        private ILoanRequestsForm loanRequestsForm;
+        private IEmployeeTypeRepository employeeTypeRepository;
 
         /// <summary>
         /// Initializes new instance of menu form
@@ -35,6 +43,7 @@ namespace MobiFinanceBank.Forms
             IBankServicesOverviewForm bankServicesOverviewForm,
             IAdminPanel adminPanel,
             ILoanRequestsForm _loanRequestsForm,
+            IEmployeeTypeRepository _employeeTypeRepository,
             Employee _employee)
         {
             InitializeComponent();
@@ -44,9 +53,13 @@ namespace MobiFinanceBank.Forms
             this._clientOverviewForm = clientOverviewForm;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
             this._adminPanel = adminPanel;
+            this.loanRequestsForm = _loanRequestsForm;
+            this.employeeTypeRepository = _employeeTypeRepository;
+
+            //this.btnAdminPanel.Visible = false;
+            btnAdminPanel.Enabled = true;
             this.btnAdminPanel.Visible = false;
      
-
 
         }
         public void GetEmployee(Employee _employee)
@@ -64,17 +77,17 @@ namespace MobiFinanceBank.Forms
         
         private void btnMjenjacnica_Click(object sender, EventArgs e)
         {
-            exchangeForm.Show();
+                exchangeForm.Show();
         }
 
         private void btnZaposlenici_Click(object sender, EventArgs e)
         {
-            this._createClientForm.Show(null);
+                this._createClientForm.Show(null);
         }
 
         private void btnPregledKlijenata_Click(object sender, EventArgs e)
         {
-            this._clientOverviewForm.Show();
+                this._clientOverviewForm.Show();    
         }
 
         private void btnOtvaranjeUsluga_Click(object sender, EventArgs e)
@@ -90,7 +103,15 @@ namespace MobiFinanceBank.Forms
 
         private void loanRequestsBtn_Click(object sender, EventArgs e)
         {
+            this.loanRequestsForm.Show();
+        }
 
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            var currentUser = CurrentUser.GetEmployee();
+            var employeeType = this.employeeTypeRepository.Get(currentUser.EmployeeTypeId);
+            if (employeeType.Name == Enum.GetName(typeof(EmployeeTypeEnum), EmployeeTypeEnum.Zaposlenik))
+                loanRequestsBtn.Visible = false;
         }
 
         private void MenuForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)

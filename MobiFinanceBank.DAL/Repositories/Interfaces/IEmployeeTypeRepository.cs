@@ -23,7 +23,7 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
         /// </summary>
         /// <param name="personId">The person identifier.</param>
         /// <returns>Returns account </returns>
-        EmployeeType Get(long personId);
+        EmployeeType Get(long employeeTypeId);
 
         /// <summary>
         /// Edits the specified employee type.

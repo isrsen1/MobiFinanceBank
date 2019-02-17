@@ -200,8 +200,10 @@
             this.Controls.Add(this.btnPregledKlijenata);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
+            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MenuForm_KeyDown);
             this.Controls.SetChildIndex(this.btnPregledKlijenata, 0);
             this.Controls.SetChildIndex(this.btnMjenjacnica, 0);
