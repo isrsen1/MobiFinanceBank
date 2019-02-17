@@ -86,7 +86,7 @@
             this.bankServicesFlp.Controls.Add(this.loanDgv);
             this.bankServicesFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.bankServicesFlp.Location = new System.Drawing.Point(9, 105);
-            this.bankServicesFlp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bankServicesFlp.Margin = new System.Windows.Forms.Padding(2);
             this.bankServicesFlp.Name = "bankServicesFlp";
             this.bankServicesFlp.Size = new System.Drawing.Size(712, 210);
             this.bankServicesFlp.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.savingAccountsDataGridViewTextBoxColumn});
             this.savingAccountDgv.DataSource = this.savingAccountTypeBindingSource;
             this.savingAccountDgv.Location = new System.Drawing.Point(2, 2);
-            this.savingAccountDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.savingAccountDgv.Margin = new System.Windows.Forms.Padding(2);
             this.savingAccountDgv.Name = "savingAccountDgv";
             this.savingAccountDgv.RowTemplate.Height = 24;
             this.savingAccountDgv.Size = new System.Drawing.Size(268, 164);
@@ -165,7 +165,7 @@
             this.accountsDataGridViewTextBoxColumn});
             this.accountDgv.DataSource = this.accountTypeBindingSource;
             this.accountDgv.Location = new System.Drawing.Point(274, 2);
-            this.accountDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accountDgv.Margin = new System.Windows.Forms.Padding(2);
             this.accountDgv.Name = "accountDgv";
             this.accountDgv.Size = new System.Drawing.Size(216, 164);
             this.accountDgv.TabIndex = 2;
@@ -239,7 +239,7 @@
             this.interestRateDataGridViewTextBoxColumn1});
             this.loanDgv.DataSource = this.loanTypeBindingSource;
             this.loanDgv.Location = new System.Drawing.Point(494, 2);
-            this.loanDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loanDgv.Margin = new System.Windows.Forms.Padding(2);
             this.loanDgv.Name = "loanDgv";
             this.loanDgv.Size = new System.Drawing.Size(206, 164);
             this.loanDgv.TabIndex = 1;
@@ -275,7 +275,7 @@
             // 
             this.bankServicesCb.FormattingEnabled = true;
             this.bankServicesCb.Location = new System.Drawing.Point(783, 153);
-            this.bankServicesCb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bankServicesCb.Margin = new System.Windows.Forms.Padding(2);
             this.bankServicesCb.Name = "bankServicesCb";
             this.bankServicesCb.Size = new System.Drawing.Size(153, 21);
             this.bankServicesCb.TabIndex = 4;
@@ -285,7 +285,7 @@
             // 
             this.createAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createAccountBtn.Location = new System.Drawing.Point(2, 34);
-            this.createAccountBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createAccountBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createAccountBtn.Name = "createAccountBtn";
             this.createAccountBtn.Size = new System.Drawing.Size(82, 28);
             this.createAccountBtn.TabIndex = 5;
@@ -297,7 +297,7 @@
             // 
             this.createLoanBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createLoanBtn.Location = new System.Drawing.Point(2, 2);
-            this.createLoanBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createLoanBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createLoanBtn.Name = "createLoanBtn";
             this.createLoanBtn.Size = new System.Drawing.Size(82, 28);
             this.createLoanBtn.TabIndex = 6;
@@ -309,7 +309,7 @@
             // 
             this.createSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createSavingAccountBtn.Location = new System.Drawing.Point(88, 2);
-            this.createSavingAccountBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createSavingAccountBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createSavingAccountBtn.Name = "createSavingAccountBtn";
             this.createSavingAccountBtn.Size = new System.Drawing.Size(84, 28);
             this.createSavingAccountBtn.TabIndex = 7;
@@ -325,7 +325,7 @@
             this.buttonsFlp.Controls.Add(this.createSavingAccountBtn);
             this.buttonsFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.buttonsFlp.Location = new System.Drawing.Point(783, 177);
-            this.buttonsFlp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonsFlp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonsFlp.Name = "buttonsFlp";
             this.buttonsFlp.Size = new System.Drawing.Size(182, 81);
             this.buttonsFlp.TabIndex = 8;
@@ -362,9 +362,11 @@
             this.Controls.Add(this.buttonsFlp);
             this.Controls.Add(this.bankServicesCb);
             this.Controls.Add(this.bankServicesFlp);
+            this.KeyPreview = true;
             this.Name = "OpeningBankServicesForm";
             this.Text = "OpeningBankServicesForm";
             this.Load += new System.EventHandler(this.OpeningBankServicesForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OpeningBankServicesForm_KeyDown);
             this.Controls.SetChildIndex(this.bankServicesFlp, 0);
             this.Controls.SetChildIndex(this.bankServicesCb, 0);
             this.Controls.SetChildIndex(this.buttonsFlp, 0);

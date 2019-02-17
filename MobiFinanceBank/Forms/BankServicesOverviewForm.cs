@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using MobiFinanceBank.DAL.Repositories;
+using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
@@ -20,6 +22,7 @@ namespace MobiFinanceBank.Forms
     public partial class BankServicesOverviewForm : TemplateForm, IBankServicesOverviewForm
     {
         private readonly IBankServicesVmService bankServicesVmService;
+        private readonly IEmployeeRepository employeeRepository;
 
         /// <summary>
         /// Gets or sets the client
@@ -43,10 +46,11 @@ namespace MobiFinanceBank.Forms
         /// </summary>
         /// <param name="_bankServicesVmService">Bank services view model service</param>
         public BankServicesOverviewForm
-            (IBankServicesVmService _bankServicesVmService)
+            (IBankServicesVmService _bankServicesVmService, IEmployeeRepository _employeeRepository)
         {
             InitializeComponent();
             this.bankServicesVmService = _bankServicesVmService;
+            this.employeeRepository = _employeeRepository;
         }
 
         /// <summary>
@@ -69,6 +73,7 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void SavingAndAccountOverviewForm_Load(object sender, EventArgs e)
         {
+            
             // Set data sources and windows size
             this.SetDataSources();
             this.SetDataGridViewSize(750, 300);
@@ -81,7 +86,34 @@ namespace MobiFinanceBank.Forms
                 {BankServices.Štednja, savingAccountDgv}
             };
         }
+        private void GetEmployee(Account account, Loan loan,SavingAccount savingAccount)
+        {
+            //var account = (Account)accountDgv.SelectedRows[0].DataBoundItem;
+            //var loan = (Loan)loanDgv.SelectedRows[0].DataBoundItem;
+            //var savingAccount = (SavingAccount)savingAccountDgv.SelectedRows[0].DataBoundItem;
 
+            this.employeeDgv.DefaultCellStyle.ForeColor = Color.Black;
+
+            if (savingAccountDgv.Visible==true)
+            {
+                this.employeeDgv.DataSource = new BindingSource(this.employeeRepository.Get(savingAccount.EmployeeId), null);
+            }
+            if (accountDgv.Visible == true)
+            {
+                this.employeeDgv.DataSource = new BindingSource(this.employeeRepository.Get(account.EmployeeId), null);
+            }
+            if (loanDgv.Visible == true)
+            {
+                this.employeeDgv.DataSource = new BindingSource(this.employeeRepository.Get(loan.EmployeeId), null);
+            }
+            this.employeeDgv.Columns["Id"].Visible = false;
+            this.employeeDgv.Columns["Loans"].Visible = false;
+            this.employeeDgv.Columns["EmployeeTypeId"].Visible = false;
+            this.employeeDgv.Columns["EmployeeType"].Visible = false;
+            this.employeeDgv.Columns["SavingAccounts"].Visible = false;
+
+
+        }
         /// <summary>
         /// On bank services combobox selected index change
         /// </summary>
@@ -143,6 +175,35 @@ namespace MobiFinanceBank.Forms
             savingAccountDgv.Size = new Size(width, height);
             accountDgv.Size = new Size(width, height);
             loanDgv.Size = new Size(width, height);
+        }
+
+        private void BankServicesOverviewForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#252-pregled-usluga");
+            }          
+        }
+
+        private void accountDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            var account = (Account)accountDgv.SelectedRows[0].DataBoundItem;
+            GetEmployee(account, null, null);
+
+
+        }
+
+        private void savingAccountDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var savingAccount = (SavingAccount)savingAccountDgv.SelectedRows[0].DataBoundItem;
+            GetEmployee(null, null, savingAccount);
+        }
+
+        private void loanDgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var loan = (Loan)loanDgv.SelectedRows[0].DataBoundItem;
+            GetEmployee(null, loan, null);
         }
     }
 }

@@ -81,5 +81,13 @@ namespace MobiFinanceBank.Forms
             var currency = Enum.Parse(typeof(Currency), currencyCb.SelectedValue.ToString());
             if(!Currencies.Contains((Currency)currency)) Currencies.Add((Currency)currency); 
         }
+
+        private void ExchangeForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#27-te%C4%8Dajna-lista");
+            }
+        }
     }
 }

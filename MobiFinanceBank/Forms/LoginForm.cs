@@ -62,7 +62,7 @@ namespace MobiFinanceBank.Forms
         {
             if (e.KeyData == Keys.F1)
             {
-                Help.ShowHelp(this, @"file://../../Resources/ help.chm");
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#12-prijava");
             }
         }
     }
