@@ -43,8 +43,8 @@ namespace MobiFinanceBank.Forms
             this._clientOverviewForm = clientOverviewForm;
             this._bankServicesOverviewForm = bankServicesOverviewForm;
             this._adminPanel = adminPanel;
-            //this.btnAdminPanel.Visible = false;
-            btnAdminPanel.Enabled = true;
+            this.btnAdminPanel.Visible = false;
+     
 
 
         }

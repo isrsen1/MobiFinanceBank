@@ -34,6 +34,7 @@
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnUnesi = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // userNameLbl
@@ -99,6 +100,10 @@
             this.btnUnesi.UseVisualStyleBackColor = true;
             this.btnUnesi.Click += new System.EventHandler(this.btnUnesi_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "Y:\\Git1\\MobiFinanceBank\\Resources\\help.chm";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,8 +115,12 @@
             this.Controls.Add(this.userNameTxt);
             this.Controls.Add(this.passwordLbl);
             this.Controls.Add(this.userNameLbl);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
+            this.helpProvider1.SetHelpString(this, "1002");
             this.Name = "LoginForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "LoginForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
             this.Controls.SetChildIndex(this.userNameLbl, 0);
             this.Controls.SetChildIndex(this.passwordLbl, 0);
             this.Controls.SetChildIndex(this.userNameTxt, 0);
@@ -131,5 +140,6 @@
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUnesi;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

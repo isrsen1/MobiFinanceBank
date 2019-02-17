@@ -16,43 +16,59 @@ namespace MobiFinanceBank.Services
     {
         private readonly IEmployeeRepository employeeRepository;
         private HashLibrary.HashedPassword hash;
-        private string Hashed;
-        private string Salted;
-
-
-
+ 
+        /// <summary>
+        /// Login service constructor
+        /// </summary>
+        /// <param name="_employeeRepository">Sender</param>
         public LoginService(IEmployeeRepository _employeeRepository)
         {          
               this.employeeRepository = _employeeRepository;
             
         }
-        public static string Base64Decode(string base64EncodedData)
+
+        /// <summary>
+        /// Base64Decoder to get the hashed value
+        /// </summary>
+        /// <param name="base64EncodedHash">Encoded hash</param>
+        public static string Base64Decode(string base64EncodedHash)
         {
-            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedHash);
             return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
+        /// <summary>
+        /// Queries the database and checks if the entered plaintext password matches the record
+        /// </summary>
+        /// <param name="username">Entered Username</param>
+        /// <param name="password">Plaintext password args</param>
         public Employee CheckCredentials(string username, string password)
         {
-             
-             var employee = this.employeeRepository.GetEmployeeByUserName(username);
-            var hashy = Base64Decode(employee.PasswordHash);
-            var salty = Base64Decode(employee.PasswordSalt);
+             //Returns the employee from the database by the username
+            var employee = this.employeeRepository.GetEmployeeByUserName(username);
+            //decodes the returned data into UTF8 data appropriate for the hasher
+            var hashDecode = Base64Decode(employee.PasswordHash);
+            var saltDecode = Base64Decode(employee.PasswordSalt);
             
             try
             {
+                //example of hash and password after decoding
                 // hash = HashLibrary.HashedPassword.New(password);                
-                 Hashed = "O_¸¯°íó7ÚS§ÊįāĨkÙZµį4g}BÞo.óDxßT";
-                 Salted = "¥ĎP¢ċÎ³ðsĤĩçÍĴÃČðp×}õĐ­£ŀ_`ð?îy=";
-                hash = new HashLibrary.HashedPassword(hashy, salty);    
+                // Hashed = "O_¸¯°íó7ÚS§ÊįāĨkÙZµį4g}BÞo.óDxßT";
+                // Salted = "¥ĎP¢ċÎ³ðsĤĩçÍĴÃČðp×}õĐ­£ŀ_`ð?îy=";
+
+                //passes the decoded data into the HashedPassword class constructor
+                hash = new HashLibrary.HashedPassword(hashDecode, saltDecode);    
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.ToString());
             }
 
-            System.IO.File.WriteAllText(@"C:\Users\Public\HashSaltLogin.txt", hash.Hash+"\n"+hash.Salt);      
+            //used for testing
+            //System.IO.File.WriteAllText(@"C:\Users\Public\HashSaltLogin.txt", hash.Hash+"\n"+hash.Salt);      
             try
             {
+                //checks the hash against the plaintext
                 if (hash.Check(password)==false)
                 {
                     MessageBox.Show("Šifra je neispravna! Pokušajte ponovo.");
