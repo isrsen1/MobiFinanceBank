@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
+using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Services.Interfaces;
 
@@ -40,10 +41,13 @@ namespace MobiFinanceBank.Services
             // Calculate monthly loan amount from all client loans
             foreach (var loan in clientLoans)
             {
-                var loanCapital = loan.Capital;
-                var loanInterestRate = loan.LoanType.InterestRate;
-                var loanDurationMonths = loan.LoanDuration * 12;
-                currentLoansAmount += (loanCapital * loanInterestRate + loanCapital) / loanDurationMonths;
+                if (loan.Status == (int)LoanStatus.Odobren)
+                {
+                    var loanCapital = loan.Capital;
+                    var loanInterestRate = loan.LoanType.InterestRate;
+                    var loanDurationMonths = loan.LoanDuration * 12;
+                    currentLoansAmount += (loanCapital * loanInterestRate + loanCapital) / loanDurationMonths;
+                }
             }
 
             double assessment = 0;

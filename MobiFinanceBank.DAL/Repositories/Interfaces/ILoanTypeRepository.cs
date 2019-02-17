@@ -6,5 +6,6 @@ namespace MobiFinanceBank.DAL.Repositories.Interfaces
     public interface ILoanTypeRepository
     {
         IEnumerable<LoanType> GetAll();
+        LoanType GetById(int loanTypeId);
     }
 }

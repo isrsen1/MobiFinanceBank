@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
@@ -18,7 +19,11 @@ namespace MobiFinanceBank.Forms
         private readonly IClientTypeRepository clientTypeRepository;
         private readonly IClientRepository clientRepository;
         private string emailPlaceholder = "e.g. isrsen1@foi.hr";
-        
+        private readonly string emailRegex = @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+        private readonly string nameRegex = @"^[A-Z]{1}[a-z]{1-25}$";
+        private readonly string oibRegex = @"^[0-9]{11}$";
+        private readonly string contactRegex = @"^[0]{1}[9]{1}[1-9]{1}[0-9]{6,7}$";
+
         /// <summary>
         /// Gets or sets the client
         /// </summary>
@@ -168,18 +173,24 @@ namespace MobiFinanceBank.Forms
         {
             // Retrieve selected client type
             var clientType = (ClientType)clientTypeCb.SelectedItem;
-
+            
             var isValid = !string.IsNullOrEmpty(oibTb.Text)
                           && !string.IsNullOrEmpty(emailTb.Text)
                           && !string.IsNullOrEmpty(contactTb.Text)
                           && !string.IsNullOrEmpty(addressTb.Text);
-
+            
             if (clientType.Name == Model.Enums.ClientType.Privatni.ToString())
-                isValid = isValid && !string.IsNullOrEmpty(firstNameTb.Text)
-                                  && !string.IsNullOrEmpty(lastNameTb.Text);
+                isValid = !string.IsNullOrEmpty(firstNameTb.Text)
+                          && !string.IsNullOrEmpty(lastNameTb.Text);
             else
             {
-                isValid = isValid && !string.IsNullOrEmpty(companyTb.Text);
+                isValid = !string.IsNullOrEmpty(companyTb.Text);
+            }
+
+            if (!isValid)
+            {
+                MessageBox.Show(@"Unos svih polja je obvezan", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (!string.IsNullOrEmpty(oibTb.Text))
@@ -188,9 +199,41 @@ namespace MobiFinanceBank.Forms
                 if (clientByOib != null && ClientToModify == null)
                 {
                     isValid = false;
-                    MessageBox.Show(@"Klijent s upisanim osobnim identifikacijskim brojem vec postoji");
+                    MessageBox.Show(@"Klijent s upisanim osobnim identifikacijskim brojem vec postoji", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            if (!Regex.Match(firstNameTb.Text, nameRegex).Success)
+            {
+                MessageBox.Show(@"Ime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Regex.Match(lastNameTb.Text, nameRegex).Success)
+            {
+                MessageBox.Show(@"Prezime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Regex.Match(oibTb.Text, oibRegex).Success)
+            {
+                MessageBox.Show(@"OIB mora sadržavati 11 brojčanih znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Regex.Match(contactTb.Text, contactRegex).Success)
+            {
+                MessageBox.Show(@"Neispravan kontakt", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Regex.Match(emailTb.Text, emailRegex).Success)
+            {
+                MessageBox.Show(@"Neispravan email format", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
 
             if (isValid)
             {
