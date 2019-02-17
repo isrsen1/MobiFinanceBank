@@ -203,17 +203,17 @@ namespace MobiFinanceBank.Forms
                 }
             }
 
-            if (!Regex.Match(firstNameTb.Text, nameRegex).Success)
-            {
-                MessageBox.Show(@"Ime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (!Regex.Match(firstNameTb.Text, nameRegex).Success)
+            //{
+            //    MessageBox.Show(@"Ime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            if (!Regex.Match(lastNameTb.Text, nameRegex).Success)
-            {
-                MessageBox.Show(@"Prezime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (!Regex.Match(lastNameTb.Text, nameRegex).Success)
+            //{
+            //    MessageBox.Show(@"Prezime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
             if (!Regex.Match(oibTb.Text, oibRegex).Success)
             {
