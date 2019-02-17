@@ -102,7 +102,7 @@ namespace MobiFinanceBank.Forms
 
         private void loanRequestsBtn_Click(object sender, EventArgs e)
         {
-
+            this.loanRequestsForm.Show();
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
