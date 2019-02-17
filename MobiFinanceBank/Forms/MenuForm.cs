@@ -4,7 +4,9 @@ using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Helpers;
 using MobiFinanceBank.Model.Enums;
 using MobiFinanceBank.Model.Models;
+using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
+using MobiFinanceBank.VmService;
 
 namespace MobiFinanceBank.Forms
 {
@@ -16,7 +18,7 @@ namespace MobiFinanceBank.Forms
     public partial class MenuForm : TemplateForm, IMenuForm
     {
         private Employee employee;
-        private readonly IExchangeForm exchangeForm;
+        private IExchangeForm exchangeForm;
         private readonly ICreateClientForm _createClientForm;
         private readonly IClientOverviewForm _clientOverviewForm;
         private readonly IBankServicesOverviewForm _bankServicesOverviewForm;
@@ -70,6 +72,8 @@ namespace MobiFinanceBank.Forms
         
         private void btnMjenjacnica_Click(object sender, EventArgs e)
         {
+            if(exchangeForm == null)
+                exchangeForm = new ExchangeForm(new ExchangeVmService(new ExchangeService()));
             exchangeForm.Show();
         }
 
