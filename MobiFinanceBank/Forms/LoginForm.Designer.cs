@@ -39,11 +39,11 @@
             // userNameLbl
             // 
             this.userNameLbl.AutoSize = true;
-            this.userNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLbl.Location = new System.Drawing.Point(200, 167);
+            this.userNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userNameLbl.Location = new System.Drawing.Point(244, 179);
             this.userNameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userNameLbl.Name = "userNameLbl";
-            this.userNameLbl.Size = new System.Drawing.Size(114, 20);
+            this.userNameLbl.Size = new System.Drawing.Size(138, 24);
             this.userNameLbl.TabIndex = 3;
             this.userNameLbl.Text = "Korisničko ime:";
             this.userNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -51,18 +51,18 @@
             // passwordLbl
             // 
             this.passwordLbl.AutoSize = true;
-            this.passwordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLbl.Location = new System.Drawing.Point(200, 203);
+            this.passwordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.passwordLbl.Location = new System.Drawing.Point(244, 215);
             this.passwordLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordLbl.Name = "passwordLbl";
-            this.passwordLbl.Size = new System.Drawing.Size(68, 20);
+            this.passwordLbl.Size = new System.Drawing.Size(79, 24);
             this.passwordLbl.TabIndex = 4;
             this.passwordLbl.Text = "Lozinka:";
             this.passwordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // userNameTxt
             // 
-            this.userNameTxt.Location = new System.Drawing.Point(509, 167);
+            this.userNameTxt.Location = new System.Drawing.Point(482, 179);
             this.userNameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.userNameTxt.Name = "userNameTxt";
             this.userNameTxt.Size = new System.Drawing.Size(218, 20);
@@ -70,7 +70,7 @@
             // 
             // passwordTxt
             // 
-            this.passwordTxt.Location = new System.Drawing.Point(509, 203);
+            this.passwordTxt.Location = new System.Drawing.Point(482, 215);
             this.passwordTxt.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '*';
@@ -90,10 +90,11 @@
             // 
             // btnUnesi
             // 
+            this.btnUnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUnesi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUnesi.Location = new System.Drawing.Point(652, 240);
+            this.btnUnesi.Location = new System.Drawing.Point(522, 250);
             this.btnUnesi.Name = "btnUnesi";
-            this.btnUnesi.Size = new System.Drawing.Size(75, 23);
+            this.btnUnesi.Size = new System.Drawing.Size(138, 39);
             this.btnUnesi.TabIndex = 8;
             this.btnUnesi.Text = "Unesi";
             this.btnUnesi.UseVisualStyleBackColor = true;
