@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
 using MobiFinanceBank.Helpers;
 using MobiFinanceBank.Model.Enums;
@@ -16,9 +8,6 @@ using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
 using MobiFinanceBank.VmService.Interfaces;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-
 namespace MobiFinanceBank.Forms
 {
     /// <summary>
@@ -73,6 +62,14 @@ namespace MobiFinanceBank.Forms
            
             
 
+        }
+
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                Help.ShowHelp(this, @"file://../../Resources/ help.chm");
+            }
         }
     }
 }

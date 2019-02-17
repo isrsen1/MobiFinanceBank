@@ -315,6 +315,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\help.chm" />
     <None Include="Resources\logo1.png" />
   </ItemGroup>
   <ItemGroup>

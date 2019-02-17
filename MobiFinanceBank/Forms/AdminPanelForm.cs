@@ -35,11 +35,20 @@ namespace MobiFinanceBank.Forms
             InitializeComponent();
         }
         /// <summary>
-        /// On admin panel load
+        /// On admin panel load refresh elements
         /// </summary>
         /// <param name="sender">Sender</param>
         /// <param name="e">Event args</param>
         private void AdminPanelForm_Load(object sender, EventArgs e)
+        {
+            RefreshElements();
+        }
+        /// <summary>
+        /// Refreshes the elements on the page
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
+        private void RefreshElements()
         {
             // Sets data source of the employee type combo box, its display member and the value member
             employeeTypeCb.ValueMember = "Id";
@@ -95,18 +104,18 @@ namespace MobiFinanceBank.Forms
                           && !string.IsNullOrEmpty(contactTb.Text)
                           && !string.IsNullOrEmpty(addressTb.Text)
                           && !string.IsNullOrEmpty(firstNameTb.Text)
-                          && !string.IsNullOrEmpty(lastNameTb.Text)
-                          && !string.IsNullOrEmpty(passwordTb.Text);
+                          && !string.IsNullOrEmpty(lastNameTb.Text);                         
 
             return isValid;
         }
-        public static string Base64Encode(string plainText)
+        /// <summary>
+        /// Base64 encoder used to convert the hash to a more managable character set for the database
+        /// </summary>
+        /// <param name="hash">Sender</param>
+        public static string Base64Encode(string hash)
         {
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
-            return System.Convert.ToBase64String(plainTextBytes);
-        }
-        private void updateBtn_Click(object sender, EventArgs e)
-        {
+            var hashBytes = System.Text.Encoding.UTF8.GetBytes(hash);
+            return System.Convert.ToBase64String(hashBytes);
         }
         /// <summary>
         /// Adds or edits employee
@@ -131,42 +140,49 @@ namespace MobiFinanceBank.Forms
                     newEmployee.PhoneNumber = contactTb.Text;
                     newEmployee.Address = addressTb.Text;
                     newEmployee.EmployeeTypeId = Convert.ToInt32(employeeTypeCb.SelectedValue);
+                    newEmployee.IsActive = aktivanChb.Checked;
 
-                    //generates new password hash and salt from the entered plaintext password
-                    var hashedPassword = HashedPassword.New(passwordTb.Text);
 
-                    var hashi = Base64Encode(hashedPassword.Hash);
-                    var salty = Base64Encode(hashedPassword.Salt);
 
-                    newEmployee.PasswordHash = hashi;
-                    newEmployee.PasswordSalt = salty;
-                    if (hashedPassword.Check(passwordTb.Text))
-                    {                    
-                        System.IO.File.WriteAllText(@"C:\Users\Public\HashSalt.txt", hashi+ "\n" + salty);
-                        MessageBox.Show(@"Poklapaju se!");
+                    if (!string.IsNullOrEmpty(passwordTb.Text))
+                    {
+                        //generates new password hash and salt from the entered plaintext password
+                        var hashedPassword = HashedPassword.New(passwordTb.Text);
+                        //encodes the hash and salt for storage in the database
+                        var encodedHash = Base64Encode(hashedPassword.Hash);
+                        var encodedSalt = Base64Encode(hashedPassword.Salt);
+
+                        newEmployee.PasswordHash = encodedHash;
+                        newEmployee.PasswordSalt = encodedSalt;
                     }
-                    
+                                
                     //checks if employee already exists, edits if it does
                     if (!string.IsNullOrEmpty(oibTb.Text))
                     {
                         var employeeByOib = this.employeeRepository.GetByOIB(oibTb.Text);
                         if (employeeByOib != null)
-                        {                           
-                            
+                        {
+
                             this.employeeRepository.Edit(newEmployee);
                             employeeDgv.Update();
                             employeeDgv.Refresh();
+                            RefreshElements();
                             MessageBox.Show("Zaposlenik izmjenjen");
 
                         }
                         else
                         {
-                            //adds new employee to database
-                            this.employeeRepository.Add(newEmployee);
-                            employeeDgv.Update();
-                            employeeDgv.Refresh();
-                            MessageBox.Show(@"Zaposlenik uspješno unesen");
+                            //if we are adding a new employee, the password must be entered as well
+                            if (!string.IsNullOrEmpty(passwordTb.Text))
+                            {
+                                //adds new employee to database
+                                this.employeeRepository.Add(newEmployee);
+                                employeeDgv.Update();
+                                employeeDgv.Refresh();
+                                RefreshElements();
+                                MessageBox.Show(@"Zaposlenik uspješno unesen");
 
+                            }
                         }
                     }
 

@@ -55,6 +55,8 @@ namespace MobiFinanceBank.Forms
 
             //this.btnAdminPanel.Visible = false;
             btnAdminPanel.Enabled = true;
+            this.btnAdminPanel.Visible = false;
+     
 
         }
         public void GetEmployee(Employee _employee)
@@ -100,7 +102,7 @@ namespace MobiFinanceBank.Forms
 
         private void loanRequestsBtn_Click(object sender, EventArgs e)
         {
-            this.loanRequestsForm.Show();
+
         }
 
         private void MenuForm_Load(object sender, EventArgs e)

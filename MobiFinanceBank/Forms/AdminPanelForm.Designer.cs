@@ -51,6 +51,8 @@
             this.employeeTypeCb = new System.Windows.Forms.ComboBox();
             this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.newBtn = new System.Windows.Forms.Button();
+            this.aktivanChb = new System.Windows.Forms.CheckBox();
+            this.aktivanLbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
@@ -68,11 +70,12 @@
             this.flowLayoutPanel2.Controls.Add(this.contactLbl);
             this.flowLayoutPanel2.Controls.Add(this.addressLbl);
             this.flowLayoutPanel2.Controls.Add(this.tiplbl);
+            this.flowLayoutPanel2.Controls.Add(this.aktivanLbl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(615, 127);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(118, 219);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(118, 263);
             this.flowLayoutPanel2.TabIndex = 18;
             // 
             // firstNameLbl
@@ -187,11 +190,12 @@
             this.flowLayoutPanel1.Controls.Add(this.contactTb);
             this.flowLayoutPanel1.Controls.Add(this.addressTb);
             this.flowLayoutPanel1.Controls.Add(this.employeeTypeCb);
+            this.flowLayoutPanel1.Controls.Add(this.aktivanChb);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(737, 127);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(175, 219);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(175, 242);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // firstNameTb
@@ -291,13 +295,36 @@
             // 
             this.newBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.newBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.newBtn.Location = new System.Drawing.Point(715, 364);
+            this.newBtn.Location = new System.Drawing.Point(703, 385);
             this.newBtn.Name = "newBtn";
             this.newBtn.Size = new System.Drawing.Size(135, 37);
             this.newBtn.TabIndex = 21;
             this.newBtn.Text = "Prihvati";
             this.newBtn.UseVisualStyleBackColor = true;
             this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
+            // 
+            // aktivanChb
+            // 
+            this.aktivanChb.AutoSize = true;
+            this.aktivanChb.Checked = true;
+            this.aktivanChb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.aktivanChb.Location = new System.Drawing.Point(3, 222);
+            this.aktivanChb.Name = "aktivanChb";
+            this.aktivanChb.Size = new System.Drawing.Size(62, 17);
+            this.aktivanChb.TabIndex = 12;
+            this.aktivanChb.Text = "Aktivan";
+            this.aktivanChb.UseVisualStyleBackColor = true;
+            // 
+            // aktivanLbl
+            // 
+            this.aktivanLbl.AutoSize = true;
+            this.aktivanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.aktivanLbl.Location = new System.Drawing.Point(2, 218);
+            this.aktivanLbl.Margin = new System.Windows.Forms.Padding(2, 8, 2, 0);
+            this.aktivanLbl.Name = "aktivanLbl";
+            this.aktivanLbl.Size = new System.Drawing.Size(62, 16);
+            this.aktivanLbl.TabIndex = 19;
+            this.aktivanLbl.Text = "Aktivnost";
             // 
             // AdminPanelForm
             // 
@@ -349,5 +376,7 @@
         private System.Windows.Forms.Label passwordlbl;
         private System.Windows.Forms.TextBox passwordTb;
         private System.Windows.Forms.Button newBtn;
+        private System.Windows.Forms.Label aktivanLbl;
+        private System.Windows.Forms.CheckBox aktivanChb;
     }
 }
