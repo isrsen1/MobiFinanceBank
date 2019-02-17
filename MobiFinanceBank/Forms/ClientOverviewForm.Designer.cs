@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.clientOverviewDgv = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,64 +118,64 @@
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.firstNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.firstNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
             this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.lastNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.lastNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             // 
             // companyNameDataGridViewTextBoxColumn
             // 
             this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.companyNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.companyNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
             // 
             // oIBDataGridViewTextBoxColumn
             // 
             this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.oIBDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.oIBDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
             this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.phoneNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            this.phoneNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             // 
             // incomeDataGridViewTextBoxColumn
             // 
             this.incomeDataGridViewTextBoxColumn.DataPropertyName = "Income";
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.incomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.incomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.incomeDataGridViewTextBoxColumn.HeaderText = "Income";
             this.incomeDataGridViewTextBoxColumn.Name = "incomeDataGridViewTextBoxColumn";
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.addressDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.addressDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             // 
@@ -239,7 +239,7 @@
             // clientTypeCb
             // 
             this.clientTypeCb.FormattingEnabled = true;
-            this.clientTypeCb.Location = new System.Drawing.Point(777, 168);
+            this.clientTypeCb.Location = new System.Drawing.Point(772, 169);
             this.clientTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.clientTypeCb.Name = "clientTypeCb";
             this.clientTypeCb.Size = new System.Drawing.Size(186, 21);
@@ -252,7 +252,7 @@
             this.bankServicesOverviewBtn.ForeColor = System.Drawing.Color.Black;
             this.bankServicesOverviewBtn.Image = global::MobiFinanceBank.Properties.Resources.ugovaranje;
             this.bankServicesOverviewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bankServicesOverviewBtn.Location = new System.Drawing.Point(772, 381);
+            this.bankServicesOverviewBtn.Location = new System.Drawing.Point(772, 370);
             this.bankServicesOverviewBtn.Margin = new System.Windows.Forms.Padding(2);
             this.bankServicesOverviewBtn.Name = "bankServicesOverviewBtn";
             this.bankServicesOverviewBtn.Size = new System.Drawing.Size(249, 52);
@@ -294,7 +294,7 @@
             // 
             this.filterLbl.AutoSize = true;
             this.filterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterLbl.Location = new System.Drawing.Point(768, 105);
+            this.filterLbl.Location = new System.Drawing.Point(754, 106);
             this.filterLbl.Name = "filterLbl";
             this.filterLbl.Size = new System.Drawing.Size(51, 24);
             this.filterLbl.TabIndex = 17;
@@ -398,11 +398,12 @@
             // 
             // editClientButton
             // 
+            this.editClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.editClientButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.editClientButton.Location = new System.Drawing.Point(550, 423);
+            this.editClientButton.Location = new System.Drawing.Point(611, 391);
             this.editClientButton.Margin = new System.Windows.Forms.Padding(2);
             this.editClientButton.Name = "editClientButton";
-            this.editClientButton.Size = new System.Drawing.Size(87, 31);
+            this.editClientButton.Size = new System.Drawing.Size(110, 31);
             this.editClientButton.TabIndex = 20;
             this.editClientButton.Text = "Ažuriraj klijenta";
             this.editClientButton.UseVisualStyleBackColor = true;

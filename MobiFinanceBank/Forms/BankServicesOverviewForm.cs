@@ -176,15 +176,6 @@ namespace MobiFinanceBank.Forms
             accountDgv.Size = new Size(width, height);
             loanDgv.Size = new Size(width, height);
         }
-
-        private void BankServicesOverviewForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.F1)
-            {
-                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#252-pregled-usluga");
-            }          
-        }
-
         private void accountDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -204,6 +195,19 @@ namespace MobiFinanceBank.Forms
         {
             var loan = (Loan)loanDgv.SelectedRows[0].DataBoundItem;
             GetEmployee(null, loan, null);
+        }
+
+        private void BankServicesOverviewForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
+        private void BankServicesOverviewForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#252-pregled-usluga");
+            }
         }
     }
 }
