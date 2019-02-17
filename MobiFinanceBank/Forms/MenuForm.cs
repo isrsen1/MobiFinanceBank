@@ -44,6 +44,8 @@ namespace MobiFinanceBank.Forms
             this._bankServicesOverviewForm = bankServicesOverviewForm;
             this._adminPanel = adminPanel;
             this.loanRequestsForm = _loanRequestsForm;
+            //this.btnAdminPanel.Visible = false;
+            btnAdminPanel.Enabled = true;
 
         }
         public void GetEmployee(Employee _employee)
@@ -54,6 +56,7 @@ namespace MobiFinanceBank.Forms
             lblPrava.Text = employee.EmployeeType.Name;
             if (employee.EmployeeTypeId == 2)
             {
+                btnAdminPanel.Visible = true;
                 btnAdminPanel.Enabled = true;
             }
         }

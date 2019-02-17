@@ -47,7 +47,7 @@
         /// <value>
         /// Personal Identity Number
         /// </value>
-        public int OIB { get; set; }
+        public string OIB { get; set; }
         /// <summary>
         /// Gets or sets employee's email
         /// </summary>
