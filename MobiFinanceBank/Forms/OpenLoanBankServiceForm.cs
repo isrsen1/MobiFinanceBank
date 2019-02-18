@@ -170,7 +170,6 @@ namespace MobiFinanceBank.Forms
 
                     capitalNum.Value = 1000;
                     startDateDtp.Value = DateTime.Now;
-                    IsStandingOrderChecked = false;
                     standingOrderChb.Checked = false;
                     loanDurationNum.Value = 1;
                     assessmentProgressBar.Value = 0;

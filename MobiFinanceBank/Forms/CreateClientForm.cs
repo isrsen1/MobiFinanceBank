@@ -59,17 +59,16 @@ namespace MobiFinanceBank.Forms
             clientTypeCb.DisplayMember = "Name";
             clientTypeCb.DataSource = new BindingSource(this.clientTypeRepository.GetAll(), null);
 
-            if (ClientToModify == null)
-            {
-                monthlyIncomeLbl.Visible = false;
-                monthlyIncomeNum.Visible = false;
 
-                riskProfessionChb.Visible = false;
-                riskProfessionLbl.Visible = false;
+            monthlyIncomeLbl.Visible = false;
+            monthlyIncomeNum.Visible = false;
 
-                fixedTermContractLbl.Visible = false;
-                fixedTermContractChb.Visible = false;
-            }
+            riskProfessionChb.Visible = false;
+            riskProfessionLbl.Visible = false;
+
+            fixedTermContractLbl.Visible = false;
+            fixedTermContractChb.Visible = false;
+
 
             // Email text box placeholder
             emailTb.Text = emailPlaceholder;
@@ -90,17 +89,17 @@ namespace MobiFinanceBank.Forms
                 riskProfessionChb.Checked = ClientToModify.IsUnusualProfession;
                 addClientBtn.Text = @"Uredi klijenta";
 
-                if (!ClientToModify.IsEmployed)
-                {
-                    monthlyIncomeLbl.Visible = false;
-                    monthlyIncomeNum.Visible = false;
+                //if (!ClientToModify.IsEmployed)
+                //{
+                //    monthlyIncomeLbl.Visible = false;
+                //    monthlyIncomeNum.Visible = false;
 
-                    riskProfessionChb.Visible = false;
-                    riskProfessionLbl.Visible = false;
+                //    riskProfessionChb.Visible = false;
+                //    riskProfessionLbl.Visible = false;
 
-                    fixedTermContractLbl.Visible = false;
-                    fixedTermContractChb.Visible = false;
-                }
+                //    fixedTermContractLbl.Visible = false;
+                //    fixedTermContractChb.Visible = false;
+                //}
             }
 
         }
@@ -185,12 +184,12 @@ namespace MobiFinanceBank.Forms
         {
             // Retrieve selected client type
             var clientType = (ClientType)clientTypeCb.SelectedItem;
-            
+
             var isValid = !string.IsNullOrEmpty(oibTb.Text)
                           && !string.IsNullOrEmpty(emailTb.Text)
                           && !string.IsNullOrEmpty(contactTb.Text)
                           && !string.IsNullOrEmpty(addressTb.Text);
-            
+
             if (clientType.Name == Model.Enums.ClientType.Privatni.ToString())
                 isValid = !string.IsNullOrEmpty(firstNameTb.Text)
                           && !string.IsNullOrEmpty(lastNameTb.Text);
@@ -289,6 +288,18 @@ namespace MobiFinanceBank.Forms
 
                         this.clientRepository.Edit(ClientToModify);
                     }
+
+                    firstNameTb.Text = "";
+                    lastNameTb.Text = "";
+                    oibTb.Text = "";
+                    companyTb.Text = "";
+                    emailTb.Text = emailPlaceholder;
+                    monthlyIncomeNum.Value = 0;
+                    contactTb.Text = "";
+                    addressTb.Text = "";
+                    employedChb.Checked = false;
+                    fixedTermContractChb.Checked = false;
+                    riskProfessionChb.Checked = false;
                 }
                 catch (Exception)
                 {

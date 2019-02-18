@@ -170,7 +170,7 @@ namespace MobiFinanceBank.Forms
 
                     capitalNum.Value = 0;
                     startDateDtp.Value = DateTime.Now;
-                    fixedTermChb.Checked = false;
+                    standingOrderChb.Checked = false;
                     IsStandingOrderChecked = false;
                     accountsDgv.Visible = false;
                 }

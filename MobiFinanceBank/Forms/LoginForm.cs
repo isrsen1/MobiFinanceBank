@@ -54,6 +54,7 @@ namespace MobiFinanceBank.Forms
                     CurrentUser.SetEmployee(result);
                     menuForm.GetEmployee(result);
                     this.menuForm.Show();
+                    this.Hide();
                 }
             }
             catch(Exception er) {

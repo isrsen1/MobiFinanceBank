@@ -112,7 +112,7 @@
             // 
             // startDateDtp
             // 
-            this.startDateDtp.Location = new System.Drawing.Point(202, 396);
+            this.startDateDtp.Location = new System.Drawing.Point(244, 482);
             this.startDateDtp.Margin = new System.Windows.Forms.Padding(2);
             this.startDateDtp.Name = "startDateDtp";
             this.startDateDtp.Size = new System.Drawing.Size(200, 22);
@@ -121,7 +121,7 @@
             // standingOrderChb
             // 
             this.standingOrderChb.AutoSize = true;
-            this.standingOrderChb.Location = new System.Drawing.Point(202, 435);
+            this.standingOrderChb.Location = new System.Drawing.Point(244, 535);
             this.standingOrderChb.Margin = new System.Windows.Forms.Padding(2);
             this.standingOrderChb.Name = "standingOrderChb";
             this.standingOrderChb.Size = new System.Drawing.Size(18, 17);
@@ -131,14 +131,12 @@
             // 
             // capitalNum
             // 
-            this.capitalNum.Location = new System.Drawing.Point(202, 355);
-            this.capitalNum.Margin = new System.Windows.Forms.Padding(2);
             this.capitalNum.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.capitalNum.Location = new System.Drawing.Point(269, 437);
+            this.capitalNum.Location = new System.Drawing.Point(244, 437);
             this.capitalNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.capitalNum.Maximum = new decimal(new int[] {
             1000000,
@@ -168,7 +166,7 @@
             this.loansDataGridViewTextBoxColumn,
             this.savingAccountsDataGridViewTextBoxColumn});
             this.accountsDgv.DataSource = this.accountBindingSource;
-            this.accountsDgv.Location = new System.Drawing.Point(482, 98);
+            this.accountsDgv.Location = new System.Drawing.Point(607, 121);
             this.accountsDgv.Margin = new System.Windows.Forms.Padding(2);
             this.accountsDgv.Name = "accountsDgv";
             this.accountsDgv.RowTemplate.Height = 24;
@@ -275,7 +273,7 @@
             // openSavingAccountBtn
             // 
             this.openSavingAccountBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.openSavingAccountBtn.Location = new System.Drawing.Point(272, 464);
+            this.openSavingAccountBtn.Location = new System.Drawing.Point(337, 516);
             this.openSavingAccountBtn.Margin = new System.Windows.Forms.Padding(2);
             this.openSavingAccountBtn.Name = "openSavingAccountBtn";
             this.openSavingAccountBtn.Size = new System.Drawing.Size(107, 36);
@@ -564,7 +562,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.standingOrderLbl);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "OpenSavingAccountBankServiceForm";
             this.Text = "OpenSavingAccountBankServiceForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenSavingAccountBankServiceForm_FormClosing);
