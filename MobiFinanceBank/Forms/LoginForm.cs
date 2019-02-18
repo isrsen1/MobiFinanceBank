@@ -16,10 +16,11 @@ namespace MobiFinanceBank.Forms
     /// <seealso cref="TemplateForm"/>
     public partial class LoginForm : TemplateForm , ILoginForm
     {
-        private LoginEmployeeData data;
+        private LoginEmployeeData enteredData;
         
         private IMenuForm menuForm;
         private ILoginVmService loginVmService;
+        private Employee result;
         
 
 
@@ -32,20 +33,20 @@ namespace MobiFinanceBank.Forms
             InitializeComponent();
             this.menuForm = _menuForm;
             this.loginVmService = _loginVmService;
-            data = new LoginEmployeeData();
-        }
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.menuForm.Show();
+            enteredData = new LoginEmployeeData();
         }
 
+        /// <summary>
+        /// Tries to login with given input data
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
         private void btnUnesi_Click(object sender, EventArgs e)
         {
             
-            data.Username = userNameTxt.Text;
-            data.Password = passwordTxt.Text;
-            var result = loginVmService.GetLoginData(data);
+            enteredData.Username = userNameTxt.Text;
+            enteredData.Password = passwordTxt.Text;
+            result = loginVmService.GetLoginData(enteredData);
      
             try {
                 if (result != null)
@@ -59,7 +60,11 @@ namespace MobiFinanceBank.Forms
                 throw;
              }         
         }
-
+        /// <summary>
+        /// Opens help for the login form
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
         private void LoginForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)
@@ -67,7 +72,11 @@ namespace MobiFinanceBank.Forms
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#12-prijava");
             }
         }
-
+        /// <summary>
+        /// Used for dependency injection
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
                 this.Hide();
