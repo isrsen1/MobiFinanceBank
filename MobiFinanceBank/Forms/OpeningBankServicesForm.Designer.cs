@@ -85,10 +85,10 @@
             this.bankServicesFlp.Controls.Add(this.accountDgv);
             this.bankServicesFlp.Controls.Add(this.loanDgv);
             this.bankServicesFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.bankServicesFlp.Location = new System.Drawing.Point(21, 136);
+            this.bankServicesFlp.Location = new System.Drawing.Point(143, 136);
             this.bankServicesFlp.Margin = new System.Windows.Forms.Padding(2);
             this.bankServicesFlp.Name = "bankServicesFlp";
-            this.bankServicesFlp.Size = new System.Drawing.Size(712, 210);
+            this.bankServicesFlp.Size = new System.Drawing.Size(510, 250);
             this.bankServicesFlp.TabIndex = 3;
             // 
             // savingAccountDgv
@@ -363,7 +363,7 @@
             this.Controls.Add(this.bankServicesCb);
             this.Controls.Add(this.bankServicesFlp);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "OpeningBankServicesForm";
             this.Text = "OpeningBankServicesForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpeningBankServicesForm_FormClosing);

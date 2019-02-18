@@ -94,10 +94,7 @@ namespace MobiFinanceBank.Forms
         /// <seealso cref="savingAccount"/>
         private void GetEmployee(Account account, Loan loan,SavingAccount savingAccount)
         {
-            //var account = (Account)accountDgv.SelectedRows[0].DataBoundItem;
-            //var loan = (Loan)loanDgv.SelectedRows[0].DataBoundItem;
-            //var savingAccount = (SavingAccount)savingAccountDgv.SelectedRows[0].DataBoundItem;
-
+            //sets the dgv styles and data sources, as well as visible columns
             this.employeeDgv.DefaultCellStyle.ForeColor = Color.Black;
 
             if (savingAccountDgv.Visible==true)
@@ -189,20 +186,21 @@ namespace MobiFinanceBank.Forms
         /// </summary>
 
         private void accountDgv_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            var account = (Account)accountDgv.SelectedRows[0].DataBoundItem;
+        {                     
+            var account = (Account)accountDgv.SelectedRows[0].DataBoundItem;           
             GetEmployee(account, null, null);
-
-
+            
+            
         }
         /// <summary>
         /// Performs action to get employee for savingAccountDgv 
         /// </summary>
         private void savingAccountDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var savingAccount = (SavingAccount)savingAccountDgv.SelectedRows[0].DataBoundItem;
+            var savingAccount = (SavingAccount)savingAccountDgv.SelectedRows[0].DataBoundItem;        
             GetEmployee(null, null, savingAccount);
+               
+            
         }
         /// <summary>
         /// Performs action to get employee for loanDgv
@@ -211,6 +209,8 @@ namespace MobiFinanceBank.Forms
         {
             var loan = (Loan)loanDgv.SelectedRows[0].DataBoundItem;
             GetEmployee(null, loan, null);
+        
+            
         }
         /// <summary>
         /// Dependency injection fix

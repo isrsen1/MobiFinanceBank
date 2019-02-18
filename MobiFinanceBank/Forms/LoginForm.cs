@@ -43,11 +43,13 @@ namespace MobiFinanceBank.Forms
         /// <param name="e">Event args</param>
         private void btnUnesi_Click(object sender, EventArgs e)
         {
-            
-            enteredData.Username = userNameTxt.Text;
-            enteredData.Password = passwordTxt.Text;
-            result = loginVmService.GetLoginData(enteredData);
-     
+
+            if (!string.IsNullOrEmpty(userNameTxt.Text) && !string.IsNullOrEmpty(passwordTxt.Text))
+            {
+                enteredData.Username = userNameTxt.Text;
+                enteredData.Password = passwordTxt.Text;
+                result = loginVmService.GetLoginData(enteredData);
+            }    
             try {
                 if (result != null)
                 {
