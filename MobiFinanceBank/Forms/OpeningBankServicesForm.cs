@@ -99,7 +99,7 @@ namespace MobiFinanceBank.Forms
         {
             this.SetDataSources();
             this.SetDataGridViewSize(900, 300);
-
+            
             var serviceButton = new Dictionary<DataGridView, Button>()
             {
                 {loanDgv, createLoanBtn},
@@ -255,6 +255,12 @@ namespace MobiFinanceBank.Forms
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#26-otvaranje-usluga");
             }
+        }
+
+        private void OpeningBankServicesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

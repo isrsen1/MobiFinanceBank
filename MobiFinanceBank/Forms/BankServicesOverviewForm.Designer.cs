@@ -29,27 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bankServicesFlp = new System.Windows.Forms.FlowLayoutPanel();
             this.accountDgv = new System.Windows.Forms.DataGridView();
-            this.loanDgv = new System.Windows.Forms.DataGridView();
-            this.savingAccountDgv = new System.Windows.Forms.DataGridView();
-            this.bankServicesCb = new System.Windows.Forms.ComboBox();
-            this.filterLbl = new System.Windows.Forms.Label();
-            this.serviceTypeLbl = new System.Windows.Forms.Label();
-            this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iBANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +58,7 @@
             this.loansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.savingAccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loanDgv = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capitalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +71,7 @@
             this.accountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.repaymentPlansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.savingAccountDgv = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isActiveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.capitalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,15 +88,19 @@
             this.employeeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.savingAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bankServicesCb = new System.Windows.Forms.ComboBox();
+            this.filterLbl = new System.Windows.Forms.Label();
+            this.serviceTypeLbl = new System.Windows.Forms.Label();
+            this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.nadlezniLbl = new System.Windows.Forms.Label();
             this.bankServicesFlp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loanDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.savingAccountDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loanDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.savingAccountDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
             this.SuspendLayout();
             // 
             // bankServicesFlp
@@ -145,105 +145,6 @@
             this.accountDgv.TabIndex = 0;
             this.accountDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.accountDgv_CellClick);
             // 
-            // loanDgv
-            // 
-            this.loanDgv.AutoGenerateColumns = false;
-            this.loanDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.loanDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.loanDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loanDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.statusDataGridViewTextBoxColumn,
-            this.capitalDataGridViewTextBoxColumn,
-            this.isStandingOrderActiveDataGridViewCheckBoxColumn,
-            this.employeeIdDataGridViewTextBoxColumn1,
-            this.clientIdDataGridViewTextBoxColumn1,
-            this.accountIdDataGridViewTextBoxColumn,
-            this.clientDataGridViewTextBoxColumn1,
-            this.employeeDataGridViewTextBoxColumn1,
-            this.accountDataGridViewTextBoxColumn,
-            this.repaymentPlansDataGridViewTextBoxColumn});
-            this.loanDgv.DataSource = this.loanBindingSource;
-            this.loanDgv.Location = new System.Drawing.Point(369, 2);
-            this.loanDgv.Margin = new System.Windows.Forms.Padding(2);
-            this.loanDgv.Name = "loanDgv";
-            this.loanDgv.RowTemplate.Height = 24;
-            this.loanDgv.Size = new System.Drawing.Size(320, 122);
-            this.loanDgv.TabIndex = 1;
-            this.loanDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loanDgv_CellClick);
-            // 
-            // savingAccountDgv
-            // 
-            this.savingAccountDgv.AutoGenerateColumns = false;
-            this.savingAccountDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.savingAccountDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.savingAccountDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.savingAccountDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.isActiveDataGridViewCheckBoxColumn,
-            this.capitalDataGridViewTextBoxColumn1,
-            this.balanceDataGridViewTextBoxColumn1,
-            this.fixedTermDepositingStartDateDataGridViewTextBoxColumn,
-            this.fixedTermDepositingEndDateDataGridViewTextBoxColumn,
-            this.isStandingOrderActiveDataGridViewCheckBoxColumn1,
-            this.accountIdDataGridViewTextBoxColumn1,
-            this.savingAccountTypeIdDataGridViewTextBoxColumn,
-            this.clientIdDataGridViewTextBoxColumn2,
-            this.employeeIdDataGridViewTextBoxColumn2,
-            this.clientDataGridViewTextBoxColumn2,
-            this.savingAccountTypeDataGridViewTextBoxColumn,
-            this.employeeDataGridViewTextBoxColumn2,
-            this.accountDataGridViewTextBoxColumn1});
-            this.savingAccountDgv.DataSource = this.savingAccountBindingSource;
-            this.savingAccountDgv.Location = new System.Drawing.Point(693, 2);
-            this.savingAccountDgv.Margin = new System.Windows.Forms.Padding(2);
-            this.savingAccountDgv.Name = "savingAccountDgv";
-            this.savingAccountDgv.RowTemplate.Height = 24;
-            this.savingAccountDgv.Size = new System.Drawing.Size(172, 122);
-            this.savingAccountDgv.TabIndex = 2;
-            this.savingAccountDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.savingAccountDgv_CellClick);
-            // 
-            // bankServicesCb
-            // 
-            this.bankServicesCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bankServicesCb.FormattingEnabled = true;
-            this.bankServicesCb.Location = new System.Drawing.Point(776, 182);
-            this.bankServicesCb.Margin = new System.Windows.Forms.Padding(2);
-            this.bankServicesCb.Name = "bankServicesCb";
-            this.bankServicesCb.Size = new System.Drawing.Size(147, 23);
-            this.bankServicesCb.TabIndex = 4;
-            this.bankServicesCb.SelectedIndexChanged += new System.EventHandler(this.bankServicesCb_SelectedIndexChanged);
-            // 
-            // filterLbl
-            // 
-            this.filterLbl.AutoSize = true;
-            this.filterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.filterLbl.Location = new System.Drawing.Point(753, 123);
-            this.filterLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.filterLbl.Name = "filterLbl";
-            this.filterLbl.Size = new System.Drawing.Size(66, 25);
-            this.filterLbl.TabIndex = 5;
-            this.filterLbl.Text = "Filter:";
-            // 
-            // serviceTypeLbl
-            // 
-            this.serviceTypeLbl.AutoSize = true;
-            this.serviceTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.serviceTypeLbl.Location = new System.Drawing.Point(773, 155);
-            this.serviceTypeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.serviceTypeLbl.Name = "serviceTypeLbl";
-            this.serviceTypeLbl.Size = new System.Drawing.Size(74, 16);
-            this.serviceTypeLbl.TabIndex = 6;
-            this.serviceTypeLbl.Text = "Tip usluge:";
-            // 
-            // employeeDgv
-            // 
-            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeDgv.Location = new System.Drawing.Point(60, 402);
-            this.employeeDgv.Name = "employeeDgv";
-            this.employeeDgv.Size = new System.Drawing.Size(664, 85);
-            this.employeeDgv.TabIndex = 7;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -255,8 +156,8 @@
             // iBANDataGridViewTextBoxColumn
             // 
             this.iBANDataGridViewTextBoxColumn.DataPropertyName = "IBAN";
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.iBANDataGridViewTextBoxColumn.HeaderText = "IBAN";
             this.iBANDataGridViewTextBoxColumn.Name = "iBANDataGridViewTextBoxColumn";
             this.iBANDataGridViewTextBoxColumn.Width = 57;
@@ -264,8 +165,8 @@
             // cardNumberDataGridViewTextBoxColumn
             // 
             this.cardNumberDataGridViewTextBoxColumn.DataPropertyName = "CardNumber";
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.cardNumberDataGridViewTextBoxColumn.HeaderText = "CardNumber";
             this.cardNumberDataGridViewTextBoxColumn.Name = "cardNumberDataGridViewTextBoxColumn";
             this.cardNumberDataGridViewTextBoxColumn.Width = 91;
@@ -273,8 +174,8 @@
             // balanceDataGridViewTextBoxColumn
             // 
             this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
             this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
             this.balanceDataGridViewTextBoxColumn.Width = 71;
@@ -282,10 +183,10 @@
             // blockedDataGridViewCheckBoxColumn
             // 
             this.blockedDataGridViewCheckBoxColumn.DataPropertyName = "Blocked";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.NullValue = false;
-            this.blockedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.NullValue = false;
+            this.blockedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.blockedDataGridViewCheckBoxColumn.HeaderText = "Blocked";
             this.blockedDataGridViewCheckBoxColumn.Name = "blockedDataGridViewCheckBoxColumn";
             this.blockedDataGridViewCheckBoxColumn.Width = 52;
@@ -358,6 +259,33 @@
             // 
             this.accountBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.Account);
             // 
+            // loanDgv
+            // 
+            this.loanDgv.AutoGenerateColumns = false;
+            this.loanDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.loanDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.loanDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loanDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.statusDataGridViewTextBoxColumn,
+            this.capitalDataGridViewTextBoxColumn,
+            this.isStandingOrderActiveDataGridViewCheckBoxColumn,
+            this.employeeIdDataGridViewTextBoxColumn1,
+            this.clientIdDataGridViewTextBoxColumn1,
+            this.accountIdDataGridViewTextBoxColumn,
+            this.clientDataGridViewTextBoxColumn1,
+            this.employeeDataGridViewTextBoxColumn1,
+            this.accountDataGridViewTextBoxColumn,
+            this.repaymentPlansDataGridViewTextBoxColumn});
+            this.loanDgv.DataSource = this.loanBindingSource;
+            this.loanDgv.Location = new System.Drawing.Point(369, 2);
+            this.loanDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.loanDgv.Name = "loanDgv";
+            this.loanDgv.RowTemplate.Height = 24;
+            this.loanDgv.Size = new System.Drawing.Size(320, 122);
+            this.loanDgv.TabIndex = 1;
+            this.loanDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loanDgv_CellClick);
+            // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -369,8 +297,8 @@
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.Width = 62;
@@ -378,8 +306,8 @@
             // capitalDataGridViewTextBoxColumn
             // 
             this.capitalDataGridViewTextBoxColumn.DataPropertyName = "Capital";
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            this.capitalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.capitalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.capitalDataGridViewTextBoxColumn.HeaderText = "Capital";
             this.capitalDataGridViewTextBoxColumn.Name = "capitalDataGridViewTextBoxColumn";
             this.capitalDataGridViewTextBoxColumn.Width = 64;
@@ -387,10 +315,10 @@
             // isStandingOrderActiveDataGridViewCheckBoxColumn
             // 
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.DataPropertyName = "IsStandingOrderActive";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.NullValue = false;
-            this.isStandingOrderActiveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.NullValue = false;
+            this.isStandingOrderActiveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.HeaderText = "IsStandingOrderActive";
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.Name = "isStandingOrderActiveDataGridViewCheckBoxColumn";
             this.isStandingOrderActiveDataGridViewCheckBoxColumn.Width = 119;
@@ -455,6 +383,37 @@
             // 
             this.loanBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.Loan);
             // 
+            // savingAccountDgv
+            // 
+            this.savingAccountDgv.AutoGenerateColumns = false;
+            this.savingAccountDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.savingAccountDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.savingAccountDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.savingAccountDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.isActiveDataGridViewCheckBoxColumn,
+            this.capitalDataGridViewTextBoxColumn1,
+            this.balanceDataGridViewTextBoxColumn1,
+            this.fixedTermDepositingStartDateDataGridViewTextBoxColumn,
+            this.fixedTermDepositingEndDateDataGridViewTextBoxColumn,
+            this.isStandingOrderActiveDataGridViewCheckBoxColumn1,
+            this.accountIdDataGridViewTextBoxColumn1,
+            this.savingAccountTypeIdDataGridViewTextBoxColumn,
+            this.clientIdDataGridViewTextBoxColumn2,
+            this.employeeIdDataGridViewTextBoxColumn2,
+            this.clientDataGridViewTextBoxColumn2,
+            this.savingAccountTypeDataGridViewTextBoxColumn,
+            this.employeeDataGridViewTextBoxColumn2,
+            this.accountDataGridViewTextBoxColumn1});
+            this.savingAccountDgv.DataSource = this.savingAccountBindingSource;
+            this.savingAccountDgv.Location = new System.Drawing.Point(693, 2);
+            this.savingAccountDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.savingAccountDgv.Name = "savingAccountDgv";
+            this.savingAccountDgv.RowTemplate.Height = 24;
+            this.savingAccountDgv.Size = new System.Drawing.Size(172, 122);
+            this.savingAccountDgv.TabIndex = 2;
+            this.savingAccountDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.savingAccountDgv_CellClick);
+            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
@@ -466,10 +425,10 @@
             // isActiveDataGridViewCheckBoxColumn
             // 
             this.isActiveDataGridViewCheckBoxColumn.DataPropertyName = "IsActive";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.NullValue = false;
-            this.isActiveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.NullValue = false;
+            this.isActiveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.isActiveDataGridViewCheckBoxColumn.HeaderText = "IsActive";
             this.isActiveDataGridViewCheckBoxColumn.Name = "isActiveDataGridViewCheckBoxColumn";
             this.isActiveDataGridViewCheckBoxColumn.Width = 51;
@@ -477,8 +436,8 @@
             // capitalDataGridViewTextBoxColumn1
             // 
             this.capitalDataGridViewTextBoxColumn1.DataPropertyName = "Capital";
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            this.capitalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.capitalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
             this.capitalDataGridViewTextBoxColumn1.HeaderText = "Capital";
             this.capitalDataGridViewTextBoxColumn1.Name = "capitalDataGridViewTextBoxColumn1";
             this.capitalDataGridViewTextBoxColumn1.Width = 64;
@@ -486,8 +445,8 @@
             // balanceDataGridViewTextBoxColumn1
             // 
             this.balanceDataGridViewTextBoxColumn1.DataPropertyName = "Balance";
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            this.balanceDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.balanceDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle10;
             this.balanceDataGridViewTextBoxColumn1.HeaderText = "Balance";
             this.balanceDataGridViewTextBoxColumn1.Name = "balanceDataGridViewTextBoxColumn1";
             this.balanceDataGridViewTextBoxColumn1.Width = 71;
@@ -495,8 +454,8 @@
             // fixedTermDepositingStartDateDataGridViewTextBoxColumn
             // 
             this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.DataPropertyName = "FixedTermDepositingStartDate";
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.HeaderText = "FixedTermDepositingStartDate";
             this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.Name = "fixedTermDepositingStartDateDataGridViewTextBoxColumn";
             this.fixedTermDepositingStartDateDataGridViewTextBoxColumn.Width = 176;
@@ -504,8 +463,8 @@
             // fixedTermDepositingEndDateDataGridViewTextBoxColumn
             // 
             this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.DataPropertyName = "FixedTermDepositingEndDate";
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.HeaderText = "FixedTermDepositingEndDate";
             this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.Name = "fixedTermDepositingEndDateDataGridViewTextBoxColumn";
             this.fixedTermDepositingEndDateDataGridViewTextBoxColumn.Width = 173;
@@ -513,10 +472,10 @@
             // isStandingOrderActiveDataGridViewCheckBoxColumn1
             // 
             this.isStandingOrderActiveDataGridViewCheckBoxColumn1.DataPropertyName = "IsStandingOrderActive";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle26.NullValue = false;
-            this.isStandingOrderActiveDataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.NullValue = false;
+            this.isStandingOrderActiveDataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle13;
             this.isStandingOrderActiveDataGridViewCheckBoxColumn1.HeaderText = "IsStandingOrderActive";
             this.isStandingOrderActiveDataGridViewCheckBoxColumn1.Name = "isStandingOrderActiveDataGridViewCheckBoxColumn1";
             this.isStandingOrderActiveDataGridViewCheckBoxColumn1.Width = 119;
@@ -589,6 +548,47 @@
             // 
             this.savingAccountBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.SavingAccount);
             // 
+            // bankServicesCb
+            // 
+            this.bankServicesCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bankServicesCb.FormattingEnabled = true;
+            this.bankServicesCb.Location = new System.Drawing.Point(776, 182);
+            this.bankServicesCb.Margin = new System.Windows.Forms.Padding(2);
+            this.bankServicesCb.Name = "bankServicesCb";
+            this.bankServicesCb.Size = new System.Drawing.Size(147, 23);
+            this.bankServicesCb.TabIndex = 4;
+            this.bankServicesCb.SelectedIndexChanged += new System.EventHandler(this.bankServicesCb_SelectedIndexChanged);
+            // 
+            // filterLbl
+            // 
+            this.filterLbl.AutoSize = true;
+            this.filterLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.filterLbl.Location = new System.Drawing.Point(753, 123);
+            this.filterLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.filterLbl.Name = "filterLbl";
+            this.filterLbl.Size = new System.Drawing.Size(66, 25);
+            this.filterLbl.TabIndex = 5;
+            this.filterLbl.Text = "Filter:";
+            // 
+            // serviceTypeLbl
+            // 
+            this.serviceTypeLbl.AutoSize = true;
+            this.serviceTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.serviceTypeLbl.Location = new System.Drawing.Point(773, 155);
+            this.serviceTypeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.serviceTypeLbl.Name = "serviceTypeLbl";
+            this.serviceTypeLbl.Size = new System.Drawing.Size(74, 16);
+            this.serviceTypeLbl.TabIndex = 6;
+            this.serviceTypeLbl.Text = "Tip usluge:";
+            // 
+            // employeeDgv
+            // 
+            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeDgv.Location = new System.Drawing.Point(60, 402);
+            this.employeeDgv.Name = "employeeDgv";
+            this.employeeDgv.Size = new System.Drawing.Size(664, 85);
+            this.employeeDgv.TabIndex = 7;
+            // 
             // nadlezniLbl
             // 
             this.nadlezniLbl.AutoSize = true;
@@ -613,6 +613,7 @@
             this.KeyPreview = true;
             this.Name = "BankServicesOverviewForm";
             this.Text = "BankServicesOverviewForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BankServicesOverviewForm_FormClosing);
             this.Load += new System.EventHandler(this.SavingAndAccountOverviewForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BankServicesOverviewForm_KeyDown);
             this.Controls.SetChildIndex(this.bankServicesFlp, 0);
@@ -623,12 +624,12 @@
             this.Controls.SetChildIndex(this.nadlezniLbl, 0);
             this.bankServicesFlp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loanDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.savingAccountDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loanDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.savingAccountDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.savingAccountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

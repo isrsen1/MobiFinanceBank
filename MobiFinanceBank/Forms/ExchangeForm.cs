@@ -89,5 +89,11 @@ namespace MobiFinanceBank.Forms
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#27-te%C4%8Dajna-lista");
             }
         }
+
+        private void ExchangeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

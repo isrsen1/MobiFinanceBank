@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.foreignCurrencyChb = new System.Windows.Forms.CheckBox();
             this.interestRateLbl = new System.Windows.Forms.Label();
             this.currencyTitleLbl = new System.Windows.Forms.Label();
@@ -50,6 +55,20 @@
             this.clientDetails = new System.Windows.Forms.Label();
             this.loanRequestButton = new System.Windows.Forms.Button();
             this.accountsDgv = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iBANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cardNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blockedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loansDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.savingAccountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.capitalNum = new System.Windows.Forms.NumericUpDown();
             this.startDateDtp = new System.Windows.Forms.DateTimePicker();
             this.standingOrderChb = new System.Windows.Forms.CheckBox();
@@ -61,6 +80,7 @@
             this.assessmentProgressBar = new System.Windows.Forms.ProgressBar();
             this.makeAssessmentBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.capitalNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanDurationNum)).BeginInit();
             this.SuspendLayout();
@@ -261,13 +281,132 @@
             // 
             // accountsDgv
             // 
+            this.accountsDgv.AutoGenerateColumns = false;
             this.accountsDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.accountsDgv.Location = new System.Drawing.Point(515, 101);
             this.accountsDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.accountsDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.iBANDataGridViewTextBoxColumn,
+            this.cardNumberDataGridViewTextBoxColumn,
+            this.balanceDataGridViewTextBoxColumn,
+            this.blockedDataGridViewCheckBoxColumn,
+            this.clientIdDataGridViewTextBoxColumn,
+            this.accountTypeIdDataGridViewTextBoxColumn,
+            this.employeeIdDataGridViewTextBoxColumn,
+            this.clientDataGridViewTextBoxColumn,
+            this.accountTypeDataGridViewTextBoxColumn,
+            this.employeeDataGridViewTextBoxColumn,
+            this.loansDataGridViewTextBoxColumn,
+            this.savingAccountsDataGridViewTextBoxColumn});
+            this.accountsDgv.DataSource = this.accountBindingSource;
+            this.accountsDgv.Location = new System.Drawing.Point(687, 124);
+            this.accountsDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accountsDgv.Name = "accountsDgv";
             this.accountsDgv.RowTemplate.Height = 24;
             this.accountsDgv.Size = new System.Drawing.Size(436, 225);
             this.accountsDgv.TabIndex = 58;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iBANDataGridViewTextBoxColumn
+            // 
+            this.iBANDataGridViewTextBoxColumn.DataPropertyName = "IBAN";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.iBANDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.iBANDataGridViewTextBoxColumn.HeaderText = "IBAN";
+            this.iBANDataGridViewTextBoxColumn.Name = "iBANDataGridViewTextBoxColumn";
+            // 
+            // cardNumberDataGridViewTextBoxColumn
+            // 
+            this.cardNumberDataGridViewTextBoxColumn.DataPropertyName = "CardNumber";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.cardNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.cardNumberDataGridViewTextBoxColumn.HeaderText = "CardNumber";
+            this.cardNumberDataGridViewTextBoxColumn.Name = "cardNumberDataGridViewTextBoxColumn";
+            // 
+            // balanceDataGridViewTextBoxColumn
+            // 
+            this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
+            this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
+            // 
+            // blockedDataGridViewCheckBoxColumn
+            // 
+            this.blockedDataGridViewCheckBoxColumn.DataPropertyName = "Blocked";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.NullValue = false;
+            this.blockedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.blockedDataGridViewCheckBoxColumn.HeaderText = "Blocked";
+            this.blockedDataGridViewCheckBoxColumn.Name = "blockedDataGridViewCheckBoxColumn";
+            // 
+            // clientIdDataGridViewTextBoxColumn
+            // 
+            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
+            this.clientIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // accountTypeIdDataGridViewTextBoxColumn
+            // 
+            this.accountTypeIdDataGridViewTextBoxColumn.DataPropertyName = "AccountTypeId";
+            this.accountTypeIdDataGridViewTextBoxColumn.HeaderText = "AccountTypeId";
+            this.accountTypeIdDataGridViewTextBoxColumn.Name = "accountTypeIdDataGridViewTextBoxColumn";
+            this.accountTypeIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeIdDataGridViewTextBoxColumn
+            // 
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
+            this.employeeIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            this.clientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // accountTypeDataGridViewTextBoxColumn
+            // 
+            this.accountTypeDataGridViewTextBoxColumn.DataPropertyName = "AccountType";
+            this.accountTypeDataGridViewTextBoxColumn.HeaderText = "AccountType";
+            this.accountTypeDataGridViewTextBoxColumn.Name = "accountTypeDataGridViewTextBoxColumn";
+            this.accountTypeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeDataGridViewTextBoxColumn
+            // 
+            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
+            this.employeeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // loansDataGridViewTextBoxColumn
+            // 
+            this.loansDataGridViewTextBoxColumn.DataPropertyName = "Loans";
+            this.loansDataGridViewTextBoxColumn.HeaderText = "Loans";
+            this.loansDataGridViewTextBoxColumn.Name = "loansDataGridViewTextBoxColumn";
+            this.loansDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // savingAccountsDataGridViewTextBoxColumn
+            // 
+            this.savingAccountsDataGridViewTextBoxColumn.DataPropertyName = "SavingAccounts";
+            this.savingAccountsDataGridViewTextBoxColumn.HeaderText = "SavingAccounts";
+            this.savingAccountsDataGridViewTextBoxColumn.Name = "savingAccountsDataGridViewTextBoxColumn";
+            this.savingAccountsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(MobiFinanceBank.Model.Models.Account);
             // 
             // capitalNum
             // 
@@ -440,6 +579,7 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "OpenLoanBankServiceForm";
             this.Text = "OpenLoanBankServiceForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenLoanBankServiceForm_FormClosing);
             this.Load += new System.EventHandler(this.OpenLoanBankServiceForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OpenLoanBankServiceForm_KeyDown);
             this.Controls.SetChildIndex(this.standingOrderLbl, 0);
@@ -475,6 +615,7 @@
             this.Controls.SetChildIndex(this.assessmentProgressBar, 0);
             this.Controls.SetChildIndex(this.makeAssessmentBtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.capitalNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loanDurationNum)).EndInit();
             this.ResumeLayout(false);
@@ -515,5 +656,19 @@
         private System.Windows.Forms.ProgressBar assessmentProgressBar;
         private System.Windows.Forms.Button makeAssessmentBtn;
         private System.Windows.Forms.NumericUpDown capitalNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iBANDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cardNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn blockedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountTypeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loansDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn savingAccountsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource accountBindingSource;
     }
 }

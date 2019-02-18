@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
+using MobiFinanceBank.Model.Enums;
+using MobiFinanceBank.Model.Models;
+using MobiFinanceBank.Services;
 using MobiFinanceBank.Templates;
 using MobiFinanceBank.Vm;
 using MobiFinanceBank.VmService.Interfaces;
@@ -12,10 +16,11 @@ namespace MobiFinanceBank.Forms
     /// <seealso cref="TemplateForm"/>
     public partial class LoginForm : TemplateForm , ILoginForm
     {
-        private LoginEmployeeData data;
+        private LoginEmployeeData enteredData;
         
         private IMenuForm menuForm;
         private ILoginVmService loginVmService;
+        private Employee result;
         
 
 
@@ -28,42 +33,55 @@ namespace MobiFinanceBank.Forms
             InitializeComponent();
             this.menuForm = _menuForm;
             this.loginVmService = _loginVmService;
-            data = new LoginEmployeeData();
-        }
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.menuForm.Show();
+            enteredData = new LoginEmployeeData();
         }
 
+        /// <summary>
+        /// Tries to login with given input data
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
         private void btnUnesi_Click(object sender, EventArgs e)
         {
             
-            data.Username = userNameTxt.Text;
-            data.Password = passwordTxt.Text;
-            var result = loginVmService.GetLoginData(data);
+            enteredData.Username = userNameTxt.Text;
+            enteredData.Password = passwordTxt.Text;
+            result = loginVmService.GetLoginData(enteredData);
+     
             try {
                 if (result != null)
                 {
+                    CurrentUser.SetEmployee(result);
                     menuForm.GetEmployee(result);
                     this.menuForm.Show();
                 }
             }
             catch(Exception er) {
                 throw;
-             }
-            
-           
-            
-
+             }         
         }
-
+        /// <summary>
+        /// Opens help for the login form
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
         private void LoginForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#12-prijava");
             }
+        }
+        /// <summary>
+        /// Used for dependency injection
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event args</param>
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                this.Hide();
+                e.Cancel = true;
+            
         }
     }
 }

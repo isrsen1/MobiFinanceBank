@@ -502,6 +502,7 @@
             this.KeyPreview = true;
             this.Name = "LoanRequestsForm";
             this.Text = "LoanRequestsForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoanRequestsForm_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoanRequestsForm_KeyDown);
             this.Controls.SetChildIndex(this.loanRequestsDgv, 0);
             this.Controls.SetChildIndex(this.clientDetails, 0);

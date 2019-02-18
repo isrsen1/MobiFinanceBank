@@ -86,6 +86,12 @@ namespace MobiFinanceBank.Forms
                 {BankServices.Štednja, savingAccountDgv}
             };
         }
+        /// <summary>
+        /// Gets employee that was in charge of approving the service
+        /// </summary>
+        /// <seealso cref="account"/>
+        /// <seealso cref="loan"/>
+        /// <seealso cref="savingAccount"/>
         private void GetEmployee(Account account, Loan loan,SavingAccount savingAccount)
         {
             //var account = (Account)accountDgv.SelectedRows[0].DataBoundItem;
@@ -144,7 +150,9 @@ namespace MobiFinanceBank.Forms
 
             }
         }
-
+        /// <summary>
+        /// Sets the data sources for the comboBox and dataGridViews
+        /// </summary>
         private void SetDataSources()
         {
             bankServicesCb.DataSource = Enum.GetValues(typeof(BankServices));
@@ -176,14 +184,9 @@ namespace MobiFinanceBank.Forms
             accountDgv.Size = new Size(width, height);
             loanDgv.Size = new Size(width, height);
         }
-
-        private void BankServicesOverviewForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.F1)
-            {
-                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#252-pregled-usluga");
-            }          
-        }
+        /// <summary>
+        /// Performs action to get employee for accountDataGrid
+        /// </summary>
 
         private void accountDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -193,17 +196,43 @@ namespace MobiFinanceBank.Forms
 
 
         }
-
+        /// <summary>
+        /// Performs action to get employee for savingAccountDgv 
+        /// </summary>
         private void savingAccountDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var savingAccount = (SavingAccount)savingAccountDgv.SelectedRows[0].DataBoundItem;
             GetEmployee(null, null, savingAccount);
         }
-
+        /// <summary>
+        /// Performs action to get employee for loanDgv
+        /// </summary>
         private void loanDgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var loan = (Loan)loanDgv.SelectedRows[0].DataBoundItem;
             GetEmployee(null, loan, null);
+        }
+        /// <summary>
+        /// Dependency injection fix
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
+        private void BankServicesOverviewForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
+        /// <summary>
+        /// Help file
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e">Event args</param>
+        private void BankServicesOverviewForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#252-pregled-usluga");
+            }
         }
     }
 }

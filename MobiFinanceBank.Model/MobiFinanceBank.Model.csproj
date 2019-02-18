@@ -51,6 +51,7 @@
     <Compile Include="Enums\BankServices.cs" />
     <Compile Include="Enums\ClientType.cs" />
     <Compile Include="Enums\Currency.cs" />
+    <Compile Include="Enums\EmployeeType.cs" />
     <Compile Include="Enums\LoanStatus.cs" />
     <Compile Include="Models\ClientType.cs" />
     <Compile Include="Models\Client.cs" />

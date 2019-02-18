@@ -136,6 +136,7 @@ namespace MobiFinanceBank.Forms
             {
                 var row = this.clientOverviewDgv.SelectedRows[0];
                 var client = (Client)row.DataBoundItem;
+                
                 this.openingBankServicesForm.Show(client);
             }
             else
@@ -187,6 +188,12 @@ namespace MobiFinanceBank.Forms
                 MessageBox.Show("Odaberite klijenta", "Pregled klijenata", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+        }
+
+        private void ClientOverviewForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
 
         private void ClientOverviewForm_KeyDown(object sender, KeyEventArgs e)

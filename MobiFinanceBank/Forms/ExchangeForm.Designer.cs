@@ -77,10 +77,10 @@
             this.middleDataGridViewTextBoxColumn,
             this.sellingDataGridViewTextBoxColumn});
             this.currencyExchangeRateDgv.DataSource = this.currencyExchangeRateBindingSource;
-            this.currencyExchangeRateDgv.Location = new System.Drawing.Point(9, 113);
+            this.currencyExchangeRateDgv.Location = new System.Drawing.Point(11, 122);
             this.currencyExchangeRateDgv.Margin = new System.Windows.Forms.Padding(2);
             this.currencyExchangeRateDgv.Name = "currencyExchangeRateDgv";
-            this.currencyExchangeRateDgv.Size = new System.Drawing.Size(710, 222);
+            this.currencyExchangeRateDgv.Size = new System.Drawing.Size(732, 222);
             this.currencyExchangeRateDgv.TabIndex = 3;
             // 
             // exchangeRateListDataGridViewTextBoxColumn
@@ -290,6 +290,7 @@
             this.KeyPreview = true;
             this.Name = "ExchangeForm";
             this.Text = "ExchangeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExchangeForm_FormClosing);
             this.Load += new System.EventHandler(this.ExchangeForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExchangeForm_KeyDown);
             this.Controls.SetChildIndex(this.currencyExchangeRateDgv, 0);

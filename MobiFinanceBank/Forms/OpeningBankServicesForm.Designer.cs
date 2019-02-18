@@ -85,7 +85,7 @@
             this.bankServicesFlp.Controls.Add(this.accountDgv);
             this.bankServicesFlp.Controls.Add(this.loanDgv);
             this.bankServicesFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.bankServicesFlp.Location = new System.Drawing.Point(9, 105);
+            this.bankServicesFlp.Location = new System.Drawing.Point(21, 136);
             this.bankServicesFlp.Margin = new System.Windows.Forms.Padding(2);
             this.bankServicesFlp.Name = "bankServicesFlp";
             this.bankServicesFlp.Size = new System.Drawing.Size(712, 210);
@@ -274,7 +274,7 @@
             // bankServicesCb
             // 
             this.bankServicesCb.FormattingEnabled = true;
-            this.bankServicesCb.Location = new System.Drawing.Point(783, 153);
+            this.bankServicesCb.Location = new System.Drawing.Point(772, 165);
             this.bankServicesCb.Margin = new System.Windows.Forms.Padding(2);
             this.bankServicesCb.Name = "bankServicesCb";
             this.bankServicesCb.Size = new System.Drawing.Size(153, 21);
@@ -324,7 +324,7 @@
             this.buttonsFlp.Controls.Add(this.createAccountBtn);
             this.buttonsFlp.Controls.Add(this.createSavingAccountBtn);
             this.buttonsFlp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.buttonsFlp.Location = new System.Drawing.Point(783, 177);
+            this.buttonsFlp.Location = new System.Drawing.Point(797, 201);
             this.buttonsFlp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonsFlp.Name = "buttonsFlp";
             this.buttonsFlp.Size = new System.Drawing.Size(182, 81);
@@ -363,8 +363,10 @@
             this.Controls.Add(this.bankServicesCb);
             this.Controls.Add(this.bankServicesFlp);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Name = "OpeningBankServicesForm";
             this.Text = "OpeningBankServicesForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpeningBankServicesForm_FormClosing);
             this.Load += new System.EventHandler(this.OpeningBankServicesForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OpeningBankServicesForm_KeyDown);
             this.Controls.SetChildIndex(this.bankServicesFlp, 0);

@@ -89,6 +89,18 @@ namespace MobiFinanceBank.Forms
                 fixedTermContractChb.Checked = ClientToModify.IsFixedTermContract;
                 riskProfessionChb.Checked = ClientToModify.IsUnusualProfession;
                 addClientBtn.Text = @"Uredi klijenta";
+
+                if (!ClientToModify.IsEmployed)
+                {
+                    monthlyIncomeLbl.Visible = false;
+                    monthlyIncomeNum.Visible = false;
+
+                    riskProfessionChb.Visible = false;
+                    riskProfessionLbl.Visible = false;
+
+                    fixedTermContractLbl.Visible = false;
+                    fixedTermContractChb.Visible = false;
+                }
             }
 
         }
@@ -203,17 +215,17 @@ namespace MobiFinanceBank.Forms
                 }
             }
 
-            if (!Regex.Match(firstNameTb.Text, nameRegex).Success)
-            {
-                MessageBox.Show(@"Ime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (!Regex.Match(firstNameTb.Text, nameRegex).Success)
+            //{
+            //    MessageBox.Show(@"Ime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            if (!Regex.Match(lastNameTb.Text, nameRegex).Success)
-            {
-                MessageBox.Show(@"Prezime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (!Regex.Match(lastNameTb.Text, nameRegex).Success)
+            //{
+            //    MessageBox.Show(@"Prezime mora započeti s velikim slovom i imati manje od 26 znakova", @"Klijent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
             if (!Regex.Match(oibTb.Text, oibRegex).Success)
             {
@@ -284,7 +296,7 @@ namespace MobiFinanceBank.Forms
                     return;
                 }
 
-                MessageBox.Show(@"Klijent uspješno kreiran");
+                MessageBox.Show(ClientToModify == null ? @"Klijent uspješno kreiran" : @"Klijent uspješno ažuriran");
             }
             else
             {
@@ -318,6 +330,12 @@ namespace MobiFinanceBank.Forms
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#29-kreiranje-novog-klijenta");
             }
+        }
+
+        private void CreateClientForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

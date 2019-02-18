@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using MobiFinanceBank.DAL.Repositories.Interfaces;
 using MobiFinanceBank.Forms.Interfaces;
+using MobiFinanceBank.Helpers;
 using MobiFinanceBank.Model.Models;
 using MobiFinanceBank.Services.Interfaces;
 using MobiFinanceBank.Templates;
@@ -145,7 +146,7 @@ namespace MobiFinanceBank.Forms
 
             var loan = new Loan()
             {
-                Account = account,
+                AccountId = account?.Id,
                 Capital = (double)capitalNum.Value,
                 IsStandingOrderActive = IsStandingOrderChecked,
                 LoanStartDate = startDateDtp.Value, 
@@ -153,15 +154,28 @@ namespace MobiFinanceBank.Forms
                 LoanDuration = (int)loanDurationNum.Value,
                 Status = 0,
                 LoanTypeId = LoanType.Id,
-                EmployeeId = 3,
+                EmployeeId = CurrentUser.GetEmployee().Id,
                 ClientId = Client.Id
             };
 
             try
             {
-                this.loanRepository.Add(loan);
-                MessageBox.Show(@"Uspješno otvaranje kreditnog zahtjeva", @"Otvaranje kreditnog zahtjeva", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                var createdLoan = this.loanRepository.Add(loan);
+
+                if (createdLoan != null)
+                {
+                    MessageBox.Show(@"Uspješno otvaranje kreditnog zahtjeva", @"Otvaranje kreditnog zahtjeva",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    capitalNum.Value = 1000;
+                    startDateDtp.Value = DateTime.Now;
+                    IsStandingOrderChecked = false;
+                    standingOrderChb.Checked = false;
+                    loanDurationNum.Value = 1;
+                    assessmentProgressBar.Value = 0;
+                    accountsDgv.Visible = false;
+                }
             }
             catch (Exception)
             {
@@ -225,6 +239,12 @@ namespace MobiFinanceBank.Forms
             {
                 System.Diagnostics.Process.Start("https://github.com/foivz/r18061/wiki/Korisni%C4%8Dka-dokumentacija#263-otvaranje-zahtjeva-za-kredit");
             }
+        }
+
+        private void OpenLoanBankServiceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

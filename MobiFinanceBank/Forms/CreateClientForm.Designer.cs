@@ -93,7 +93,7 @@
             this.flowLayoutPanel1.Controls.Add(this.fixedTermContractChb);
             this.flowLayoutPanel1.Controls.Add(this.riskProfessionChb);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(131, 137);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(180, 137);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(174, 277);
@@ -194,7 +194,7 @@
             // 
             this.clientTypeCb.DisplayMember = "ClientType";
             this.clientTypeCb.FormattingEnabled = true;
-            this.clientTypeCb.Location = new System.Drawing.Point(352, 136);
+            this.clientTypeCb.Location = new System.Drawing.Point(401, 136);
             this.clientTypeCb.Margin = new System.Windows.Forms.Padding(2);
             this.clientTypeCb.Name = "clientTypeCb";
             this.clientTypeCb.Size = new System.Drawing.Size(110, 21);
@@ -294,7 +294,7 @@
             this.flowLayoutPanel2.Controls.Add(this.fixedTermContractLbl);
             this.flowLayoutPanel2.Controls.Add(this.riskProfessionLbl);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 137);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(58, 137);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(118, 280);
@@ -347,7 +347,7 @@
             // addClientBtn
             // 
             this.addClientBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addClientBtn.Location = new System.Drawing.Point(352, 162);
+            this.addClientBtn.Location = new System.Drawing.Point(401, 162);
             this.addClientBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addClientBtn.Name = "addClientBtn";
             this.addClientBtn.Size = new System.Drawing.Size(109, 28);
@@ -359,7 +359,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::MobiFinanceBank.Properties.Resources.clienthelper;
-            this.pictureBox3.Location = new System.Drawing.Point(685, 137);
+            this.pictureBox3.Location = new System.Drawing.Point(639, 139);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(369, 280);
@@ -381,6 +381,7 @@
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "CreateClientForm";
             this.Text = "CreateClientForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateClientForm_FormClosing);
             this.Load += new System.EventHandler(this.CreateClient_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CreateClientForm_KeyDown);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);

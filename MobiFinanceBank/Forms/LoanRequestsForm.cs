@@ -129,5 +129,11 @@ namespace MobiFinanceBank.Forms
             }
             
         }
+
+        private void LoanRequestsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }
